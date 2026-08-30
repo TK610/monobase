@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Material Compare - MonoBase</title>
+<style>
+:root{--navy:#153a5b;--blue:#2f6fb0;--soft:#edf5fc;--line:#d8e3ec;--bg:#f5f7fa;--text:#203142;--muted:#6c7e8e;--white:#fff;--green:#17734a}
+*{box-sizing:border-box}body{margin:0;font-family:"Yu Gothic UI","Meiryo",sans-serif;background:var(--bg);color:var(--text)}a{color:inherit}.top{background:var(--navy);color:#fff;padding:15px 24px}.top-inner{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{text-decoration:none;display:flex;gap:11px;align-items:center}.mark{width:42px;height:42px;border:1px solid rgba(255,255,255,.6);border-radius:11px;display:grid;place-items:center;font-weight:900}.brand strong{display:block;font-size:18px}.brand small{display:block;opacity:.78;font-size:11px}.nav{display:flex;gap:8px}.nav a{border:1px solid rgba(255,255,255,.3);border-radius:9px;padding:8px 11px;text-decoration:none;font-size:12px;font-weight:800}.nav a.primary{background:#fff;color:var(--navy)}
+main{max-width:1240px;margin:18px auto 44px;padding:0 18px}.crumb{font-size:12px;color:var(--muted);margin-bottom:10px}.crumb a{color:#25659d;text-decoration:none}.heading{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-bottom:14px}.heading h1{margin:0;color:#143a5b;font-size:27px}.heading p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.65}.controls{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end;margin-top:15px}.select-wrap label{display:block;color:#5f7384;font-size:10px;font-weight:900;margin:0 0 5px}.select-wrap select{width:100%;height:44px;border:1px solid #cbd9e4;background:#fff;border-radius:10px;padding:0 12px;font:inherit;color:#203142}.swap{height:44px;padding:0 14px;border:1px solid #cbd9e4;border-radius:10px;background:#fff;color:var(--navy);font-weight:900;cursor:pointer}.swap:hover{background:#f2f7fb}
+.reasonbar{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:0 0 14px}.reasonbar b{font-size:11px;color:#536a7c}.reason{border:1px solid #d8e4ed;background:#fff;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:850;color:#47657c}.notice{margin-left:auto;color:#7b8995;font-size:10px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.material-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px;min-width:0}.identity{display:grid;grid-template-columns:155px 1fr;gap:16px;align-items:center}.photo{aspect-ratio:4/3;border:1px solid #d9e3eb;border-radius:12px;background:#f7f8fa;overflow:hidden;display:grid;place-items:center}.photo img{width:100%;height:100%;object-fit:contain}.formula{display:inline-flex;background:var(--navy);color:#fff;border-radius:9px;padding:7px 10px;font-weight:900;font-size:16px}.material-card h2{margin:8px 0 2px;color:#153b5c;font-size:23px}.english{margin:0;color:#718292;font-size:12px}.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}.chip{border:1px solid #dbe5ed;background:#f7f9fb;border-radius:999px;padding:4px 7px;font-size:9px;font-weight:850;color:#526b7e}.summary{margin:13px 0 0;padding:10px 12px;border-left:3px solid #4b84b6;background:#f3f7fa;border-radius:8px;font-size:12px;line-height:1.65}
+.table-card{background:#fff;border:1px solid var(--line);border-radius:17px;margin-top:14px;overflow:hidden}.table-title{padding:15px 17px;border-bottom:1px solid #e3eaf0}.table-title h2{margin:0;color:#153b5c;font-size:17px}.row{display:grid;grid-template-columns:190px 1fr 1fr;border-bottom:1px solid #e8edf1}.row:last-child{border-bottom:0}.cell{padding:12px 14px;min-width:0}.cell.label{background:#f8fafc;color:#617486;font-size:11px;font-weight:900}.cell.value{font-size:12px;line-height:1.65}.density{font-size:20px!important;font-weight:900;color:#153b5c}.pending{color:#84929d;font-weight:700}.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{border:1px solid #dae5ed;background:#f5f8fa;border-radius:999px;padding:5px 7px;font-size:10px;font-weight:800;color:#47647b}.uses{display:grid;gap:5px}.use{padding:6px 8px;border:1px solid #e1e8ed;border-radius:8px;background:#fafbfd;font-size:10px}.source a{color:#25659d;text-decoration:none;font-weight:800}.footer-note{margin-top:12px;padding:11px 13px;border:1px solid #dce5ec;background:#fff;border-radius:11px;color:#6c7d8c;font-size:10px;line-height:1.7}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.btn{border-radius:9px;padding:8px 11px;text-decoration:none;border:1px solid #cbd9e4;background:#fff;color:#1d567f;font-size:11px;font-weight:900}.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+@media(max-width:800px){.controls{grid-template-columns:1fr}.swap{width:100%}.compare-grid{grid-template-columns:1fr}.identity{grid-template-columns:120px 1fr}.row{grid-template-columns:120px 1fr 1fr}.cell{padding:10px 8px}.notice{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-inner"><a class="brand" href="index.html"><span class="mark">EPA</span><span><strong>Materials Explorer</strong><small>Explore. Understand. Compare.</small></span></a><nav class="nav"><a href="material_database.html">材料名から探す</a><a href="usage_explorer.html">用途から探す</a><a class="primary" href="index.html">ホーム</a></nav></div></header>
+<main id="app"></main>
+<script src="js/emd-data.js"></script>
+<script>
+(()=>{
+ const all=(window.EMD_DATA&&window.EMD_DATA.materials)||[];
+ const app=document.getElementById('app');
+ const esc=v=>String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ const params=new URLSearchParams(location.search);
+ const fallbackA=all[0];
+ const a=all.find(x=>x.id===params.get('a'))||fallbackA;
+ const candidate=(a&&a.compare_candidates&&a.compare_candidates[0])?all.find(x=>x.id===a.compare_candidates[0].id):null;
+ const b=all.find(x=>x.id===params.get('b'))||candidate||all.find(x=>x.id!==a?.id);
+ if(!a||!b){app.innerHTML='<div class="heading"><h1>比較データを表示できません</h1></div>';return;}
+ function optionList(selected){return all.map(x=>'<option value="'+esc(x.id)+'" '+(x.id===selected?'selected':'')+'>'+esc(x.japanese||x.name)+' / '+esc(x.formula||x.name)+'</option>').join('')}
+ function image(m){return m.image_file?'<img src="images/materials/'+esc(m.image_file)+'" alt="'+esc((m.japanese||m.name)+'の代表画像')+'">':'<span class="pending">画像未登録</span>'}
+ function materialCard(m){return '<article class="material-card"><div class="identity"><div class="photo">'+image(m)+'</div><div><span class="formula">'+esc(m.display_formula||m.formula||m.name)+'</span><h2>'+esc(m.japanese||m.name)+'</h2><p class="english">'+esc(m.english||'')+'</p><div class="chips"><span class="chip">'+esc(m.subcategory||m.category||'分類未登録')+'</span><span class="chip">'+esc(m.state||'状態未登録')+'</span></div></div></div><p class="summary">'+esc(m.summary||'概要情報は未登録です。')+'</p><div class="actions"><a class="btn" href="material_detail.html?id='+encodeURIComponent(m.id)+'">詳細を見る →</a></div></article>'}
+ function density(m){return typeof m.density==='number'?'<span class="density">'+esc(m.density)+' '+esc(m.unit||'g/cm³')+'</span>':'<span class="pending">未登録</span>'}
+ function tags(list){return list&&list.length?'<div class="tags">'+list.slice(0,5).map(x=>'<span class="tag">'+esc(String(x).replace(/[。.]$/,''))+'</span>').join('')+'</div>':'<span class="pending">未登録</span>'}
+ function uses(list){return list&&list.length?'<div class="uses">'+list.slice(0,5).map(x=>'<span class="use">'+esc(x)+'</span>').join('')+'</div>':'<span class="pending">未登録</span>'}
+ function source(m){const name=(m.source_current&&m.source_current.name)||m.source_name;const url=(m.source_current&&m.source_current.url)||m.source_url;return name?(url?'<span class="source"><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(name)+' ↗</a></span>':esc(name)):'<span class="pending">未登録</span>'}
+ function val(v){return v!==undefined&&v!==null&&v!==''?esc(v):'<span class="pending">データ準備中</span>'}
+ function findReasons(x,y){const c=(x.compare_candidates||[]).find(v=>v.id===y.id);return c?(c.reasons||[]):[]}
+ const reasons=[...new Set([...findReasons(a,b),...findReasons(b,a)])];
+ function row(label,left,right,cls=''){return '<div class="row"><div class="cell label">'+label+'</div><div class="cell value '+cls+'">'+left+'</div><div class="cell value '+cls+'">'+right+'</div></div>'}
+ app.innerHTML='<div class="crumb"><a href="index.html">ホーム</a> ／ <a href="material_database.html">材料名から探す</a><a href="usage_explorer.html">用途から探す</a> ／ 材料比較</div>'+ 
+ '<section class="heading"><h1>Material Compare</h1><p>2つの材料を並べて、特徴・用途・物性の違いを確認します。比較結果は材料選定や代替可否を断定するものではありません。</p><div class="controls"><div class="select-wrap"><label>材料 A</label><select id="selA">'+optionList(a.id)+'</select></div><button id="swap" class="swap" type="button">⇄ 入れ替え</button><div class="select-wrap"><label>材料 B</label><select id="selB">'+optionList(b.id)+'</select></div></div></section>'+ 
+ '<div class="reasonbar">'+(reasons.length?'<b>比較の観点</b>'+reasons.map(r=>'<span class="reason">'+esc(r)+'</span>').join(''):'<b>比較の観点</b><span class="reason">自由比較</span>')+'<span class="notice">※ 比較候補は代替材料を意味しません。</span></div>'+ 
+ '<div class="compare-grid">'+materialCard(a)+materialCard(b)+'</div>'+ 
+ '<section class="table-card"><div class="table-title"><h2>基本情報・物性</h2></div>'+ 
+ row('材料名',esc(a.japanese||a.name),esc(b.japanese||b.name))+ 
+ row('記号・化学式',esc(a.formula||a.name),esc(b.formula||b.name))+ 
+ row('分類',esc(a.subcategory||a.category||'未登録'),esc(b.subcategory||b.category||'未登録'))+ 
+ row('状態',esc(a.state||'未登録'),esc(b.state||'未登録'))+ 
+ row('代表形態',val(a.representative_form),val(b.representative_form))+ 
+ row('密度',density(a),density(b))+ 
+ row('融点',val(a.melting_point_c!=null?a.melting_point_c+' °C':null),val(b.melting_point_c!=null?b.melting_point_c+' °C':null))+ 
+ row('沸点',val(a.boiling_point_c!=null?a.boiling_point_c+' °C':null),val(b.boiling_point_c!=null?b.boiling_point_c+' °C':null))+ 
+ '</section>'+ 
+ '<section class="table-card"><div class="table-title"><h2>特徴・用途</h2></div>'+ 
+ row('主な特徴',tags(a.characteristics||[]),tags(b.characteristics||[]))+ 
+ row('主な用途',uses([...(a.uses||[]),...(a.sputtering_uses||[])]),uses([...(b.uses||[]),...(b.sputtering_uses||[])]))+ 
+ row('注意・取扱い',val(a.safety_note),val(b.safety_note))+ 
+ '</section>'+ 
+ '<section class="table-card"><div class="table-title"><h2>出典</h2></div>'+row('密度・基本データ',source(a),source(b))+'</section>'+ 
+ '<div class="footer-note">EPAは短時間で材料の違いを理解するためのリファレンスです。設計・安全・法規・購買などの正式判断では、SDS、規格、メーカー仕様書、一次情報をご確認ください。</div>';
+ function go(){const A=document.getElementById('selA').value,B=document.getElementById('selB').value;location.href='material_compare.html?a='+encodeURIComponent(A)+'&b='+encodeURIComponent(B)}
+ document.getElementById('selA').addEventListener('change',go);document.getElementById('selB').addEventListener('change',go);document.getElementById('swap').addEventListener('click',()=>{location.href='material_compare.html?a='+encodeURIComponent(b.id)+'&b='+encodeURIComponent(a.id)});
+})();
+</script>
+</body></html>

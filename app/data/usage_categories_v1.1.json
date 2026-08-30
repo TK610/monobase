@@ -1,0 +1,5125 @@
+{
+  "version": "1.1",
+  "material_count": 197,
+  "category_count": 15,
+  "categories": [
+    {
+      "category": "半導体",
+      "count": 43,
+      "materials": [
+        {
+          "id": "EL-005-B",
+          "japanese": "ホウ素",
+          "english": "Boron",
+          "formula": "B",
+          "details": [
+            "半導体"
+          ]
+        },
+        {
+          "id": "EL-009-F",
+          "japanese": "フッ素",
+          "english": "Fluorine",
+          "formula": "F",
+          "details": [
+            "半導体エッチング"
+          ]
+        },
+        {
+          "id": "EL-014-SI",
+          "japanese": "ケイ素",
+          "english": "Silicon",
+          "formula": "Si",
+          "details": [
+            "半導体ウェハ"
+          ]
+        },
+        {
+          "id": "EL-015-P",
+          "japanese": "リン",
+          "english": "Phosphorus",
+          "formula": "P",
+          "details": [
+            "半導体ドーパント"
+          ]
+        },
+        {
+          "id": "EL-018-AR",
+          "japanese": "アルゴン",
+          "english": "Argon",
+          "formula": "Ar",
+          "details": [
+            "半導体製造"
+          ]
+        },
+        {
+          "id": "EL-031-GA",
+          "japanese": "ガリウム",
+          "english": "Gallium",
+          "formula": "Ga",
+          "details": [
+            "GaAs・GaN半導体"
+          ]
+        },
+        {
+          "id": "EL-032-GE",
+          "japanese": "ゲルマニウム",
+          "english": "Germanium",
+          "formula": "Ge",
+          "details": [
+            "半導体"
+          ]
+        },
+        {
+          "id": "EL-033-AS",
+          "japanese": "ヒ素",
+          "english": "Arsenic",
+          "formula": "As",
+          "details": [
+            "GaAs半導体"
+          ]
+        },
+        {
+          "id": "EL-034-SE",
+          "japanese": "セレン",
+          "english": "Selenium",
+          "formula": "Se",
+          "details": [
+            "整流素子"
+          ]
+        },
+        {
+          "id": "EL-042-MO",
+          "japanese": "モリブデン",
+          "english": "Molybdenum",
+          "formula": "Mo",
+          "details": [
+            "半導体製造装置"
+          ]
+        },
+        {
+          "id": "EL-049-IN",
+          "japanese": "インジウム",
+          "english": "Indium",
+          "formula": "In",
+          "details": [
+            "半導体"
+          ]
+        },
+        {
+          "id": "EL-051-SB",
+          "japanese": "アンチモン",
+          "english": "Antimony",
+          "formula": "Sb",
+          "details": [
+            "半導体"
+          ]
+        },
+        {
+          "id": "EL-054-XE",
+          "japanese": "キセノン",
+          "english": "Xenon",
+          "formula": "Xe",
+          "details": [
+            "半導体露光光源"
+          ]
+        },
+        {
+          "id": "EL-074-W",
+          "japanese": "タングステン",
+          "english": "Tungsten",
+          "formula": "W",
+          "details": [
+            "半導体配線"
+          ]
+        },
+        {
+          "id": "EL-079-AU",
+          "japanese": "金",
+          "english": "Gold",
+          "formula": "Au",
+          "details": [
+            "半導体パッケージ"
+          ]
+        },
+        {
+          "id": "IGZO",
+          "japanese": "インジウムガリウム亜鉛酸化物",
+          "english": "Indium Gallium Zinc Oxide",
+          "formula": "In-Ga-Zn-O",
+          "details": [
+            "薄膜トランジスタ"
+          ]
+        },
+        {
+          "id": "IZO",
+          "japanese": "インジウム亜鉛酸化物",
+          "english": "Indium Zinc Oxide",
+          "formula": "In2O3-ZnO",
+          "details": [
+            "薄膜トランジスタ"
+          ]
+        },
+        {
+          "id": "IN2O3",
+          "japanese": "酸化インジウム",
+          "english": "Indium Oxide",
+          "formula": "In2O3",
+          "details": [
+            "薄膜半導体"
+          ]
+        },
+        {
+          "id": "GA2O3",
+          "japanese": "酸化ガリウム",
+          "english": "Gallium Oxide",
+          "formula": "Ga2O3",
+          "details": [
+            "パワー半導体"
+          ]
+        },
+        {
+          "id": "HFO2",
+          "japanese": "酸化ハフニウム",
+          "english": "Hafnium Oxide",
+          "formula": "HfO2",
+          "details": [
+            "半導体ゲート絶縁膜"
+          ]
+        },
+        {
+          "id": "SIO2A",
+          "japanese": "二酸化ケイ素（非晶質）",
+          "english": "Silicon Dioxide, Fused",
+          "formula": "SiO2",
+          "details": [
+            "半導体製造部材"
+          ]
+        },
+        {
+          "id": "CEO2",
+          "japanese": "酸化セリウム",
+          "english": "Cerium Oxide",
+          "formula": "CeO2",
+          "details": [
+            "ガラス・半導体研磨"
+          ]
+        },
+        {
+          "id": "ALN",
+          "japanese": "窒化アルミニウム",
+          "english": "Aluminum Nitride",
+          "formula": "AlN",
+          "details": [
+            "パワー半導体基板"
+          ]
+        },
+        {
+          "id": "SCALN",
+          "japanese": "スカンジウム添加窒化アルミニウム",
+          "english": "Scandium Aluminum Nitride",
+          "formula": "ScₓAl1₋ₓN",
+          "details": [
+            "RF-MEMS"
+          ]
+        },
+        {
+          "id": "GAN",
+          "japanese": "窒化ガリウム",
+          "english": "Gallium Nitride",
+          "formula": "GaN",
+          "details": [
+            "パワー半導体"
+          ]
+        },
+        {
+          "id": "TIN",
+          "japanese": "窒化チタン",
+          "english": "Titanium Nitride",
+          "formula": "TiN",
+          "details": [
+            "半導体拡散バリア"
+          ]
+        },
+        {
+          "id": "TAN",
+          "japanese": "窒化タンタル",
+          "english": "Tantalum Nitride",
+          "formula": "TaN",
+          "details": [
+            "半導体拡散バリア"
+          ]
+        },
+        {
+          "id": "WN",
+          "japanese": "窒化タングステン",
+          "english": "Tungsten Nitride",
+          "formula": "WNₓ",
+          "details": [
+            "半導体拡散バリア"
+          ]
+        },
+        {
+          "id": "SI3N4",
+          "japanese": "窒化ケイ素",
+          "english": "Silicon Nitride",
+          "formula": "Si3N4",
+          "details": [
+            "半導体治具"
+          ]
+        },
+        {
+          "id": "SIC",
+          "japanese": "炭化ケイ素",
+          "english": "Silicon Carbide",
+          "formula": "SiC",
+          "details": [
+            "パワー半導体",
+            "半導体治具"
+          ]
+        },
+        {
+          "id": "INP",
+          "japanese": "リン化インジウム",
+          "english": "Indium Phosphide",
+          "formula": "InP",
+          "details": [
+            "高周波トランジスタ"
+          ]
+        },
+        {
+          "id": "INAS",
+          "japanese": "ヒ化インジウム",
+          "english": "Indium Arsenide",
+          "formula": "InAs",
+          "details": [
+            "高速トランジスタ"
+          ]
+        },
+        {
+          "id": "GASB",
+          "japanese": "アンチモン化ガリウム",
+          "english": "Gallium Antimonide",
+          "formula": "GaSb",
+          "details": [
+            "高速デバイス",
+            "量子井戸"
+          ]
+        },
+        {
+          "id": "MOS2",
+          "japanese": "二硫化モリブデン",
+          "english": "Molybdenum Disulfide",
+          "formula": "MoS2",
+          "details": [
+            "2Dトランジスタ"
+          ]
+        },
+        {
+          "id": "WS2",
+          "japanese": "二硫化タングステン",
+          "english": "Tungsten Disulfide",
+          "formula": "WS2",
+          "details": [
+            "2Dトランジスタ"
+          ]
+        },
+        {
+          "id": "GST",
+          "japanese": "ゲルマニウム－アンチモン－テルル合金",
+          "english": "Ge-Sb-Te",
+          "formula": "Ge2Sb2Te5",
+          "details": [
+            "ニューロモルフィック素子"
+          ]
+        },
+        {
+          "id": "GETE",
+          "japanese": "テルル化ゲルマニウム",
+          "english": "Germanium Telluride",
+          "formula": "GeTe",
+          "details": [
+            "スイッチング素子"
+          ]
+        },
+        {
+          "id": "COFEB",
+          "japanese": "コバルト鉄ホウ素合金",
+          "english": "Cobalt Iron Boron",
+          "formula": "Co-Fe-B",
+          "details": [
+            "MRAM",
+            "MTJ"
+          ]
+        },
+        {
+          "id": "ALSI",
+          "japanese": "アルミニウム－シリコン合金",
+          "english": "Aluminum Silicon Alloy",
+          "formula": "Al-Si",
+          "details": [
+            "半導体配線"
+          ]
+        },
+        {
+          "id": "TIW",
+          "japanese": "チタン－タングステン合金",
+          "english": "Titanium Tungsten Alloy",
+          "formula": "Ti-W",
+          "details": [
+            "半導体配線"
+          ]
+        },
+        {
+          "id": "WSI2",
+          "japanese": "二ケイ化タングステン",
+          "english": "Tungsten Disilicide",
+          "formula": "WSi2",
+          "details": [
+            "半導体ゲート・配線"
+          ]
+        },
+        {
+          "id": "TASI2",
+          "japanese": "二ケイ化タンタル",
+          "english": "Tantalum Disilicide",
+          "formula": "TaSi2",
+          "details": [
+            "半導体配線・電極"
+          ]
+        },
+        {
+          "id": "CAF2",
+          "japanese": "フッ化カルシウム",
+          "english": "Calcium Fluoride",
+          "formula": "CaF2",
+          "details": [
+            "半導体露光光学"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "電池",
+      "count": 31,
+      "materials": [
+        {
+          "id": "EL-001-H",
+          "japanese": "水素",
+          "english": "Hydrogen",
+          "formula": "H",
+          "details": [
+            "燃料電池"
+          ]
+        },
+        {
+          "id": "EL-003-LI",
+          "japanese": "リチウム",
+          "english": "Lithium",
+          "formula": "Li",
+          "details": [
+            "リチウムイオン電池"
+          ]
+        },
+        {
+          "id": "EL-006-C",
+          "japanese": "炭素",
+          "english": "Carbon",
+          "formula": "C",
+          "details": [
+            "電池材料"
+          ]
+        },
+        {
+          "id": "EL-014-SI",
+          "japanese": "ケイ素",
+          "english": "Silicon",
+          "formula": "Si",
+          "details": [
+            "太陽電池"
+          ]
+        },
+        {
+          "id": "EL-023-V",
+          "japanese": "バナジウム",
+          "english": "Vanadium",
+          "formula": "V",
+          "details": [
+            "電池材料"
+          ]
+        },
+        {
+          "id": "EL-025-MN",
+          "japanese": "マンガン",
+          "english": "Manganese",
+          "formula": "Mn",
+          "details": [
+            "乾電池"
+          ]
+        },
+        {
+          "id": "EL-027-CO",
+          "japanese": "コバルト",
+          "english": "Cobalt",
+          "formula": "Co",
+          "details": [
+            "電池正極"
+          ]
+        },
+        {
+          "id": "EL-028-NI",
+          "japanese": "ニッケル",
+          "english": "Nickel",
+          "formula": "Ni",
+          "details": [
+            "電池"
+          ]
+        },
+        {
+          "id": "EL-030-ZN",
+          "japanese": "亜鉛",
+          "english": "Zinc",
+          "formula": "Zn",
+          "details": [
+            "乾電池"
+          ]
+        },
+        {
+          "id": "EL-032-GE",
+          "japanese": "ゲルマニウム",
+          "english": "Germanium",
+          "formula": "Ge",
+          "details": [
+            "太陽電池"
+          ]
+        },
+        {
+          "id": "EL-034-SE",
+          "japanese": "セレン",
+          "english": "Selenium",
+          "formula": "Se",
+          "details": [
+            "太陽電池"
+          ]
+        },
+        {
+          "id": "EL-048-CD",
+          "japanese": "カドミウム",
+          "english": "Cadmium",
+          "formula": "Cd",
+          "details": [
+            "ニッケルカドミウム電池"
+          ]
+        },
+        {
+          "id": "EL-051-SB",
+          "japanese": "アンチモン",
+          "english": "Antimony",
+          "formula": "Sb",
+          "details": [
+            "鉛蓄電池合金"
+          ]
+        },
+        {
+          "id": "EL-052-TE",
+          "japanese": "テルル",
+          "english": "Tellurium",
+          "formula": "Te",
+          "details": [
+            "CdTe太陽電池"
+          ]
+        },
+        {
+          "id": "EL-057-LA",
+          "japanese": "ランタン",
+          "english": "Lanthanum",
+          "formula": "La",
+          "details": [
+            "ニッケル水素電池"
+          ]
+        },
+        {
+          "id": "EL-058-CE",
+          "japanese": "セリウム",
+          "english": "Cerium",
+          "formula": "Ce",
+          "details": [
+            "固体酸化物形燃料電池"
+          ]
+        },
+        {
+          "id": "EL-082-PB",
+          "japanese": "鉛",
+          "english": "Lead",
+          "formula": "Pb",
+          "details": [
+            "鉛蓄電池"
+          ]
+        },
+        {
+          "id": "ITO",
+          "japanese": "インジウムスズ酸化物",
+          "english": "Indium Tin Oxide",
+          "formula": "In2O3-SnO2",
+          "details": [
+            "太陽電池"
+          ]
+        },
+        {
+          "id": "AZO",
+          "japanese": "アルミニウム添加酸化亜鉛",
+          "english": "Aluminum-doped Zinc Oxide",
+          "formula": "ZnO-Al2O3",
+          "details": [
+            "太陽電池"
+          ]
+        },
+        {
+          "id": "GZO",
+          "japanese": "ガリウム添加酸化亜鉛",
+          "english": "Gallium-doped Zinc Oxide",
+          "formula": "ZnO-Ga2O3",
+          "details": [
+            "太陽電池"
+          ]
+        },
+        {
+          "id": "FTO",
+          "japanese": "フッ素添加酸化スズ",
+          "english": "Fluorine-doped Tin Oxide",
+          "formula": "SnO2:F",
+          "details": [
+            "太陽電池用導電ガラス"
+          ]
+        },
+        {
+          "id": "ZRO2",
+          "japanese": "酸化ジルコニウム",
+          "english": "Zirconium Oxide",
+          "formula": "ZrO2",
+          "details": [
+            "固体電解質"
+          ]
+        },
+        {
+          "id": "NB2O5",
+          "japanese": "五酸化ニオブ",
+          "english": "Niobium Pentoxide",
+          "formula": "Nb2O5",
+          "details": [
+            "リチウム電池電極"
+          ]
+        },
+        {
+          "id": "TIO2A",
+          "japanese": "二酸化チタン（アナターゼ）",
+          "english": "Titanium Dioxide, Anatase",
+          "formula": "TiO2",
+          "details": [
+            "色素増感太陽電池"
+          ]
+        },
+        {
+          "id": "LA2O3",
+          "japanese": "酸化ランタン",
+          "english": "Lanthanum Oxide",
+          "formula": "La2O3",
+          "details": [
+            "電池材料"
+          ]
+        },
+        {
+          "id": "CEO2",
+          "japanese": "酸化セリウム",
+          "english": "Cerium Oxide",
+          "formula": "CeO2",
+          "details": [
+            "燃料電池"
+          ]
+        },
+        {
+          "id": "CDS",
+          "japanese": "硫化カドミウム",
+          "english": "Cadmium Sulfide",
+          "formula": "CdS",
+          "details": [
+            "薄膜太陽電池バッファ層"
+          ]
+        },
+        {
+          "id": "CDSE",
+          "japanese": "セレン化カドミウム",
+          "english": "Cadmium Selenide",
+          "formula": "CdSe",
+          "details": [
+            "太陽電池"
+          ]
+        },
+        {
+          "id": "LICOO2",
+          "japanese": "コバルト酸リチウム",
+          "english": "Lithium Cobalt Oxide",
+          "formula": "LiCoO2",
+          "details": [
+            "小型電子機器用リチウムイオン電池"
+          ]
+        },
+        {
+          "id": "LIMN2O4",
+          "japanese": "マンガン酸リチウム",
+          "english": "Lithium Manganese Oxide",
+          "formula": "LiMn2O4",
+          "details": [
+            "蓄電池",
+            "小型電池"
+          ]
+        },
+        {
+          "id": "LIFEPO4",
+          "japanese": "リン酸鉄リチウム",
+          "english": "Lithium Iron Phosphate",
+          "formula": "LiFePO4",
+          "details": [
+            "定置型蓄電"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "真空・薄膜",
+      "count": 33,
+      "materials": [
+        {
+          "id": "EL-042-MO",
+          "japanese": "モリブデン",
+          "english": "Molybdenum",
+          "formula": "Mo",
+          "details": [
+            "真空炉部品"
+          ]
+        },
+        {
+          "id": "EL-044-RU",
+          "japanese": "ルテニウム",
+          "english": "Ruthenium",
+          "formula": "Ru",
+          "details": [
+            "磁気記録層"
+          ]
+        },
+        {
+          "id": "EL-055-CS",
+          "japanese": "セシウム",
+          "english": "Cesium",
+          "formula": "Cs",
+          "details": [
+            "真空機器"
+          ]
+        },
+        {
+          "id": "EL-056-BA",
+          "japanese": "バリウム",
+          "english": "Barium",
+          "formula": "Ba",
+          "details": [
+            "真空ゲッター"
+          ]
+        },
+        {
+          "id": "EL-073-TA",
+          "japanese": "タンタル",
+          "english": "Tantalum",
+          "formula": "Ta",
+          "details": [
+            "真空部品"
+          ]
+        },
+        {
+          "id": "EL-074-W",
+          "japanese": "タングステン",
+          "english": "Tungsten",
+          "formula": "W",
+          "details": [
+            "真空炉ヒーター"
+          ]
+        },
+        {
+          "id": "ATO",
+          "japanese": "アンチモン添加酸化スズ",
+          "english": "Antimony-doped Tin Oxide",
+          "formula": "SnO2-Sb2O3",
+          "details": [
+            "帯電防止コーティング"
+          ]
+        },
+        {
+          "id": "HFO2",
+          "japanese": "酸化ハフニウム",
+          "english": "Hafnium Oxide",
+          "formula": "HfO2",
+          "details": [
+            "光学コーティング"
+          ]
+        },
+        {
+          "id": "TA2O5",
+          "japanese": "五酸化タンタル",
+          "english": "Tantalum Pentoxide",
+          "formula": "Ta2O5",
+          "details": [
+            "光学コーティング"
+          ]
+        },
+        {
+          "id": "NB2O5",
+          "japanese": "五酸化ニオブ",
+          "english": "Niobium Pentoxide",
+          "formula": "Nb2O5",
+          "details": [
+            "光学コーティング"
+          ]
+        },
+        {
+          "id": "TIO2R",
+          "japanese": "二酸化チタン（ルチル）",
+          "english": "Titanium Dioxide, Rutile",
+          "formula": "TiO2",
+          "details": [
+            "光学コーティング"
+          ]
+        },
+        {
+          "id": "MGO",
+          "japanese": "酸化マグネシウム",
+          "english": "Magnesium Oxide",
+          "formula": "MgO",
+          "details": [
+            "トンネル障壁膜"
+          ]
+        },
+        {
+          "id": "TIN",
+          "japanese": "窒化チタン",
+          "english": "Titanium Nitride",
+          "formula": "TiN",
+          "details": [
+            "切削工具コーティング"
+          ]
+        },
+        {
+          "id": "TAN",
+          "japanese": "窒化タンタル",
+          "english": "Tantalum Nitride",
+          "formula": "TaN",
+          "details": [
+            "薄膜抵抗",
+            "保護膜"
+          ]
+        },
+        {
+          "id": "WN",
+          "japanese": "窒化タングステン",
+          "english": "Tungsten Nitride",
+          "formula": "WNₓ",
+          "details": [
+            "耐摩耗コーティング"
+          ]
+        },
+        {
+          "id": "ZRN",
+          "japanese": "窒化ジルコニウム",
+          "english": "Zirconium Nitride",
+          "formula": "ZrN",
+          "details": [
+            "切削工具コーティング",
+            "装飾膜"
+          ]
+        },
+        {
+          "id": "HFN",
+          "japanese": "窒化ハフニウム",
+          "english": "Hafnium Nitride",
+          "formula": "HfN",
+          "details": [
+            "耐熱コーティング",
+            "拡散バリア"
+          ]
+        },
+        {
+          "id": "TIC",
+          "japanese": "炭化チタン",
+          "english": "Titanium Carbide",
+          "formula": "TiC",
+          "details": [
+            "耐摩耗コーティング"
+          ]
+        },
+        {
+          "id": "TAC",
+          "japanese": "炭化タンタル",
+          "english": "Tantalum Carbide",
+          "formula": "TaC",
+          "details": [
+            "炭化物コーティング"
+          ]
+        },
+        {
+          "id": "NBC",
+          "japanese": "炭化ニオブ",
+          "english": "Niobium Carbide",
+          "formula": "NbC",
+          "details": [
+            "耐摩耗コーティング"
+          ]
+        },
+        {
+          "id": "MO2C",
+          "japanese": "炭化モリブデン",
+          "english": "Molybdenum Carbide",
+          "formula": "Mo2C",
+          "details": [
+            "耐摩耗コーティング"
+          ]
+        },
+        {
+          "id": "HFB2",
+          "japanese": "二ホウ化ハフニウム",
+          "english": "Hafnium Diboride",
+          "formula": "HfB2",
+          "details": [
+            "耐火コーティング"
+          ]
+        },
+        {
+          "id": "LAB6",
+          "japanese": "六ホウ化ランタン",
+          "english": "Lanthanum Hexaboride",
+          "formula": "LaB6",
+          "details": [
+            "電子ビーム蒸着"
+          ]
+        },
+        {
+          "id": "WS2",
+          "japanese": "二硫化タングステン",
+          "english": "Tungsten Disulfide",
+          "formula": "WS2",
+          "details": [
+            "固体潤滑コーティング"
+          ]
+        },
+        {
+          "id": "ZNS",
+          "japanese": "硫化亜鉛",
+          "english": "Zinc Sulfide",
+          "formula": "ZnS",
+          "details": [
+            "光学コーティング"
+          ]
+        },
+        {
+          "id": "SB2TE3",
+          "japanese": "テルル化アンチモン",
+          "english": "Antimony Telluride",
+          "formula": "Sb2Te3",
+          "details": [
+            "研究用薄膜"
+          ]
+        },
+        {
+          "id": "TIW",
+          "japanese": "チタン－タングステン合金",
+          "english": "Titanium Tungsten Alloy",
+          "formula": "Ti-W",
+          "details": [
+            "バリアメタル",
+            "密着層",
+            "薄膜抵抗"
+          ]
+        },
+        {
+          "id": "MOW",
+          "japanese": "モリブデン－タングステン合金",
+          "english": "Molybdenum Tungsten Alloy",
+          "formula": "Mo-W",
+          "details": [
+            "真空炉部品"
+          ]
+        },
+        {
+          "id": "MOSI2",
+          "japanese": "二ケイ化モリブデン",
+          "english": "Molybdenum Disilicide",
+          "formula": "MoSi2",
+          "details": [
+            "耐酸化コーティング"
+          ]
+        },
+        {
+          "id": "WSI2",
+          "japanese": "二ケイ化タングステン",
+          "english": "Tungsten Disilicide",
+          "formula": "WSi2",
+          "details": [
+            "耐熱コーティング"
+          ]
+        },
+        {
+          "id": "TASI2",
+          "japanese": "二ケイ化タンタル",
+          "english": "Tantalum Disilicide",
+          "formula": "TaSi2",
+          "details": [
+            "耐熱コーティング",
+            "薄膜抵抗"
+          ]
+        },
+        {
+          "id": "LIF",
+          "japanese": "フッ化リチウム",
+          "english": "Lithium Fluoride",
+          "formula": "LiF",
+          "details": [
+            "真空紫外窓",
+            "光学コーティング",
+            "蒸着材"
+          ]
+        },
+        {
+          "id": "ALF3",
+          "japanese": "フッ化アルミニウム",
+          "english": "Aluminum Fluoride",
+          "formula": "AlF3",
+          "details": [
+            "光学コーティング"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "光学",
+      "count": 58,
+      "materials": [
+        {
+          "id": "EL-010-NE",
+          "japanese": "ネオン",
+          "english": "Neon",
+          "formula": "Ne",
+          "details": [
+            "ネオンサイン",
+            "レーザー"
+          ]
+        },
+        {
+          "id": "EL-031-GA",
+          "japanese": "ガリウム",
+          "english": "Gallium",
+          "formula": "Ga",
+          "details": [
+            "LED",
+            "レーザーダイオード"
+          ]
+        },
+        {
+          "id": "EL-032-GE",
+          "japanese": "ゲルマニウム",
+          "english": "Germanium",
+          "formula": "Ge",
+          "details": [
+            "赤外線レンズ",
+            "光ファイバー"
+          ]
+        },
+        {
+          "id": "EL-036-KR",
+          "japanese": "クリプトン",
+          "english": "Krypton",
+          "formula": "Kr",
+          "details": [
+            "エキシマレーザー"
+          ]
+        },
+        {
+          "id": "EL-037-RB",
+          "japanese": "ルビジウム",
+          "english": "Rubidium",
+          "formula": "Rb",
+          "details": [
+            "光電管"
+          ]
+        },
+        {
+          "id": "EL-039-Y",
+          "japanese": "イットリウム",
+          "english": "Yttrium",
+          "formula": "Y",
+          "details": [
+            "YAGレーザー",
+            "蛍光体"
+          ]
+        },
+        {
+          "id": "EL-045-RH",
+          "japanese": "ロジウム",
+          "english": "Rhodium",
+          "formula": "Rh",
+          "details": [
+            "装飾・光学めっき"
+          ]
+        },
+        {
+          "id": "EL-049-IN",
+          "japanese": "インジウム",
+          "english": "Indium",
+          "formula": "In",
+          "details": [
+            "ITO透明電極",
+            "液晶・タッチパネル"
+          ]
+        },
+        {
+          "id": "EL-052-TE",
+          "japanese": "テルル",
+          "english": "Tellurium",
+          "formula": "Te",
+          "details": [
+            "光ディスク"
+          ]
+        },
+        {
+          "id": "EL-054-XE",
+          "japanese": "キセノン",
+          "english": "Xenon",
+          "formula": "Xe",
+          "details": [
+            "キセノンランプ"
+          ]
+        },
+        {
+          "id": "EL-055-CS",
+          "japanese": "セシウム",
+          "english": "Cesium",
+          "formula": "Cs",
+          "details": [
+            "光電管"
+          ]
+        },
+        {
+          "id": "EL-057-LA",
+          "japanese": "ランタン",
+          "english": "Lanthanum",
+          "formula": "La",
+          "details": [
+            "光学ガラス"
+          ]
+        },
+        {
+          "id": "EL-059-PR",
+          "japanese": "プラセオジム",
+          "english": "Praseodymium",
+          "formula": "Pr",
+          "details": [
+            "レーザー材料"
+          ]
+        },
+        {
+          "id": "EL-063-EU",
+          "japanese": "ユウロピウム",
+          "english": "Europium",
+          "formula": "Eu",
+          "details": [
+            "ディスプレイ・照明用蛍光体",
+            "レーザー・研究材料"
+          ]
+        },
+        {
+          "id": "EL-064-GD",
+          "japanese": "ガドリニウム",
+          "english": "Gadolinium",
+          "formula": "Gd",
+          "details": [
+            "蛍光体"
+          ]
+        },
+        {
+          "id": "EL-065-TB",
+          "japanese": "テルビウム",
+          "english": "Terbium",
+          "formula": "Tb",
+          "details": [
+            "緑色蛍光体"
+          ]
+        },
+        {
+          "id": "EL-067-HO",
+          "japanese": "ホルミウム",
+          "english": "Holmium",
+          "formula": "Ho",
+          "details": [
+            "固体レーザー",
+            "光学フィルター"
+          ]
+        },
+        {
+          "id": "EL-068-ER",
+          "japanese": "エルビウム",
+          "english": "Erbium",
+          "formula": "Er",
+          "details": [
+            "光ファイバー増幅器",
+            "通信レーザー",
+            "光学ガラス"
+          ]
+        },
+        {
+          "id": "EL-069-TM",
+          "japanese": "ツリウム",
+          "english": "Thulium",
+          "formula": "Tm",
+          "details": [
+            "固体レーザー・ファイバーレーザー",
+            "蛍光材料"
+          ]
+        },
+        {
+          "id": "EL-070-YB",
+          "japanese": "イッテルビウム",
+          "english": "Ytterbium",
+          "formula": "Yb",
+          "details": [
+            "高出力ファイバーレーザー",
+            "固体レーザー"
+          ]
+        },
+        {
+          "id": "EL-071-LU",
+          "japanese": "ルテチウム",
+          "english": "Lutetium",
+          "formula": "Lu",
+          "details": [
+            "発光材料"
+          ]
+        },
+        {
+          "id": "EL-080-HG",
+          "japanese": "水銀",
+          "english": "Mercury",
+          "formula": "Hg",
+          "details": [
+            "放電ランプ"
+          ]
+        },
+        {
+          "id": "EL-081-TL",
+          "japanese": "タリウム",
+          "english": "Thallium",
+          "formula": "Tl",
+          "details": [
+            "赤外光学材料"
+          ]
+        },
+        {
+          "id": "ITO",
+          "japanese": "インジウムスズ酸化物",
+          "english": "Indium Tin Oxide",
+          "formula": "In2O3-SnO2",
+          "details": [
+            "液晶・OLED・タッチパネルの透明電極"
+          ]
+        },
+        {
+          "id": "IGZO",
+          "japanese": "インジウムガリウム亜鉛酸化物",
+          "english": "Indium Gallium Zinc Oxide",
+          "formula": "In-Ga-Zn-O",
+          "details": [
+            "液晶・OLEDバックプレーン"
+          ]
+        },
+        {
+          "id": "IZO",
+          "japanese": "インジウム亜鉛酸化物",
+          "english": "Indium Zinc Oxide",
+          "formula": "In2O3-ZnO",
+          "details": [
+            "透明電極",
+            "光電デバイス"
+          ]
+        },
+        {
+          "id": "AZO",
+          "japanese": "アルミニウム添加酸化亜鉛",
+          "english": "Aluminum-doped Zinc Oxide",
+          "formula": "ZnO-Al2O3",
+          "details": [
+            "透明電極"
+          ]
+        },
+        {
+          "id": "GZO",
+          "japanese": "ガリウム添加酸化亜鉛",
+          "english": "Gallium-doped Zinc Oxide",
+          "formula": "ZnO-Ga2O3",
+          "details": [
+            "透明電極",
+            "ディスプレイ"
+          ]
+        },
+        {
+          "id": "ATO",
+          "japanese": "アンチモン添加酸化スズ",
+          "english": "Antimony-doped Tin Oxide",
+          "formula": "SnO2-Sb2O3",
+          "details": [
+            "透明電極",
+            "赤外線遮蔽"
+          ]
+        },
+        {
+          "id": "IN2O3",
+          "japanese": "酸化インジウム",
+          "english": "Indium Oxide",
+          "formula": "In2O3",
+          "details": [
+            "透明電極"
+          ]
+        },
+        {
+          "id": "SNO2",
+          "japanese": "酸化スズ",
+          "english": "Tin Oxide",
+          "formula": "SnO2",
+          "details": [
+            "透明電極"
+          ]
+        },
+        {
+          "id": "ZNO",
+          "japanese": "酸化亜鉛",
+          "english": "Zinc Oxide",
+          "formula": "ZnO",
+          "details": [
+            "紫外線遮蔽"
+          ]
+        },
+        {
+          "id": "GA2O3",
+          "japanese": "酸化ガリウム",
+          "english": "Gallium Oxide",
+          "formula": "Ga2O3",
+          "details": [
+            "深紫外線検出器",
+            "触媒・光学材料"
+          ]
+        },
+        {
+          "id": "SIO2A",
+          "japanese": "二酸化ケイ素（非晶質）",
+          "english": "Silicon Dioxide, Fused",
+          "formula": "SiO2",
+          "details": [
+            "光学窓",
+            "光ファイバー"
+          ]
+        },
+        {
+          "id": "SIO2Q",
+          "japanese": "二酸化ケイ素（石英）",
+          "english": "Quartz",
+          "formula": "SiO2",
+          "details": [
+            "光学部品"
+          ]
+        },
+        {
+          "id": "TIO2R",
+          "japanese": "二酸化チタン（ルチル）",
+          "english": "Titanium Dioxide, Rutile",
+          "formula": "TiO2",
+          "details": [
+            "紫外線遮蔽"
+          ]
+        },
+        {
+          "id": "TIO2A",
+          "japanese": "二酸化チタン（アナターゼ）",
+          "english": "Titanium Dioxide, Anatase",
+          "formula": "TiO2",
+          "details": [
+            "紫外線遮蔽"
+          ]
+        },
+        {
+          "id": "Y2O3",
+          "japanese": "酸化イットリウム",
+          "english": "Yttrium Oxide",
+          "formula": "Y2O3",
+          "details": [
+            "蛍光体",
+            "光学セラミックス"
+          ]
+        },
+        {
+          "id": "LA2O3",
+          "japanese": "酸化ランタン",
+          "english": "Lanthanum Oxide",
+          "formula": "La2O3",
+          "details": [
+            "光学ガラス"
+          ]
+        },
+        {
+          "id": "CEO2",
+          "japanese": "酸化セリウム",
+          "english": "Cerium Oxide",
+          "formula": "CeO2",
+          "details": [
+            "紫外線遮蔽"
+          ]
+        },
+        {
+          "id": "ALN",
+          "japanese": "窒化アルミニウム",
+          "english": "Aluminum Nitride",
+          "formula": "AlN",
+          "details": [
+            "LED基板"
+          ]
+        },
+        {
+          "id": "GAN",
+          "japanese": "窒化ガリウム",
+          "english": "Gallium Nitride",
+          "formula": "GaN",
+          "details": [
+            "LED",
+            "レーザーダイオード"
+          ]
+        },
+        {
+          "id": "GAAS",
+          "japanese": "ヒ化ガリウム",
+          "english": "Gallium Arsenide",
+          "formula": "GaAs",
+          "details": [
+            "レーザーダイオード",
+            "LED"
+          ]
+        },
+        {
+          "id": "INP",
+          "japanese": "リン化インジウム",
+          "english": "Indium Phosphide",
+          "formula": "InP",
+          "details": [
+            "光通信レーザー・受光器",
+            "フォトニック集積回路",
+            "LiDAR"
+          ]
+        },
+        {
+          "id": "INAS",
+          "japanese": "ヒ化インジウム",
+          "english": "Indium Arsenide",
+          "formula": "InAs",
+          "details": [
+            "赤外線センサー",
+            "量子ドット"
+          ]
+        },
+        {
+          "id": "GAP",
+          "japanese": "リン化ガリウム",
+          "english": "Gallium Phosphide",
+          "formula": "GaP",
+          "details": [
+            "赤・緑色LED",
+            "光学部品",
+            "フォトニクス"
+          ]
+        },
+        {
+          "id": "INSB",
+          "japanese": "アンチモン化インジウム",
+          "english": "Indium Antimonide",
+          "formula": "InSb",
+          "details": [
+            "赤外線検出器"
+          ]
+        },
+        {
+          "id": "GASB",
+          "japanese": "アンチモン化ガリウム",
+          "english": "Gallium Antimonide",
+          "formula": "GaSb",
+          "details": [
+            "中赤外線レーザー・検出器"
+          ]
+        },
+        {
+          "id": "WS2",
+          "japanese": "二硫化タングステン",
+          "english": "Tungsten Disulfide",
+          "formula": "WS2",
+          "details": [
+            "光検出器"
+          ]
+        },
+        {
+          "id": "ZNS",
+          "japanese": "硫化亜鉛",
+          "english": "Zinc Sulfide",
+          "formula": "ZnS",
+          "details": [
+            "赤外光学窓",
+            "蛍光体",
+            "発光材料"
+          ]
+        },
+        {
+          "id": "ZNSE",
+          "japanese": "セレン化亜鉛",
+          "english": "Zinc Selenide",
+          "formula": "ZnSe",
+          "details": [
+            "CO2レーザー窓・レンズ",
+            "赤外光学",
+            "発光デバイス",
+            "光検出器"
+          ]
+        },
+        {
+          "id": "CDS",
+          "japanese": "硫化カドミウム",
+          "english": "Cadmium Sulfide",
+          "formula": "CdS",
+          "details": [
+            "光検出器"
+          ]
+        },
+        {
+          "id": "CDSE",
+          "japanese": "セレン化カドミウム",
+          "english": "Cadmium Selenide",
+          "formula": "CdSe",
+          "details": [
+            "量子ドットディスプレイ",
+            "発光材料",
+            "光検出器"
+          ]
+        },
+        {
+          "id": "SB2TE3",
+          "japanese": "テルル化アンチモン",
+          "english": "Antimony Telluride",
+          "formula": "Sb2Te3",
+          "details": [
+            "赤外デバイス"
+          ]
+        },
+        {
+          "id": "GST",
+          "japanese": "ゲルマニウム－アンチモン－テルル合金",
+          "english": "Ge-Sb-Te",
+          "formula": "Ge2Sb2Te5",
+          "details": [
+            "光ディスク"
+          ]
+        },
+        {
+          "id": "GETE",
+          "japanese": "テルル化ゲルマニウム",
+          "english": "Germanium Telluride",
+          "formula": "GeTe",
+          "details": [
+            "赤外光学"
+          ]
+        },
+        {
+          "id": "MGF2",
+          "japanese": "フッ化マグネシウム",
+          "english": "Magnesium Fluoride",
+          "formula": "MgF2",
+          "details": [
+            "UV光学窓",
+            "レンズ",
+            "偏光素子"
+          ]
+        },
+        {
+          "id": "CAF2",
+          "japanese": "フッ化カルシウム",
+          "english": "Calcium Fluoride",
+          "formula": "CaF2",
+          "details": [
+            "UV・IRレンズ",
+            "レーザー窓",
+            "分光器"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "医療",
+      "count": 13,
+      "materials": [
+        {
+          "id": "EL-002-HE",
+          "japanese": "ヘリウム",
+          "english": "Helium",
+          "formula": "He",
+          "details": [
+            "MRI・超電導冷却"
+          ]
+        },
+        {
+          "id": "EL-008-O",
+          "japanese": "酸素",
+          "english": "Oxygen",
+          "formula": "O",
+          "details": [
+            "医療用酸素"
+          ]
+        },
+        {
+          "id": "EL-022-TI",
+          "japanese": "チタン",
+          "english": "Titanium",
+          "formula": "Ti",
+          "details": [
+            "医療用インプラント"
+          ]
+        },
+        {
+          "id": "EL-043-TC",
+          "japanese": "テクネチウム",
+          "english": "Technetium",
+          "formula": "Tc",
+          "details": [
+            "核医学診断"
+          ]
+        },
+        {
+          "id": "EL-054-XE",
+          "japanese": "キセノン",
+          "english": "Xenon",
+          "formula": "Xe",
+          "details": [
+            "医療・画像診断"
+          ]
+        },
+        {
+          "id": "EL-064-GD",
+          "japanese": "ガドリニウム",
+          "english": "Gadolinium",
+          "formula": "Gd",
+          "details": [
+            "MRI関連化合物"
+          ]
+        },
+        {
+          "id": "EL-068-ER",
+          "japanese": "エルビウム",
+          "english": "Erbium",
+          "formula": "Er",
+          "details": [
+            "医療レーザー"
+          ]
+        },
+        {
+          "id": "EL-069-TM",
+          "japanese": "ツリウム",
+          "english": "Thulium",
+          "formula": "Tm",
+          "details": [
+            "医療レーザー"
+          ]
+        },
+        {
+          "id": "EL-071-LU",
+          "japanese": "ルテチウム",
+          "english": "Lutetium",
+          "formula": "Lu",
+          "details": [
+            "PET検出器用シンチレータ"
+          ]
+        },
+        {
+          "id": "EL-073-TA",
+          "japanese": "タンタル",
+          "english": "Tantalum",
+          "formula": "Ta",
+          "details": [
+            "医療用インプラント"
+          ]
+        },
+        {
+          "id": "EL-085-AT",
+          "japanese": "アスタチン",
+          "english": "Astatine",
+          "formula": "At",
+          "details": [
+            "標的アルファ線治療の研究"
+          ]
+        },
+        {
+          "id": "EL-089-AC",
+          "japanese": "アクチニウム",
+          "english": "Actinium",
+          "formula": "Ac",
+          "details": [
+            "標的アルファ線治療の研究"
+          ]
+        },
+        {
+          "id": "ZRO2",
+          "japanese": "酸化ジルコニウム",
+          "english": "Zirconium Oxide",
+          "formula": "ZrO2",
+          "details": [
+            "歯科材料"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "航空宇宙",
+      "count": 14,
+      "materials": [
+        {
+          "id": "EL-004-BE",
+          "japanese": "ベリリウム",
+          "english": "Beryllium",
+          "formula": "Be",
+          "details": [
+            "航空宇宙部品"
+          ]
+        },
+        {
+          "id": "EL-012-MG",
+          "japanese": "マグネシウム",
+          "english": "Magnesium",
+          "formula": "Mg",
+          "details": [
+            "航空機部品"
+          ]
+        },
+        {
+          "id": "EL-021-SC",
+          "japanese": "スカンジウム",
+          "english": "Scandium",
+          "formula": "Sc",
+          "details": [
+            "航空宇宙"
+          ]
+        },
+        {
+          "id": "EL-022-TI",
+          "japanese": "チタン",
+          "english": "Titanium",
+          "formula": "Ti",
+          "details": [
+            "航空機"
+          ]
+        },
+        {
+          "id": "EL-054-XE",
+          "japanese": "キセノン",
+          "english": "Xenon",
+          "formula": "Xe",
+          "details": [
+            "宇宙機イオン推進"
+          ]
+        },
+        {
+          "id": "EL-059-PR",
+          "japanese": "プラセオジム",
+          "english": "Praseodymium",
+          "formula": "Pr",
+          "details": [
+            "航空機用合金"
+          ]
+        },
+        {
+          "id": "EL-062-SM",
+          "japanese": "サマリウム",
+          "english": "Samarium",
+          "formula": "Sm",
+          "details": [
+            "航空宇宙"
+          ]
+        },
+        {
+          "id": "EL-075-RE",
+          "japanese": "レニウム",
+          "english": "Rhenium",
+          "formula": "Re",
+          "details": [
+            "航空機用超合金",
+            "ロケットノズル"
+          ]
+        },
+        {
+          "id": "EL-094-PU",
+          "japanese": "プルトニウム",
+          "english": "Plutonium",
+          "formula": "Pu",
+          "details": [
+            "宇宙用電源同位体"
+          ]
+        },
+        {
+          "id": "ZRB2",
+          "japanese": "二ホウ化ジルコニウム",
+          "english": "Zirconium Diboride",
+          "formula": "ZrB2",
+          "details": [
+            "極超音速機熱防護"
+          ]
+        },
+        {
+          "id": "HFB2",
+          "japanese": "二ホウ化ハフニウム",
+          "english": "Hafnium Diboride",
+          "formula": "HfB2",
+          "details": [
+            "極超音速機熱防護"
+          ]
+        },
+        {
+          "id": "GAAS",
+          "japanese": "ヒ化ガリウム",
+          "english": "Gallium Arsenide",
+          "formula": "GaAs",
+          "details": [
+            "衛星通信"
+          ]
+        },
+        {
+          "id": "MOS2",
+          "japanese": "二硫化モリブデン",
+          "english": "Molybdenum Disulfide",
+          "formula": "MoS2",
+          "details": [
+            "宇宙・真空機構"
+          ]
+        },
+        {
+          "id": "WS2",
+          "japanese": "二硫化タングステン",
+          "english": "Tungsten Disulfide",
+          "formula": "WS2",
+          "details": [
+            "宇宙機構"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "自動車",
+      "count": 14,
+      "materials": [
+        {
+          "id": "EL-012-MG",
+          "japanese": "マグネシウム",
+          "english": "Magnesium",
+          "formula": "Mg",
+          "details": [
+            "自動車部品"
+          ]
+        },
+        {
+          "id": "EL-026-FE",
+          "japanese": "鉄",
+          "english": "Iron",
+          "formula": "Fe",
+          "details": [
+            "自動車"
+          ]
+        },
+        {
+          "id": "EL-045-RH",
+          "japanese": "ロジウム",
+          "english": "Rhodium",
+          "formula": "Rh",
+          "details": [
+            "自動車排ガス触媒"
+          ]
+        },
+        {
+          "id": "EL-046-PD",
+          "japanese": "パラジウム",
+          "english": "Palladium",
+          "formula": "Pd",
+          "details": [
+            "自動車触媒"
+          ]
+        },
+        {
+          "id": "EL-058-CE",
+          "japanese": "セリウム",
+          "english": "Cerium",
+          "formula": "Ce",
+          "details": [
+            "排ガス浄化触媒"
+          ]
+        },
+        {
+          "id": "EL-060-ND",
+          "japanese": "ネオジム",
+          "english": "Neodymium",
+          "formula": "Nd",
+          "details": [
+            "EV・産業用モーター"
+          ]
+        },
+        {
+          "id": "EL-066-DY",
+          "japanese": "ジスプロシウム",
+          "english": "Dysprosium",
+          "formula": "Dy",
+          "details": [
+            "EVモーター"
+          ]
+        },
+        {
+          "id": "EL-078-PT",
+          "japanese": "白金",
+          "english": "Platinum",
+          "formula": "Pt",
+          "details": [
+            "自動車排ガス触媒"
+          ]
+        },
+        {
+          "id": "CEO2",
+          "japanese": "酸化セリウム",
+          "english": "Cerium Oxide",
+          "formula": "CeO2",
+          "details": [
+            "排ガス浄化触媒"
+          ]
+        },
+        {
+          "id": "CRN",
+          "japanese": "窒化クロム",
+          "english": "Chromium Nitride",
+          "formula": "CrN",
+          "details": [
+            "自動車部品"
+          ]
+        },
+        {
+          "id": "ALSI",
+          "japanese": "アルミニウム－シリコン合金",
+          "english": "Aluminum Silicon Alloy",
+          "formula": "Al-Si",
+          "details": [
+            "自動車鋳物"
+          ]
+        },
+        {
+          "id": "ALSICU",
+          "japanese": "アルミニウム－シリコン－銅合金",
+          "english": "Aluminum Silicon Copper Alloy",
+          "formula": "Al-Si-Cu",
+          "details": [
+            "自動車部品"
+          ]
+        },
+        {
+          "id": "LIMN2O4",
+          "japanese": "マンガン酸リチウム",
+          "english": "Lithium Manganese Oxide",
+          "formula": "LiMn2O4",
+          "details": [
+            "ハイブリッド車"
+          ]
+        },
+        {
+          "id": "LIFEPO4",
+          "japanese": "リン酸鉄リチウム",
+          "english": "Lithium Iron Phosphate",
+          "formula": "LiFePO4",
+          "details": [
+            "EV",
+            "商用車"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "建築",
+      "count": 6,
+      "materials": [
+        {
+          "id": "EL-013-AL",
+          "japanese": "アルミニウム",
+          "english": "Aluminum",
+          "formula": "Al",
+          "details": [
+            "建材"
+          ]
+        },
+        {
+          "id": "EL-020-CA",
+          "japanese": "カルシウム",
+          "english": "Calcium",
+          "formula": "Ca",
+          "details": [
+            "セメント",
+            "石灰"
+          ]
+        },
+        {
+          "id": "EL-026-FE",
+          "japanese": "鉄",
+          "english": "Iron",
+          "formula": "Fe",
+          "details": [
+            "建築"
+          ]
+        },
+        {
+          "id": "EL-036-KR",
+          "japanese": "クリプトン",
+          "english": "Krypton",
+          "formula": "Kr",
+          "details": [
+            "断熱ガラス"
+          ]
+        },
+        {
+          "id": "AZO",
+          "japanese": "アルミニウム添加酸化亜鉛",
+          "english": "Aluminum-doped Zinc Oxide",
+          "formula": "ZnO-Al2O3",
+          "details": [
+            "低放射ガラス"
+          ]
+        },
+        {
+          "id": "FTO",
+          "japanese": "フッ素添加酸化スズ",
+          "english": "Fluorine-doped Tin Oxide",
+          "formula": "SnO2:F",
+          "details": [
+            "低放射ガラス"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "化学工業",
+      "count": 57,
+      "materials": [
+        {
+          "id": "EL-001-H",
+          "japanese": "水素",
+          "english": "Hydrogen",
+          "formula": "H",
+          "details": [
+            "アンモニア製造",
+            "石油精製"
+          ]
+        },
+        {
+          "id": "EL-007-N",
+          "japanese": "窒素",
+          "english": "Nitrogen",
+          "formula": "N",
+          "details": [
+            "化学合成"
+          ]
+        },
+        {
+          "id": "EL-008-O",
+          "japanese": "酸素",
+          "english": "Oxygen",
+          "formula": "O",
+          "details": [
+            "酸化処理"
+          ]
+        },
+        {
+          "id": "EL-009-F",
+          "japanese": "フッ素",
+          "english": "Fluorine",
+          "formula": "F",
+          "details": [
+            "フッ素樹脂",
+            "冷媒原料",
+            "表面処理"
+          ]
+        },
+        {
+          "id": "EL-011-NA",
+          "japanese": "ナトリウム",
+          "english": "Sodium",
+          "formula": "Na",
+          "details": [
+            "化学合成"
+          ]
+        },
+        {
+          "id": "EL-012-MG",
+          "japanese": "マグネシウム",
+          "english": "Magnesium",
+          "formula": "Mg",
+          "details": [
+            "還元剤"
+          ]
+        },
+        {
+          "id": "EL-014-SI",
+          "japanese": "ケイ素",
+          "english": "Silicon",
+          "formula": "Si",
+          "details": [
+            "シリコーン原料"
+          ]
+        },
+        {
+          "id": "EL-015-P",
+          "japanese": "リン",
+          "english": "Phosphorus",
+          "formula": "P",
+          "details": [
+            "肥料",
+            "化学薬品"
+          ]
+        },
+        {
+          "id": "EL-016-S",
+          "japanese": "硫黄",
+          "english": "Sulfur",
+          "formula": "S",
+          "details": [
+            "硫酸製造",
+            "ゴム加硫",
+            "肥料",
+            "化学薬品"
+          ]
+        },
+        {
+          "id": "EL-017-CL",
+          "japanese": "塩素",
+          "english": "Chlorine",
+          "formula": "Cl",
+          "details": [
+            "漂白",
+            "PVC原料",
+            "化学合成"
+          ]
+        },
+        {
+          "id": "EL-018-AR",
+          "japanese": "アルゴン",
+          "english": "Argon",
+          "formula": "Ar",
+          "details": [
+            "金属精錬"
+          ]
+        },
+        {
+          "id": "EL-019-K",
+          "japanese": "カリウム",
+          "english": "Potassium",
+          "formula": "K",
+          "details": [
+            "肥料",
+            "化学合成"
+          ]
+        },
+        {
+          "id": "EL-022-TI",
+          "japanese": "チタン",
+          "english": "Titanium",
+          "formula": "Ti",
+          "details": [
+            "化学装置"
+          ]
+        },
+        {
+          "id": "EL-023-V",
+          "japanese": "バナジウム",
+          "english": "Vanadium",
+          "formula": "V",
+          "details": [
+            "触媒"
+          ]
+        },
+        {
+          "id": "EL-035-BR",
+          "japanese": "臭素",
+          "english": "Bromine",
+          "formula": "Br",
+          "details": [
+            "医薬・農薬中間体",
+            "化学合成"
+          ]
+        },
+        {
+          "id": "EL-040-ZR",
+          "japanese": "ジルコニウム",
+          "english": "Zirconium",
+          "formula": "Zr",
+          "details": [
+            "化学装置"
+          ]
+        },
+        {
+          "id": "EL-044-RU",
+          "japanese": "ルテニウム",
+          "english": "Ruthenium",
+          "formula": "Ru",
+          "details": [
+            "触媒"
+          ]
+        },
+        {
+          "id": "EL-045-RH",
+          "japanese": "ロジウム",
+          "english": "Rhodium",
+          "formula": "Rh",
+          "details": [
+            "化学触媒"
+          ]
+        },
+        {
+          "id": "EL-046-PD",
+          "japanese": "パラジウム",
+          "english": "Palladium",
+          "formula": "Pd",
+          "details": [
+            "化学触媒",
+            "水素精製"
+          ]
+        },
+        {
+          "id": "EL-053-I",
+          "japanese": "ヨウ素",
+          "english": "Iodine",
+          "formula": "I",
+          "details": [
+            "医薬・消毒",
+            "化学合成"
+          ]
+        },
+        {
+          "id": "EL-057-LA",
+          "japanese": "ランタン",
+          "english": "Lanthanum",
+          "formula": "La",
+          "details": [
+            "石油精製触媒"
+          ]
+        },
+        {
+          "id": "EL-071-LU",
+          "japanese": "ルテチウム",
+          "english": "Lutetium",
+          "formula": "Lu",
+          "details": [
+            "触媒"
+          ]
+        },
+        {
+          "id": "EL-073-TA",
+          "japanese": "タンタル",
+          "english": "Tantalum",
+          "formula": "Ta",
+          "details": [
+            "化学装置"
+          ]
+        },
+        {
+          "id": "EL-075-RE",
+          "japanese": "レニウム",
+          "english": "Rhenium",
+          "formula": "Re",
+          "details": [
+            "石油改質触媒"
+          ]
+        },
+        {
+          "id": "EL-076-OS",
+          "japanese": "オスミウム",
+          "english": "Osmium",
+          "formula": "Os",
+          "details": [
+            "触媒"
+          ]
+        },
+        {
+          "id": "EL-077-IR",
+          "japanese": "イリジウム",
+          "english": "Iridium",
+          "formula": "Ir",
+          "details": [
+            "電気化学電極",
+            "触媒"
+          ]
+        },
+        {
+          "id": "EL-078-PT",
+          "japanese": "白金",
+          "english": "Platinum",
+          "formula": "Pt",
+          "details": [
+            "化学触媒"
+          ]
+        },
+        {
+          "id": "EL-080-HG",
+          "japanese": "水銀",
+          "english": "Mercury",
+          "formula": "Hg",
+          "details": [
+            "化学・分析用途（代替が進行）"
+          ]
+        },
+        {
+          "id": "EL-083-BI",
+          "japanese": "ビスマス",
+          "english": "Bismuth",
+          "formula": "Bi",
+          "details": [
+            "医薬品",
+            "化粧品"
+          ]
+        },
+        {
+          "id": "EL-084-PO",
+          "japanese": "ポロニウム",
+          "english": "Polonium",
+          "formula": "Po",
+          "details": [
+            "放射化学"
+          ]
+        },
+        {
+          "id": "EL-085-AT",
+          "japanese": "アスタチン",
+          "english": "Astatine",
+          "formula": "At",
+          "details": [
+            "核化学研究"
+          ]
+        },
+        {
+          "id": "EL-087-FR",
+          "japanese": "フランシウム",
+          "english": "Francium",
+          "formula": "Fr",
+          "details": [
+            "原子物理・核化学の基礎研究"
+          ]
+        },
+        {
+          "id": "EL-089-AC",
+          "japanese": "アクチニウム",
+          "english": "Actinium",
+          "formula": "Ac",
+          "details": [
+            "核化学研究"
+          ]
+        },
+        {
+          "id": "EL-091-PA",
+          "japanese": "プロトアクチニウム",
+          "english": "Protactinium",
+          "formula": "Pa",
+          "details": [
+            "核化学研究"
+          ]
+        },
+        {
+          "id": "EL-093-NP",
+          "japanese": "ネプツニウム",
+          "english": "Neptunium",
+          "formula": "Np",
+          "details": [
+            "核化学研究"
+          ]
+        },
+        {
+          "id": "EL-096-CM",
+          "japanese": "キュリウム",
+          "english": "Curium",
+          "formula": "Cm",
+          "details": [
+            "核化学研究"
+          ]
+        },
+        {
+          "id": "EL-097-BK",
+          "japanese": "バークリウム",
+          "english": "Berkelium",
+          "formula": "Bk",
+          "details": [
+            "核化学研究"
+          ]
+        },
+        {
+          "id": "EL-099-ES",
+          "japanese": "アインスタイニウム",
+          "english": "Einsteinium",
+          "formula": "Es",
+          "details": [
+            "核化学研究"
+          ]
+        },
+        {
+          "id": "EL-100-FM",
+          "japanese": "フェルミウム",
+          "english": "Fermium",
+          "formula": "Fm",
+          "details": [
+            "核化学・原子核物理研究"
+          ]
+        },
+        {
+          "id": "EL-101-MD",
+          "japanese": "メンデレビウム",
+          "english": "Mendelevium",
+          "formula": "Md",
+          "details": [
+            "核化学・超重元素研究"
+          ]
+        },
+        {
+          "id": "EL-102-NO",
+          "japanese": "ノーベリウム",
+          "english": "Nobelium",
+          "formula": "No",
+          "details": [
+            "核化学・原子物理研究"
+          ]
+        },
+        {
+          "id": "EL-103-LR",
+          "japanese": "ローレンシウム",
+          "english": "Lawrencium",
+          "formula": "Lr",
+          "details": [
+            "核化学・周期表研究"
+          ]
+        },
+        {
+          "id": "EL-104-RF",
+          "japanese": "ラザホージウム",
+          "english": "Rutherfordium",
+          "formula": "Rf",
+          "details": [
+            "超重元素・核化学研究"
+          ]
+        },
+        {
+          "id": "EL-105-DB",
+          "japanese": "ドブニウム",
+          "english": "Dubnium",
+          "formula": "Db",
+          "details": [
+            "超重元素・核化学研究"
+          ]
+        },
+        {
+          "id": "EL-106-SG",
+          "japanese": "シーボーギウム",
+          "english": "Seaborgium",
+          "formula": "Sg",
+          "details": [
+            "超重元素・核化学研究"
+          ]
+        },
+        {
+          "id": "EL-108-HS",
+          "japanese": "ハッシウム",
+          "english": "Hassium",
+          "formula": "Hs",
+          "details": [
+            "超重元素・核化学研究"
+          ]
+        },
+        {
+          "id": "EL-112-CN",
+          "japanese": "コペルニシウム",
+          "english": "Copernicium",
+          "formula": "Cn",
+          "details": [
+            "超重元素・核化学研究"
+          ]
+        },
+        {
+          "id": "EL-114-FL",
+          "japanese": "フレロビウム",
+          "english": "Flerovium",
+          "formula": "Fl",
+          "details": [
+            "超重元素・核化学研究"
+          ]
+        },
+        {
+          "id": "FTO",
+          "japanese": "フッ素添加酸化スズ",
+          "english": "Fluorine-doped Tin Oxide",
+          "formula": "SnO2:F",
+          "details": [
+            "電気化学電極"
+          ]
+        },
+        {
+          "id": "SNO2",
+          "japanese": "酸化スズ",
+          "english": "Tin Oxide",
+          "formula": "SnO2",
+          "details": [
+            "触媒"
+          ]
+        },
+        {
+          "id": "ZNO",
+          "japanese": "酸化亜鉛",
+          "english": "Zinc Oxide",
+          "formula": "ZnO",
+          "details": [
+            "ゴム加硫"
+          ]
+        },
+        {
+          "id": "NB2O5",
+          "japanese": "五酸化ニオブ",
+          "english": "Niobium Pentoxide",
+          "formula": "Nb2O5",
+          "details": [
+            "触媒"
+          ]
+        },
+        {
+          "id": "TIO2A",
+          "japanese": "二酸化チタン（アナターゼ）",
+          "english": "Titanium Dioxide, Anatase",
+          "formula": "TiO2",
+          "details": [
+            "光触媒"
+          ]
+        },
+        {
+          "id": "LA2O3",
+          "japanese": "酸化ランタン",
+          "english": "Lanthanum Oxide",
+          "formula": "La2O3",
+          "details": [
+            "触媒"
+          ]
+        },
+        {
+          "id": "WN",
+          "japanese": "窒化タングステン",
+          "english": "Tungsten Nitride",
+          "formula": "WNₓ",
+          "details": [
+            "触媒研究"
+          ]
+        },
+        {
+          "id": "MO2C",
+          "japanese": "炭化モリブデン",
+          "english": "Molybdenum Carbide",
+          "formula": "Mo2C",
+          "details": [
+            "水素化・脱硫触媒"
+          ]
+        },
+        {
+          "id": "ALF3",
+          "japanese": "フッ化アルミニウム",
+          "english": "Aluminum Fluoride",
+          "formula": "AlF3",
+          "details": [
+            "アルミニウム電解",
+            "フッ素化触媒"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "研究・分析",
+      "count": 44,
+      "materials": [
+        {
+          "id": "EL-010-NE",
+          "japanese": "ネオン",
+          "english": "Neon",
+          "formula": "Ne",
+          "details": [
+            "低温研究"
+          ]
+        },
+        {
+          "id": "EL-036-KR",
+          "japanese": "クリプトン",
+          "english": "Krypton",
+          "formula": "Kr",
+          "details": [
+            "分析・研究用ガス"
+          ]
+        },
+        {
+          "id": "EL-037-RB",
+          "japanese": "ルビジウム",
+          "english": "Rubidium",
+          "formula": "Rb",
+          "details": [
+            "原子時計",
+            "研究用"
+          ]
+        },
+        {
+          "id": "EL-041-NB",
+          "japanese": "ニオブ",
+          "english": "Niobium",
+          "formula": "Nb",
+          "details": [
+            "加速器"
+          ]
+        },
+        {
+          "id": "EL-043-TC",
+          "japanese": "テクネチウム",
+          "english": "Technetium",
+          "formula": "Tc",
+          "details": [
+            "研究"
+          ]
+        },
+        {
+          "id": "EL-048-CD",
+          "japanese": "カドミウム",
+          "english": "Cadmium",
+          "formula": "Cd",
+          "details": [
+            "放射線遮蔽・制御材料"
+          ]
+        },
+        {
+          "id": "EL-053-I",
+          "japanese": "ヨウ素",
+          "english": "Iodine",
+          "formula": "I",
+          "details": [
+            "分析試薬"
+          ]
+        },
+        {
+          "id": "EL-055-CS",
+          "japanese": "セシウム",
+          "english": "Cesium",
+          "formula": "Cs",
+          "details": [
+            "原子時計"
+          ]
+        },
+        {
+          "id": "EL-061-PM",
+          "japanese": "プロメチウム",
+          "english": "Promethium",
+          "formula": "Pm",
+          "details": [
+            "研究",
+            "特殊電源・光源の研究用途"
+          ]
+        },
+        {
+          "id": "EL-064-GD",
+          "japanese": "ガドリニウム",
+          "english": "Gadolinium",
+          "formula": "Gd",
+          "details": [
+            "中性子吸収材",
+            "磁気冷凍研究"
+          ]
+        },
+        {
+          "id": "EL-067-HO",
+          "japanese": "ホルミウム",
+          "english": "Holmium",
+          "formula": "Ho",
+          "details": [
+            "中性子関連研究"
+          ]
+        },
+        {
+          "id": "EL-069-TM",
+          "japanese": "ツリウム",
+          "english": "Thulium",
+          "formula": "Tm",
+          "details": [
+            "研究"
+          ]
+        },
+        {
+          "id": "EL-070-YB",
+          "japanese": "イッテルビウム",
+          "english": "Ytterbium",
+          "formula": "Yb",
+          "details": [
+            "原子時計・研究"
+          ]
+        },
+        {
+          "id": "EL-076-OS",
+          "japanese": "オスミウム",
+          "english": "Osmium",
+          "formula": "Os",
+          "details": [
+            "研究用材料"
+          ]
+        },
+        {
+          "id": "EL-078-PT",
+          "japanese": "白金",
+          "english": "Platinum",
+          "formula": "Pt",
+          "details": [
+            "分析用るつぼ"
+          ]
+        },
+        {
+          "id": "EL-080-HG",
+          "japanese": "水銀",
+          "english": "Mercury",
+          "formula": "Hg",
+          "details": [
+            "一部の計測・研究機器"
+          ]
+        },
+        {
+          "id": "EL-081-TL",
+          "japanese": "タリウム",
+          "english": "Thallium",
+          "formula": "Tl",
+          "details": [
+            "研究用途"
+          ]
+        },
+        {
+          "id": "EL-082-PB",
+          "japanese": "鉛",
+          "english": "Lead",
+          "formula": "Pb",
+          "details": [
+            "放射線遮蔽"
+          ]
+        },
+        {
+          "id": "EL-084-PO",
+          "japanese": "ポロニウム",
+          "english": "Polonium",
+          "formula": "Po",
+          "details": [
+            "研究",
+            "特殊な放射線源"
+          ]
+        },
+        {
+          "id": "EL-086-RN",
+          "japanese": "ラドン",
+          "english": "Radon",
+          "formula": "Rn",
+          "details": [
+            "地質・放射線研究"
+          ]
+        },
+        {
+          "id": "EL-088-RA",
+          "japanese": "ラジウム",
+          "english": "Radium",
+          "formula": "Ra",
+          "details": [
+            "放射線研究",
+            "歴史資料・標準試料の管理"
+          ]
+        },
+        {
+          "id": "EL-089-AC",
+          "japanese": "アクチニウム",
+          "english": "Actinium",
+          "formula": "Ac",
+          "details": [
+            "同位体製造"
+          ]
+        },
+        {
+          "id": "EL-091-PA",
+          "japanese": "プロトアクチニウム",
+          "english": "Protactinium",
+          "formula": "Pa",
+          "details": [
+            "年代測定研究"
+          ]
+        },
+        {
+          "id": "EL-092-U",
+          "japanese": "ウラン",
+          "english": "Uranium",
+          "formula": "U",
+          "details": [
+            "放射線遮蔽",
+            "核燃料サイクル研究"
+          ]
+        },
+        {
+          "id": "EL-093-NP",
+          "japanese": "ネプツニウム",
+          "english": "Neptunium",
+          "formula": "Np",
+          "details": [
+            "同位体製造",
+            "核燃料サイクル研究"
+          ]
+        },
+        {
+          "id": "EL-094-PU",
+          "japanese": "プルトニウム",
+          "english": "Plutonium",
+          "formula": "Pu",
+          "details": [
+            "核物質研究"
+          ]
+        },
+        {
+          "id": "EL-095-AM",
+          "japanese": "アメリシウム",
+          "english": "Americium",
+          "formula": "Am",
+          "details": [
+            "厚さ・密度計測",
+            "研究用線源"
+          ]
+        },
+        {
+          "id": "EL-096-CM",
+          "japanese": "キュリウム",
+          "english": "Curium",
+          "formula": "Cm",
+          "details": [
+            "同位体電源研究",
+            "重元素合成用試料"
+          ]
+        },
+        {
+          "id": "EL-097-BK",
+          "japanese": "バークリウム",
+          "english": "Berkelium",
+          "formula": "Bk",
+          "details": [
+            "超重元素合成"
+          ]
+        },
+        {
+          "id": "EL-098-CF",
+          "japanese": "カリホルニウム",
+          "english": "Californium",
+          "formula": "Cf",
+          "details": [
+            "中性子源",
+            "分析・検層",
+            "研究"
+          ]
+        },
+        {
+          "id": "EL-099-ES",
+          "japanese": "アインスタイニウム",
+          "english": "Einsteinium",
+          "formula": "Es",
+          "details": [
+            "重元素合成"
+          ]
+        },
+        {
+          "id": "EL-107-BH",
+          "japanese": "ボーリウム",
+          "english": "Bohrium",
+          "formula": "Bh",
+          "details": [
+            "超重元素・核物理研究"
+          ]
+        },
+        {
+          "id": "EL-109-MT",
+          "japanese": "マイトネリウム",
+          "english": "Meitnerium",
+          "formula": "Mt",
+          "details": [
+            "超重元素・核物理研究"
+          ]
+        },
+        {
+          "id": "EL-110-DS",
+          "japanese": "ダームスタチウム",
+          "english": "Darmstadtium",
+          "formula": "Ds",
+          "details": [
+            "超重元素・核物理研究"
+          ]
+        },
+        {
+          "id": "EL-111-RG",
+          "japanese": "レントゲニウム",
+          "english": "Roentgenium",
+          "formula": "Rg",
+          "details": [
+            "超重元素・核物理研究"
+          ]
+        },
+        {
+          "id": "EL-113-NH",
+          "japanese": "ニホニウム",
+          "english": "Nihonium",
+          "formula": "Nh",
+          "details": [
+            "超重元素・核物理研究"
+          ]
+        },
+        {
+          "id": "EL-115-MC",
+          "japanese": "モスコビウム",
+          "english": "Moscovium",
+          "formula": "Mc",
+          "details": [
+            "超重元素・核物理研究"
+          ]
+        },
+        {
+          "id": "EL-116-LV",
+          "japanese": "リバモリウム",
+          "english": "Livermorium",
+          "formula": "Lv",
+          "details": [
+            "超重元素・核物理研究"
+          ]
+        },
+        {
+          "id": "EL-117-TS",
+          "japanese": "テネシン",
+          "english": "Tennessine",
+          "formula": "Ts",
+          "details": [
+            "超重元素・核物理研究"
+          ]
+        },
+        {
+          "id": "EL-118-OG",
+          "japanese": "オガネソン",
+          "english": "Oganesson",
+          "formula": "Og",
+          "details": [
+            "超重元素・核物理研究"
+          ]
+        },
+        {
+          "id": "B4C",
+          "japanese": "炭化ホウ素",
+          "english": "Boron Carbide",
+          "formula": "B4C",
+          "details": [
+            "中性子吸収材"
+          ]
+        },
+        {
+          "id": "MO2C",
+          "japanese": "炭化モリブデン",
+          "english": "Molybdenum Carbide",
+          "formula": "Mo2C",
+          "details": [
+            "電子材料研究"
+          ]
+        },
+        {
+          "id": "TASI2",
+          "japanese": "二ケイ化タンタル",
+          "english": "Tantalum Disilicide",
+          "formula": "TaSi2",
+          "details": [
+            "研究用材料"
+          ]
+        },
+        {
+          "id": "LIF",
+          "japanese": "フッ化リチウム",
+          "english": "Lithium Fluoride",
+          "formula": "LiF",
+          "details": [
+            "放射線検出"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "電気・電子",
+      "count": 71,
+      "materials": [
+        {
+          "id": "EL-006-C",
+          "japanese": "炭素",
+          "english": "Carbon",
+          "formula": "C",
+          "details": [
+            "黒鉛電極"
+          ]
+        },
+        {
+          "id": "EL-012-MG",
+          "japanese": "マグネシウム",
+          "english": "Magnesium",
+          "formula": "Mg",
+          "details": [
+            "電子機器筐体"
+          ]
+        },
+        {
+          "id": "EL-013-AL",
+          "japanese": "アルミニウム",
+          "english": "Aluminum",
+          "formula": "Al",
+          "details": [
+            "電線"
+          ]
+        },
+        {
+          "id": "EL-027-CO",
+          "japanese": "コバルト",
+          "english": "Cobalt",
+          "formula": "Co",
+          "details": [
+            "永久磁石"
+          ]
+        },
+        {
+          "id": "EL-029-CU",
+          "japanese": "銅",
+          "english": "Copper",
+          "formula": "Cu",
+          "details": [
+            "電線",
+            "端子"
+          ]
+        },
+        {
+          "id": "EL-033-AS",
+          "japanese": "ヒ素",
+          "english": "Arsenic",
+          "formula": "As",
+          "details": [
+            "電子材料"
+          ]
+        },
+        {
+          "id": "EL-042-MO",
+          "japanese": "モリブデン",
+          "english": "Molybdenum",
+          "formula": "Mo",
+          "details": [
+            "ヒーター",
+            "電極"
+          ]
+        },
+        {
+          "id": "EL-044-RU",
+          "japanese": "ルテニウム",
+          "english": "Ruthenium",
+          "formula": "Ru",
+          "details": [
+            "電極",
+            "厚膜抵抗"
+          ]
+        },
+        {
+          "id": "EL-046-PD",
+          "japanese": "パラジウム",
+          "english": "Palladium",
+          "formula": "Pd",
+          "details": [
+            "電子部品"
+          ]
+        },
+        {
+          "id": "EL-047-AG",
+          "japanese": "銀",
+          "english": "Silver",
+          "formula": "Ag",
+          "details": [
+            "電気接点",
+            "導電ペースト"
+          ]
+        },
+        {
+          "id": "EL-056-BA",
+          "japanese": "バリウム",
+          "english": "Barium",
+          "formula": "Ba",
+          "details": [
+            "電子部品"
+          ]
+        },
+        {
+          "id": "EL-060-ND",
+          "japanese": "ネオジム",
+          "english": "Neodymium",
+          "formula": "Nd",
+          "details": [
+            "Nd-Fe-B永久磁石",
+            "スピーカー"
+          ]
+        },
+        {
+          "id": "EL-062-SM",
+          "japanese": "サマリウム",
+          "english": "Samarium",
+          "formula": "Sm",
+          "details": [
+            "Sm-Co永久磁石",
+            "センサー"
+          ]
+        },
+        {
+          "id": "EL-065-TB",
+          "japanese": "テルビウム",
+          "english": "Terbium",
+          "formula": "Tb",
+          "details": [
+            "磁歪アクチュエータ",
+            "センサー"
+          ]
+        },
+        {
+          "id": "EL-072-HF",
+          "japanese": "ハフニウム",
+          "english": "Hafnium",
+          "formula": "Hf",
+          "details": [
+            "プラズマ電極"
+          ]
+        },
+        {
+          "id": "EL-073-TA",
+          "japanese": "タンタル",
+          "english": "Tantalum",
+          "formula": "Ta",
+          "details": [
+            "タンタルコンデンサ"
+          ]
+        },
+        {
+          "id": "EL-074-W",
+          "japanese": "タングステン",
+          "english": "Tungsten",
+          "formula": "W",
+          "details": [
+            "TIG電極"
+          ]
+        },
+        {
+          "id": "EL-076-OS",
+          "japanese": "オスミウム",
+          "english": "Osmium",
+          "formula": "Os",
+          "details": [
+            "耐摩耗接点"
+          ]
+        },
+        {
+          "id": "EL-077-IR",
+          "japanese": "イリジウム",
+          "english": "Iridium",
+          "formula": "Ir",
+          "details": [
+            "点火プラグ電極"
+          ]
+        },
+        {
+          "id": "EL-079-AU",
+          "japanese": "金",
+          "english": "Gold",
+          "formula": "Au",
+          "details": [
+            "電子接点"
+          ]
+        },
+        {
+          "id": "EL-081-TL",
+          "japanese": "タリウム",
+          "english": "Thallium",
+          "formula": "Tl",
+          "details": [
+            "電子材料"
+          ]
+        },
+        {
+          "id": "EL-082-PB",
+          "japanese": "鉛",
+          "english": "Lead",
+          "formula": "Pb",
+          "details": [
+            "ケーブル被覆"
+          ]
+        },
+        {
+          "id": "EL-090-TH",
+          "japanese": "トリウム",
+          "english": "Thorium",
+          "formula": "Th",
+          "details": [
+            "歴史的なガスマントル・電極添加"
+          ]
+        },
+        {
+          "id": "ITO",
+          "japanese": "インジウムスズ酸化物",
+          "english": "Indium Tin Oxide",
+          "formula": "In2O3-SnO2",
+          "details": [
+            "ヒーター",
+            "センサー"
+          ]
+        },
+        {
+          "id": "IGZO",
+          "japanese": "インジウムガリウム亜鉛酸化物",
+          "english": "Indium Gallium Zinc Oxide",
+          "formula": "In-Ga-Zn-O",
+          "details": [
+            "センサー"
+          ]
+        },
+        {
+          "id": "AZO",
+          "japanese": "アルミニウム添加酸化亜鉛",
+          "english": "Aluminum-doped Zinc Oxide",
+          "formula": "ZnO-Al2O3",
+          "details": [
+            "センサー"
+          ]
+        },
+        {
+          "id": "GZO",
+          "japanese": "ガリウム添加酸化亜鉛",
+          "english": "Gallium-doped Zinc Oxide",
+          "formula": "ZnO-Ga2O3",
+          "details": [
+            "センサー"
+          ]
+        },
+        {
+          "id": "FTO",
+          "japanese": "フッ素添加酸化スズ",
+          "english": "Fluorine-doped Tin Oxide",
+          "formula": "SnO2:F",
+          "details": [
+            "透明ヒーター"
+          ]
+        },
+        {
+          "id": "ATO",
+          "japanese": "アンチモン添加酸化スズ",
+          "english": "Antimony-doped Tin Oxide",
+          "formula": "SnO2-Sb2O3",
+          "details": [
+            "導電性フィラー"
+          ]
+        },
+        {
+          "id": "IN2O3",
+          "japanese": "酸化インジウム",
+          "english": "Indium Oxide",
+          "formula": "In2O3",
+          "details": [
+            "ガスセンサー"
+          ]
+        },
+        {
+          "id": "SNO2",
+          "japanese": "酸化スズ",
+          "english": "Tin Oxide",
+          "formula": "SnO2",
+          "details": [
+            "ガスセンサー"
+          ]
+        },
+        {
+          "id": "ZNO",
+          "japanese": "酸化亜鉛",
+          "english": "Zinc Oxide",
+          "formula": "ZnO",
+          "details": [
+            "バリスタ",
+            "センサー"
+          ]
+        },
+        {
+          "id": "GA2O3",
+          "japanese": "酸化ガリウム",
+          "english": "Gallium Oxide",
+          "formula": "Ga2O3",
+          "details": [
+            "透明電子材料"
+          ]
+        },
+        {
+          "id": "ZRO2",
+          "japanese": "酸化ジルコニウム",
+          "english": "Zirconium Oxide",
+          "formula": "ZrO2",
+          "details": [
+            "酸素センサー"
+          ]
+        },
+        {
+          "id": "TA2O5",
+          "japanese": "五酸化タンタル",
+          "english": "Tantalum Pentoxide",
+          "formula": "Ta2O5",
+          "details": [
+            "コンデンサ誘電体",
+            "センサー"
+          ]
+        },
+        {
+          "id": "NB2O5",
+          "japanese": "五酸化ニオブ",
+          "english": "Niobium Pentoxide",
+          "formula": "Nb2O5",
+          "details": [
+            "コンデンサ"
+          ]
+        },
+        {
+          "id": "AL2O3",
+          "japanese": "酸化アルミニウム（α相）",
+          "english": "Aluminum Oxide",
+          "formula": "Al2O3",
+          "details": [
+            "電子基板",
+            "絶縁部品"
+          ]
+        },
+        {
+          "id": "SIO2Q",
+          "japanese": "二酸化ケイ素（石英）",
+          "english": "Quartz",
+          "formula": "SiO2",
+          "details": [
+            "水晶振動子",
+            "周波数制御",
+            "センサー"
+          ]
+        },
+        {
+          "id": "TIO2R",
+          "japanese": "二酸化チタン（ルチル）",
+          "english": "Titanium Dioxide, Rutile",
+          "formula": "TiO2",
+          "details": [
+            "コンデンサ"
+          ]
+        },
+        {
+          "id": "MGO",
+          "japanese": "酸化マグネシウム",
+          "english": "Magnesium Oxide",
+          "formula": "MgO",
+          "details": [
+            "ヒーター絶縁材",
+            "電子部品"
+          ]
+        },
+        {
+          "id": "ALN",
+          "japanese": "窒化アルミニウム",
+          "english": "Aluminum Nitride",
+          "formula": "AlN",
+          "details": [
+            "RF部品"
+          ]
+        },
+        {
+          "id": "SCALN",
+          "japanese": "スカンジウム添加窒化アルミニウム",
+          "english": "Scandium Aluminum Nitride",
+          "formula": "ScₓAl1₋ₓN",
+          "details": [
+            "BAW・SAWフィルタ",
+            "圧電センサー",
+            "アクチュエータ"
+          ]
+        },
+        {
+          "id": "GAN",
+          "japanese": "窒化ガリウム",
+          "english": "Gallium Nitride",
+          "formula": "GaN",
+          "details": [
+            "5G高周波増幅器"
+          ]
+        },
+        {
+          "id": "TIN",
+          "japanese": "窒化チタン",
+          "english": "Titanium Nitride",
+          "formula": "TiN",
+          "details": [
+            "電極"
+          ]
+        },
+        {
+          "id": "TAN",
+          "japanese": "窒化タンタル",
+          "english": "Tantalum Nitride",
+          "formula": "TaN",
+          "details": [
+            "電極"
+          ]
+        },
+        {
+          "id": "WN",
+          "japanese": "窒化タングステン",
+          "english": "Tungsten Nitride",
+          "formula": "WNₓ",
+          "details": [
+            "電極"
+          ]
+        },
+        {
+          "id": "ZRN",
+          "japanese": "窒化ジルコニウム",
+          "english": "Zirconium Nitride",
+          "formula": "ZrN",
+          "details": [
+            "電極"
+          ]
+        },
+        {
+          "id": "HFN",
+          "japanese": "窒化ハフニウム",
+          "english": "Hafnium Nitride",
+          "formula": "HfN",
+          "details": [
+            "電極"
+          ]
+        },
+        {
+          "id": "SI3N4",
+          "japanese": "窒化ケイ素",
+          "english": "Silicon Nitride",
+          "formula": "Si3N4",
+          "details": [
+            "絶縁基板"
+          ]
+        },
+        {
+          "id": "HBN",
+          "japanese": "六方晶窒化ホウ素",
+          "english": "Hexagonal Boron Nitride",
+          "formula": "BN",
+          "details": [
+            "電気絶縁部品"
+          ]
+        },
+        {
+          "id": "SIC",
+          "japanese": "炭化ケイ素",
+          "english": "Silicon Carbide",
+          "formula": "SiC",
+          "details": [
+            "ヒーター"
+          ]
+        },
+        {
+          "id": "TIC",
+          "japanese": "炭化チタン",
+          "english": "Titanium Carbide",
+          "formula": "TiC",
+          "details": [
+            "電極"
+          ]
+        },
+        {
+          "id": "TIB2",
+          "japanese": "二ホウ化チタン",
+          "english": "Titanium Diboride",
+          "formula": "TiB2",
+          "details": [
+            "導電性セラミックス"
+          ]
+        },
+        {
+          "id": "ZRB2",
+          "japanese": "二ホウ化ジルコニウム",
+          "english": "Zirconium Diboride",
+          "formula": "ZrB2",
+          "details": [
+            "電極"
+          ]
+        },
+        {
+          "id": "HFB2",
+          "japanese": "二ホウ化ハフニウム",
+          "english": "Hafnium Diboride",
+          "formula": "HfB2",
+          "details": [
+            "電極"
+          ]
+        },
+        {
+          "id": "LAB6",
+          "japanese": "六ホウ化ランタン",
+          "english": "Lanthanum Hexaboride",
+          "formula": "LaB6",
+          "details": [
+            "SEM・TEM電子銃",
+            "電子線描画"
+          ]
+        },
+        {
+          "id": "GAAS",
+          "japanese": "ヒ化ガリウム",
+          "english": "Gallium Arsenide",
+          "formula": "GaAs",
+          "details": [
+            "スマートフォンRF部品"
+          ]
+        },
+        {
+          "id": "INAS",
+          "japanese": "ヒ化インジウム",
+          "english": "Indium Arsenide",
+          "formula": "InAs",
+          "details": [
+            "ホール素子"
+          ]
+        },
+        {
+          "id": "INSB",
+          "japanese": "アンチモン化インジウム",
+          "english": "Indium Antimonide",
+          "formula": "InSb",
+          "details": [
+            "ホールセンサー",
+            "磁気抵抗素子"
+          ]
+        },
+        {
+          "id": "MOS2",
+          "japanese": "二硫化モリブデン",
+          "english": "Molybdenum Disulfide",
+          "formula": "MoS2",
+          "details": [
+            "センサー"
+          ]
+        },
+        {
+          "id": "CDS",
+          "japanese": "硫化カドミウム",
+          "english": "Cadmium Sulfide",
+          "formula": "CdS",
+          "details": [
+            "光抵抗"
+          ]
+        },
+        {
+          "id": "BI2TE3",
+          "japanese": "テルル化ビスマス",
+          "english": "Bismuth Telluride",
+          "formula": "Bi2Te3",
+          "details": [
+            "センサー"
+          ]
+        },
+        {
+          "id": "COFEB",
+          "japanese": "コバルト鉄ホウ素合金",
+          "english": "Cobalt Iron Boron",
+          "formula": "Co-Fe-B",
+          "details": [
+            "磁気ヘッド",
+            "磁気センサー"
+          ]
+        },
+        {
+          "id": "NIFE",
+          "japanese": "ニッケル鉄合金（パーマロイ系）",
+          "english": "Nickel Iron Alloy",
+          "formula": "Ni-Fe",
+          "details": [
+            "磁気シールド",
+            "磁気ヘッド",
+            "センサー",
+            "トランス"
+          ]
+        },
+        {
+          "id": "COFE",
+          "japanese": "コバルト鉄合金",
+          "english": "Cobalt Iron Alloy",
+          "formula": "Co-Fe",
+          "details": [
+            "高性能モーター",
+            "磁気センサー",
+            "アクチュエータ",
+            "磁気ヘッド"
+          ]
+        },
+        {
+          "id": "ALSI",
+          "japanese": "アルミニウム－シリコン合金",
+          "english": "Aluminum Silicon Alloy",
+          "formula": "Al-Si",
+          "details": [
+            "電子部品"
+          ]
+        },
+        {
+          "id": "MOW",
+          "japanese": "モリブデン－タングステン合金",
+          "english": "Molybdenum Tungsten Alloy",
+          "formula": "Mo-W",
+          "details": [
+            "ヒーター",
+            "電極"
+          ]
+        },
+        {
+          "id": "MOSI2",
+          "japanese": "二ケイ化モリブデン",
+          "english": "Molybdenum Disilicide",
+          "formula": "MoSi2",
+          "details": [
+            "電気炉発熱体",
+            "電極"
+          ]
+        },
+        {
+          "id": "WSI2",
+          "japanese": "二ケイ化タングステン",
+          "english": "Tungsten Disilicide",
+          "formula": "WSi2",
+          "details": [
+            "発熱体",
+            "電極"
+          ]
+        },
+        {
+          "id": "LICOO2",
+          "japanese": "コバルト酸リチウム",
+          "english": "Lithium Cobalt Oxide",
+          "formula": "LiCoO2",
+          "details": [
+            "スマートフォン",
+            "ノートPC"
+          ]
+        },
+        {
+          "id": "LIFEPO4",
+          "japanese": "リン酸鉄リチウム",
+          "english": "Lithium Iron Phosphate",
+          "formula": "LiFePO4",
+          "details": [
+            "UPS"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "エネルギー",
+      "count": 10,
+      "materials": [
+        {
+          "id": "EL-040-ZR",
+          "japanese": "ジルコニウム",
+          "english": "Zirconium",
+          "formula": "Zr",
+          "details": [
+            "原子炉被覆管"
+          ]
+        },
+        {
+          "id": "EL-060-ND",
+          "japanese": "ネオジム",
+          "english": "Neodymium",
+          "formula": "Nd",
+          "details": [
+            "風力発電機"
+          ]
+        },
+        {
+          "id": "EL-066-DY",
+          "japanese": "ジスプロシウム",
+          "english": "Dysprosium",
+          "formula": "Dy",
+          "details": [
+            "発電機"
+          ]
+        },
+        {
+          "id": "EL-072-HF",
+          "japanese": "ハフニウム",
+          "english": "Hafnium",
+          "formula": "Hf",
+          "details": [
+            "原子炉制御材"
+          ]
+        },
+        {
+          "id": "EL-090-TH",
+          "japanese": "トリウム",
+          "english": "Thorium",
+          "formula": "Th",
+          "details": [
+            "原子力燃料研究"
+          ]
+        },
+        {
+          "id": "EL-092-U",
+          "japanese": "ウラン",
+          "english": "Uranium",
+          "formula": "U",
+          "details": [
+            "原子力燃料"
+          ]
+        },
+        {
+          "id": "EL-094-PU",
+          "japanese": "プルトニウム",
+          "english": "Plutonium",
+          "formula": "Pu",
+          "details": [
+            "原子力燃料"
+          ]
+        },
+        {
+          "id": "EL-098-CF",
+          "japanese": "カリホルニウム",
+          "english": "Californium",
+          "formula": "Cf",
+          "details": [
+            "原子炉起動"
+          ]
+        },
+        {
+          "id": "BI2TE3",
+          "japanese": "テルル化ビスマス",
+          "english": "Bismuth Telluride",
+          "formula": "Bi2Te3",
+          "details": [
+            "廃熱発電"
+          ]
+        },
+        {
+          "id": "SB2TE3",
+          "japanese": "テルル化アンチモン",
+          "english": "Antimony Telluride",
+          "formula": "Sb2Te3",
+          "details": [
+            "熱電発電・冷却"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "機械",
+      "count": 72,
+      "materials": [
+        {
+          "id": "EL-003-LI",
+          "japanese": "リチウム",
+          "english": "Lithium",
+          "formula": "Li",
+          "details": [
+            "軽合金",
+            "ガラス・セラミックス"
+          ]
+        },
+        {
+          "id": "EL-004-BE",
+          "japanese": "ベリリウム",
+          "english": "Beryllium",
+          "formula": "Be",
+          "details": [
+            "銅合金添加"
+          ]
+        },
+        {
+          "id": "EL-005-B",
+          "japanese": "ホウ素",
+          "english": "Boron",
+          "formula": "B",
+          "details": [
+            "耐熱ガラス",
+            "研磨材",
+            "合金添加"
+          ]
+        },
+        {
+          "id": "EL-006-C",
+          "japanese": "炭素",
+          "english": "Carbon",
+          "formula": "C",
+          "details": [
+            "鉄鋼"
+          ]
+        },
+        {
+          "id": "EL-008-O",
+          "japanese": "酸素",
+          "english": "Oxygen",
+          "formula": "O",
+          "details": [
+            "製鋼",
+            "溶接・切断"
+          ]
+        },
+        {
+          "id": "EL-011-NA",
+          "japanese": "ナトリウム",
+          "english": "Sodium",
+          "formula": "Na",
+          "details": [
+            "合金"
+          ]
+        },
+        {
+          "id": "EL-013-AL",
+          "japanese": "アルミニウム",
+          "english": "Aluminum",
+          "formula": "Al",
+          "details": [
+            "缶"
+          ]
+        },
+        {
+          "id": "EL-014-SI",
+          "japanese": "ケイ素",
+          "english": "Silicon",
+          "formula": "Si",
+          "details": [
+            "合金添加"
+          ]
+        },
+        {
+          "id": "EL-018-AR",
+          "japanese": "アルゴン",
+          "english": "Argon",
+          "formula": "Ar",
+          "details": [
+            "アーク溶接"
+          ]
+        },
+        {
+          "id": "EL-020-CA",
+          "japanese": "カルシウム",
+          "english": "Calcium",
+          "formula": "Ca",
+          "details": [
+            "製鋼",
+            "合金添加"
+          ]
+        },
+        {
+          "id": "EL-021-SC",
+          "japanese": "スカンジウム",
+          "english": "Scandium",
+          "formula": "Sc",
+          "details": [
+            "Al-Sc合金"
+          ]
+        },
+        {
+          "id": "EL-022-TI",
+          "japanese": "チタン",
+          "english": "Titanium",
+          "formula": "Ti",
+          "details": [
+            "熱交換器"
+          ]
+        },
+        {
+          "id": "EL-023-V",
+          "japanese": "バナジウム",
+          "english": "Vanadium",
+          "formula": "V",
+          "details": [
+            "工具鋼",
+            "Ti合金"
+          ]
+        },
+        {
+          "id": "EL-024-CR",
+          "japanese": "クロム",
+          "english": "Chromium",
+          "formula": "Cr",
+          "details": [
+            "ステンレス鋼",
+            "めっき",
+            "耐熱合金"
+          ]
+        },
+        {
+          "id": "EL-025-MN",
+          "japanese": "マンガン",
+          "english": "Manganese",
+          "formula": "Mn",
+          "details": [
+            "鉄鋼",
+            "アルミ合金"
+          ]
+        },
+        {
+          "id": "EL-026-FE",
+          "japanese": "鉄",
+          "english": "Iron",
+          "formula": "Fe",
+          "details": [
+            "機械",
+            "工具"
+          ]
+        },
+        {
+          "id": "EL-027-CO",
+          "japanese": "コバルト",
+          "english": "Cobalt",
+          "formula": "Co",
+          "details": [
+            "超合金",
+            "硬質合金"
+          ]
+        },
+        {
+          "id": "EL-028-NI",
+          "japanese": "ニッケル",
+          "english": "Nickel",
+          "formula": "Ni",
+          "details": [
+            "ステンレス鋼",
+            "耐熱合金",
+            "めっき"
+          ]
+        },
+        {
+          "id": "EL-029-CU",
+          "japanese": "銅",
+          "english": "Copper",
+          "formula": "Cu",
+          "details": [
+            "配管",
+            "熱交換器"
+          ]
+        },
+        {
+          "id": "EL-030-ZN",
+          "japanese": "亜鉛",
+          "english": "Zinc",
+          "formula": "Zn",
+          "details": [
+            "亜鉛めっき",
+            "ダイカスト"
+          ]
+        },
+        {
+          "id": "EL-033-AS",
+          "japanese": "ヒ素",
+          "english": "Arsenic",
+          "formula": "As",
+          "details": [
+            "合金添加"
+          ]
+        },
+        {
+          "id": "EL-038-SR",
+          "japanese": "ストロンチウム",
+          "english": "Strontium",
+          "formula": "Sr",
+          "details": [
+            "セラミックス"
+          ]
+        },
+        {
+          "id": "EL-039-Y",
+          "japanese": "イットリウム",
+          "english": "Yttrium",
+          "formula": "Y",
+          "details": [
+            "耐熱合金",
+            "YSZセラミックス"
+          ]
+        },
+        {
+          "id": "EL-040-ZR",
+          "japanese": "ジルコニウム",
+          "english": "Zirconium",
+          "formula": "Zr",
+          "details": [
+            "耐火物",
+            "セラミック"
+          ]
+        },
+        {
+          "id": "EL-041-NB",
+          "japanese": "ニオブ",
+          "english": "Niobium",
+          "formula": "Nb",
+          "details": [
+            "高強度鋼",
+            "耐熱合金"
+          ]
+        },
+        {
+          "id": "EL-047-AG",
+          "japanese": "銀",
+          "english": "Silver",
+          "formula": "Ag",
+          "details": [
+            "ろう材",
+            "めっき"
+          ]
+        },
+        {
+          "id": "EL-048-CD",
+          "japanese": "カドミウム",
+          "english": "Cadmium",
+          "formula": "Cd",
+          "details": [
+            "特殊めっき"
+          ]
+        },
+        {
+          "id": "EL-049-IN",
+          "japanese": "インジウム",
+          "english": "Indium",
+          "formula": "In",
+          "details": [
+            "はんだ"
+          ]
+        },
+        {
+          "id": "EL-050-SN",
+          "japanese": "スズ",
+          "english": "Tin",
+          "formula": "Sn",
+          "details": [
+            "はんだ",
+            "錫めっき",
+            "ベアリング合金"
+          ]
+        },
+        {
+          "id": "EL-052-TE",
+          "japanese": "テルル",
+          "english": "Tellurium",
+          "formula": "Te",
+          "details": [
+            "合金添加"
+          ]
+        },
+        {
+          "id": "EL-056-BA",
+          "japanese": "バリウム",
+          "english": "Barium",
+          "formula": "Ba",
+          "details": [
+            "セラミックス"
+          ]
+        },
+        {
+          "id": "EL-057-LA",
+          "japanese": "ランタン",
+          "english": "Lanthanum",
+          "formula": "La",
+          "details": [
+            "特殊合金"
+          ]
+        },
+        {
+          "id": "EL-058-CE",
+          "japanese": "セリウム",
+          "english": "Cerium",
+          "formula": "Ce",
+          "details": [
+            "ガラス研磨材",
+            "発火合金"
+          ]
+        },
+        {
+          "id": "EL-059-PR",
+          "japanese": "プラセオジム",
+          "english": "Praseodymium",
+          "formula": "Pr",
+          "details": [
+            "ガラス・セラミックス着色"
+          ]
+        },
+        {
+          "id": "EL-066-DY",
+          "japanese": "ジスプロシウム",
+          "english": "Dysprosium",
+          "formula": "Dy",
+          "details": [
+            "耐熱Nd-Fe-B磁石"
+          ]
+        },
+        {
+          "id": "EL-070-YB",
+          "japanese": "イッテルビウム",
+          "english": "Ytterbium",
+          "formula": "Yb",
+          "details": [
+            "特殊合金"
+          ]
+        },
+        {
+          "id": "EL-071-LU",
+          "japanese": "ルテチウム",
+          "english": "Lutetium",
+          "formula": "Lu",
+          "details": [
+            "特殊合金"
+          ]
+        },
+        {
+          "id": "EL-072-HF",
+          "japanese": "ハフニウム",
+          "english": "Hafnium",
+          "formula": "Hf",
+          "details": [
+            "耐熱合金"
+          ]
+        },
+        {
+          "id": "EL-076-OS",
+          "japanese": "オスミウム",
+          "english": "Osmium",
+          "formula": "Os",
+          "details": [
+            "特殊合金"
+          ]
+        },
+        {
+          "id": "EL-077-IR",
+          "japanese": "イリジウム",
+          "english": "Iridium",
+          "formula": "Ir",
+          "details": [
+            "高温るつぼ"
+          ]
+        },
+        {
+          "id": "EL-079-AU",
+          "japanese": "金",
+          "english": "Gold",
+          "formula": "Au",
+          "details": [
+            "めっき"
+          ]
+        },
+        {
+          "id": "EL-082-PB",
+          "japanese": "鉛",
+          "english": "Lead",
+          "formula": "Pb",
+          "details": [
+            "錘"
+          ]
+        },
+        {
+          "id": "EL-083-BI",
+          "japanese": "ビスマス",
+          "english": "Bismuth",
+          "formula": "Bi",
+          "details": [
+            "低融点合金"
+          ]
+        },
+        {
+          "id": "EL-090-TH",
+          "japanese": "トリウム",
+          "english": "Thorium",
+          "formula": "Th",
+          "details": [
+            "耐熱酸化物"
+          ]
+        },
+        {
+          "id": "SNO2",
+          "japanese": "酸化スズ",
+          "english": "Tin Oxide",
+          "formula": "SnO2",
+          "details": [
+            "研磨材"
+          ]
+        },
+        {
+          "id": "HFO2",
+          "japanese": "酸化ハフニウム",
+          "english": "Hafnium Oxide",
+          "formula": "HfO2",
+          "details": [
+            "耐熱・耐食材料"
+          ]
+        },
+        {
+          "id": "ZRO2",
+          "japanese": "酸化ジルコニウム",
+          "english": "Zirconium Oxide",
+          "formula": "ZrO2",
+          "details": [
+            "切削工具"
+          ]
+        },
+        {
+          "id": "AL2O3",
+          "japanese": "酸化アルミニウム（α相）",
+          "english": "Aluminum Oxide",
+          "formula": "Al2O3",
+          "details": [
+            "耐摩耗部品",
+            "研磨材"
+          ]
+        },
+        {
+          "id": "SIO2A",
+          "japanese": "二酸化ケイ素（非晶質）",
+          "english": "Silicon Dioxide, Fused",
+          "formula": "SiO2",
+          "details": [
+            "るつぼ"
+          ]
+        },
+        {
+          "id": "LA2O3",
+          "japanese": "酸化ランタン",
+          "english": "Lanthanum Oxide",
+          "formula": "La2O3",
+          "details": [
+            "セラミックス"
+          ]
+        },
+        {
+          "id": "MGO",
+          "japanese": "酸化マグネシウム",
+          "english": "Magnesium Oxide",
+          "formula": "MgO",
+          "details": [
+            "耐火れんが"
+          ]
+        },
+        {
+          "id": "TIN",
+          "japanese": "窒化チタン",
+          "english": "Titanium Nitride",
+          "formula": "TiN",
+          "details": [
+            "金型"
+          ]
+        },
+        {
+          "id": "CRN",
+          "japanese": "窒化クロム",
+          "english": "Chromium Nitride",
+          "formula": "CrN",
+          "details": [
+            "切削工具",
+            "金型",
+            "摺動部品"
+          ]
+        },
+        {
+          "id": "ZRN",
+          "japanese": "窒化ジルコニウム",
+          "english": "Zirconium Nitride",
+          "formula": "ZrN",
+          "details": [
+            "耐摩耗部品"
+          ]
+        },
+        {
+          "id": "SI3N4",
+          "japanese": "窒化ケイ素",
+          "english": "Silicon Nitride",
+          "formula": "Si3N4",
+          "details": [
+            "セラミックベアリング",
+            "ターボ部品"
+          ]
+        },
+        {
+          "id": "HBN",
+          "japanese": "六方晶窒化ホウ素",
+          "english": "Hexagonal Boron Nitride",
+          "formula": "BN",
+          "details": [
+            "高温潤滑"
+          ]
+        },
+        {
+          "id": "SIC",
+          "japanese": "炭化ケイ素",
+          "english": "Silicon Carbide",
+          "formula": "SiC",
+          "details": [
+            "メカニカルシール"
+          ]
+        },
+        {
+          "id": "WC",
+          "japanese": "炭化タングステン",
+          "english": "Tungsten Carbide",
+          "formula": "WC",
+          "details": [
+            "切削工具",
+            "金型",
+            "掘削工具",
+            "耐摩耗部品"
+          ]
+        },
+        {
+          "id": "TIC",
+          "japanese": "炭化チタン",
+          "english": "Titanium Carbide",
+          "formula": "TiC",
+          "details": [
+            "サーメット工具"
+          ]
+        },
+        {
+          "id": "TAC",
+          "japanese": "炭化タンタル",
+          "english": "Tantalum Carbide",
+          "formula": "TaC",
+          "details": [
+            "超高温セラミックス",
+            "切削工具",
+            "耐摩耗部品"
+          ]
+        },
+        {
+          "id": "NBC",
+          "japanese": "炭化ニオブ",
+          "english": "Niobium Carbide",
+          "formula": "NbC",
+          "details": [
+            "超硬工具",
+            "耐熱合金",
+            "マイクロアロイ鋼"
+          ]
+        },
+        {
+          "id": "B4C",
+          "japanese": "炭化ホウ素",
+          "english": "Boron Carbide",
+          "formula": "B4C",
+          "details": [
+            "研磨材",
+            "ノズル"
+          ]
+        },
+        {
+          "id": "MO2C",
+          "japanese": "炭化モリブデン",
+          "english": "Molybdenum Carbide",
+          "formula": "Mo2C",
+          "details": [
+            "超硬材料"
+          ]
+        },
+        {
+          "id": "TIB2",
+          "japanese": "二ホウ化チタン",
+          "english": "Titanium Diboride",
+          "formula": "TiB2",
+          "details": [
+            "切削工具",
+            "耐摩耗部品"
+          ]
+        },
+        {
+          "id": "ZRB2",
+          "japanese": "二ホウ化ジルコニウム",
+          "english": "Zirconium Diboride",
+          "formula": "ZrB2",
+          "details": [
+            "超高温部品",
+            "るつぼ"
+          ]
+        },
+        {
+          "id": "HFB2",
+          "japanese": "二ホウ化ハフニウム",
+          "english": "Hafnium Diboride",
+          "formula": "HfB2",
+          "details": [
+            "超高温構造材"
+          ]
+        },
+        {
+          "id": "MOS2",
+          "japanese": "二硫化モリブデン",
+          "english": "Molybdenum Disulfide",
+          "formula": "MoS2",
+          "details": [
+            "固体潤滑剤"
+          ]
+        },
+        {
+          "id": "ALSICU",
+          "japanese": "アルミニウム－シリコン－銅合金",
+          "english": "Aluminum Silicon Copper Alloy",
+          "formula": "Al-Si-Cu",
+          "details": [
+            "ダイカスト",
+            "機械筐体"
+          ]
+        },
+        {
+          "id": "MOW",
+          "japanese": "モリブデン－タングステン合金",
+          "english": "Molybdenum Tungsten Alloy",
+          "formula": "Mo-W",
+          "details": [
+            "耐熱治具"
+          ]
+        },
+        {
+          "id": "MOSI2",
+          "japanese": "二ケイ化モリブデン",
+          "english": "Molybdenum Disilicide",
+          "formula": "MoSi2",
+          "details": [
+            "セラミック複合材"
+          ]
+        },
+        {
+          "id": "ALF3",
+          "japanese": "フッ化アルミニウム",
+          "english": "Aluminum Fluoride",
+          "formula": "AlF3",
+          "details": [
+            "セラミックス"
+          ]
+        },
+        {
+          "id": "LIMN2O4",
+          "japanese": "マンガン酸リチウム",
+          "english": "Lithium Manganese Oxide",
+          "formula": "LiMn2O4",
+          "details": [
+            "電動工具"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "環境",
+      "count": 3,
+      "materials": [
+        {
+          "id": "EL-017-CL",
+          "japanese": "塩素",
+          "english": "Chlorine",
+          "formula": "Cl",
+          "details": [
+            "水処理"
+          ]
+        },
+        {
+          "id": "EL-086-RN",
+          "japanese": "ラドン",
+          "english": "Radon",
+          "formula": "Rn",
+          "details": [
+            "環境測定"
+          ]
+        },
+        {
+          "id": "TIO2A",
+          "japanese": "二酸化チタン（アナターゼ）",
+          "english": "Titanium Dioxide, Anatase",
+          "formula": "TiO2",
+          "details": [
+            "セルフクリーニング表面"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "その他",
+      "count": 72,
+      "materials": [
+        {
+          "id": "EL-001-H",
+          "japanese": "水素",
+          "english": "Hydrogen",
+          "formula": "H",
+          "details": [
+            "還元雰囲気"
+          ]
+        },
+        {
+          "id": "EL-002-HE",
+          "japanese": "ヘリウム",
+          "english": "Helium",
+          "formula": "He",
+          "details": [
+            "漏れ検査",
+            "保護雰囲気"
+          ]
+        },
+        {
+          "id": "EL-004-BE",
+          "japanese": "ベリリウム",
+          "english": "Beryllium",
+          "formula": "Be",
+          "details": [
+            "X線窓"
+          ]
+        },
+        {
+          "id": "EL-006-C",
+          "japanese": "炭素",
+          "english": "Carbon",
+          "formula": "C",
+          "details": [
+            "炭素繊維"
+          ]
+        },
+        {
+          "id": "EL-007-N",
+          "japanese": "窒素",
+          "english": "Nitrogen",
+          "formula": "N",
+          "details": [
+            "熱処理雰囲気",
+            "食品包装",
+            "液体窒素冷却"
+          ]
+        },
+        {
+          "id": "EL-010-NE",
+          "japanese": "ネオン",
+          "english": "Neon",
+          "formula": "Ne",
+          "details": [
+            "放電管"
+          ]
+        },
+        {
+          "id": "EL-011-NA",
+          "japanese": "ナトリウム",
+          "english": "Sodium",
+          "formula": "Na",
+          "details": [
+            "ナトリウムランプ",
+            "熱媒体"
+          ]
+        },
+        {
+          "id": "EL-013-AL",
+          "japanese": "アルミニウム",
+          "english": "Aluminum",
+          "formula": "Al",
+          "details": [
+            "輸送機器"
+          ]
+        },
+        {
+          "id": "EL-015-P",
+          "japanese": "リン",
+          "english": "Phosphorus",
+          "formula": "P",
+          "details": [
+            "難燃剤"
+          ]
+        },
+        {
+          "id": "EL-018-AR",
+          "japanese": "アルゴン",
+          "english": "Argon",
+          "formula": "Ar",
+          "details": [
+            "照明"
+          ]
+        },
+        {
+          "id": "EL-019-K",
+          "japanese": "カリウム",
+          "english": "Potassium",
+          "formula": "K",
+          "details": [
+            "ガラス",
+            "熱媒体"
+          ]
+        },
+        {
+          "id": "EL-021-SC",
+          "japanese": "スカンジウム",
+          "english": "Scandium",
+          "formula": "Sc",
+          "details": [
+            "スポーツ用品",
+            "照明"
+          ]
+        },
+        {
+          "id": "EL-024-CR",
+          "japanese": "クロム",
+          "english": "Chromium",
+          "formula": "Cr",
+          "details": [
+            "顔料"
+          ]
+        },
+        {
+          "id": "EL-025-MN",
+          "japanese": "マンガン",
+          "english": "Manganese",
+          "formula": "Mn",
+          "details": [
+            "顔料"
+          ]
+        },
+        {
+          "id": "EL-030-ZN",
+          "japanese": "亜鉛",
+          "english": "Zinc",
+          "formula": "Zn",
+          "details": [
+            "黄銅"
+          ]
+        },
+        {
+          "id": "EL-031-GA",
+          "japanese": "ガリウム",
+          "english": "Gallium",
+          "formula": "Ga",
+          "details": [
+            "高周波デバイス"
+          ]
+        },
+        {
+          "id": "EL-033-AS",
+          "japanese": "ヒ素",
+          "english": "Arsenic",
+          "formula": "As",
+          "details": [
+            "特殊ガラス"
+          ]
+        },
+        {
+          "id": "EL-034-SE",
+          "japanese": "セレン",
+          "english": "Selenium",
+          "formula": "Se",
+          "details": [
+            "ガラス着色・脱色",
+            "顔料"
+          ]
+        },
+        {
+          "id": "EL-035-BR",
+          "japanese": "臭素",
+          "english": "Bromine",
+          "formula": "Br",
+          "details": [
+            "難燃剤原料",
+            "写真材料"
+          ]
+        },
+        {
+          "id": "EL-036-KR",
+          "japanese": "クリプトン",
+          "english": "Krypton",
+          "formula": "Kr",
+          "details": [
+            "高性能照明"
+          ]
+        },
+        {
+          "id": "EL-037-RB",
+          "japanese": "ルビジウム",
+          "english": "Rubidium",
+          "formula": "Rb",
+          "details": [
+            "特殊ガラス"
+          ]
+        },
+        {
+          "id": "EL-038-SR",
+          "japanese": "ストロンチウム",
+          "english": "Strontium",
+          "formula": "Sr",
+          "details": [
+            "フェライト磁石",
+            "花火・信号炎",
+            "特殊ガラス"
+          ]
+        },
+        {
+          "id": "EL-041-NB",
+          "japanese": "ニオブ",
+          "english": "Niobium",
+          "formula": "Nb",
+          "details": [
+            "超伝導磁石"
+          ]
+        },
+        {
+          "id": "EL-043-TC",
+          "japanese": "テクネチウム",
+          "english": "Technetium",
+          "formula": "Tc",
+          "details": [
+            "放射性トレーサー"
+          ]
+        },
+        {
+          "id": "EL-045-RH",
+          "japanese": "ロジウム",
+          "english": "Rhodium",
+          "formula": "Rh",
+          "details": [
+            "熱電対"
+          ]
+        },
+        {
+          "id": "EL-048-CD",
+          "japanese": "カドミウム",
+          "english": "Cadmium",
+          "formula": "Cd",
+          "details": [
+            "顔料"
+          ]
+        },
+        {
+          "id": "EL-050-SN",
+          "japanese": "スズ",
+          "english": "Tin",
+          "formula": "Sn",
+          "details": [
+            "青銅"
+          ]
+        },
+        {
+          "id": "EL-051-SB",
+          "japanese": "アンチモン",
+          "english": "Antimony",
+          "formula": "Sb",
+          "details": [
+            "難燃助剤",
+            "顔料"
+          ]
+        },
+        {
+          "id": "EL-052-TE",
+          "japanese": "テルル",
+          "english": "Tellurium",
+          "formula": "Te",
+          "details": [
+            "Bi2Te3熱電材料"
+          ]
+        },
+        {
+          "id": "EL-053-I",
+          "japanese": "ヨウ素",
+          "english": "Iodine",
+          "formula": "I",
+          "details": [
+            "写真材料"
+          ]
+        },
+        {
+          "id": "EL-055-CS",
+          "japanese": "セシウム",
+          "english": "Cesium",
+          "formula": "Cs",
+          "details": [
+            "掘削流体用化合物"
+          ]
+        },
+        {
+          "id": "EL-056-BA",
+          "japanese": "バリウム",
+          "english": "Barium",
+          "formula": "Ba",
+          "details": [
+            "バリウムガラス"
+          ]
+        },
+        {
+          "id": "EL-059-PR",
+          "japanese": "プラセオジム",
+          "english": "Praseodymium",
+          "formula": "Pr",
+          "details": [
+            "希土類磁石"
+          ]
+        },
+        {
+          "id": "EL-061-PM",
+          "japanese": "プロメチウム",
+          "english": "Promethium",
+          "formula": "Pm",
+          "details": [
+            "放射性トレーサー"
+          ]
+        },
+        {
+          "id": "EL-062-SM",
+          "japanese": "サマリウム",
+          "english": "Samarium",
+          "formula": "Sm",
+          "details": [
+            "原子力関連材料"
+          ]
+        },
+        {
+          "id": "EL-063-EU",
+          "japanese": "ユウロピウム",
+          "english": "Europium",
+          "formula": "Eu",
+          "details": [
+            "セキュリティインク"
+          ]
+        },
+        {
+          "id": "EL-065-TB",
+          "japanese": "テルビウム",
+          "english": "Terbium",
+          "formula": "Tb",
+          "details": [
+            "磁性材料"
+          ]
+        },
+        {
+          "id": "EL-066-DY",
+          "japanese": "ジスプロシウム",
+          "english": "Dysprosium",
+          "formula": "Dy",
+          "details": [
+            "磁歪材料"
+          ]
+        },
+        {
+          "id": "EL-067-HO",
+          "japanese": "ホルミウム",
+          "english": "Holmium",
+          "formula": "Ho",
+          "details": [
+            "磁束集中材"
+          ]
+        },
+        {
+          "id": "EL-072-HF",
+          "japanese": "ハフニウム",
+          "english": "Hafnium",
+          "formula": "Hf",
+          "details": [
+            "HfO2高誘電率膜"
+          ]
+        },
+        {
+          "id": "EL-074-W",
+          "japanese": "タングステン",
+          "english": "Tungsten",
+          "formula": "W",
+          "details": [
+            "X線ターゲット"
+          ]
+        },
+        {
+          "id": "EL-075-RE",
+          "japanese": "レニウム",
+          "english": "Rhenium",
+          "formula": "Re",
+          "details": [
+            "熱電対"
+          ]
+        },
+        {
+          "id": "EL-078-PT",
+          "japanese": "白金",
+          "english": "Platinum",
+          "formula": "Pt",
+          "details": [
+            "熱電対"
+          ]
+        },
+        {
+          "id": "EL-079-AU",
+          "japanese": "金",
+          "english": "Gold",
+          "formula": "Au",
+          "details": [
+            "ボンディングワイヤ"
+          ]
+        },
+        {
+          "id": "EL-081-TL",
+          "japanese": "タリウム",
+          "english": "Thallium",
+          "formula": "Tl",
+          "details": [
+            "特殊ガラス"
+          ]
+        },
+        {
+          "id": "EL-083-BI",
+          "japanese": "ビスマス",
+          "english": "Bismuth",
+          "formula": "Bi",
+          "details": [
+            "熱電材料"
+          ]
+        },
+        {
+          "id": "EL-095-AM",
+          "japanese": "アメリシウム",
+          "english": "Americium",
+          "formula": "Am",
+          "details": [
+            "煙感知器"
+          ]
+        },
+        {
+          "id": "IGZO",
+          "japanese": "インジウムガリウム亜鉛酸化物",
+          "english": "Indium Gallium Zinc Oxide",
+          "formula": "In-Ga-Zn-O",
+          "details": [
+            "低消費電力デバイス"
+          ]
+        },
+        {
+          "id": "IZO",
+          "japanese": "インジウム亜鉛酸化物",
+          "english": "Indium Zinc Oxide",
+          "formula": "In2O3-ZnO",
+          "details": [
+            "フレキシブル表示"
+          ]
+        },
+        {
+          "id": "IN2O3",
+          "japanese": "酸化インジウム",
+          "english": "Indium Oxide",
+          "formula": "In2O3",
+          "details": [
+            "ITO原料"
+          ]
+        },
+        {
+          "id": "HFO2",
+          "japanese": "酸化ハフニウム",
+          "english": "Hafnium Oxide",
+          "formula": "HfO2",
+          "details": [
+            "強誘電メモリ"
+          ]
+        },
+        {
+          "id": "TA2O5",
+          "japanese": "五酸化タンタル",
+          "english": "Tantalum Pentoxide",
+          "formula": "Ta2O5",
+          "details": [
+            "導波路"
+          ]
+        },
+        {
+          "id": "TIO2R",
+          "japanese": "二酸化チタン（ルチル）",
+          "english": "Titanium Dioxide, Rutile",
+          "formula": "TiO2",
+          "details": [
+            "白色顔料"
+          ]
+        },
+        {
+          "id": "Y2O3",
+          "japanese": "酸化イットリウム",
+          "english": "Yttrium Oxide",
+          "formula": "Y2O3",
+          "details": [
+            "耐プラズマ部材",
+            "ZrO2安定化材"
+          ]
+        },
+        {
+          "id": "ALN",
+          "japanese": "窒化アルミニウム",
+          "english": "Aluminum Nitride",
+          "formula": "AlN",
+          "details": [
+            "ヒートスプレッダ"
+          ]
+        },
+        {
+          "id": "HFN",
+          "japanese": "窒化ハフニウム",
+          "english": "Hafnium Nitride",
+          "formula": "HfN",
+          "details": [
+            "超高温材料"
+          ]
+        },
+        {
+          "id": "HBN",
+          "japanese": "六方晶窒化ホウ素",
+          "english": "Hexagonal Boron Nitride",
+          "formula": "BN",
+          "details": [
+            "離型剤",
+            "熱伝導フィラー"
+          ]
+        },
+        {
+          "id": "TIC",
+          "japanese": "炭化チタン",
+          "english": "Titanium Carbide",
+          "formula": "TiC",
+          "details": [
+            "金属基複合材"
+          ]
+        },
+        {
+          "id": "B4C",
+          "japanese": "炭化ホウ素",
+          "english": "Boron Carbide",
+          "formula": "B4C",
+          "details": [
+            "防弾材"
+          ]
+        },
+        {
+          "id": "TIB2",
+          "japanese": "二ホウ化チタン",
+          "english": "Titanium Diboride",
+          "formula": "TiB2",
+          "details": [
+            "アルミ電解用カソード"
+          ]
+        },
+        {
+          "id": "LAB6",
+          "japanese": "六ホウ化ランタン",
+          "english": "Lanthanum Hexaboride",
+          "formula": "LaB6",
+          "details": [
+            "プラズマ源"
+          ]
+        },
+        {
+          "id": "GAP",
+          "japanese": "リン化ガリウム",
+          "english": "Gallium Phosphide",
+          "formula": "GaP",
+          "details": [
+            "エピタキシャル基板"
+          ]
+        },
+        {
+          "id": "INSB",
+          "japanese": "アンチモン化インジウム",
+          "english": "Indium Antimonide",
+          "formula": "InSb",
+          "details": [
+            "サーモグラフィ"
+          ]
+        },
+        {
+          "id": "GASB",
+          "japanese": "アンチモン化ガリウム",
+          "english": "Gallium Antimonide",
+          "formula": "GaSb",
+          "details": [
+            "熱光起電力セル"
+          ]
+        },
+        {
+          "id": "CDS",
+          "japanese": "硫化カドミウム",
+          "english": "Cadmium Sulfide",
+          "formula": "CdS",
+          "details": [
+            "顔料"
+          ]
+        },
+        {
+          "id": "BI2TE3",
+          "japanese": "テルル化ビスマス",
+          "english": "Bismuth Telluride",
+          "formula": "Bi2Te3",
+          "details": [
+            "ペルチェ冷却",
+            "温度制御"
+          ]
+        },
+        {
+          "id": "SB2TE3",
+          "japanese": "テルル化アンチモン",
+          "english": "Antimony Telluride",
+          "formula": "Sb2Te3",
+          "details": [
+            "相変化メモリ"
+          ]
+        },
+        {
+          "id": "GST",
+          "japanese": "ゲルマニウム－アンチモン－テルル合金",
+          "english": "Ge-Sb-Te",
+          "formula": "Ge2Sb2Te5",
+          "details": [
+            "相変化メモリ",
+            "再構成可能光デバイス"
+          ]
+        },
+        {
+          "id": "GETE",
+          "japanese": "テルル化ゲルマニウム",
+          "english": "Germanium Telluride",
+          "formula": "GeTe",
+          "details": [
+            "相変化メモリ",
+            "熱電材料"
+          ]
+        },
+        {
+          "id": "ALSI",
+          "japanese": "アルミニウム－シリコン合金",
+          "english": "Aluminum Silicon Alloy",
+          "formula": "Al-Si",
+          "details": [
+            "ヒートシンク"
+          ]
+        },
+        {
+          "id": "ALSICU",
+          "japanese": "アルミニウム－シリコン－銅合金",
+          "english": "Aluminum Silicon Copper Alloy",
+          "formula": "Al-Si-Cu",
+          "details": [
+            "ヒートシンク"
+          ]
+        },
+        {
+          "id": "MGF2",
+          "japanese": "フッ化マグネシウム",
+          "english": "Magnesium Fluoride",
+          "formula": "MgF2",
+          "details": [
+            "反射防止膜"
+          ]
+        }
+      ]
+    }
+  ]
+}

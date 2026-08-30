@@ -1,0 +1,103 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>まとめ・理解度チェック | EPA Technical Learning</title><link rel="stylesheet" href="css/learning.css">
+<style>
+.recap-wrap{max-width:900px;margin:0 auto 26px}
+.recap{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0 10px}
+.step{position:relative;text-align:center;padding:16px 9px;border:1px solid #d8e2ea;border-radius:14px;background:#fff;min-height:112px}
+.step:not(:last-child):after{content:"›";position:absolute;right:-9px;top:39px;color:#8aa3b5;font-size:25px;font-weight:800;z-index:2}
+.sn{font-size:11px;color:#3473a1;font-weight:900}.step b{display:block;margin:8px 0 5px;color:#173f68}.step small{color:#566d7b;line-height:1.55}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 8px}
+.key{padding:16px;border-radius:14px;background:#f7fafc;border:1px solid #dbe5eb}.key b{display:block;color:#173f68;margin-bottom:5px}.key span{font-size:14px;color:#536a78;line-height:1.65}
+.quiz h2{font-size:1.35rem}
+.quiz>p{font-size:1rem;line-height:1.7}
+.q{padding:16px 16px!important;margin-bottom:12px!important}
+.q>b{font-size:1.02rem;line-height:1.6}
+.opts button{font-size:.98rem!important;padding:9px 14px!important}
+.opts button.selected-choice{border-color:#2267b7!important;background:#eaf3ff!important;box-shadow:0 0 0 2px rgba(34,103,183,.12)}
+.feedback{margin-top:10px!important;font-size:.98rem!important}
+.feedback:empty{display:none}
+.explain{display:block;margin-top:7px;line-height:1.65}
+.quiz-actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.quiz-actions button{border-radius:8px;padding:11px 20px;font-weight:700;font-size:1rem;cursor:pointer}
+.quiz-primary{background:#0b57b7;color:#fff;border:1px solid #0b57b7}
+.quiz-secondary{background:#fff;color:#0b57b7;border:1px solid #8eb3dc}
+.quiz-actions button:disabled{opacity:.45;cursor:not-allowed}
+.score{font-size:1.08rem!important;padding:14px 16px!important}
+.finish{max-width:900px;margin:25px auto 0;padding:19px 22px;background:#f4f9fd;border-left:4px solid #6fa3c7;border-radius:10px;color:#304f63;font-size:16px;line-height:1.8}
+@media(max-width:760px){.recap{grid-template-columns:1fr}.step:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-20px}.keys{grid-template-columns:1fr}}
+</style>
+</head><body><header><div class="head"><div class="brand">EPA Technical Learning</div><a class="right" href="index.html">← MonoBase ホーム</a></div></header><div class="course-switch-wrap"><nav class="course-switch" aria-label="技術学習コース切替"><span class="course-switch-label">学習コース</span><a href="learning_vacuum.html">真空技術</a><a class="active" aria-current="page" href="learning_sputtering.html">スパッタリング</a><a href="learning_thinfilm.html">薄膜技術</a></nav></div><main>
+<div class="hero"><div class="ey">SPUTTERING / 06</div><h1>まとめ・理解度チェック</h1><p>最後に、スパッタリングの流れを振り返って、理解できたか確認してみましょう。</p></div>
+
+<section><div class="recap-wrap">
+<h2>スパッタリングの流れ</h2>
+<div class="recap">
+<div class="step"><span class="sn">01</span><b>Ar⁺が向かう</b><small>Ar⁺がターゲットへ</small></div>
+<div class="step"><span class="sn">02</span><b>ぶつかる</b><small>Ar⁺が材料に衝突</small></div>
+<div class="step"><span class="sn">03</span><b>飛び出す</b><small>材料の原子が飛び出す</small></div>
+<div class="step"><span class="sn">04</span><b>基板へ向かう</b><small>飛び出した原子が移動</small></div>
+<div class="step"><span class="sn">05</span><b>膜になる</b><small>基板について薄膜になる</small></div>
+</div>
+<h2>覚えておきたい3つ</h2>
+<div class="keys">
+<div class="key"><b>真空中で行う</b><span>空気の粒子を少なくし、材料原子が基板まで届きやすい環境をつくります。</span></div>
+<div class="key"><b>膜は調整できる</b><span>材料やつくる条件によって、膜の厚さや性質を調整します。</span></div>
+<div class="key"><b>いろいろな場所で使われる</b><span>スマートフォン、半導体、ガラス、工具などに利用されています。</span></div>
+</div></div></section>
+
+<section class="quiz"><h2>全7問｜理解度チェック</h2><p>○×と3択で、ここまでの内容を確認します。すべて回答したら「採点する」を押してください。</p><div id="qs"></div><div class="quiz-actions">
+<button id="gradeBtn" class="quiz-primary" type="button" disabled>採点する</button>
+<button id="explainBtn" class="quiz-secondary" type="button" disabled>解説を見る</button>
+<button id="retryBtn" class="quiz-secondary" type="button" hidden>もう一度挑戦</button>
+</div><div id="score" class="score">0 / 7問 回答済み</div></section>
+
+<div class="finish"><strong>これで、スパッタリングの基本は終了です。</strong><br>まずは「Ar⁺がターゲットにぶつかり、飛び出した材料原子が基板について膜になる」という流れを覚えておきましょう。</div>
+
+<script>
+const data=[
+["Ar⁺（アルゴンイオン）は、どこへ向かう？",["ターゲット","基板","真空ポンプ"],0,"プラスの電気をもつAr⁺は、電気の力でターゲットへ引き寄せられます。"],
+["アルゴン原子（Ar）から電子が抜けると、どうなる？",["Ar⁺になる","材料原子になる","基板になる"],0,"電子が1個抜けることで、プラスの電気をもつAr⁺になります。"],
+["Ar⁺がターゲットにぶつかると、何が飛び出す？",["材料の原子","基板","空気の粒子"],0,"Ar⁺の衝突によって、ターゲットをつくっている材料の原子が飛び出します。"],
+["スパッタリングを真空中で行う理由として近いものは？",["材料原子が空気の粒子にぶつかりにくくするため","ターゲットを大きくするため","基板を厚くするため"],0,"真空では空気の粒子が少ないため、飛び出した材料原子が基板まで届きやすくなります。"],
+["スパッタリングでつくる膜の厚さや性質は、調整できる。",["○","×"],0,"材料やつくる条件を調整することで、膜の厚さや性質を変えることができます。"],
+["スパッタリングが利用されているものとして、このコースで紹介したものは？",["スマートフォンや半導体","ガラスやミラー","工具・部品","すべて"],3,"スマートフォン、半導体、ガラス・ミラー、工具・部品など幅広い分野で利用されています。"],
+["スパッタリングとは、どんな技術？",["材料を溶かして型に流す技術","Ar⁺をターゲットにぶつけ、飛び出した材料原子を基板につけて膜をつくる技術","空気を入れて材料を冷やす技術"],1,"Ar⁺の衝突で材料原子を飛び出させ、その原子を基板につけて薄膜をつくるのが基本の流れです。"]
+];
+
+const answers=Array(data.length).fill(null);
+let graded=false, explanationsVisible=false;
+const box=document.getElementById("qs"), score=document.getElementById("score");
+const gradeBtn=document.getElementById("gradeBtn"), explainBtn=document.getElementById("explainBtn"), retryBtn=document.getElementById("retryBtn");
+
+data.forEach((q,i)=>{
+ const d=document.createElement("div"); d.className="q";
+ d.innerHTML=`<b>Q${i+1}. ${q[0]}</b><div class="opts">${q[1].map((x,j)=>`<button type="button" data-i="${i}" data-j="${j}">${x}</button>`).join("")}</div><div class="feedback" aria-live="polite"></div>`;
+ box.appendChild(d);
+});
+box.addEventListener("click",e=>{
+ if(graded||e.target.tagName!=="BUTTON")return;
+ const i=+e.target.dataset.i,j=+e.target.dataset.j; answers[i]=j;
+ const row=e.target.closest(".q"); row.querySelectorAll(".opts button").forEach(b=>b.classList.remove("selected-choice")); e.target.classList.add("selected-choice"); updateProgress();
+});
+function updateProgress(){const count=answers.filter(v=>v!==null).length;score.textContent=count===7?"7問すべて回答しました。採点できます。":`${count} / 7問 回答済み`;gradeBtn.disabled=count!==7;}
+gradeBtn.addEventListener("click",()=>{
+ if(answers.some(v=>v===null))return; graded=true;let correct=0;
+ document.querySelectorAll(".q").forEach((row,i)=>{
+  const buttons=[...row.querySelectorAll(".opts button")];buttons.forEach(b=>b.disabled=true);
+  if(answers[i]===data[i][2]){correct++;buttons[answers[i]].classList.add("correct-choice");}else{buttons[answers[i]].classList.add("wrong-choice");buttons[data[i][2]].classList.add("correct-choice");}
+  row.querySelector(".feedback").innerHTML=answers[i]===data[i][2]?"✓ 正解":`× 不正解　正解：${data[i][1][data[i][2]]}`;
+  row.querySelector(".feedback").className=answers[i]===data[i][2]?"feedback ok":"feedback ng";
+ });
+ score.innerHTML=`<strong>7問中 ${correct}問正解</strong>`; explainBtn.disabled=false;retryBtn.hidden=false;gradeBtn.disabled=true;
+});
+explainBtn.addEventListener("click",()=>{
+ if(!graded)return; explanationsVisible=!explanationsVisible;
+ document.querySelectorAll(".q").forEach((row,i)=>{
+  const fb=row.querySelector(".feedback"),base=answers[i]===data[i][2]?"✓ 正解":`× 不正解　正解：${data[i][1][data[i][2]]}`;
+  fb.innerHTML=explanationsVisible?`${base}<span class="explain">${data[i][3]}</span>`:base;
+ });
+ explainBtn.textContent=explanationsVisible?"解説を閉じる":"解説を見る";
+});
+retryBtn.addEventListener("click",()=>location.reload());
+updateProgress();
+</script>
+<div class="nav"><a class="btn alt" href="learning_sputtering_05.html">← 05へ</a><a class="btn alt" href="learning_sputtering.html">コースTOP</a><a class="btn" href="learning_sputtering_supplement_types.html">補足 スパッタリングの種類 →</a></div></main><footer>EPA Technical Learning ｜ Sputtering Course Ver.3.0</footer></body></html>

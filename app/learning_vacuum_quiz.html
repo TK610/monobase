@@ -1,0 +1,115 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>理解度チェック | EPA Technical Learning</title><link rel="stylesheet" href="css/learning.css">
+<style>
+.quiz h2{font-size:1.35rem}
+.quiz>p{font-size:1rem;line-height:1.7}
+.q{padding:16px 16px!important;margin-bottom:12px!important}
+.q>b{font-size:1.02rem;line-height:1.6}
+.opts button{font-size:.98rem!important;padding:9px 14px!important}
+.opts button.selected-choice{border-color:#2267b7!important;background:#eaf3ff!important;box-shadow:0 0 0 2px rgba(34,103,183,.12)}
+.feedback{margin-top:10px!important;font-size:.98rem!important}
+.feedback:empty{display:none}
+.explain{display:block;margin-top:7px;line-height:1.65}
+.quiz-actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.quiz-actions button{border-radius:8px;padding:11px 20px;font-weight:700;font-size:1rem;cursor:pointer}
+.quiz-primary{background:#0b57b7;color:#fff;border:1px solid #0b57b7}
+.quiz-secondary{background:#fff;color:#0b57b7;border:1px solid #8eb3dc}
+.quiz-actions button:disabled{opacity:.45;cursor:not-allowed}
+.score{font-size:1.08rem!important;padding:14px 16px!important}
+</style>
+</head><body><header><div class="head"><div class="brand">EPA Technical Learning</div><a class="right" href="index.html">← MonoBase ホーム</a></div></header><div class="course-switch-wrap"><nav class="course-switch" aria-label="技術学習コース切替"><span class="course-switch-label">学習コース</span><a class="active" aria-current="page" href="learning_vacuum.html">真空技術</a><a href="learning_sputtering.html">スパッタリング</a><a href="learning_thinfilm.html">薄膜技術</a></nav></div><main><div class="hero"><div class="ey">VACUUM TECHNOLOGY / 07</div><h1>理解度チェック</h1></div><section class="quiz"><h2>全10問｜理解度チェック</h2><p>○×と3択で、ここまでの内容を確認します。すべて回答したら「採点する」を押してください。</p><div id="qs"></div><div class="quiz-actions">
+  <button id="gradeBtn" class="quiz-primary" type="button" disabled>採点する</button>
+  <button id="explainBtn" class="quiz-secondary" type="button" disabled>解説を見る</button>
+  <button id="retryBtn" class="quiz-secondary" type="button" hidden>もう一度挑戦</button>
+</div>
+<div id="score" class="score">0 / 10問 回答済み</div></section>
+
+<script>
+const data=[
+["真空とは、気体が完全にゼロになった状態だけをいう。",["○","×"],1,"実際の真空にも、通常はわずかな気体が残っています。"],
+["標準大気圧は、およそ10万Paである。",["○","×"],0,"標準大気圧は約101,325 Paで、およそ10万Paです。"],
+["圧力が低くなるほど、真空度は高くなる。",["○","×"],0,"圧力が低いほど気体が少ない状態となり、真空度は高くなります。"],
+["圧力を下げると、水の沸点はどうなる？",["下がる","変わらない","上がる"],0,"周囲の圧力が低くなると、水はより低い温度で沸騰します。"],
+["真空ポンプの主な役割は？",["気体を排気する","圧力を測る","気体の流れを開閉する"],0,"真空ポンプはチャンバー内の気体を外へ排気し、圧力を下げます。"],
+["真空計の主な役割は？",["気体を排気する","圧力を測る","配管をつなぐ"],1,"真空計はチャンバー内などの圧力を測り、真空の状態を確認するために使います。"],
+["真空チャンバーと真空ポンプの間で、気体の通り道になるものは？",["真空計","配管","電源"],1,"配管はチャンバーとポンプなどをつなぎ、気体の通り道になります。"],
+["バルブの役割として正しいものは？",["気体の流れを開閉する","圧力を表示する","気体を冷却する"],0,"バルブは気体の流れを開いたり閉じたりするために使います。"],
+["1種類の真空計ですべての真空領域を測定できる。",["○","×"],1,"真空計には測定原理や測定範囲の違いがあり、真空領域に応じて使い分けます。"],
+["真空技術が利用されているものとして適切なのは？",["半導体製造","食品包装","分析装置","すべて"],3,"真空技術は半導体製造だけでなく、食品包装や分析装置など幅広い分野で利用されています。"]
+];
+
+const answers = Array(data.length).fill(null);
+let graded = false;
+let explanationsVisible = false;
+const box = document.getElementById("qs");
+const score = document.getElementById("score");
+const gradeBtn = document.getElementById("gradeBtn");
+const explainBtn = document.getElementById("explainBtn");
+const retryBtn = document.getElementById("retryBtn");
+
+data.forEach((q,i)=>{
+  const d=document.createElement("div");
+  d.className="q";
+  d.innerHTML=`<b>Q${i+1}. ${q[0]}</b>
+    <div class="opts">${q[1].map((x,j)=>`<button type="button" data-i="${i}" data-j="${j}">${x}</button>`).join("")}</div>
+    <div class="feedback" aria-live="polite"></div>`;
+  box.appendChild(d);
+});
+
+box.addEventListener("click",e=>{
+  if(graded || e.target.tagName!=="BUTTON") return;
+  const i=+e.target.dataset.i, j=+e.target.dataset.j;
+  answers[i]=j;
+  const row=e.target.closest(".q");
+  row.querySelectorAll(".opts button").forEach(b=>b.classList.remove("selected-choice"));
+  e.target.classList.add("selected-choice");
+  updateProgress();
+});
+
+function updateProgress(){
+  const count=answers.filter(v=>v!==null).length;
+  score.textContent = count===10 ? "10問すべて回答しました。採点できます。" : `${count} / 10問 回答済み`;
+  gradeBtn.disabled = count!==10;
+}
+
+gradeBtn.addEventListener("click",()=>{
+  if(answers.some(v=>v===null)) return;
+  graded=true;
+  let correct=0;
+  document.querySelectorAll(".q").forEach((row,i)=>{
+    const buttons=[...row.querySelectorAll(".opts button")];
+    buttons.forEach(b=>b.disabled=true);
+    if(answers[i]===data[i][2]){
+      correct++;
+      buttons[answers[i]].classList.add("correct-choice");
+    }else{
+      buttons[answers[i]].classList.add("wrong-choice");
+      buttons[data[i][2]].classList.add("correct-choice");
+    }
+    row.querySelector(".feedback").innerHTML =
+      answers[i]===data[i][2] ? "✓ 正解" : `× 不正解　正解：${data[i][1][data[i][2]]}`;
+    row.querySelector(".feedback").className =
+      answers[i]===data[i][2] ? "feedback ok" : "feedback ng";
+  });
+  score.innerHTML=`<strong>10問中 ${correct}問正解</strong>`;
+  explainBtn.disabled=false;
+  retryBtn.hidden=false;
+  gradeBtn.disabled=true;
+});
+
+explainBtn.addEventListener("click",()=>{
+  if(!graded) return;
+  explanationsVisible=!explanationsVisible;
+  document.querySelectorAll(".q").forEach((row,i)=>{
+    const fb=row.querySelector(".feedback");
+    const base=answers[i]===data[i][2] ? "✓ 正解" : `× 不正解　正解：${data[i][1][data[i][2]]}`;
+    fb.innerHTML= explanationsVisible
+      ? `${base}<span class="explain">${data[i][3]}</span>`
+      : base;
+  });
+  explainBtn.textContent = explanationsVisible ? "解説を閉じる" : "解説を見る";
+});
+
+retryBtn.addEventListener("click",()=>location.reload());
+
+updateProgress();
+</script><div class="nav"><a class="btn alt" href="learning_vacuum_06.html">← 前へ</a><a class="btn alt" href="learning_vacuum.html">真空技術 TOP</a><span></span></div></main><footer>EPA Technical Learning ｜ Vacuum Technology Course Ver.7.29</footer></body></html>

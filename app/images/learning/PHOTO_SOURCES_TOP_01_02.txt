@@ -1,0 +1,46 @@
+EPA Technical Learning Ver.2.5 TOP/01/02 Review - Photo Sources
+
+TOP main:
+NASA/JPL PIA26094 image. NASA/JPL-Caltech. See NASA/JPL image-use terms.
+
+top_semiconductor.jpg:
+Wikimedia Commons: File:Cleanroom suit.jpg
+Author: Steve Jurvetson
+License: CC BY 2.0
+
+top_optics.jpg:
+Wikimedia Commons: File:Anti-reflective coating comparison.jpg
+Author: Justin Lebar
+License: CC BY-SA (multi-license listed on Commons)
+
+top_food.jpg:
+Wikimedia Commons: File:Vacuum sealer with food sealed on wooden table and rolls of plastic for sealing.jpg
+Author: Your Best Digs
+License: CC BY 2.0
+
+top_plasma.jpg:
+Wikimedia Commons: File:Au sputtering light.JPG
+Author: GcG
+License: Public Domain
+
+vacuum_simple_chamber.jpg:
+Wikimedia Commons: File:Studio vacuum chamber.jpg
+Author: Emccorm
+License: CC BY 3.0
+
+vacuum_research_chamber.jpg:
+Wikimedia Commons: File:Surface science vacuum chamber.jpg
+Author: Stian Martinsen
+License: CC BY 2.0
+
+vacuum_oven.jpg:
+Wikimedia Commons: File:Vacuum oven.jpg
+Author: Smokefoot
+License: CC BY 4.0
+
+vacuum_furnace.jpg:
+Wikimedia Commons: File:500 lb vacuum furnace - DPLA - 6974d846356aa2cc6a81b817476608ca.jpg
+Source: National Archives at Boston / DPLA
+Rights: Public Domain in the United States
+
+All image files are stored locally for offline viewing.

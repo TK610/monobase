@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>材料名から探す | MonoBase Ver.7.2</title>
+<style>
+:root{--navy:#17324d;--blue:#2563a6;--line:#dce5ee;--bg:#f4f7fa;--text:#263746}
+*{box-sizing:border-box}body{margin:0;font-family:"Yu Gothic UI","Meiryo",sans-serif;background:var(--bg);color:var(--text)}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}.btn.primary{background:white;color:var(--navy)}main{max-width:1180px;margin:14px auto 44px;padding:0 18px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat,.panel{background:white;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 3px 12px rgba(20,50,75,.06)}
+.stat strong{font-size:26px;display:block;color:var(--blue)}.search{display:grid;grid-template-columns:1fr 260px;gap:10px;margin:18px 0}
+input,select{width:100%;padding:12px;border:1px solid #b9c9d8;border-radius:8px;font-size:15px;background:white}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:16px}
+.list{max-height:670px;overflow:auto}.item{padding:12px;border-bottom:1px solid var(--line);cursor:pointer}.item:hover,.item.active{background:#edf5fc}
+.item strong{font-size:16px}.muted{color:#65798b;font-size:13px}.density{float:right;font-weight:700;color:var(--blue)}
+.detail h2{margin-top:0}.explorer-image{height:210px;margin:12px 0 16px;border:1px solid var(--line);border-radius:11px;background:#f7f8fa;display:grid;place-items:center;overflow:hidden}.explorer-image img{width:100%;height:100%;object-fit:contain}.grid{display:grid;grid-template-columns:120px 1fr;gap:8px 12px;font-size:14px}.label{font-weight:700;color:#51687b}
+.source{border:1px solid var(--line);border-radius:9px;padding:10px;margin-top:9px}.source a{word-break:break-all;color:#145ea8}
+.badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#e8f2fb;color:#195b91;font-size:12px;font-weight:700}.detail-title{display:flex;align-items:center;justify-content:space-between;gap:10px}.favorite-btn{border:1px solid #c7d6e4;border-radius:8px;background:#fff;color:#315978;padding:8px 10px;font-weight:800;cursor:pointer}.favorite-btn.active{background:#fff4cf;border-color:#e3bd45;color:#7b5700}
+.notice{background:#fff8e6;border-left:4px solid #e2a728;padding:10px;margin-top:12px;font-size:13px}
+.empty{padding:30px;text-align:center;color:#718394}
+footer{max-width:1180px;margin:18px auto 30px;padding:0 18px;color:#6d7f8f;font-size:12px}
+@media(max-width:800px){.stats{grid-template-columns:1fr}.search,.layout{grid-template-columns:1fr}.detail{order:-1}.list{max-height:430px}}
+
+/* Ver.7.2 unified Explorer shell */
+body{background:#f4f7f9;color:#243746}
+a{color:inherit}.top{background:#fff;border-bottom:1px solid #d6e0e8}.top-inner{max-width:1180px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{text-decoration:none;display:flex;align-items:center;gap:10px;color:#17324d}.mark{width:36px;height:36px;border-radius:10px;background:#1f5277;color:#fff;display:grid;place-items:center;font-weight:900;font-size:12px}.brand strong{display:block;font-size:15px}.brand small{display:block;color:#667c8d;font-size:10px;margin-top:2px}.top .nav{display:flex;gap:8px;margin-top:0}.top .nav a{text-decoration:none;border:1px solid #d6e0e8;border-radius:8px;padding:8px 11px;font-size:12px;font-weight:800;background:#fff;color:#243746}.top .nav a.primary{background:#2563a6;border-color:#2563a6;color:#fff}.hero{background:#1f5277;color:#fff}.hero-inner{max-width:1180px;margin:auto;padding:28px 18px 26px}.hero h1{margin:0 0 7px;font-size:28px}.hero p{margin:0;opacity:.9;font-size:13px;line-height:1.7}.breadcrumbs{max-width:1180px;margin:14px auto 0;padding:0 18px;color:#667c8d;font-size:11px}.breadcrumbs a{color:#2c6b9c;text-decoration:none}
+@media(max-width:600px){.top-inner{align-items:flex-start;flex-direction:column}.hero h1{font-size:23px}}
+
+/* Ver.7.2 Official */
+.search-input-wrap{position:relative;min-width:0}
+.suggestions{position:absolute;z-index:40;left:0;right:0;top:calc(100% + 6px);background:#fff;border:1px solid #b9c9d8;border-radius:10px;box-shadow:0 12px 30px rgba(20,50,75,.14);overflow:hidden;max-height:330px;overflow-y:auto}
+.suggestion{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;width:100%;border:0;border-bottom:1px solid #edf2f6;background:#fff;padding:10px 12px;text-align:left;color:#263746;cursor:pointer}
+.suggestion:last-child{border-bottom:0}.suggestion:hover,.suggestion.active{background:#edf5fc}
+.suggestion strong{display:block;font-size:14px}.suggestion small{display:block;margin-top:2px;color:#65798b;font-size:11px}
+.suggestion .formula{align-self:center;color:#195b91;font-weight:850;font-size:13px;white-space:nowrap}
+.result-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 9px;padding:0 2px}
+.result-head strong{font-size:13px;color:#17324d}.result-head span{font-size:11px;color:#667c8d}
+.empty-search{padding:26px 20px;text-align:center}.empty-search strong{display:block;color:#17324d;font-size:16px;margin-bottom:7px}.empty-search p{margin:0 0 14px;color:#667c8d;font-size:13px;line-height:1.7}
+.empty-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.empty-actions a,.empty-actions button{border:1px solid #c3d0dc;background:#fff;color:#245879;border-radius:8px;padding:8px 11px;text-decoration:none;font-weight:800;font-size:12px;cursor:pointer}
+.empty-actions a:hover,.empty-actions button:hover{background:#edf5fc;border-color:#8eb3cf}
+@media(max-width:800px){.result-head{display:block}.result-head span{display:block;margin-top:4px}}
+
+
+/* EPA Search Clear Button */
+.epa-search-field{position:relative;min-width:0}
+.epa-search-field>input{width:100%;padding-right:44px!important;box-sizing:border-box}
+.epa-search-clear{
+ position:absolute;right:10px;top:50%;transform:translateY(-50%);
+ width:28px;height:28px;border:0;border-radius:50%;padding:0;
+ display:flex;align-items:center;justify-content:center;
+ background:transparent;color:#667085;font-size:20px;line-height:1;
+ cursor:pointer;z-index:5
+}
+.epa-search-clear:hover{background:#eef2f6;color:#1f2937}
+.epa-search-clear:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.epa-search-clear[hidden]{display:none}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="top-inner"><a class="brand" href="index.html"><span class="mark">EPA</span><span><strong>MonoBase</strong><small>Manufacturing Learning & Tools</small></span></a><nav class="nav"><a href="index.html">ホーム</a><a class="primary" href="material_database.html">材料名</a><a href="usage_explorer.html">用途</a><a href="classification_explorer.html">分類</a></nav></div></header>
+<section class="hero"><div class="hero-inner"><h1>材料名から探す</h1><p>「材料の名前」からすばやく見つけます。材料名・元素記号・化学式・英語名などで検索し、材料詳細へ進めます。</p></div></section>
+<div class="breadcrumbs"><a href="index.html">ホーム</a> ／ 材料名から探す</div>
+<main>
+<section class="stats">
+<div class="stat"><strong id="countAll">197</strong>登録材料</div>
+<div class="stat"><strong id="countDensity">176</strong>密度設定済み</div>
+<div class="stat"><strong>197</strong>正式レビュー済み</div>
+</section>
+<section class="search">
+<div class="search-input-wrap epa-search-field">
+<input id="q" autocomplete="off" aria-autocomplete="list" aria-controls="searchSuggestions" aria-expanded="false" placeholder="材料名・元素記号・化学式・英語名で検索（例：シリコン、Si、SiO2、silicon）"><button type="button" class="epa-search-clear" data-clear-for="q" aria-label="検索文字を消す" title="検索文字を消す" hidden>×</button>
+<div id="searchSuggestions" class="suggestions" role="listbox" hidden></div>
+</div>
+<select id="category"><option value="">すべてのカテゴリ</option></select>
+</section>
+<div class="result-head"><strong id="resultCount">検索結果 0件</strong><span id="resultHint">材料名・記号・化学式・英語名を横断検索します。</span></div>
+<section class="layout">
+<div class="panel list" id="list"></div>
+<div class="panel detail" id="detail"><div class="empty">左の一覧から材料を選択してください。</div></div>
+</section>
+</main>
+<footer>MonoBase Ver.7.2 ／ オフラインでも検索・閲覧できます。出典URLを開くにはネット接続が必要です。</footer>
+<script src="js/emd-data.js"></script>
+<script>
+const db=window.EMD_DATA, all=db.materials||[];
+const q=document.getElementById('q'), cat=document.getElementById('category'), list=document.getElementById('list'), detail=document.getElementById('detail'), suggestions=document.getElementById('searchSuggestions'), resultCount=document.getElementById('resultCount'), resultHint=document.getElementById('resultHint');
+let suggestionIndex=-1;
+const initialParams=new URLSearchParams(location.search); q.value=initialParams.get('q')||'';
+document.getElementById('countAll').textContent=all.length;
+document.getElementById('countDensity').textContent=all.filter(x=>typeof x.density==='number').length;
+[...new Set(all.map(x=>x.category).filter(Boolean))].sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;cat.appendChild(o)});
+try{const ctx=JSON.parse(localStorage.getItem('epaExplorerContext')||'null');if(ctx){if(!q.value&&ctx.q)q.value=ctx.q;if(ctx.category)cat.value=ctx.category;setTimeout(()=>{if(Number.isFinite(ctx.scrollTop))list.scrollTop=ctx.scrollTop},0)}}catch(e){}
+function esc(v){return String(v??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]))}
+function sourceBlock(title,s){
+ if(!s||(!s.name&&!s.url)) return '';
+ const value=(s.value!==null&&s.value!==undefined)?`<div class="muted">掲載値：${esc(s.value)} g/cm³</div>`:'';
+ const link=s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">公式・参照ページを開く</a>`:'<span class="muted">URL未登録</span>';
+ return `<div class="source"><strong>${esc(title)}</strong><div>${esc(s.name||'')}</div>${value}<div>${link}</div>${s.url?`<div class="muted">${esc(s.url)}</div>`:''}</div>`;
+}
+function getStore(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return[]}}
+function setStore(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function addRecent(m){let a=getStore('epaRecentMaterials').filter(x=>x.id!==m.id);a.unshift({id:m.id,name:m.name,japanese:m.japanese,formula:m.formula});setStore('epaRecentMaterials',a.slice(0,8))}
+function toggleFavorite(m){let a=getStore('epaFavoriteMaterials'),exists=a.some(x=>x.id===m.id);a=exists?a.filter(x=>x.id!==m.id):[{id:m.id,name:m.name,japanese:m.japanese,formula:m.formula},...a];setStore('epaFavoriteMaterials',a.slice(0,30));show(m,false)}
+function show(m,track=true){
+ if(track)addRecent(m);
+ document.querySelectorAll('.item').forEach(x=>x.classList.toggle('active',x.dataset.id===m.id));
+ const den=typeof m.density==='number'?`${m.density} ${esc(m.unit||'g/cm³')}`:'未設定（重量計算対象外）';
+ const fav=getStore('epaFavoriteMaterials').some(x=>x.id===m.id);
+ detail.innerHTML=`<div class="detail-title"><h2>${esc(m.japanese||m.name)} <span class="badge">${esc(m.review_status||'')}</span></h2><button class="favorite-btn ${fav?'active':''}" id="favoriteBtn">${fav?'★ お気に入り':'☆ お気に入り'}</button></div>
+ <div class="muted">${esc(m.english||'')} ／ ${esc(m.formula||'')}</div>${m.image_file?`<div class="explorer-image"><img src="images/materials/${esc(m.image_file)}" alt="${esc((m.japanese||m.name||'材料')+'の代表画像')}" onerror="this.parentElement.style.display='none'"></div>`:''}<hr>
+ <div class="grid">
+ <div class="label">材料ID</div><div>${esc(m.id)}</div>
+ <div class="label">カテゴリ</div><div>${esc(m.category||'')} / ${esc(m.subcategory||'')}</div>
+ <div class="label">EPA採用密度</div><div><strong>${den}</strong></div>
+ <div class="label">密度条件</div><div>${esc(m.density_condition||m.density_status||'')}</div>
+ <div class="label">レビュー判定</div><div>${esc(m.review_decision||'')}</div>
+ <div class="label">更新日</div><div>${esc(m.updated||'')}</div>
+ </div>
+ <h3>採用理由</h3><div>${esc(m.adoption_reason||'')}</div>
+ ${m.note?`<div class="notice">${esc(m.note)}</div>`:''}
+ <p style="margin-top:16px"><a id="openDetail" href="material_detail.html?id=${encodeURIComponent(m.id)}" style="display:block;text-align:center;background:#2563a6;color:white;text-decoration:none;padding:11px;border-radius:9px;font-weight:800">材料詳細ページを開く →</a></p><h3>出典情報</h3>
+ ${sourceBlock('採用出典',m.source_current||{name:m.source_name,url:m.source_url})}
+ ${sourceBlock('比較出典A',m.source_a)}
+ ${sourceBlock('比較出典B',m.source_b)}`;
+ const fb=document.getElementById('favoriteBtn');if(fb)fb.addEventListener('click',()=>toggleFavorite(m));
+ const od=document.getElementById('openDetail');if(od)od.addEventListener('click',()=>{try{localStorage.setItem('epaExplorerContext',JSON.stringify({q:q.value,category:cat.value,ids:[...document.querySelectorAll('.item')].map(x=>x.dataset.id),scrollTop:list.scrollTop,selected:m.id,updated:Date.now()}))}catch(e){}});
+ const params=new URLSearchParams();params.set('material',m.id);if(q.value.trim())params.set('q',q.value.trim());history.replaceState(null,'','?'+params.toString());
+}
+function norm(v){
+ return String(v??'').normalize('NFKC').toLowerCase()
+  .replace(/[₀₁₂₃₄₅₆₇₈₉]/g,ch=>'0123456789'['₀₁₂₃₄₅₆₇₈₉'.indexOf(ch)])
+  .replace(/[\s・･／/_\-()[\]{}]/g,'');
+}
+function searchFields(m){return [m.japanese,m.name,m.english,m.formula,m.id,...(m.aliases||[])].filter(Boolean)}
+function extendedFields(m){return [...searchFields(m),m.summary,m.representative_form,m.machinability,m.safety_note,...(m.uses||[]),...(m.characteristics||[]),...(m.processing_forms||[])].filter(Boolean)}
+function scoreMatch(m,term){
+ if(!term)return 0;
+ const fields=searchFields(m).map(norm), ext=extendedFields(m).map(norm);
+ let score=0;
+ fields.forEach((v,i)=>{if(v===term)score=Math.max(score,i===3?120:110);else if(v.startsWith(term))score=Math.max(score,i===0||i===2?90:82);else if(v.includes(term))score=Math.max(score,68)});
+ if(!score&&ext.some(v=>v.includes(term)))score=35;
+ return score;
+}
+function filteredRows(){
+ const term=norm(q.value.trim()),c=cat.value;
+ return all.map(m=>({m,score:term?scoreMatch(m,term):0}))
+  .filter(x=>(!term||x.score>0)&&(!c||x.m.category===c))
+  .sort((a,b)=>term?(b.score-a.score)||String(a.m.japanese||a.m.name).localeCompare(String(b.m.japanese||b.m.name),'ja'):0)
+  .map(x=>x.m);
+}
+function closeSuggestions(){suggestions.hidden=true;suggestions.innerHTML='';q.setAttribute('aria-expanded','false');suggestionIndex=-1}
+function openSuggestion(m){q.value=m.japanese||m.name||m.formula||'';closeSuggestions();render(false);show(m,true)}
+function renderSuggestions(){
+ const term=norm(q.value.trim());if(!term){closeSuggestions();return}
+ const candidates=all.map(m=>({m,score:scoreMatch(m,term)})).filter(x=>x.score>=68).sort((a,b)=>(b.score-a.score)||String(a.m.japanese||a.m.name).localeCompare(String(b.m.japanese||b.m.name),'ja')).slice(0,7);
+ if(!candidates.length){closeSuggestions();return}
+ suggestions.innerHTML=candidates.map((x,i)=>`<button type="button" class="suggestion" role="option" data-id="${esc(x.m.id)}" data-index="${i}"><span><strong>${esc(x.m.japanese||x.m.name)}</strong><small>${esc(x.m.english||x.m.name||'')} ／ ${esc(x.m.category||'')}</small></span><span class="formula">${esc(x.m.formula||'')}</span></button>`).join('');
+ suggestions.hidden=false;q.setAttribute('aria-expanded','true');suggestionIndex=-1;
+ suggestions.querySelectorAll('.suggestion').forEach(el=>el.addEventListener('mousedown',e=>{e.preventDefault();const m=all.find(x=>x.id===el.dataset.id);if(m)openSuggestion(m)}));
+}
+function updateSuggestionActive(){
+ const els=[...suggestions.querySelectorAll('.suggestion')];
+ els.forEach((el,i)=>el.classList.toggle('active',i===suggestionIndex));
+ if(els[suggestionIndex])els[suggestionIndex].scrollIntoView({block:'nearest'});
+}
+function render(updateSuggestions=true){
+ const term=norm(q.value.trim()),rows=filteredRows();
+ try{localStorage.setItem('epaExplorerContext',JSON.stringify({q:q.value,category:cat.value,ids:rows.map(x=>x.id),scrollTop:list.scrollTop,updated:Date.now()}))}catch(e){}
+ resultCount.textContent=`検索結果 ${rows.length}件`;
+ resultHint.textContent=term?'一致度の高い材料から表示しています。':'材料名・元素記号・化学式・英語名を横断検索します。';
+ list.innerHTML=rows.length?rows.map(m=>`<div class="item" data-id="${esc(m.id)}"><span class="density">${typeof m.density==='number'?esc(m.density)+' g/cm³':'密度未設定'}</span><strong>${esc(m.japanese||m.name)}</strong><div class="muted">${esc(m.english||m.name||'')} ／ ${esc(m.formula||'')} ／ ${esc(m.category||'')}</div></div>`).join(''):`<div class="empty-search"><strong>該当する材料が見つかりませんでした。</strong><p>表記を短くするか、元素記号・化学式・英語名でも検索できます。<br>例：シリコン / Si / silicon、酸化アルミニウム / Al2O3</p><div class="empty-actions"><button type="button" id="clearSearch">検索をクリア</button><a href="usage_explorer.html">用途から探す</a><a href="classification_explorer.html">分類から探す</a></div></div>`;
+ list.querySelectorAll('.item').forEach(el=>el.addEventListener('click',()=>show(all.find(m=>m.id===el.dataset.id))));
+ const clear=document.getElementById('clearSearch');if(clear)clear.addEventListener('click',()=>{q.value='';cat.value='';closeSuggestions();render(false);q.focus()});
+ if(rows.length){const requested=new URLSearchParams(location.search).get('material');const chosen=all.find(m=>m.id===requested&&rows.some(r=>r.id===m.id))||rows[0];show(chosen,requested?true:false)}
+ else detail.innerHTML='<div class="empty">検索条件を変更すると、ここに材料詳細が表示されます。</div>';
+ if(updateSuggestions)renderSuggestions();
+}
+q.addEventListener('input',()=>render(true));q.addEventListener('focus',renderSuggestions);
+q.addEventListener('keydown',e=>{
+ if(suggestions.hidden)return;
+ const els=[...suggestions.querySelectorAll('.suggestion')];
+ if(e.key==='ArrowDown'){e.preventDefault();suggestionIndex=Math.min(suggestionIndex+1,els.length-1);updateSuggestionActive()}
+ else if(e.key==='ArrowUp'){e.preventDefault();suggestionIndex=Math.max(suggestionIndex-1,0);updateSuggestionActive()}
+ else if(e.key==='Enter'&&suggestionIndex>=0){e.preventDefault();const m=all.find(x=>x.id===els[suggestionIndex].dataset.id);if(m)openSuggestion(m)}
+ else if(e.key==='Escape')closeSuggestions();
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.search-input-wrap'))closeSuggestions()});
+cat.addEventListener('change',()=>render(false));render(false);
+</script>
+
+<script>
+(()=>{
+  const input=document.getElementById('q');
+  const clear=document.querySelector('[data-clear-for="q"]');
+  if(!input||!clear)return;
+  const sync=()=>{clear.hidden=!input.value;};
+  clear.addEventListener('click',()=>{
+    input.value='';
+    
+    const sug=document.getElementById('searchSuggestions');
+    if(sug){sug.hidden=true;sug.innerHTML='';}
+
+    input.dispatchEvent(new Event('input',{bubbles:true}));
+    input.dispatchEvent(new Event('change',{bubbles:true}));
+    sync();
+    input.focus();
+  });
+  input.addEventListener('input',sync);
+  sync();
+})();
+</script>
+
+</body></html>

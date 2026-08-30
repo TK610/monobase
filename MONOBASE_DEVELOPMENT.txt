@@ -1,0 +1,14 @@
+MonoBase Ver.0.4 Development
+
+Base: EPA Materials Explorer Ver.7.5.52 / MonoBase Ver.0.2
+
+Changes:
+- Replaced the temporary M mark on the MonoBase home header with a green apple brand icon.
+- Kept the existing blue UI and all application functions unchanged.
+- No large apple hero image added.
+- Character integration is deferred to a later phase.
+
+Brand direction:
+Blue UI = technology / trust
+Green apple = learning / growth / memorable identity
+[Ver.0.4.1] ZIP直下の起動ファイル名を「アプリを開く.html」に変更し、起動ボタンも「アプリを開く」に統一。

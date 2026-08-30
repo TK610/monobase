@@ -1,0 +1,48 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>用途から探す | MonoBase</title>
+<style>
+:root{--navy:#17324d;--blue:#2563a6;--line:#d6e0e8;--bg:#f4f7f9;--text:#243746;--muted:#667c8d}*{box-sizing:border-box}body{margin:0;font-family:"Yu Gothic UI","Meiryo",sans-serif;background:var(--bg);color:var(--text)}a{color:inherit}.top{background:#fff;border-bottom:1px solid var(--line)}.top-inner{max-width:1180px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{text-decoration:none;display:flex;align-items:center;gap:10px;color:var(--navy)}.mark{width:36px;height:36px;border-radius:10px;background:#1f5277;color:#fff;display:grid;place-items:center;font-weight:900;font-size:12px}.brand strong{display:block;font-size:15px}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.nav{display:flex;gap:8px}.nav a{text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:8px 11px;font-size:12px;font-weight:800;background:#fff}.nav a.primary{background:var(--blue);border-color:var(--blue);color:#fff}.hero{background:#1f5277;color:#fff}.hero-inner{max-width:1180px;margin:auto;padding:28px 18px 26px}.hero h1{margin:0 0 7px;font-size:28px}.hero p{margin:0;opacity:.9;font-size:13px;line-height:1.7}.breadcrumbs{max-width:1180px;margin:14px auto 0;padding:0 18px;color:var(--muted);font-size:11px}.breadcrumbs a{color:#2c6b9c;text-decoration:none}main{max-width:1180px;margin:14px auto 44px;padding:0 18px}.toolbar{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 2px 8px rgba(24,50,75,.035)}.toolbar input,.toolbar select{height:44px;border:1px solid #c4d2dd;border-radius:9px;padding:0 13px;font:inherit;font-size:13px;background:#fff}.layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:16px;margin-top:16px}.categories,.results{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 2px 8px rgba(24,50,75,.03)}.categories{padding:13px;align-self:start;position:sticky;top:12px}.categories h2,.results h2{margin:0;color:var(--navy);font-size:16px}.category-list{display:grid;gap:6px;margin-top:11px}.cat-btn{width:100%;border:1px solid #e0e7ed;background:#fff;border-radius:9px;padding:10px 11px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;gap:10px;color:#40576a;font:inherit;font-size:12px;font-weight:800}.cat-btn:hover{background:#f4f8fb;border-color:#bfd0dc}.cat-btn.active{background:#eaf3fb;border-color:#9fc2dc;color:#1f5e91}.cat-count{color:#7c8d99;font-size:11px}.results{padding:16px}.result-head{display:flex;justify-content:space-between;align-items:end;gap:10px;padding-bottom:12px;border-bottom:1px solid #edf1f4}.result-head p{margin:4px 0 0;color:var(--muted);font-size:11px}.result-count{color:#58748b;font-size:11px;font-weight:800}.material-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:13px}.material-card{border:1px solid #dce5ec;background:#fff;border-radius:11px;padding:12px;text-decoration:none;transition:.15s ease;min-width:0}.material-card:hover{transform:translateY(-1px);border-color:#a8c3d6;box-shadow:0 5px 14px rgba(24,50,75,.07)}.material-card strong{display:block;color:#234d6d;font-size:13px}.material-card .sub{display:block;color:#7c8b98;font-size:10px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.use-detail{margin-top:9px;padding-top:8px;border-top:1px solid #edf1f4;color:#4f6678;font-size:10px;line-height:1.55}.empty{padding:30px;text-align:center;color:var(--muted);font-size:12px}.note{margin-top:13px;color:#748593;font-size:10px;line-height:1.65}.footer{background:#fff;border-top:1px solid var(--line);padding:18px;color:#728392;font-size:10px}.footer-inner{max-width:1180px;margin:auto;padding:0 18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}@media(max-width:900px){.layout{grid-template-columns:1fr}.categories{position:static}.category-list{grid-template-columns:repeat(3,1fr)}.material-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.top-inner{align-items:flex-start;flex-direction:column}.toolbar{grid-template-columns:1fr}.category-list,.material-grid{grid-template-columns:1fr}.hero h1{font-size:23px}}
+
+/* EPA Search Clear Button */
+.epa-search-field{position:relative;min-width:0}
+.epa-search-field>input{width:100%;padding-right:44px!important;box-sizing:border-box}
+.epa-search-clear{
+ position:absolute;right:10px;top:50%;transform:translateY(-50%);
+ width:28px;height:28px;border:0;border-radius:50%;padding:0;
+ display:flex;align-items:center;justify-content:center;
+ background:transparent;color:#667085;font-size:20px;line-height:1;
+ cursor:pointer;z-index:5
+}
+.epa-search-clear:hover{background:#eef2f6;color:#1f2937}
+.epa-search-clear:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.epa-search-clear[hidden]{display:none}
+
+</style></head><body>
+<header class="top"><div class="top-inner"><a class="brand" href="index.html"><span class="mark">EPA</span><span><strong>MonoBase</strong><small>Manufacturing Learning & Tools</small></span></a><nav class="nav"><a href="index.html">ホーム</a><a href="material_database.html">材料名</a><a class="primary" href="usage_explorer.html">用途</a><a href="classification_explorer.html">分類</a></nav></div></header>
+<section class="hero"><div class="hero-inner"><h1>用途から材料を探す</h1><p>「何に使う材料か」から候補を見つけます。用途カテゴリを選び、代表的な使われ方を見ながら材料詳細へ進めます。</p></div></section>
+<div class="breadcrumbs"><a href="index.html">ホーム</a> ／ 用途から探す</div>
+<main><section class="toolbar"><div class="epa-search-field"><input id="useSearch" placeholder="用途・材料名で絞り込み（例：半導体、透明電極、LiFePO4）"><button type="button" class="epa-search-clear" data-clear-for="useSearch" aria-label="検索文字を消す" title="検索文字を消す" hidden>×</button></div><select id="sortMode"><option value="name">材料名順</option><option value="detail">用途詳細順</option></select></section>
+<div class="layout"><aside class="categories"><h2>用途カテゴリ</h2><div id="categoryList" class="category-list"></div><p class="note">カテゴリはEPA標準用途分類です。同じ材料が複数カテゴリに表示される場合があります。</p></aside><section class="results"><div class="result-head"><div><h2 id="resultTitle">用途を選択</h2><p id="resultDesc">左の用途カテゴリから選んでください。</p></div><div id="resultCount" class="result-count"></div></div><div id="materialGrid" class="material-grid"></div></section></div></main>
+<footer class="footer"><div class="footer-inner"><span>MonoBase Ver.7.2</span><span>用途カテゴリ標準化 Ver.1.1</span><span>完全オフライン</span></div></footer>
+<script src="js/usage-categories.js"></script><script>
+(()=>{const data=window.EPA_USAGE_CATEGORIES||{categories:[]};const qs=new URLSearchParams(location.search);const catList=document.getElementById('categoryList'),grid=document.getElementById('materialGrid'),title=document.getElementById('resultTitle'),desc=document.getElementById('resultDesc'),count=document.getElementById('resultCount'),search=document.getElementById('useSearch'),sort=document.getElementById('sortMode');let selected=qs.get('category')||data.categories[0]?.category||'';const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));function renderCats(){catList.innerHTML=data.categories.map(c=>`<button class="cat-btn ${c.category===selected?'active':''}" data-cat="${esc(c.category)}"><span>${esc(c.category)}</span><span class="cat-count">${c.count}</span></button>`).join('');catList.querySelectorAll('.cat-btn').forEach(b=>b.onclick=()=>{selected=b.dataset.cat;const u=new URL(location.href);u.searchParams.set('category',selected);history.replaceState(null,'',u);renderCats();render();});}function render(){const c=data.categories.find(x=>x.category===selected);if(!c){grid.innerHTML='<div class="empty">用途カテゴリがありません。</div>';return;}const term=search.value.trim().toLowerCase();let rows=c.materials.filter(m=>!term||[m.japanese,m.english,m.formula,...(m.details||[])].filter(Boolean).join(' ').toLowerCase().includes(term));rows=rows.slice().sort((a,b)=>sort.value==='detail'?String(a.details?.[0]||'').localeCompare(String(b.details?.[0]||''),'ja'):String(a.japanese||'').localeCompare(String(b.japanese||''),'ja'));title.textContent=c.category;desc.textContent='代表的な用途を確認しながら材料を選べます。';count.textContent=`${rows.length} materials`;grid.innerHTML=rows.length?rows.map(m=>`<a class="material-card" href="material_detail.html?id=${encodeURIComponent(m.id)}"><strong>${esc(m.japanese)}</strong><span class="sub">${esc(m.english||'')}${m.formula?' ／ '+esc(m.formula):''}</span><div class="use-detail">${(m.details||[]).map(x=>'・'+esc(x)).join('<br>')}</div></a>`).join(''):'<div class="empty">条件に合う材料はありません。</div>';}search.addEventListener('input',render);sort.addEventListener('change',render);renderCats();render();})();
+</script>
+<script>
+(()=>{
+  const input=document.getElementById('useSearch');
+  const clear=document.querySelector('[data-clear-for="useSearch"]');
+  if(!input||!clear)return;
+  const sync=()=>{clear.hidden=!input.value;};
+  clear.addEventListener('click',()=>{
+    input.value='';
+    
+    input.dispatchEvent(new Event('input',{bubbles:true}));
+    input.dispatchEvent(new Event('change',{bubbles:true}));
+    sync();
+    input.focus();
+  });
+  input.addEventListener('input',sync);
+  sync();
+})();
+</script>
+
+</body></html>

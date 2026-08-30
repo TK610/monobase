@@ -1,0 +1,8 @@
+EPA Technical Learning 01 images - Ver.2.9
+01-1 Bell jar: EPA original illustrative image, used as the simple introductory vacuum vessel.
+01-2 Atmosphere vs vacuum: HTML/SVG diagram only (no duplicate raster infographic).
+01-3 Research chamber: existing research vacuum chamber image retained.
+
+Design rule:
+photo -> simple diagram -> real research equipment.
+Do not duplicate the molecule comparison as both an image and an SVG.

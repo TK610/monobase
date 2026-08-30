@@ -1,0 +1,29 @@
+EPA Technical Learning - Photo Sources
+
+nasa_vacuum_cleanroom.jpg
+Source: NASA Scientific Visualization Studio / Wikimedia Commons
+Credit: NASA/Sophia Roberts
+Status: Public Domain (NASA work)
+Source page: https://commons.wikimedia.org/wiki/File:NASA_Tests_LISA_Development_Units_(SVS14955_-_LISA_TVAC-9).jpg
+
+vacuum_chamber_lab.jpg / vacuum_chamber_arc.jpg
+Cropped views prepared from the same NASA public-domain photograph above.
+These crops are used to focus attention on different parts of the real vacuum facility.
+
+All image files are stored locally for offline use.
+
+Additional verified photo candidates for future offline inclusion
+---------------------------------------------------------------
+Fruitland RCF500 Rotary Vane Vacuum Pump
+Author: Gwhite4444
+License: CC BY-SA 4.0
+Wikimedia Commons file page:
+https://commons.wikimedia.org/wiki/File:Fruitland_RCF500_Rotary_Vane_Vacuum_Pump.jpg
+
+Edwards E2M2 2-Stage Rotary Vane Vacuum Pump
+Author/Credit: Kitmondo Marketplace
+License: CC BY 2.0
+Wikimedia Commons file page:
+https://commons.wikimedia.org/wiki/File:Edwards_E2M2_2-Stage_Rotary_Vane_Vacuum_Pump_(15957733526).jpg
+
+These candidates are documented but are not embedded unless the local image file is present.

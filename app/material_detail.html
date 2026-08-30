@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Material Detail - MonoBase</title>
+<style>
+:root{--navy:#153a5b;--navy2:#1d4f75;--blue:#2f6fb0;--blue-soft:#edf5fc;--line:#d8e3ec;--line-strong:#c7d6e2;--bg:#f5f7fa;--text:#203142;--muted:#66798a;--green:#17734a;--amber:#94620c;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Yu Gothic UI","Meiryo",sans-serif;background:var(--bg);color:var(--text)}a{color:inherit}.top{background:var(--navy);color:#fff;padding:15px 24px}.top-inner{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{text-decoration:none;display:flex;align-items:center;gap:11px}.mark{width:42px;height:42px;border:1px solid rgba(255,255,255,.6);border-radius:11px;display:grid;place-items:center;font-weight:900}.brand strong{display:block;font-size:18px}.brand small{display:block;opacity:.78;font-size:11px;margin-top:2px}.top-nav{display:flex;gap:8px;flex-wrap:wrap}.top-nav a{padding:8px 11px;border:1px solid rgba(255,255,255,.3);border-radius:9px;text-decoration:none;font-size:12px;font-weight:800}.top-nav a.primary{background:#fff;color:var(--navy)}
+main{max-width:1240px;margin:18px auto 42px;padding:0 18px}.breadcrumbs{font-size:12px;color:var(--muted);margin-bottom:8px}.breadcrumbs a{text-decoration:none;color:#25659d}.back-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.back-btn{border:0;background:transparent;color:#175f99;font-weight:900;padding:7px 0;cursor:pointer;font-size:13px}.back-btn:hover{text-decoration:underline}.sequence{display:flex;gap:7px}.seq-btn{border:1px solid var(--line-strong);background:#fff;color:var(--navy);border-radius:9px;padding:8px 11px;font-weight:800;cursor:pointer;font-size:12px}.seq-btn:hover:not(:disabled){background:#f2f7fb}.seq-btn:disabled{opacity:.35;cursor:not-allowed}
+.edge-nav{position:fixed;top:50%;transform:translateY(-50%);z-index:50;width:46px;height:68px;border:1px solid #bfd0df;background:rgba(255,255,255,.96);color:var(--navy);border-radius:12px;box-shadow:0 6px 18px rgba(23,50,77,.11);display:grid;place-items:center;cursor:pointer;font-weight:900;font-size:24px;transition:.16s ease}.edge-nav:hover{background:#eef6fc;transform:translateY(-50%) scale(1.03)}.edge-nav.prev{left:12px}.edge-nav.next{right:12px}.edge-nav:disabled{opacity:.2;cursor:not-allowed;transform:translateY(-50%)}.edge-nav small{display:none}
+.hero{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;grid-template-columns:minmax(330px,.9fr) minmax(0,1.25fr);gap:26px;box-shadow:0 5px 18px rgba(23,50,77,.055)}.hero-image-wrap{min-width:0}.section-kicker{font-size:11px;font-weight:900;letter-spacing:.08em;color:#5f7890;text-transform:uppercase;margin-bottom:9px}.hero-image{aspect-ratio:4/3;border:1px solid #d7e2eb;border-radius:15px;background:#f7f8fa;display:grid;place-items:center;overflow:hidden;position:relative}.hero-image img{width:100%;height:100%;object-fit:contain;display:block;background:#f7f8fa}.fallback-object{width:155px;height:105px;border-radius:14px;background:linear-gradient(145deg,#eef2f5,#a0adb7 72%);box-shadow:inset -10px -8px 15px rgba(0,0,0,.1)}.image-caption{margin:9px 2px 0;color:var(--muted);font-size:11px;line-height:1.65}.image-caption b{color:#3c637f}.hero-copy{min-width:0;display:flex;flex-direction:column;justify-content:center}.identity-row{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:9px}.formula-badge{display:inline-grid;place-items:center;min-width:54px;height:42px;padding:0 12px;border-radius:11px;background:var(--navy);color:#fff;font-size:19px;font-weight:900}.type-badge,.status-badge{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:850}.type-badge{background:#edf4fa;color:#275f91}.status-badge{background:#e7f5ed;color:var(--green)}.hero h1{margin:0;color:#122f49;font-size:34px;letter-spacing:-.02em}.english{margin:4px 0 0;color:#6a7c8d;font-size:15px}.classification-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.class-chip{display:inline-flex;align-items:center;border:1px solid #dbe5ed;background:#f7f9fb;color:#50697d;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:850}.class-chip.form{background:#eef5fb;color:#2f6289;border-color:#d6e5f1}.one-line{margin-top:15px;background:#f2f7fb;border-left:4px solid #4b84b6;border-radius:10px;padding:12px 14px}.one-line b{display:block;color:#315f82;font-size:11px;margin-bottom:4px}.one-line p{margin:0;color:#2f4659;font-size:15px;line-height:1.7;font-weight:650}.hero-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.action{border-radius:10px;padding:10px 14px;text-decoration:none;text-align:center;font-weight:900;cursor:pointer;font-size:13px;border:1px solid transparent}.action.primary{background:var(--blue);color:#fff}.action.primary:hover{background:#285f98}.action.secondary{background:#fff;color:var(--navy);border-color:var(--line-strong)}.action.secondary:hover{background:#f3f7fa}.action.favorite.active{background:#fff5cf;color:#785700;border-color:#e5c45d}
+.content-grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px;margin-top:18px}.main-stack,.side-stack{display:grid;gap:16px;align-content:start}.side-stack{position:sticky;top:16px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px;box-shadow:0 2px 9px rgba(23,50,77,.035)}.card h2{margin:0 0 5px;color:#163a58;font-size:18px}.section-desc{margin:0 0 15px;color:#738494;font-size:12px;line-height:1.65}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:13px}.info-block{background:#f8fafc;border:1px solid #e5ebf0;border-radius:12px;padding:14px}.info-block h3{margin:0 0 9px;color:#173c5b;font-size:13px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tag{background:#eef5fb;border:1px solid #d7e5f0;color:#315f82;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:800}.tag.feature::before{content:"◆";font-size:8px;margin-right:5px;opacity:.7}.tag.use{background:#f5f7f9;border-color:#e2e7ec;color:#4d6172}.tag.use::before{content:"▸";margin-right:5px;color:#6d8da6}.use-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.use-card-material{display:grid;grid-template-columns:30px minmax(0,1fr);gap:9px;align-items:center;border:1px solid #dfe8ef;background:#fff;border-radius:11px;padding:10px 11px;min-height:61px}.use-card-icon{width:30px;height:30px;border-radius:9px;background:#eef5fb;display:grid;place-items:center;font-size:15px}.use-card-copy{min-width:0}.use-card-category{display:block;color:#5f7384;font-size:9px;font-weight:900;letter-spacing:.02em;margin-bottom:2px}.use-card-role{display:block;color:#243f55;font-size:11px;font-weight:850;line-height:1.4}.related-links{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px!important}.related-link{border-radius:11px!important;padding:11px 12px!important;display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0}.related-main{min-width:0}.related-main strong{display:block;color:#234d6d;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.related-main small{display:block;color:#7b8b98;font-size:9px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.related-arrow{color:#4c7ba0;font-size:13px}.compare-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.compare-link{border:1px solid #d7e1e9;background:#fbfcfd;border-radius:11px;padding:11px 12px;text-decoration:none;display:flex;flex-direction:column;gap:7px;min-width:0;transition:.15s ease}.compare-link:hover{background:#f3f7fa;border-color:#bfcfdb;transform:translateY(-1px)}.compare-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.compare-head strong{color:#234d6d;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.compare-head span{color:#4c7ba0;font-size:13px}.compare-sub{color:#7b8b98;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.compare-reasons{display:flex;gap:5px;flex-wrap:wrap}.compare-reason{border:1px solid #dfe6eb;background:#fff;color:#617789;border-radius:999px;padding:3px 6px;font-size:9px;font-weight:800}.compare-note{margin:9px 2px 0;color:#7a8995;font-size:9px;line-height:1.55}.empty{padding:12px;background:#f8fafc;border-radius:9px;color:#7b8995;font-size:12px;line-height:1.65}.properties-grid{display:grid;grid-template-columns:1.4fr repeat(2,1fr);gap:10px}.property{background:#f8fafc;border:1px solid #e4ebf1;border-radius:11px;padding:12px}.property.primary{background:#edf5fc;border-color:#cfe1ef}.property span{display:block;font-size:10px;color:#718292;font-weight:850;margin-bottom:4px}.property strong{color:#153b5c;font-size:14px}.property.primary strong{font-size:25px;letter-spacing:-.02em}.pending{color:#8996a1!important;font-weight:700!important;font-size:12px!important}.missing-value{display:inline-flex!important;align-items:center;gap:5px;color:#7b8995!important;font-weight:750!important;font-size:12px!important}.missing-value::before{content:"—";color:#a4afb8}.not-applicable{display:inline-flex!important;align-items:center;color:#82909b!important;font-weight:750!important;font-size:12px!important}.data-preparing{display:inline-flex!important;align-items:center;gap:5px;color:#687d90!important;font-weight:750!important;font-size:12px!important}.data-preparing::before{content:"○";font-size:9px;color:#8ea7ba}.missing-note{margin-top:10px;padding:9px 11px;border:1px dashed #d6e0e7;border-radius:9px;background:#fafbfd;color:#748492;font-size:10px;line-height:1.6}.property-note{margin-top:11px;color:#6c7d8c;font-size:11px;line-height:1.65}.detail-list{display:grid;grid-template-columns:145px 1fr;gap:9px 13px;font-size:12px;line-height:1.65}.detail-list .label{color:#718292;font-weight:850}.notice{background:#fff8e8;border-left:3px solid #d29a2e;padding:10px 12px;border-radius:8px;font-size:12px;line-height:1.7}.related-links{display:flex;gap:8px;flex-wrap:wrap}.related-link{background:#fff;border:1px solid #cbdbe7;border-radius:999px;padding:7px 10px;text-decoration:none;color:#245f91;font-size:11px;font-weight:850}.related-link:hover{background:#f2f7fb}.source-list{display:grid;gap:8px}.source-row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:10px;border:1px solid #dce5ec;border-radius:11px;padding:10px;text-decoration:none;background:#fff}.source-row:hover{background:#f5f9fc;border-color:#bfd3e2}.source-icon{width:32px;height:32px;border-radius:9px;background:#edf5fc;color:#176198;display:grid;place-items:center;font-size:12px;font-weight:900}.source-copy strong{display:block;color:#173b59;font-size:12px}.source-copy small{display:block;color:#718292;font-size:10px;margin-top:2px}.source-arrow{color:#2e6fa8;font-weight:900}.source-group{margin-top:13px}.source-group:first-child{margin-top:0}.source-group-title{font-size:11px;font-weight:900;color:#597084;margin:0 0 7px}.external-note{margin:10px 0 0;color:#788896;font-size:10px;line-height:1.6}
+.side-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px}.side-card h3{margin:0 0 12px;color:#173a57;font-size:14px}.side-list{display:grid;grid-template-columns:95px 1fr;gap:8px 9px;font-size:11px;line-height:1.55}.side-list .label{color:#778897;font-weight:800}.source-summary{background:#f8fafc;border:1px solid #e4ebf1;border-radius:11px;padding:10px 11px;margin-bottom:10px;color:#607486;font-size:11px;line-height:1.6}.source-summary strong{display:block;color:#244e6e;font-size:12px;margin-bottom:2px}.evidence-list{display:grid;gap:8px}.evidence-item{border:1px solid #e2e8ee;background:#fff;border-radius:10px;padding:9px 10px;font-size:11px;line-height:1.6;color:#4c6376}.evidence-item b{display:flex;align-items:center;gap:6px;color:#244e6e;margin-bottom:2px}.evidence-item.ok b::before{content:"✓";color:#19734a}.evidence-item.warn{background:#fffaf0;border-color:#ecd8a8}.evidence-item.warn b::before{content:"⚠";color:#9a6a0b}.evidence-details{margin-top:9px;font-size:10px;color:#617485}.evidence-details summary{cursor:pointer;color:#2b648f;font-weight:800}.evidence-details p{margin:7px 0 0;line-height:1.65}.side-source{display:block;margin-top:9px;padding-top:9px;border-top:1px solid #e7edf2;color:#1f659b;text-decoration:none;font-size:11px;font-weight:850}.side-source:hover{text-decoration:underline}.weight-card{background:#f8fbfe;border-color:#d5e4ef}.weight-card p{margin:0 0 11px;color:#637687;font-size:11px;line-height:1.7}.weight-link{display:block;background:var(--blue);color:#fff;text-decoration:none;text-align:center;border-radius:9px;padding:10px;font-weight:900;font-size:12px}.weight-link:hover{background:#285f98}.management{color:#758594;font-size:10px;line-height:1.75}.management strong{color:#456078}.footer{background:#fff;border-top:1px solid var(--line);padding:18px;color:#728392;font-size:11px}.footer-inner{max-width:1240px;margin:auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:1080px){.edge-nav{display:none}.content-grid{grid-template-columns:1fr}.side-stack{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}.side-stack .management{grid-column:1/-1}.hero{grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr)}}
+@media(max-width:760px){.top-inner{display:block}.top-nav{margin-top:12px}.hero{grid-template-columns:1fr}.hero h1{font-size:29px}.classification-row{gap:6px}.content-grid{display:block}.main-stack{margin-bottom:16px}.side-stack{display:grid;grid-template-columns:1fr}.two-col,.properties-grid{grid-template-columns:1fr}.back-row{align-items:flex-start;flex-direction:column}.sequence{width:100%;overflow:auto}.detail-list{grid-template-columns:1fr}.detail-list .label{margin-top:4px}.side-stack .management{grid-column:auto}}
+
+.safety-reference{display:block;margin-top:7px;color:#7b6a4e;font-size:10px;line-height:1.55;font-weight:650}.source-label{display:block;color:#7a8b99;font-size:9px;font-weight:900;letter-spacing:.04em;margin-bottom:3px}.evidence-list{gap:8px}.evidence-item{line-height:1.55}.notice b{color:#8a5b0b}.side-card.weight-card p{line-height:1.55}
+.property-note{margin-top:12px;padding-top:10px;border-top:1px solid #e3e9ef;color:#667b8c;font-size:12px;line-height:1.65}.property-note a{color:#1669a8;font-weight:800;text-decoration:none}.property-note a:hover{text-decoration:underline}
+</style>
+</head><body>
+<header class="top"><div class="top-inner"><a class="brand" href="index.html"><span class="mark">EPA</span><span><strong>MonoBase</strong><small>Manufacturing Learning & Tools</small></span></a><nav class="top-nav"><a href="index.html">ホーム</a><a class="primary" href="material_database.html">材料名から探す</a><a href="usage_explorer.html">用途から探す</a></nav></div></header>
+<main id="app"><div class="card">材料データを読み込んでいます。</div></main>
+<footer class="footer"><div class="footer-inner"><span>MonoBase Ver.7.2</span><span>完全オフライン対応 ／ 外部資料リンクを開く場合のみ通信</span></div></footer>
+<script src="js/emd-data.js"></script>
+<script>
+(function(){
+ const all=(window.EMD_DATA&&window.EMD_DATA.materials)||[], params=new URLSearchParams(location.search), id=params.get('id')||params.get('material'), app=document.getElementById('app');
+ const m=all.find(x=>x.id===id)||all[0];
+ const esc=v=>String(v??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+ const textOrMissing=v=>{const t=String(v??'').trim();return t?esc(t):'<span class="missing-value">未登録</span>'};
+ const get=k=>{try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return[]}},set=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+ if(!m){app.innerHTML='<div class="card">材料データが見つかりません。</div>';return}
+ document.title=(m.japanese||m.name)+' - MonoBase';
+ function addRecent(){let a=get('epaRecentMaterials').filter(x=>x.id!==m.id);a.unshift({id:m.id,name:m.name,japanese:m.japanese,formula:m.formula});set('epaRecentMaterials',a.slice(0,8))}
+ function extRefs(x){
+   const q=encodeURIComponent(x.japanese||x.english||x.formula||x.id), eq=encodeURIComponent(x.english||x.japanese||x.formula||x.id);
+   /* External reference policy (Ver.7.2 audit):
+      検索結果が出ない/別物へ飛ぶリスクを避けるため、全材料へ同じ外部検索を
+      機械的に表示しない。材料タイプ別に適したリンクだけを表示する。 */
+   const academic=[];
+   const reference=[];
+   const isElement=/^EL-\d{3}-/.test(x.id);
+
+   /* RSCは元素専用。登録済みの元素個別ページを優先。 */
+   if(isElement){
+     const allSrc=[x.transport_source_url,x.property_source_url,
+       x.source_current&&x.source_current.url,x.source_a&&x.source_a.url,x.source_b&&x.source_b.url].filter(Boolean);
+     const rscDirect=allSrc.find(u=>/periodic-table\.rsc\.org\/element\//i.test(u));
+     if(rscDirect)academic.push(['R','RSC','元素個別ページ',rscDirect]);
+   }
+
+   /* PubChemは単一化学種として検索しやすい材料だけに限定。 */
+   const noPubChem=new Set([
+     'ITO','IGZO','IZO','AZO','GZO','FTO','ATO','SCALN','GST',
+     'COFEB','NIFE','COFE','ALSI','ALSICU','TIW','MOW'
+   ]);
+   if(!isElement&&!noPubChem.has(x.id)&&(x.formula||x.english)){
+     const pcq=encodeURIComponent(x.formula||x.english);
+     academic.push(['P','PubChem','化学種検索：'+(x.formula||x.english),
+       'https://pubchem.ncbi.nlm.nih.gov/#query='+pcq]);
+   }
+   if(x.id==='ITO'){
+     academic.push(['P','PubChem','Indium Tin Oxide 個別ページ',
+       'https://pubchem.ncbi.nlm.nih.gov/compound/Indium-tin-oxide']);
+   }
+
+   /* Wikipediaスマートリンク */
+   const wikiMap={
+    ITO:['https://en.wikipedia.org/wiki/Indium_tin_oxide','英語版：Indium tin oxide'],
+    IGZO:['https://en.wikipedia.org/wiki/Indium_gallium_zinc_oxide','英語版：Indium gallium zinc oxide'],
+    IZO:['https://en.wikipedia.org/wiki/Indium_tin_oxide#Amorphous_indium%E2%80%93zinc_oxide','英語版：Indium zinc oxide 関連節'],
+    AZO:['https://ja.wikipedia.org/w/index.php?search='+encodeURIComponent('アルミニウム添加酸化亜鉛 AZO'),'日本語版検索：AZO'],
+    GZO:['https://ja.wikipedia.org/w/index.php?search='+encodeURIComponent('ガリウム添加酸化亜鉛 GZO'),'日本語版検索：GZO'],
+    FTO:['https://ja.wikipedia.org/w/index.php?search='+encodeURIComponent('フッ素添加酸化スズ FTO'),'日本語版検索：FTO'],
+    ATO:['https://ja.wikipedia.org/w/index.php?search='+encodeURIComponent('アンチモン添加酸化スズ ATO'),'日本語版検索：ATO'],
+    IN2O3:['https://en.wikipedia.org/wiki/Indium(III)_oxide','英語版：Indium(III) oxide'],
+    SNO2:['https://en.wikipedia.org/wiki/Tin(IV)_oxide','英語版：Tin(IV) oxide'],
+    GA2O3:['https://en.wikipedia.org/wiki/Gallium(III)_oxide','英語版：Gallium(III) oxide'],
+    HFO2:['https://en.wikipedia.org/wiki/Hafnium(IV)_oxide','英語版：Hafnium(IV) oxide'],
+    ZRO2:['https://en.wikipedia.org/wiki/Zirconium_dioxide','英語版：Zirconium dioxide'],
+    TA2O5:['https://en.wikipedia.org/wiki/Tantalum_pentoxide','英語版：Tantalum pentoxide'],
+    NB2O5:['https://en.wikipedia.org/wiki/Niobium_pentoxide','英語版：Niobium pentoxide'],
+    AL2O3:['https://ja.wikipedia.org/wiki/%E9%85%B8%E5%8C%96%E3%82%A2%E3%83%AB%E3%83%9F%E3%83%8B%E3%82%A6%E3%83%A0','日本語版：酸化アルミニウム'],
+    SIO2A:['https://ja.wikipedia.org/wiki/%E4%BA%8C%E9%85%B8%E5%8C%96%E3%82%B1%E3%82%A4%E7%B4%A0','日本語版：二酸化ケイ素'],
+    SIO2Q:['https://ja.wikipedia.org/wiki/%E7%9F%B3%E8%8B%B1','日本語版：石英'],
+    TIO2R:['https://ja.wikipedia.org/wiki/%E4%BA%8C%E9%85%B8%E5%8C%96%E3%83%81%E3%82%BF%E3%83%B3','日本語版：二酸化チタン'],
+    TIO2A:['https://ja.wikipedia.org/wiki/%E4%BA%8C%E9%85%B8%E5%8C%96%E3%83%81%E3%82%BF%E3%83%B3','日本語版：二酸化チタン'],
+    SCALN:['https://en.wikipedia.org/wiki/Scandium_aluminium_nitride','英語版：Scandium aluminium nitride'],
+    GST:['https://en.wikipedia.org/wiki/GeSbTe','英語版：GeSbTe'],
+    NIFE:['https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%9E%E3%83%AD%E3%82%A4','日本語版：パーマロイ'],
+    LICOO2:['https://ja.wikipedia.org/w/index.php?search='+encodeURIComponent('コバルト酸リチウム'),'日本語版検索：コバルト酸リチウム'],
+    LIMN2O4:['https://ja.wikipedia.org/w/index.php?search='+encodeURIComponent('マンガン酸リチウム'),'日本語版検索：マンガン酸リチウム'],
+    LIFEPO4:['https://ja.wikipedia.org/w/index.php?search='+encodeURIComponent('リン酸鉄リチウム'),'日本語版検索：リン酸鉄リチウム']
+   };
+   const wiki=wikiMap[x.id]||['https://ja.wikipedia.org/w/index.php?search='+q,'日本語版検索：'+(x.japanese||x.english||x.formula||x.id)];
+   reference.push(['W','Wikipedia',wiki[1],wiki[0]]);
+
+   /* MatWebは全材料への自動検索を廃止。確認済み個別ページだけ表示。 */
+   const matwebMap={
+     ITO:['https://www.matweb.com/search/datasheet.aspx?matguid=86918c434dc64398a89feb1863d67010','Indium Corp. Standard ITO'],
+     ATO:['https://www.matweb.com/search/datasheettext.aspx?matguid=d28a2fabc55141879823cd4f79d21dad','Antimony Tin Oxide (ATO) Powder'],
+     FTO:['https://www.matweb.com/search/datasheet.aspx?matguid=ed23bceea5d44582b8c19ac48aa930fb','Fluorine-doped Tin Oxide coated glass']
+   };
+   if(matwebMap[x.id])reference.push(['M','MatWeb','掲載例：'+matwebMap[x.id][1],matwebMap[x.id][0]]);
+
+   const genericSourceUrls=new Set([
+     'https://www.rsc.org/periodic-table',
+     'https://pubchem.ncbi.nlm.nih.gov/',
+     'https://materialsproject.org/',
+     'https://jimm.jp/'
+   ]);
+   if(x.jimm_url&&!genericSourceUrls.has(x.jimm_url))academic.push(['J','日本金属学会','金属の特徴・製法・用途',x.jimm_url]);
+   [x.source_current,x.source_a,x.source_b,{name:x.property_source_name,url:x.property_source_url},{name:x.transport_source_name,url:x.transport_source_url}].forEach(src=>{
+     if(src&&src.url&&src.name&&!genericSourceUrls.has(src.url)&&!academic.some(r=>r[3]===src.url)&&!reference.some(r=>r[3]===src.url)){
+       const row=['S',src.name,src.value!=null?'登録値：'+src.value+' g/cm³':'登録済み出典',src.url];
+       (/nist|royal society|rsc|pubchem|j-stage|jstage/i.test(src.name))?academic.push(row):reference.push(row);
+     }
+   });
+   const rows=a=>'<div class="source-list">'+a.map(r=>'<a class="source-row" href="'+esc(r[3])+'" target="_blank" rel="noopener noreferrer"><span class="source-icon">'+esc(r[0])+'</span><span class="source-copy"><strong>'+esc(r[1])+'</strong><small>'+esc(r[2])+'</small></span><span class="source-arrow">↗</span></a>').join('')+'</div>';
+   return '<div class="source-group"><p class="source-group-title">公的・学術情報</p>'+rows(academic)+'</div><div class="source-group"><p class="source-group-title">参考情報</p>'+rows(reference)+'</div>';
+ }
+ function useMeta(use){
+   const u=String(use||'');
+   const rules=[
+    [/半導体|IC|ウェハ|トランジスタ|MEMS|電子銃|電子線|露光|ゲート|配線|バリア|ドーパント|エッチング|TFT|薄膜トランジスタ/i,'🔬','半導体'],
+    [/電池|燃料電池|蓄電|正極|負極|電解|ペルチェ|熱電/i,'🔋','電池・エネルギー'],
+    [/自動車|EV|ハイブリッド|商用車|排ガス/i,'🚗','自動車'],
+    [/航空|宇宙|ロケット|衛星|極超音速/i,'✈️','航空宇宙'],
+    [/建築|建材|サッシ|セメント|れんが/i,'🏗️','建築・インフラ'],
+    [/医療|MRI|診断|治療|インプラント|歯科|バイオ/i,'🏥','医療'],
+    [/光学|レーザー|LED|発光|蛍光|レンズ|窓|ディスプレイ|OLED|タッチ|透明電極|光ファイバー|フォトニ|赤外|紫外|UV|光源|偏光|反射/i,'💡','光学・表示'],
+    [/触媒|化学|アンモニア|石油精製|水処理|漂白|肥料|薬品|合成|フッ素化|脱硫|還元雰囲気|保護雰囲気|熱処理雰囲気/i,'🧪','化学工業'],
+    [/磁性|磁石|MRAM|MTJ|スピントロ|磁気|モーター|発電機|トランス|磁気コア/i,'🧲','磁性・電機'],
+    [/原子力|核|放射|中性子|同位体|超重元素|線源|原子炉|年代測定/i,'☢️','原子力・研究'],
+    [/センサー|検出|計測|ホール|サーモグラフィ|漏れ検査/i,'📡','センサー・計測'],
+    [/切削|工具|金型|機械|摺動|ベアリング|ノズル|ヒーター|るつぼ|真空|配管|部品|治具|コーティング|耐摩耗|耐熱|耐火|複合材料|合金|めっき|電極|接点/i,'⚙️','機械・工業'],
+    [/研究|分析|試料|加速器/i,'🔎','研究・分析']
+   ];
+   for(const r of rules)if(r[0].test(u))return {icon:r[1],category:r[2],role:u};
+   return {icon:'◆',category:'代表用途',role:u};
+ }
+ function useCards(list){
+   return '<div class="use-cards">'+list.slice(0,4).map(v=>{const x=useMeta(v);const map={'半導体':'半導体','電池・エネルギー':'電池','航空宇宙':'航空宇宙','自動車':'自動車','建築・インフラ':'建築','医療':'医療','光学・表示':'光学','化学工業':'化学工業','磁性・電機':'電気・電子','原子力・研究':'研究・分析','センサー・計測':'研究・分析','機械・工業':'機械','研究・分析':'研究・分析'};const cat=map[x.category]||'その他';return '<a class="use-card-material" href="usage_explorer.html?category='+encodeURIComponent(cat)+'" style="text-decoration:none"><span class="use-card-icon">'+x.icon+'</span><span class="use-card-copy"><span class="use-card-category">'+esc(x.category)+'</span><span class="use-card-role">'+esc(x.role)+'</span></span></a>'}).join('')+'</div>';
+ }
+ function relatedCards(list){
+   return '<div class="related-links">'+list.slice(0,4).map(x=>'<a class="related-link" href="material_detail.html?id='+encodeURIComponent(x.id)+'"><span class="related-main"><strong>'+esc(x.japanese||x.name)+'</strong><small>'+esc(x.english||'')+(x.formula?' ／ '+esc(x.formula):'')+'</small></span><span class="related-arrow">→</span></a>').join('')+'</div>';
+ }
+ function compareCards(list){
+   return '<div class="compare-links">'+list.slice(0,3).map(c=>{const x=all.find(v=>v.id===c.id);if(!x)return '';const reasons=(c.reasons||[]).slice(0,3);return '<a class="compare-link" href="material_compare.html?a='+encodeURIComponent(m.id)+'&b='+encodeURIComponent(x.id)+'"><span class="compare-head"><strong>'+esc(x.japanese||x.name)+'</strong><span>比較 →</span></span><span class="compare-sub">'+esc(x.english||'')+(x.formula?' ／ '+esc(x.formula):'')+'</span>'+(reasons.length?'<span class="compare-reasons">'+reasons.map(r=>'<span class="compare-reason">'+esc(r)+'</span>').join('')+'</span>':'')+'</a>'}).join('')+'</div><p class="compare-note">違いを並べて理解するための候補です。代替可能性を示すものではありません。</p>';
+ }
+
+ let ctx=null;try{ctx=JSON.parse(localStorage.getItem('epaExplorerContext')||'null')}catch(e){}
+ const ids=(ctx&&Array.isArray(ctx.ids)&&ctx.ids.includes(m.id))?ctx.ids:all.map(x=>x.id), pos=ids.indexOf(m.id), prev=pos>0?all.find(x=>x.id===ids[pos-1]):null, next=pos>=0&&pos<ids.length-1?all.find(x=>x.id===ids[pos+1]):null;
+ const densitySet=typeof m.density==='number', densityNum=densitySet?esc(m.density):'', densityUnit=densitySet?esc(m.unit||'g/cm³'):'', density=densitySet?densityNum+' '+densityUnit:'<span class="missing-value">未登録</span>';
+ const currentSourceName=(m.source_current&&m.source_current.name)||m.source_name||'出典未登録';
+ const shortCondition=(/NIST/i.test(currentSourceName)?'NIST掲載条件の代表値を採用':'登録済み出典の代表値を採用');
+ const shortReason='EPAで比較しやすい代表値として登録';
+ const summary=m.summary||'概要情報は未登録です。', chars=m.characteristics||[], uses=(m.uses||[]).concat(m.sputtering_uses||[]), related=(m.related||[]).map(id=>all.find(x=>x.id===id)).filter(Boolean), compare=(m.compare_candidates||[]).filter(c=>all.some(x=>x.id===c.id)), forms=m.processing_forms||[];
+ const photo=m.image_file?'<img src="images/materials/'+esc(m.image_file)+'" alt="'+esc((m.japanese||m.name)+'の代表画像')+'" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\'">':'';
+ const image='<div class="hero-image">'+photo+'<div class="fallback-object" style="'+(m.image_file?'display:none':'')+'"></div></div><p class="image-caption">実物の色・表面状態・形状は、製品や製法によって異なります。</p>';
+ const detailReady=m.detail_status==='完成';
+ app.innerHTML=
+ '<div class="breadcrumbs"><a href="index.html">ホーム</a> ／ <a href="material_database.html">材料を探す</a> ／ '+esc(m.japanese||m.name)+'</div>'+ 
+ '<div class="back-row"><button id="backExplorer" class="back-btn" type="button">← Materials Explorer に戻る</button><div class="sequence"><button id="prevMaterial" class="seq-btn" '+(prev?'':'disabled')+' type="button">← '+esc(prev?(prev.japanese||prev.name):'前の材料')+'</button><button id="nextMaterial" class="seq-btn" '+(next?'':'disabled')+' type="button">'+esc(next?(next.japanese||next.name):'次の材料')+' →</button></div></div>'+ 
+ '<button id="edgePrevMaterial" class="edge-nav prev" '+(prev?'':'disabled')+' type="button">‹<small></small></button><button id="edgeNextMaterial" class="edge-nav next" '+(next?'':'disabled')+' type="button">›<small></small></button>'+ 
+ '<section class="hero"><div class="hero-image-wrap"><div class="section-kicker">Representative Image</div>'+image+'</div><div class="hero-copy"><div class="identity-row"><span class="formula-badge">'+esc(m.display_formula||m.formula||m.name)+'</span><span class="status-badge">✓ '+esc(m.review_status||'レビュー状況未登録')+'</span></div><h1>'+esc(m.japanese||m.name)+'</h1><p class="english">'+esc(m.english||'')+'</p><div class="classification-row"><a class="class-chip" href="classification_explorer.html?group='+encodeURIComponent(m.category==='元素・金属ターゲット'?'元素':(m.category||'その他'))+'" style="text-decoration:none">'+esc(m.subcategory||m.category||'分類未登録')+'</a><span class="class-chip">'+esc(m.state||'状態未登録')+'</span><span class="class-chip form">代表形態：'+esc(m.representative_form||'未登録')+'</span></div><div class="one-line"><b>ひとことで言うと</b><p>'+esc(summary)+'</p></div><div class="hero-actions"><button id="favorite" class="action secondary favorite" type="button">☆ お気に入り</button></div></div></section>'+ 
+ '<div class="content-grid"><div class="main-stack">'+
+ '<section class="card"><h2>特徴・用途</h2><div class="two-col"><div class="info-block"><h3>主な特徴</h3>'+(chars.length?'<div class="tags">'+chars.slice(0,4).map(x=>'<span class="tag feature">'+esc(String(x).replace(/[。.]$/,''))+'</span>').join('')+'</div>':'<div class="empty">特徴情報は未登録です。</div>')+'</div><div class="info-block"><h3>主な用途</h3>'+(uses.length?useCards(uses):'<div class="empty">用途情報は未登録です。</div>')+'</div></div></section>'+ 
+ '<section class="card"><h2>基本物性</h2><div class="properties-grid"><div class="property primary"><span>密度（EPA採用値）</span><strong>'+density+'</strong></div><div class="property"><span>融点</span><strong class="'+(m.melting_point_display?'':'data-preparing')+'">'+esc(m.melting_point_display||'データ準備中')+'</strong></div><div class="property"><span>熱伝導率</span><strong class="'+(m.thermal_conductivity_display?'':'data-preparing')+'">'+esc(m.thermal_conductivity_display||'データ準備中')+'</strong></div><div class="property"><span>沸点</span><strong class="'+(m.boiling_point_display?'':'data-preparing')+'">'+esc(m.boiling_point_display||'データ準備中')+'</strong></div><div class="property"><span>電気抵抗率</span><strong class="'+(m.electrical_resistivity_display?'':'data-preparing')+'">'+esc(m.electrical_resistivity_display||'データ準備中')+'</strong></div><div class="property"><span>比熱</span><strong class="'+(m.specific_heat_display?'':'data-preparing')+'">'+esc(m.specific_heat_display||'データ準備中')+'</strong></div></div>'+(m.property_note?'<div class="property-note">'+esc(m.property_note)+(m.property_source_url?' <a href="'+esc(m.property_source_url)+'" target="_blank" rel="noopener noreferrer">融点・熱挙動出典 ↗</a>':'')+'</div>':'')+(m.transport_condition?'<div class="property-note"><b>熱・電気物性条件：</b>'+esc(m.transport_condition)+(m.transport_source_url?' <a href="'+esc(m.transport_source_url)+'" target="_blank" rel="noopener noreferrer">熱・電気物性出典 ↗</a>':'')+'</div>':'')+'</section>'+ 
+ '<section class="card"><h2>加工・取扱い</h2>'+(detailReady?'<div class="detail-list"><div class="label">加工形状</div><div>'+(forms.length?forms.map(esc).join(' ／ '):'<span class="missing-value">未登録</span>')+'</div><div class="label">加工・扱い方</div><div>'+(m.machinability?esc(m.machinability):'<span class="missing-value">未登録</span>')+'</div></div><div class="notice" style="margin-top:13px"><b>注意・取扱い</b><br>'+(m.safety_note?esc(m.safety_note):'<span class="missing-value">未登録</span>')+'<span class="safety-reference">安全・法規上の判断には、SDSやメーカーの正式資料をご確認ください。</span></div>':'<div class="empty">加工・取扱い情報は未登録です。</div>')+'</section>'+ 
+ '<section class="card"><h2>関連材料</h2>'+(related.length?relatedCards(related):'<div class="empty">関連材料は未登録です。</div>')+'</section>'+ 
+ '<section class="card"><h2>比較候補</h2>'+(compare.length?compareCards(compare):'<div class="empty">比較候補はレビュー中です。</div>')+'</section>'+ 
+ '<section class="card"><h2>参考リンク</h2>'+extRefs(m)+'</section>'+ 
+ '</div><aside class="side-stack">'+
+ '<section class="side-card"><h3>識別情報</h3><div class="side-list"><div class="label">材料ID</div><div>'+esc(m.id)+'</div><div class="label">原子番号</div><div>'+(m.atomic_number!=null?esc(m.atomic_number):(m.subcategory==='元素'?'<span class="missing-value">未登録</span>':'<span class="not-applicable">該当なし</span>'))+'</div></div></section>'+ 
+ '<section class="side-card"><h3>採用値・出典</h3><div class="source-summary"><span class="source-label">主な出典</span><strong>'+esc(currentSourceName)+'</strong></div><div class="evidence-list"><div class="evidence-item ok"><b>採用条件</b>'+esc(shortCondition)+'</div><div class="evidence-item ok"><b>採用理由</b>'+esc(shortReason)+'</div></div><details class="evidence-details"><summary>採用根拠の詳細</summary><p>'+(m.adoption_reason||m.density_condition?esc(m.adoption_reason||m.density_condition):'<span class="missing-value">未登録</span>')+'</p></details>'+(((m.source_current&&m.source_current.url)||m.source_url||m.property_source_url)?'<a class="side-source" href="'+esc((m.source_current&&m.source_current.url)||m.source_url||m.property_source_url)+'" target="_blank" rel="noopener noreferrer">登録済み出典を開く ↗</a>':'<div class="missing-note">出典URLは未登録です。</div>')+'</section>'+ 
+ '<section class="side-card weight-card"><h3>重量を計算する</h3><p>この材料を重量計算ツールへ引き継ぎ、形状と寸法から重量を計算できます。</p><a class="weight-link" href="detail.html?id=WEIGHT_CALCULATOR&material='+encodeURIComponent(m.id)+'">重量計算へ →</a></section>'+ 
+ '<section class="side-card management"><strong>データ情報</strong><br>Database: '+esc((window.EMD_DATA&&window.EMD_DATA.version)||'未登録')+'<br>Detail: '+esc((window.EMD_DATA&&window.EMD_DATA.detail_version)||'未登録')+'<br>Last Updated: '+esc(m.updated||(window.EMD_DATA&&window.EMD_DATA.updated)||'未登録')+'</section>'+ 
+ '</aside></div>';
+ addRecent();
+ function goMaterial(x){if(x)location.href='material_detail.html?id='+encodeURIComponent(x.id)}
+ document.getElementById('prevMaterial').addEventListener('click',()=>goMaterial(prev));document.getElementById('nextMaterial').addEventListener('click',()=>goMaterial(next));document.getElementById('edgePrevMaterial').addEventListener('click',()=>goMaterial(prev));document.getElementById('edgeNextMaterial').addEventListener('click',()=>goMaterial(next));document.addEventListener('keydown',e=>{if(e.target&&/input|textarea|select/i.test(e.target.tagName))return;if(e.key==='ArrowLeft'&&prev)goMaterial(prev);if(e.key==='ArrowRight'&&next)goMaterial(next)});
+ document.getElementById('backExplorer').addEventListener('click',()=>{if(document.referrer&&document.referrer.includes('material_database.html'))history.back();else{const u=new URL('material_database.html',location.href);if(ctx){if(ctx.q)u.searchParams.set('q',ctx.q);u.searchParams.set('material',m.id)}location.href=u.href}});
+ const fav=document.getElementById('favorite');
+ function drawFav(){const hit=get('epaFavoriteMaterials').some(x=>x.id===m.id);fav.textContent=hit?'★ お気に入り登録済み':'☆ お気に入り';fav.classList.toggle('active',hit)}
+ function toggleFav(){let a=get('epaFavoriteMaterials'),hit=a.some(x=>x.id===m.id);a=hit?a.filter(x=>x.id!==m.id):[{id:m.id,name:m.name,japanese:m.japanese,formula:m.formula},...a].slice(0,30);set('epaFavoriteMaterials',a);drawFav()}
+ fav.addEventListener('click',toggleFav);drawFav();
+})();
+</script></body></html>

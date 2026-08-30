@@ -1,0 +1,10 @@
+{
+  "name": "MonoBase",
+  "short_name": "MonoBase",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f9fc",
+  "theme_color": "#1768ab",
+  "lang": "ja",
+  "description": "Manufacturing Learning & Tools"
+}
