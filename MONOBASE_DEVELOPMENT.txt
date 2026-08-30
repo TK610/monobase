@@ -20,3 +20,8 @@ Ver.0.6.1 Smartphone Polish
 - Heroのりんごを小型化
 - スマホ見出し・検索欄を調整
 - 保存先説明を端末非依存化
+
+
+Ver.0.6.2 Mobile Headline Fix
+- iPhone Heroコピーを3行固定
+- PC版レイアウトは維持
