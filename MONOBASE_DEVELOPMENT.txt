@@ -12,3 +12,11 @@ Brand direction:
 Blue UI = technology / trust
 Green apple = learning / growth / memorable identity
 [Ver.0.4.1] ZIP直下の起動ファイル名を「アプリを開く.html」に変更し、起動ボタンも「アプリを開く」に統一。
+
+
+Ver.0.6.1 Smartphone Polish
+- iPhone実機確認を反映
+- モバイルHeroを圧縮
+- Heroのりんごを小型化
+- スマホ見出し・検索欄を調整
+- 保存先説明を端末非依存化

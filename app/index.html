@@ -96,7 +96,7 @@ main{margin-top:24px}.mb-paths{display:grid;grid-template-columns:repeat(3,1fr);
 
 
 <style>
-/* MonoBase Ver.0.6 — 2026 Home Hero */
+/* MonoBase Ver.0.6.1 — 2026 Home Hero */
 :root{--mb-gold:#e6b84f;--mb-lime:#78bd22}
 body{background:linear-gradient(180deg,#f7fbff 0,#f3f8fc 34%,#f7f9fb 100%)}
 .hero{
@@ -208,7 +208,7 @@ footer{background:rgba(255,255,255,.96)}
 
 
 <style>
-/* MonoBase Ver.0.6 — Brand / Hero / CTA polish */
+/* MonoBase Ver.0.6.1 — Brand / Hero / CTA polish */
 .hero .mark{
   background:rgba(255,255,255,.78);
   border:1px solid rgba(92,151,193,.18);
@@ -281,7 +281,7 @@ footer{background:rgba(255,255,255,.96)}
 
 
 <style>
-/* MonoBase Ver.0.6 — final home identity pass */
+/* MonoBase Ver.0.6.1 — final home identity pass */
 
 /* Clean proprietary brand mark: line-art apple, not the photographic hero. */
 .hero .mark.mb-line-apple{
@@ -351,7 +351,7 @@ footer{background:rgba(255,255,255,.96)}
 
 
 <style>
-/* MonoBase Ver.0.6 — Home candidate */
+/* MonoBase Ver.0.6.1 — Home candidate */
 
 /* Hero: slightly tighter for common notebook heights. */
 .hero{padding-top:18px;padding-bottom:26px}
@@ -428,7 +428,7 @@ footer{background:rgba(255,255,255,.96)}
 
 
 <style>
-/* MonoBase Ver.0.6.1 — utility card state refinement */
+/* MonoBase Ver.0.6.1.1 — utility card state refinement */
 .quick a,
 .quick a.primary{
   background:linear-gradient(180deg,#f8fbfe 0%,#eef6fc 100%);
@@ -461,7 +461,7 @@ footer{background:rgba(255,255,255,.96)}
 
 
 <style>
-/* MonoBase Ver.0.6 — force consistent hover states on all utility cards */
+/* MonoBase Ver.0.6.1 — force consistent hover states on all utility cards */
 main .quick a,
 main .quick a.primary{
   background:linear-gradient(180deg,#f8fbfe 0%,#eef6fc 100%) !important;
@@ -493,7 +493,7 @@ main .quick a.primary:active{
 
 
 <style>
-/* MonoBase Ver.0.6 — logo + learning-card visual polish only */
+/* MonoBase Ver.0.6.1 — logo + learning-card visual polish only */
 
 /* Refine the line apple without changing the brand direction. */
 .hero .mark.mb-line-apple{
@@ -548,7 +548,7 @@ main .quick a.primary:active{
 
 
 <style>
-/* MonoBase Ver.0.6 — logo mark final polish only */
+/* MonoBase Ver.0.6.1 — logo mark final polish only */
 
 /* Override the clipped-outline experiment: keep the green contour continuous. */
 .hero .mark.mb-line-apple{
@@ -597,7 +597,7 @@ main .quick a.primary:active{
 
 
 <style>
-/* MonoBase Ver.0.6 — remove gold dot from header logo only */
+/* MonoBase Ver.0.6.1 — remove gold dot from header logo only */
 .hero .mark.mb-line-apple:after{
   content:none !important;
   display:none !important;
@@ -606,7 +606,7 @@ main .quick a.primary:active{
 
 
 <style>
-/* MonoBase Ver.0.6 — Web / Mobile Ready Home */
+/* MonoBase Ver.0.6.1 — Web / Mobile Ready Home */
 html{scroll-behavior:smooth}
 body{-webkit-text-size-adjust:100%}
 button,a,input{touch-action:manipulation}
@@ -701,6 +701,32 @@ button,a,input{touch-action:manipulation}
 </style>
 
 <link rel="manifest" href="manifest.webmanifest">
+<style>
+/* MonoBase Ver.0.6.1 — Smartphone Polish */
+@media(max-width:640px){
+.hero{padding-bottom:12px}
+.hero-layout{gap:3px}
+.hero-copy h2{font-size:27px;line-height:1.28;letter-spacing:-.04em;max-width:100%}
+.hero-copy>p{font-size:12.5px;line-height:1.58}
+.hero-search{margin-top:12px;padding:13px}
+.hero-search .search-row input{min-width:0;width:100%;text-overflow:ellipsis}
+.hero-search .search-row input::placeholder{font-size:14px}
+.search-examples{margin-top:8px}
+.hero-visual{min-height:112px;max-height:124px;margin-top:-1px;overflow:hidden}
+.hero-visual img{width:43%;max-height:126px;object-fit:contain;opacity:.86}
+.hero-visual:after{height:15%}
+main{margin-top:8px}
+.quick-head{margin-top:0}
+.epa-learning-section{margin-top:12px}
+.epa-learning-card{min-height:74px}
+}
+@media(max-width:390px){
+.hero-copy h2{font-size:25px;line-height:1.3}
+.hero-copy>p{font-size:12px}
+.hero-visual{min-height:104px;max-height:114px}
+.hero-visual img{width:46%;max-height:116px}
+}
+</style>
 </head><body>
 <header class="hero">
   <div class="hero-inner">
@@ -783,12 +809,12 @@ button,a,input{touch-action:manipulation}
 </section>
 
 
-<div class="section-head"><div><h2>マイ材料</h2><p>このPCのブラウザ内だけに保存されます。</p></div></div><section class="personal-grid"><div class="panel"><h3>最近使った材料</h3><div id="recentMaterials" class="history-list"></div></div><div class="panel"><h3>お気に入り</h3><div id="favoriteMaterials" class="history-list"></div></div><div class="panel today"><div class="today-head"><h3>今日の材料</h3><button id="refreshToday" class="refresh" type="button" title="別の材料を表示">↻ 更新</button></div><div id="todayMaterial"></div></div></section>
+<div class="section-head"><div><h2>マイ材料</h2><p>このブラウザ内に保存されます。</p></div></div><section class="personal-grid"><div class="panel"><h3>最近使った材料</h3><div id="recentMaterials" class="history-list"></div></div><div class="panel"><h3>お気に入り</h3><div id="favoriteMaterials" class="history-list"></div></div><div class="panel today"><div class="today-head"><h3>今日の材料</h3><button id="refreshToday" class="refresh" type="button" title="別の材料を表示">↻ 更新</button></div><div id="todayMaterial"></div></div></section>
 <div class="section-head"><div><h2>最新の更新</h2><p>データベース内の更新日から最新項目を表示します。</p></div></div><section class="panel"><div id="latestUpdates" class="updates"></div></section>
 
 </main>
 
-<footer><div class="footer-inner"><div class="footer-brand"><strong>MonoBase</strong><span>Manufacturing Learning & Tools</span></div><div class="footer-meta"><span>Ver.0.6</span><span>Materials Database</span><span>Learning / Explorer / Tools</span><span>©2026 MonoBase Project</span></div></div></footer>
+<footer><div class="footer-inner"><div class="footer-brand"><strong>MonoBase</strong><span>Manufacturing Learning & Tools</span></div><div class="footer-meta"><span>Ver.0.6.1</span><span>Materials Database</span><span>Learning / Explorer / Tools</span><span>©2026 MonoBase Project</span></div></div></footer>
 <script src="js/emd-data.js"></script><script>
 (function(){
  const all=(window.EMD_DATA&&window.EMD_DATA.materials)||[];
