@@ -17,7 +17,7 @@ main{max-width:1240px;margin:18px auto 42px;padding:0 18px}.breadcrumbs{font-siz
 .safety-reference{display:block;margin-top:7px;color:#7b6a4e;font-size:10px;line-height:1.55;font-weight:650}.source-label{display:block;color:#7a8b99;font-size:9px;font-weight:900;letter-spacing:.04em;margin-bottom:3px}.evidence-list{gap:8px}.evidence-item{line-height:1.55}.notice b{color:#8a5b0b}.side-card.weight-card p{line-height:1.55}
 .property-note{margin-top:12px;padding-top:10px;border-top:1px solid #e3e9ef;color:#667b8c;font-size:12px;line-height:1.65}.property-note a{color:#1669a8;font-weight:800;text-decoration:none}.property-note a:hover{text-decoration:underline}
 
-/* Ver.0.7.24: First 10 image-quality reset.
+/* Ver.0.7.26: First 10 image-quality reset.
    Low-resolution sheet crops removed. Future approved images can be
    attached one-use-per-file without changing card structure. */
 
@@ -197,7 +197,7 @@ main{max-width:1240px;margin:18px auto 42px;padding:0 18px}.breadcrumbs{font-siz
 
 
 <style>
-/* Ver.0.7.24 Final content polish */
+/* Ver.0.7.26 Final content polish */
 .everyday-card,
 .story-card{
   height:auto !important;
@@ -235,7 +235,7 @@ main{max-width:1240px;margin:18px auto 42px;padding:0 18px}.breadcrumbs{font-siz
 
 
 <style id="monobase-mobile-responsive-v0724">
-/* MonoBase Ver.0.7.24 Mobile Responsive */
+/* MonoBase Ver.0.7.26 Mobile Responsive */
 html{
   -webkit-text-size-adjust:100%;
   text-size-adjust:100%;
@@ -584,10 +584,112 @@ button,a,input,select,textarea{
 }
 </style>
 
+
+<style id="monobase-mobile-final-v0725">
+/* Ver.0.7.26: iPhone実機確認後の最終調整 */
+@media (max-width:700px){
+
+  /* ヘッダーのリンゴ：横長化を防ぎ、PC版と同じ輪郭比を固定 */
+  .top .brand .mark.mb-line-apple{
+    width:38px!important;
+    height:38px!important;
+    min-width:38px!important;
+    min-height:38px!important;
+    flex:0 0 38px!important;
+    aspect-ratio:1 / 1!important;
+    box-sizing:border-box!important;
+    transform:none!important;
+    border-radius:45% 45% 48% 48% / 40% 40% 55% 55%!important;
+  }
+  .top .brand .mark.mb-line-apple::before{
+    left:18px!important;
+    top:-7px!important;
+  }
+  .top .brand .mb-apple-leaf{
+    left:22px!important;
+    top:-5px!important;
+  }
+
+  /* 特徴・用途：スマホは1列。文字切れより読みやすさを優先 */
+  .uses-grid,
+  .usage-grid,
+  .applications-grid,
+  .use-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  /* 関連材料：カードを無理に3列へ押し込まない */
+  .related-grid,
+  .related-materials,
+  .related-cards{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+
+  /* 比較候補：1枚＋次カードが少し見える横スクロール */
+  .compare-grid,
+  .comparison-grid,
+  .compare-cards{
+    display:flex!important;
+    gap:10px!important;
+    overflow-x:auto!important;
+    -webkit-overflow-scrolling:touch;
+    scroll-snap-type:x proximity;
+    padding-bottom:6px!important;
+  }
+  .compare-grid > *,
+  .comparison-grid > *,
+  .compare-cards > *{
+    flex:0 0 82%!important;
+    min-width:0!important;
+    scroll-snap-align:start;
+  }
+
+  /* 実機で縦に長く感じた箇所だけ軽く圧縮 */
+  .section,
+  section,
+  .panel{
+    margin-bottom:16px!important;
+  }
+  .story-card,
+  .everyday-card{
+    padding-top:14px!important;
+    padding-bottom:14px!important;
+  }
+  .property-card,
+  .spec-card,
+  .fact-card{
+    padding-top:14px!important;
+    padding-bottom:14px!important;
+  }
+
+  /* 長い材料名・比較カード名は省略せず折り返す */
+  .related-grid *,
+  .related-materials *,
+  .compare-grid *,
+  .comparison-grid *{
+    text-overflow:clip!important;
+  }
+  .related-grid a,
+  .related-materials a,
+  .compare-grid a,
+  .comparison-grid a{
+    white-space:normal!important;
+    overflow:visible!important;
+    overflow-wrap:anywhere!important;
+  }
+}
+</style>
+
+<style id='monobase-mobile-exact-v0725'>
+@media(max-width:700px){
+}
+</style>
 </head><body>
 <header class="top"><div class="top-inner"><a class="brand" href="index.html"><div class="mark mb-line-apple" aria-hidden="true"><span class="mb-apple-leaf"></span></div><span><strong>MonoBase</strong><small>Manufacturing Learning &amp; Tools</small></span></a><div class="top-actions"><nav class="top-nav"><a href="index.html" data-ja="ホーム" data-en="Home">ホーム</a><a class="primary" href="material_database.html" data-ja="材料名から探す" data-en="By Material">材料名から探す</a><a href="usage_explorer.html" data-ja="用途から探す" data-en="By Application">用途から探す</a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ja">JP</button><button type="button" data-lang="en">EN</button></div></div></div></header>
 <main id="app"><div class="card">材料データを読み込んでいます。</div></main>
-<footer class="footer"><div class="footer-inner"><span>MonoBase Ver.0.7.24</span><span>完全オフライン対応 ／ Offline ready ／ 外部資料リンクを開く場合のみ通信</span></div></footer>
+<footer class="footer"><div class="footer-inner"><span>MonoBase Ver.0.7.26</span><span>完全オフライン対応 ／ Offline ready ／ 外部資料リンクを開く場合のみ通信</span></div></footer>
 <script src="js/emd-data.js"></script>
 <script>
 (function(){
@@ -838,4 +940,19 @@ button,a,input,select,textarea{
  function toggleFav(){let a=get('epaFavoriteMaterials'),hit=a.some(x=>x.id===m.id);a=hit?a.filter(x=>x.id!==m.id):[{id:m.id,name:m.name,japanese:m.japanese,formula:m.formula},...a].slice(0,30);set('epaFavoriteMaterials',a);drawFav()}
  fav.addEventListener('click',toggleFav);drawFav();
 })();
-</script></body></html>
+</script>
+<script id="monobase-story-display-audit-v0726">
+document.addEventListener('DOMContentLoaded', function(){
+  try{
+    const title = Array.from(document.querySelectorAll('h1,h2,h3')).find(el => (el.textContent||'').includes('ちょっと気になる話'));
+    if(!title) return;
+    const section = title.closest('section,.section,.panel') || title.parentElement;
+    if(!section) return;
+    const cards = section.querySelectorAll('.story-card,[data-story-card]');
+    // Existing renderer is authoritative; this block only marks audit state.
+    section.setAttribute('data-story-rendered-count', String(cards.length));
+  }catch(e){}
+});
+</script>
+
+</body></html>
