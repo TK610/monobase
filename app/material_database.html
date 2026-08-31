@@ -1,214 +1,519 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>材料名から探す | MonoBase Ver.7.2</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Materials Explorer | MonoBase</title>
 <style>
-:root{--navy:#17324d;--blue:#2563a6;--line:#dce5ee;--bg:#f4f7fa;--text:#263746}
-*{box-sizing:border-box}body{margin:0;font-family:"Yu Gothic UI","Meiryo",sans-serif;background:var(--bg);color:var(--text)}
-.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}.btn.primary{background:white;color:var(--navy)}main{max-width:1180px;margin:14px auto 44px;padding:0 18px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat,.panel{background:white;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 3px 12px rgba(20,50,75,.06)}
-.stat strong{font-size:26px;display:block;color:var(--blue)}.search{display:grid;grid-template-columns:1fr 260px;gap:10px;margin:18px 0}
-input,select{width:100%;padding:12px;border:1px solid #b9c9d8;border-radius:8px;font-size:15px;background:white}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:16px}
-.list{max-height:670px;overflow:auto}.item{padding:12px;border-bottom:1px solid var(--line);cursor:pointer}.item:hover,.item.active{background:#edf5fc}
-.item strong{font-size:16px}.muted{color:#65798b;font-size:13px}.density{float:right;font-weight:700;color:var(--blue)}
-.detail h2{margin-top:0}.explorer-image{height:210px;margin:12px 0 16px;border:1px solid var(--line);border-radius:11px;background:#f7f8fa;display:grid;place-items:center;overflow:hidden}.explorer-image img{width:100%;height:100%;object-fit:contain}.grid{display:grid;grid-template-columns:120px 1fr;gap:8px 12px;font-size:14px}.label{font-weight:700;color:#51687b}
-.source{border:1px solid var(--line);border-radius:9px;padding:10px;margin-top:9px}.source a{word-break:break-all;color:#145ea8}
-.badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#e8f2fb;color:#195b91;font-size:12px;font-weight:700}.detail-title{display:flex;align-items:center;justify-content:space-between;gap:10px}.favorite-btn{border:1px solid #c7d6e4;border-radius:8px;background:#fff;color:#315978;padding:8px 10px;font-weight:800;cursor:pointer}.favorite-btn.active{background:#fff4cf;border-color:#e3bd45;color:#7b5700}
-.notice{background:#fff8e6;border-left:4px solid #e2a728;padding:10px;margin-top:12px;font-size:13px}
-.empty{padding:30px;text-align:center;color:#718394}
-footer{max-width:1180px;margin:18px auto 30px;padding:0 18px;color:#6d7f8f;font-size:12px}
-@media(max-width:800px){.stats{grid-template-columns:1fr}.search,.layout{grid-template-columns:1fr}.detail{order:-1}.list{max-height:430px}}
-
-/* Ver.7.2 unified Explorer shell */
-body{background:#f4f7f9;color:#243746}
-a{color:inherit}.top{background:#fff;border-bottom:1px solid #d6e0e8}.top-inner{max-width:1180px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{text-decoration:none;display:flex;align-items:center;gap:10px;color:#17324d}.mark{width:36px;height:36px;border-radius:10px;background:#1f5277;color:#fff;display:grid;place-items:center;font-weight:900;font-size:12px}.brand strong{display:block;font-size:15px}.brand small{display:block;color:#667c8d;font-size:10px;margin-top:2px}.top .nav{display:flex;gap:8px;margin-top:0}.top .nav a{text-decoration:none;border:1px solid #d6e0e8;border-radius:8px;padding:8px 11px;font-size:12px;font-weight:800;background:#fff;color:#243746}.top .nav a.primary{background:#2563a6;border-color:#2563a6;color:#fff}.hero{background:#1f5277;color:#fff}.hero-inner{max-width:1180px;margin:auto;padding:28px 18px 26px}.hero h1{margin:0 0 7px;font-size:28px}.hero p{margin:0;opacity:.9;font-size:13px;line-height:1.7}.breadcrumbs{max-width:1180px;margin:14px auto 0;padding:0 18px;color:#667c8d;font-size:11px}.breadcrumbs a{color:#2c6b9c;text-decoration:none}
-@media(max-width:600px){.top-inner{align-items:flex-start;flex-direction:column}.hero h1{font-size:23px}}
-
-/* Ver.7.2 Official */
-.search-input-wrap{position:relative;min-width:0}
-.suggestions{position:absolute;z-index:40;left:0;right:0;top:calc(100% + 6px);background:#fff;border:1px solid #b9c9d8;border-radius:10px;box-shadow:0 12px 30px rgba(20,50,75,.14);overflow:hidden;max-height:330px;overflow-y:auto}
-.suggestion{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;width:100%;border:0;border-bottom:1px solid #edf2f6;background:#fff;padding:10px 12px;text-align:left;color:#263746;cursor:pointer}
-.suggestion:last-child{border-bottom:0}.suggestion:hover,.suggestion.active{background:#edf5fc}
-.suggestion strong{display:block;font-size:14px}.suggestion small{display:block;margin-top:2px;color:#65798b;font-size:11px}
-.suggestion .formula{align-self:center;color:#195b91;font-weight:850;font-size:13px;white-space:nowrap}
-.result-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 9px;padding:0 2px}
-.result-head strong{font-size:13px;color:#17324d}.result-head span{font-size:11px;color:#667c8d}
-.empty-search{padding:26px 20px;text-align:center}.empty-search strong{display:block;color:#17324d;font-size:16px;margin-bottom:7px}.empty-search p{margin:0 0 14px;color:#667c8d;font-size:13px;line-height:1.7}
-.empty-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.empty-actions a,.empty-actions button{border:1px solid #c3d0dc;background:#fff;color:#245879;border-radius:8px;padding:8px 11px;text-decoration:none;font-weight:800;font-size:12px;cursor:pointer}
-.empty-actions a:hover,.empty-actions button:hover{background:#edf5fc;border-color:#8eb3cf}
-@media(max-width:800px){.result-head{display:block}.result-head span{display:block;margin-top:4px}}
-
-
-/* EPA Search Clear Button */
-.epa-search-field{position:relative;min-width:0}
-.epa-search-field>input{width:100%;padding-right:44px!important;box-sizing:border-box}
-.epa-search-clear{
- position:absolute;right:10px;top:50%;transform:translateY(-50%);
- width:28px;height:28px;border:0;border-radius:50%;padding:0;
- display:flex;align-items:center;justify-content:center;
- background:transparent;color:#667085;font-size:20px;line-height:1;
- cursor:pointer;z-index:5
+:root{
+  --navy:#123b63;--blue:#2077b6;--blue2:#0f5f9b;--line:#dbe6ef;--line2:#c8d8e5;
+  --bg:#f4f8fb;--text:#263b4c;--muted:#6b8192;--soft:#eef6fb;--white:#fff;
 }
-.epa-search-clear:hover{background:#eef2f6;color:#1f2937}
-.epa-search-clear:focus-visible{outline:2px solid currentColor;outline-offset:2px}
-.epa-search-clear[hidden]{display:none}
-
+*{box-sizing:border-box}
+body{margin:0;font-family:"Yu Gothic UI","Meiryo",system-ui,sans-serif;background:var(--bg);color:var(--text)}
+button,input,select{font:inherit}
+a{color:inherit}
+.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:60}
+.top-inner{max-width:1220px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(145deg,#277fbd,#164f7e);color:#fff;display:grid;place-items:center;font-size:20px;font-weight:900}
+.brand strong{display:block;color:var(--navy);font-size:16px}
+.brand small{display:block;color:#718596;font-size:10px;margin-top:1px}
+.nav{display:flex;gap:5px}
+.nav a{text-decoration:none;padding:8px 10px;border-radius:9px;color:#526c80;font-weight:800;font-size:12px}
+.nav a:hover{background:#f1f6fa}.nav a.active{background:#eaf4fb;color:#155f96}
+.lang{display:flex;align-items:center;border:1px solid var(--line2);background:#fff;border-radius:9px;padding:3px}
+.lang button{border:0;background:transparent;color:#668096;padding:6px 8px;border-radius:6px;font-size:11px;font-weight:800;cursor:pointer}
+.lang button.active{background:#e9f4fb;color:#145f97}
+.hero{max-width:1220px;margin:22px auto 0;padding:0 20px}
+.hero-card{position:relative;overflow:hidden;background:linear-gradient(125deg,#123f67 0%,#176493 70%,#2081b9 100%);border-radius:22px;padding:28px 30px;color:#fff;box-shadow:0 12px 32px rgba(29,80,117,.12)}
+.hero-card:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-70px;top:-130px}
+.kicker{font-size:10px;font-weight:900;letter-spacing:.15em;opacity:.8}
+.hero h1{margin:7px 0 8px;font-size:32px;line-height:1.15}.hero p{margin:0;max-width:700px;font-size:13px;line-height:1.7;opacity:.9}
+main{max-width:1220px;margin:16px auto 42px;padding:0 20px}
+.toolbar{display:grid;grid-template-columns:1fr 245px;gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 5px 18px rgba(28,69,100,.05)}
+.search-wrap{position:relative}
+.search-label{position:absolute;left:14px;top:8px;color:#6c8395;font-size:9px;font-weight:800;letter-spacing:.06em;pointer-events:none}
+#q{width:100%;height:54px;border:1px solid #bcd0df;border-radius:11px;padding:20px 45px 7px 14px;background:#fbfdff;color:#243c4e;font-size:14px;outline:none}
+#q:focus{border-color:#5799c7;box-shadow:0 0 0 3px rgba(44,126,183,.10)}
+.clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#758b9c;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:19px}
+.clear:hover{background:#edf4f8}
+#category{width:100%;height:54px;border:1px solid #bcd0df;border-radius:11px;background:#fff;padding:0 12px;color:#334e62}
+.suggestions{position:absolute;z-index:80;left:0;right:0;top:60px;background:#fff;border:1px solid #bcd0df;border-radius:12px;box-shadow:0 16px 34px rgba(20,50,75,.14);overflow:auto;max-height:330px}
+.suggestion{width:100%;border:0;border-bottom:1px solid #edf2f6;background:#fff;padding:10px 12px;text-align:left;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:10px}
+.suggestion:hover,.suggestion.active{background:#eef6fb}.suggestion strong{display:block;color:#173d5d}.suggestion small{display:block;margin-top:2px;color:#748797;font-size:10px}.formula{align-self:center;color:#1b679e;font-weight:900}
+.stats{display:flex;gap:8px;margin:11px 0 14px;flex-wrap:wrap}
+.stat{display:flex;align-items:center;gap:7px;padding:7px 10px;background:#fff;border:1px solid var(--line);border-radius:999px;color:#6d8191;font-size:10.5px}
+.stat strong{color:#155f96;font-size:13px}
+.result-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 2px 8px}
+.result-head strong{color:#24475f;font-size:12px}.result-head span{color:#718696;font-size:10.5px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:14px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 5px 18px rgba(28,69,100,.045)}
+.list{max-height:700px;overflow:auto;padding:5px}
+.item{display:grid;grid-template-columns:1fr auto;gap:9px;padding:11px 12px;border-radius:10px;cursor:pointer}
+.item+.item{border-top:1px solid #eef3f6}.item:hover{background:#f4f9fc}.item.active{background:#eaf5fb;box-shadow:inset 3px 0 #247bb6}
+.item strong{font-size:14px;color:#1b405f}.item .muted{margin-top:2px;color:#768999;font-size:10.5px}
+.density{align-self:center;font-size:11px;font-weight:850;color:#236c9f;white-space:nowrap}
+.detail{padding:17px;position:sticky;top:78px;align-self:start}
+.detail-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.detail h2{margin:0;color:#123e65;font-size:23px;line-height:1.25}
+.badge{display:inline-block;margin-left:4px;padding:3px 7px;border-radius:999px;background:#e8f3fb;color:#1b6196;font-size:9px;font-weight:800;vertical-align:middle}
+.favorite{border:1px solid #c8d8e4;border-radius:9px;background:#fff;color:#3f6178;padding:7px 9px;font-size:10px;font-weight:800;cursor:pointer;white-space:nowrap}.favorite.active{background:#fff4cf;border-color:#e4bf4f;color:#745300}
+.subname{margin-top:5px;color:#708597;font-size:11px}
+.image{height:205px;margin:13px 0;border-radius:13px;overflow:hidden;background:#f4f7f9;border:1px solid var(--line);display:grid;place-items:center}.image img{width:100%;height:100%;object-fit:contain}
+.meta{display:grid;grid-template-columns:105px 1fr;gap:8px 10px;font-size:11.5px;padding:4px 0}.meta b{color:#597287}
+.section-title{margin:16px 0 7px;font-size:12px;color:#214d6d}.reason{font-size:11.5px;line-height:1.65;color:#4e6679}
+.notice{margin-top:10px;padding:9px 10px;border-left:3px solid #e1a72d;background:#fff8e8;font-size:10.5px;line-height:1.55}
+.open-detail{display:block;margin-top:14px;text-align:center;text-decoration:none;border-radius:10px;padding:10px;background:linear-gradient(#2b83bf,#17669f);color:#fff;font-size:11.5px;font-weight:850}
+.source{margin-top:7px;padding:9px;border:1px solid var(--line);border-radius:10px;font-size:10.5px;line-height:1.45}.source a{color:#1769a2;font-weight:800;word-break:break-all}.source .url{color:#8594a0;font-size:9px;word-break:break-all;margin-top:3px}
+.empty,.empty-search{text-align:center;color:#748797;padding:34px 20px;font-size:12px}.empty-search strong{display:block;color:#23465f;font-size:15px;margin-bottom:7px}.empty-search p{line-height:1.6}.empty-actions{display:flex;justify-content:center;gap:7px;flex-wrap:wrap}.empty-actions a,.empty-actions button{border:1px solid #c7d7e3;background:#fff;color:#2d668e;border-radius:8px;padding:7px 9px;text-decoration:none;font-weight:800;font-size:10.5px;cursor:pointer}
+footer{max-width:1220px;margin:0 auto 30px;padding:0 20px;color:#738796;font-size:10.5px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.detail{position:static;order:-1}.toolbar{grid-template-columns:1fr}.nav{display:none}}
+@media(max-width:600px){.top-inner{padding:10px 12px}.brand small{display:none}.hero{padding:0 10px;margin-top:10px}.hero-card{padding:22px 18px;border-radius:16px}.hero h1{font-size:26px}main{padding:0 10px}.layout{gap:10px}.stats{gap:5px}.stat{font-size:9px;padding:6px 8px}.detail{padding:13px}.detail h2{font-size:20px}.result-head{display:block}.result-head span{display:block;margin-top:3px}}
 </style>
+
+<style id="mb-home-brand-header">
+/* Home-aligned MonoBase brand mark */
+.brand .mb-line-apple{
+  width:42px;height:42px;position:relative;padding:0;flex:0 0 42px;
+  border:2.5px solid #76b82a;border-radius:45% 45% 48% 48% / 40% 40% 55% 55%;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 6px 18px rgba(31,86,122,.07);
+}
+.brand .mb-line-apple:before{
+  content:"";position:absolute;width:3px;height:9px;left:20px;top:-7px;
+  background:#5e9820;border-radius:3px;transform:rotate(7deg);
+}
+.brand .mb-apple-leaf{
+  position:absolute;width:13px;height:7px;left:24px;top:-5px;
+  background:#78b82a;border-radius:100% 0 100% 0;transform:rotate(-18deg);
+}
+.brand{gap:14px}
+.brand strong{font-size:16px}
+.brand small{margin-top:3px}
+</style>
+
+
+<style id="monobase-mobile-responsive-v0724">
+/* MonoBase Ver.0.7.24 Mobile Responsive */
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+body{
+  overflow-x:hidden;
+}
+img,svg,video,canvas{
+  max-width:100%;
+  height:auto;
+}
+button,a,input,select,textarea{
+  -webkit-tap-highlight-color:transparent;
+}
+@media (max-width: 900px){
+  body{
+    min-width:0 !important;
+  }
+
+  /* Header / brand */
+  .top,
+  header.top,
+  .app-header,
+  header{
+    min-height:auto !important;
+  }
+  .top .inner,
+  .top-inner,
+  .header-inner,
+  header .inner{
+    padding-left:14px !important;
+    padding-right:14px !important;
+  }
+  .top .brand,
+  .brand{
+    min-width:0 !important;
+  }
+  .top .brand .name,
+  .brand .name,
+  .brand-text{
+    min-width:0 !important;
+  }
+
+  /* Main shell / side navigation */
+  .shell,
+  .app-shell,
+  .layout,
+  .page-layout,
+  .main-layout{
+    width:100% !important;
+    max-width:100% !important;
+    grid-template-columns:1fr !important;
+    display:block !important;
+  }
+  aside,
+  .sidebar,
+  .side-nav,
+  .sidenav,
+  .left-nav,
+  nav.side{
+    position:static !important;
+    width:100% !important;
+    max-width:none !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin:0 0 12px !important;
+    overflow:visible !important;
+  }
+
+  /* Horizontal nav fallback when a desktop side nav exists */
+  .sidebar nav,
+  .side-nav nav,
+  .sidenav nav,
+  .left-nav nav,
+  nav.side{
+    display:flex !important;
+    gap:8px !important;
+    overflow-x:auto !important;
+    overscroll-behavior-inline:contain;
+    scrollbar-width:thin;
+    padding-bottom:6px !important;
+  }
+  .sidebar nav a,
+  .side-nav nav a,
+  .sidenav nav a,
+  .left-nav nav a,
+  nav.side a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    min-height:42px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+  }
+
+  /* Main content */
+  main,
+  .main,
+  .content,
+  .page,
+  .page-content,
+  .main-content{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    padding-left:14px !important;
+    padding-right:14px !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Hero / two-column blocks */
+  .hero,
+  .hero-grid,
+  .detail-hero,
+  .detail-grid,
+  .intro-grid,
+  .two-col,
+  .two-column,
+  .columns,
+  .grid-2,
+  .split,
+  .overview-grid{
+    grid-template-columns:1fr !important;
+  }
+  .hero{
+    gap:18px !important;
+  }
+  .hero-copy,
+  .hero-text,
+  .detail-main,
+  .detail-side{
+    min-width:0 !important;
+  }
+
+  /* Cards */
+  .cards,
+  .card-grid,
+  .grid,
+  .quick,
+  .quick-grid,
+  .material-grid,
+  .story-grid,
+  #storyGrid,
+  .everyday-grid,
+  .property-grid,
+  .stats-grid,
+  .feature-grid{
+    grid-template-columns:1fr !important;
+  }
+  .card,
+  .story-card,
+  .everyday-card,
+  .panel,
+  .box{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Forms / search */
+  input[type="text"],
+  input[type="search"],
+  input[type="number"],
+  select,
+  textarea{
+    min-height:44px !important;
+    font-size:16px !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+  }
+  button,
+  .btn,
+  a.btn,
+  .button,
+  .cta{
+    min-height:44px !important;
+  }
+  .search,
+  .searchbar,
+  .search-bar,
+  .search-box,
+  .search-wrap{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  /* Tables stay usable instead of crushing columns */
+  table{
+    min-width:640px;
+  }
+  .table-wrap,
+  .table-scroll,
+  .data-table-wrap,
+  .properties-table,
+  .comparison-table,
+  .result-table{
+    overflow-x:auto !important;
+    -webkit-overflow-scrolling:touch;
+    max-width:100% !important;
+  }
+
+  /* Long technical text */
+  h1{
+    font-size:clamp(26px,7vw,36px) !important;
+    line-height:1.25 !important;
+  }
+  h2{
+    font-size:clamp(21px,5.8vw,28px) !important;
+    line-height:1.35 !important;
+  }
+  h3{
+    line-height:1.45 !important;
+  }
+  p,li,dd,dt,td,th{
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+
+  /* Material detail image */
+  .material-image,
+  .detail-image,
+  .hero-image,
+  .material-visual{
+    width:100% !important;
+    max-width:520px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  /* Utility bar / actions */
+  .actions,
+  .toolbar,
+  .detail-actions,
+  .button-row,
+  .controls{
+    flex-wrap:wrap !important;
+    gap:8px !important;
+  }
+  .actions > *,
+  .toolbar > *,
+  .detail-actions > *,
+  .button-row > *{
+    max-width:100% !important;
+  }
+
+  /* Modal/dialog */
+  .modal,
+  .dialog,
+  [role="dialog"]{
+    max-width:calc(100vw - 24px) !important;
+    max-height:calc(100vh - 24px) !important;
+  }
+}
+
+@media (max-width: 600px){
+  main,
+  .main,
+  .content,
+  .page,
+  .page-content,
+  .main-content{
+    padding-left:12px !important;
+    padding-right:12px !important;
+  }
+
+  .top .brand .mark.mb-line-apple{
+    width:36px!important;
+    height:36px!important;
+    min-width:36px!important;
+  }
+
+  .hero,
+  .section,
+  section,
+  .panel,
+  .card{
+    border-radius:14px !important;
+  }
+
+  .story-card,
+  .everyday-card{
+    padding:15px !important;
+  }
+
+  .story-card p,
+  .story-card .story-a,
+  .everyday-card p{
+    font-size:15px !important;
+    line-height:1.8 !important;
+  }
+
+  .quick a,
+  .quick a.primary{
+    width:100% !important;
+    justify-content:center !important;
+  }
+
+  .breadcrumb,
+  .breadcrumbs{
+    overflow-x:auto !important;
+    white-space:nowrap !important;
+    padding-bottom:4px !important;
+  }
+
+  /* Sticky/fixed desktop controls often cover mobile content */
+  .fixed-tools,
+  .floating-tools{
+    position:static !important;
+  }
+}
+</style>
+
 </head>
 <body>
-<header class="top"><div class="top-inner"><a class="brand" href="index.html"><span class="mark">EPA</span><span><strong>MonoBase</strong><small>Manufacturing Learning & Tools</small></span></a><nav class="nav"><a href="index.html">ホーム</a><a class="primary" href="material_database.html">材料名</a><a href="usage_explorer.html">用途</a><a href="classification_explorer.html">分類</a></nav></div></header>
-<section class="hero"><div class="hero-inner"><h1>材料名から探す</h1><p>「材料の名前」からすばやく見つけます。材料名・元素記号・化学式・英語名などで検索し、材料詳細へ進めます。</p></div></section>
-<div class="breadcrumbs"><a href="index.html">ホーム</a> ／ 材料名から探す</div>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html"><span class="mark mb-line-apple" aria-hidden="true"><span class="mb-apple-leaf"></span></span><span><strong>MonoBase</strong><small data-i18n="brand.subtitle">Manufacturing Learning & Tools</small></span></a>
+    <nav class="nav">
+      <a href="index.html" data-i18n="nav.home">ホーム</a>
+      <a class="active" href="material_database.html" data-i18n="nav.material">材料名</a>
+      <a href="usage_explorer.html" data-i18n="nav.usage">用途</a>
+      <a href="classification_explorer.html" data-i18n="nav.classification">分類</a>
+    </nav>
+    <div class="lang" aria-label="Language">
+      <button type="button" data-lang="ja">JP</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-card">
+    <div class="kicker" data-i18n="hero.kicker">MATERIALS EXPLORER</div>
+    <h1 data-i18n="hero.title">材料名から探す</h1>
+    <p data-i18n="hero.lead">材料名・元素記号・化学式・英語名から、目的の材料をすばやく探せます。</p>
+  </div>
+</section>
+
 <main>
-<section class="stats">
-<div class="stat"><strong id="countAll">197</strong>登録材料</div>
-<div class="stat"><strong id="countDensity">176</strong>密度設定済み</div>
-<div class="stat"><strong>197</strong>正式レビュー済み</div>
-</section>
-<section class="search">
-<div class="search-input-wrap epa-search-field">
-<input id="q" autocomplete="off" aria-autocomplete="list" aria-controls="searchSuggestions" aria-expanded="false" placeholder="材料名・元素記号・化学式・英語名で検索（例：シリコン、Si、SiO2、silicon）"><button type="button" class="epa-search-clear" data-clear-for="q" aria-label="検索文字を消す" title="検索文字を消す" hidden>×</button>
-<div id="searchSuggestions" class="suggestions" role="listbox" hidden></div>
-</div>
-<select id="category"><option value="">すべてのカテゴリ</option></select>
-</section>
-<div class="result-head"><strong id="resultCount">検索結果 0件</strong><span id="resultHint">材料名・記号・化学式・英語名を横断検索します。</span></div>
-<section class="layout">
-<div class="panel list" id="list"></div>
-<div class="panel detail" id="detail"><div class="empty">左の一覧から材料を選択してください。</div></div>
-</section>
+  <section class="toolbar">
+    <div class="search-wrap">
+      <span class="search-label" data-i18n="search.label">材料を検索</span>
+      <input id="q" autocomplete="off" aria-autocomplete="list" aria-controls="searchSuggestions">
+      <button type="button" id="clearBtn" class="clear" aria-label="検索文字を消す" hidden>×</button>
+      <div id="searchSuggestions" class="suggestions" role="listbox" hidden></div>
+    </div>
+    <select id="category"></select>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><strong id="countAll">0</strong><span data-i18n="stats.materials">登録材料</span></div>
+    <div class="stat"><strong id="countDensity">0</strong><span data-i18n="stats.density">密度設定済み</span></div>
+    <div class="stat"><strong id="countReviewed">0</strong><span data-i18n="stats.reviewed">正式レビュー済み</span></div>
+  </section>
+
+  <div class="result-head"><strong id="resultCount"></strong><span id="resultHint"></span></div>
+  <section class="layout">
+    <div class="panel list" id="list"></div>
+    <div class="panel detail" id="detail"></div>
+  </section>
 </main>
-<footer>MonoBase Ver.7.2 ／ オフラインでも検索・閲覧できます。出典URLを開くにはネット接続が必要です。</footer>
+<footer data-i18n="footer"></footer>
+
 <script src="js/emd-data.js"></script>
+<script src="js/i18n-data.js"></script>
+<script src="js/i18n.js"></script>
 <script>
-const db=window.EMD_DATA, all=db.materials||[];
-const q=document.getElementById('q'), cat=document.getElementById('category'), list=document.getElementById('list'), detail=document.getElementById('detail'), suggestions=document.getElementById('searchSuggestions'), resultCount=document.getElementById('resultCount'), resultHint=document.getElementById('resultHint');
-let suggestionIndex=-1;
-const initialParams=new URLSearchParams(location.search); q.value=initialParams.get('q')||'';
-document.getElementById('countAll').textContent=all.length;
-document.getElementById('countDensity').textContent=all.filter(x=>typeof x.density==='number').length;
-[...new Set(all.map(x=>x.category).filter(Boolean))].sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;cat.appendChild(o)});
-try{const ctx=JSON.parse(localStorage.getItem('epaExplorerContext')||'null');if(ctx){if(!q.value&&ctx.q)q.value=ctx.q;if(ctx.category)cat.value=ctx.category;setTimeout(()=>{if(Number.isFinite(ctx.scrollTop))list.scrollTop=ctx.scrollTop},0)}}catch(e){}
+const db=window.EMD_DATA||{}, all=db.materials||[];
+const I=window.MonoBaseI18n;
+const q=document.getElementById('q'),cat=document.getElementById('category'),list=document.getElementById('list'),
+ detail=document.getElementById('detail'),suggestions=document.getElementById('searchSuggestions'),
+ resultCount=document.getElementById('resultCount'),resultHint=document.getElementById('resultHint'),clearBtn=document.getElementById('clearBtn');
+let suggestionIndex=-1, selectedId=null;
+
+function t(k,v){return I.t(k,v)}
 function esc(v){return String(v??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]))}
-function sourceBlock(title,s){
- if(!s||(!s.name&&!s.url)) return '';
- const value=(s.value!==null&&s.value!==undefined)?`<div class="muted">掲載値：${esc(s.value)} g/cm³</div>`:'';
- const link=s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">公式・参照ページを開く</a>`:'<span class="muted">URL未登録</span>';
- return `<div class="source"><strong>${esc(title)}</strong><div>${esc(s.name||'')}</div>${value}<div>${link}</div>${s.url?`<div class="muted">${esc(s.url)}</div>`:''}</div>`;
-}
+function norm(v){return String(v??'').normalize('NFKC').toLowerCase().replace(/[₀₁₂₃₄₅₆₇₈₉]/g,ch=>'0123456789'['₀₁₂₃₄₅₆₇₈₉'.indexOf(ch)]).replace(/[\s・･／/_\-()[\]{}]/g,'')}
 function getStore(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return[]}}
 function setStore(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
-function addRecent(m){let a=getStore('epaRecentMaterials').filter(x=>x.id!==m.id);a.unshift({id:m.id,name:m.name,japanese:m.japanese,formula:m.formula});setStore('epaRecentMaterials',a.slice(0,8))}
-function toggleFavorite(m){let a=getStore('epaFavoriteMaterials'),exists=a.some(x=>x.id===m.id);a=exists?a.filter(x=>x.id!==m.id):[{id:m.id,name:m.name,japanese:m.japanese,formula:m.formula},...a];setStore('epaFavoriteMaterials',a.slice(0,30));show(m,false)}
-function show(m,track=true){
- if(track)addRecent(m);
- document.querySelectorAll('.item').forEach(x=>x.classList.toggle('active',x.dataset.id===m.id));
- const den=typeof m.density==='number'?`${m.density} ${esc(m.unit||'g/cm³')}`:'未設定（重量計算対象外）';
- const fav=getStore('epaFavoriteMaterials').some(x=>x.id===m.id);
- detail.innerHTML=`<div class="detail-title"><h2>${esc(m.japanese||m.name)} <span class="badge">${esc(m.review_status||'')}</span></h2><button class="favorite-btn ${fav?'active':''}" id="favoriteBtn">${fav?'★ お気に入り':'☆ お気に入り'}</button></div>
- <div class="muted">${esc(m.english||'')} ／ ${esc(m.formula||'')}</div>${m.image_file?`<div class="explorer-image"><img src="images/materials/${esc(m.image_file)}" alt="${esc((m.japanese||m.name||'材料')+'の代表画像')}" onerror="this.parentElement.style.display='none'"></div>`:''}<hr>
- <div class="grid">
- <div class="label">材料ID</div><div>${esc(m.id)}</div>
- <div class="label">カテゴリ</div><div>${esc(m.category||'')} / ${esc(m.subcategory||'')}</div>
- <div class="label">EPA採用密度</div><div><strong>${den}</strong></div>
- <div class="label">密度条件</div><div>${esc(m.density_condition||m.density_status||'')}</div>
- <div class="label">レビュー判定</div><div>${esc(m.review_decision||'')}</div>
- <div class="label">更新日</div><div>${esc(m.updated||'')}</div>
- </div>
- <h3>採用理由</h3><div>${esc(m.adoption_reason||'')}</div>
- ${m.note?`<div class="notice">${esc(m.note)}</div>`:''}
- <p style="margin-top:16px"><a id="openDetail" href="material_detail.html?id=${encodeURIComponent(m.id)}" style="display:block;text-align:center;background:#2563a6;color:white;text-decoration:none;padding:11px;border-radius:9px;font-weight:800">材料詳細ページを開く →</a></p><h3>出典情報</h3>
- ${sourceBlock('採用出典',m.source_current||{name:m.source_name,url:m.source_url})}
- ${sourceBlock('比較出典A',m.source_a)}
- ${sourceBlock('比較出典B',m.source_b)}`;
- const fb=document.getElementById('favoriteBtn');if(fb)fb.addEventListener('click',()=>toggleFavorite(m));
- const od=document.getElementById('openDetail');if(od)od.addEventListener('click',()=>{try{localStorage.setItem('epaExplorerContext',JSON.stringify({q:q.value,category:cat.value,ids:[...document.querySelectorAll('.item')].map(x=>x.dataset.id),scrollTop:list.scrollTop,selected:m.id,updated:Date.now()}))}catch(e){}});
- const params=new URLSearchParams();params.set('material',m.id);if(q.value.trim())params.set('q',q.value.trim());history.replaceState(null,'','?'+params.toString());
-}
-function norm(v){
- return String(v??'').normalize('NFKC').toLowerCase()
-  .replace(/[₀₁₂₃₄₅₆₇₈₉]/g,ch=>'0123456789'['₀₁₂₃₄₅₆₇₈₉'.indexOf(ch)])
-  .replace(/[\s・･／/_\-()[\]{}]/g,'');
-}
+function addRecent(m){let a=getStore('epaRecentMaterials').filter(x=>x.id!==m.id);a.unshift({id:m.id,name:m.name,japanese:m.japanese,english:m.english,formula:m.formula});setStore('epaRecentMaterials',a.slice(0,8))}
+function toggleFavorite(m){let a=getStore('epaFavoriteMaterials'),has=a.some(x=>x.id===m.id);a=has?a.filter(x=>x.id!==m.id):[{id:m.id,name:m.name,japanese:m.japanese,english:m.english,formula:m.formula},...a];setStore('epaFavoriteMaterials',a.slice(0,30));show(m,false)}
 function searchFields(m){return [m.japanese,m.name,m.english,m.formula,m.id,...(m.aliases||[])].filter(Boolean)}
 function extendedFields(m){return [...searchFields(m),m.summary,m.representative_form,m.machinability,m.safety_note,...(m.uses||[]),...(m.characteristics||[]),...(m.processing_forms||[])].filter(Boolean)}
-function scoreMatch(m,term){
- if(!term)return 0;
- const fields=searchFields(m).map(norm), ext=extendedFields(m).map(norm);
- let score=0;
- fields.forEach((v,i)=>{if(v===term)score=Math.max(score,i===3?120:110);else if(v.startsWith(term))score=Math.max(score,i===0||i===2?90:82);else if(v.includes(term))score=Math.max(score,68)});
- if(!score&&ext.some(v=>v.includes(term)))score=35;
- return score;
+function scoreMatch(m,term){if(!term)return 0;const f=searchFields(m).map(norm),e=extendedFields(m).map(norm);let s=0;f.forEach((v,i)=>{if(v===term)s=Math.max(s,i===3?120:110);else if(v.startsWith(term))s=Math.max(s,i===0||i===2?90:82);else if(v.includes(term))s=Math.max(s,68)});if(!s&&e.some(v=>v.includes(term)))s=35;return s}
+function rows(){const term=norm(q.value.trim()),c=cat.value;return all.map(m=>({m,score:term?scoreMatch(m,term):0})).filter(x=>(!term||x.score>0)&&(!c||x.m.category===c)).sort((a,b)=>term?(b.score-a.score)||I.materialName(a.m).localeCompare(I.materialName(b.m),I.lang):I.materialName(a.m).localeCompare(I.materialName(b.m),I.lang)).map(x=>x.m)}
+function categoryLabel(c){return t('category.'+c)}
+function rebuildCategory(){const current=cat.value;cat.innerHTML=`<option value="">${esc(t('filter.all'))}</option>`;[...new Set(all.map(x=>x.category).filter(Boolean))].sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=categoryLabel(c);cat.appendChild(o)});cat.value=current}
+function sourceBlock(title,s){if(!s||(!s.name&&!s.url))return '';const value=(s.value!==null&&s.value!==undefined)?`<div>${esc(t('source.value',{v:s.value}))}</div>`:'';const link=s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(t('source.open'))}</a>`:`<span>${esc(t('source.none'))}</span>`;return `<div class="source"><strong>${esc(title)}</strong><div>${esc(s.name||'')}</div>${value}<div>${link}</div>${s.url?`<div class="url">${esc(s.url)}</div>`:''}</div>`}
+function show(m,track=true){if(!m)return;selectedId=m.id;if(track)addRecent(m);document.querySelectorAll('.item').forEach(x=>x.classList.toggle('active',x.dataset.id===m.id));const den=typeof m.density==='number'?`${m.density} ${esc(m.unit||'g/cm³')}`:t('detail.noDensity');const fav=getStore('epaFavoriteMaterials').some(x=>x.id===m.id);
+ detail.innerHTML=`<div class="detail-title"><h2>${esc(I.materialName(m))}<span class="badge">${esc(m.review_status||'')}</span></h2><button class="favorite ${fav?'active':''}" id="favoriteBtn">${esc(fav?t('detail.favorited'):t('detail.favorite'))}</button></div>
+ <div class="subname">${esc(I.secondaryMaterialName(m))}${m.formula?' ／ '+esc(m.formula):''}</div>
+ ${m.image_file?`<div class="image"><img src="images/materials/${esc(m.image_file)}" alt="${esc(I.materialName(m))}" onerror="this.parentElement.style.display='none'"></div>`:''}
+ <div class="meta"><b>${esc(t('detail.id'))}</b><div>${esc(m.id)}</div><b>${esc(t('detail.category'))}</b><div>${esc(categoryLabel(m.category||''))}${m.subcategory?' / '+esc(m.subcategory):''}</div><b>${esc(t('detail.density'))}</b><div><strong>${den}</strong></div><b>${esc(t('detail.condition'))}</b><div>${esc(m.density_condition||m.density_status||t('detail.unset'))}</div><b>${esc(t('detail.review'))}</b><div>${esc(m.review_decision||'')}</div><b>${esc(t('detail.updated'))}</b><div>${esc(m.updated||'')}</div></div>
+ <div class="section-title">${esc(t('detail.reason'))}</div><div class="reason">${esc(m.adoption_reason||'')}</div>${m.note?`<div class="notice">${esc(m.note)}</div>`:''}
+ <a class="open-detail" id="openDetail" href="material_detail.html?id=${encodeURIComponent(m.id)}">${esc(t('detail.open'))}</a>
+ <div class="section-title">${esc(t('detail.sources'))}</div>${sourceBlock(t('source.current'),m.source_current||{name:m.source_name,url:m.source_url})}${sourceBlock(t('source.a'),m.source_a)}${sourceBlock(t('source.b'),m.source_b)}`;
+ document.getElementById('favoriteBtn')?.addEventListener('click',()=>toggleFavorite(m));
+ document.getElementById('openDetail')?.addEventListener('click',()=>{try{localStorage.setItem('epaExplorerContext',JSON.stringify({q:q.value,category:cat.value,selected:m.id,scrollTop:list.scrollTop,updated:Date.now()}))}catch(e){}});
 }
-function filteredRows(){
- const term=norm(q.value.trim()),c=cat.value;
- return all.map(m=>({m,score:term?scoreMatch(m,term):0}))
-  .filter(x=>(!term||x.score>0)&&(!c||x.m.category===c))
-  .sort((a,b)=>term?(b.score-a.score)||String(a.m.japanese||a.m.name).localeCompare(String(b.m.japanese||b.m.name),'ja'):0)
-  .map(x=>x.m);
-}
-function closeSuggestions(){suggestions.hidden=true;suggestions.innerHTML='';q.setAttribute('aria-expanded','false');suggestionIndex=-1}
-function openSuggestion(m){q.value=m.japanese||m.name||m.formula||'';closeSuggestions();render(false);show(m,true)}
-function renderSuggestions(){
- const term=norm(q.value.trim());if(!term){closeSuggestions();return}
- const candidates=all.map(m=>({m,score:scoreMatch(m,term)})).filter(x=>x.score>=68).sort((a,b)=>(b.score-a.score)||String(a.m.japanese||a.m.name).localeCompare(String(b.m.japanese||b.m.name),'ja')).slice(0,7);
- if(!candidates.length){closeSuggestions();return}
- suggestions.innerHTML=candidates.map((x,i)=>`<button type="button" class="suggestion" role="option" data-id="${esc(x.m.id)}" data-index="${i}"><span><strong>${esc(x.m.japanese||x.m.name)}</strong><small>${esc(x.m.english||x.m.name||'')} ／ ${esc(x.m.category||'')}</small></span><span class="formula">${esc(x.m.formula||'')}</span></button>`).join('');
- suggestions.hidden=false;q.setAttribute('aria-expanded','true');suggestionIndex=-1;
- suggestions.querySelectorAll('.suggestion').forEach(el=>el.addEventListener('mousedown',e=>{e.preventDefault();const m=all.find(x=>x.id===el.dataset.id);if(m)openSuggestion(m)}));
-}
-function updateSuggestionActive(){
- const els=[...suggestions.querySelectorAll('.suggestion')];
- els.forEach((el,i)=>el.classList.toggle('active',i===suggestionIndex));
- if(els[suggestionIndex])els[suggestionIndex].scrollIntoView({block:'nearest'});
-}
-function render(updateSuggestions=true){
- const term=norm(q.value.trim()),rows=filteredRows();
- try{localStorage.setItem('epaExplorerContext',JSON.stringify({q:q.value,category:cat.value,ids:rows.map(x=>x.id),scrollTop:list.scrollTop,updated:Date.now()}))}catch(e){}
- resultCount.textContent=`検索結果 ${rows.length}件`;
- resultHint.textContent=term?'一致度の高い材料から表示しています。':'材料名・元素記号・化学式・英語名を横断検索します。';
- list.innerHTML=rows.length?rows.map(m=>`<div class="item" data-id="${esc(m.id)}"><span class="density">${typeof m.density==='number'?esc(m.density)+' g/cm³':'密度未設定'}</span><strong>${esc(m.japanese||m.name)}</strong><div class="muted">${esc(m.english||m.name||'')} ／ ${esc(m.formula||'')} ／ ${esc(m.category||'')}</div></div>`).join(''):`<div class="empty-search"><strong>該当する材料が見つかりませんでした。</strong><p>表記を短くするか、元素記号・化学式・英語名でも検索できます。<br>例：シリコン / Si / silicon、酸化アルミニウム / Al2O3</p><div class="empty-actions"><button type="button" id="clearSearch">検索をクリア</button><a href="usage_explorer.html">用途から探す</a><a href="classification_explorer.html">分類から探す</a></div></div>`;
+function closeSuggestions(){suggestions.hidden=true;suggestions.innerHTML='';suggestionIndex=-1}
+function renderSuggestions(){const term=norm(q.value.trim());if(!term){closeSuggestions();return}const c=all.map(m=>({m,score:scoreMatch(m,term)})).filter(x=>x.score>=68).sort((a,b)=>b.score-a.score).slice(0,7);if(!c.length){closeSuggestions();return}suggestions.innerHTML=c.map((x,i)=>`<button type="button" class="suggestion" data-id="${esc(x.m.id)}" data-index="${i}"><span><strong>${esc(I.materialName(x.m))}</strong><small>${esc(I.secondaryMaterialName(x.m))} ／ ${esc(categoryLabel(x.m.category||''))}</small></span><span class="formula">${esc(x.m.formula||'')}</span></button>`).join('');suggestions.hidden=false;suggestions.querySelectorAll('.suggestion').forEach(el=>el.addEventListener('mousedown',e=>{e.preventDefault();const m=all.find(x=>x.id===el.dataset.id);q.value=I.materialName(m);closeSuggestions();render(false);show(m,true)}))}
+function render(withSug=true){const r=rows(),term=norm(q.value.trim());clearBtn.hidden=!q.value;resultCount.textContent=t('result.count',{n:r.length});resultHint.textContent=term?t('result.matchHint'):t('result.defaultHint');
+ list.innerHTML=r.length?r.map(m=>`<div class="item" data-id="${esc(m.id)}"><div><strong>${esc(I.materialName(m))}</strong><div class="muted">${esc(I.secondaryMaterialName(m))}${m.formula?' ／ '+esc(m.formula):''} ／ ${esc(categoryLabel(m.category||''))}</div></div><span class="density">${typeof m.density==='number'?esc(m.density)+' g/cm³':esc(t('detail.unset'))}</span></div>`).join(''):`<div class="empty-search"><strong>${esc(t('empty.title'))}</strong><p>${esc(t('empty.body'))}</p><div class="empty-actions"><button id="emptyClear">${esc(t('empty.clear'))}</button><a href="usage_explorer.html">${esc(t('empty.usage'))}</a><a href="classification_explorer.html">${esc(t('empty.class'))}</a></div></div>`;
  list.querySelectorAll('.item').forEach(el=>el.addEventListener('click',()=>show(all.find(m=>m.id===el.dataset.id))));
- const clear=document.getElementById('clearSearch');if(clear)clear.addEventListener('click',()=>{q.value='';cat.value='';closeSuggestions();render(false);q.focus()});
- if(rows.length){const requested=new URLSearchParams(location.search).get('material');const chosen=all.find(m=>m.id===requested&&rows.some(r=>r.id===m.id))||rows[0];show(chosen,requested?true:false)}
- else detail.innerHTML='<div class="empty">検索条件を変更すると、ここに材料詳細が表示されます。</div>';
- if(updateSuggestions)renderSuggestions();
+ document.getElementById('emptyClear')?.addEventListener('click',()=>{q.value='';cat.value='';render(false);q.focus()});
+ if(r.length){const wanted=r.find(m=>m.id===selectedId)||r[0];show(wanted,false)}else detail.innerHTML=`<div class="empty">${esc(t('empty.change'))}</div>`;
+ if(withSug)renderSuggestions();
 }
-q.addEventListener('input',()=>render(true));q.addEventListener('focus',renderSuggestions);
-q.addEventListener('keydown',e=>{
- if(suggestions.hidden)return;
- const els=[...suggestions.querySelectorAll('.suggestion')];
- if(e.key==='ArrowDown'){e.preventDefault();suggestionIndex=Math.min(suggestionIndex+1,els.length-1);updateSuggestionActive()}
- else if(e.key==='ArrowUp'){e.preventDefault();suggestionIndex=Math.max(suggestionIndex-1,0);updateSuggestionActive()}
- else if(e.key==='Enter'&&suggestionIndex>=0){e.preventDefault();const m=all.find(x=>x.id===els[suggestionIndex].dataset.id);if(m)openSuggestion(m)}
- else if(e.key==='Escape')closeSuggestions();
-});
-document.addEventListener('click',e=>{if(!e.target.closest('.search-input-wrap'))closeSuggestions()});
-cat.addEventListener('change',()=>render(false));render(false);
+function applyLanguage(){document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));q.placeholder=t('search.placeholder');clearBtn.setAttribute('aria-label',t('search.clear'));document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===I.lang));rebuildCategory();render(false)}
+document.getElementById('countAll').textContent=all.length;
+document.getElementById('countDensity').textContent=all.filter(x=>typeof x.density==='number').length;
+document.getElementById('countReviewed').textContent=all.filter(x=>x.review_status||x.review_decision).length;
+const params=new URLSearchParams(location.search);q.value=params.get('q')||'';
+try{const ctx=JSON.parse(localStorage.getItem('epaExplorerContext')||'null');if(ctx){if(!q.value&&ctx.q)q.value=ctx.q;if(ctx.category)cat.dataset.restore=ctx.category;if(ctx.selected)selectedId=ctx.selected}}catch(e){}
+rebuildCategory();if(cat.dataset.restore)cat.value=cat.dataset.restore;
+q.addEventListener('input',()=>render(true));q.addEventListener('focus',renderSuggestions);cat.addEventListener('change',()=>render(false));clearBtn.addEventListener('click',()=>{q.value='';closeSuggestions();render(false);q.focus()});
+document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))closeSuggestions()});
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>I.set(b.dataset.lang)));
+window.addEventListener('monobase:languagechange',applyLanguage);
+applyLanguage();
 </script>
-
-<script>
-(()=>{
-  const input=document.getElementById('q');
-  const clear=document.querySelector('[data-clear-for="q"]');
-  if(!input||!clear)return;
-  const sync=()=>{clear.hidden=!input.value;};
-  clear.addEventListener('click',()=>{
-    input.value='';
-    
-    const sug=document.getElementById('searchSuggestions');
-    if(sug){sug.hidden=true;sug.innerHTML='';}
-
-    input.dispatchEvent(new Event('input',{bubbles:true}));
-    input.dispatchEvent(new Event('change',{bubbles:true}));
-    sync();
-    input.focus();
-  });
-  input.addEventListener('input',sync);
-  sync();
-})();
-</script>
-
-</body></html>
+</body>
+</html>

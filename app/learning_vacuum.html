@@ -3,41 +3,686 @@
 .epa-course-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border:1px solid #bfd2e2;border-radius:10px;background:#fff;color:#15527d;text-decoration:none;font-weight:700}
 .epa-course-nav .prev{justify-self:start}.epa-course-nav .home{justify-self:center}.epa-course-nav .next{justify-self:end}
 @media(max-width:680px){.epa-course-nav{grid-template-columns:1fr 1fr}.epa-course-nav .home{grid-column:1/-1;grid-row:1}.epa-course-nav .prev{grid-column:1}.epa-course-nav .next{grid-column:2}}
-</style></head><body><header><div class="head"><div class="brand">EPA Technical Learning</div><a class="right" href="index.html">← MonoBase ホーム</a></div></header><div class="course-switch-wrap"><nav class="course-switch" aria-label="技術学習コース切替"><span class="course-switch-label">学習コース</span><a class="active" aria-current="page" href="learning_vacuum.html">真空技術</a><a href="learning_sputtering.html">スパッタリング</a><a href="learning_thinfilm.html">薄膜技術</a></nav></div><main>
-<div class="hero">
-  <div class="ey">VACUUM TECHNOLOGY / COURSE</div>
-  <h1>真空技術入門</h1>
-  <p class="lead">真空は、研究室だけの特別な技術ではありません。私たちの身の回りにある製品の製造や処理にも、真空技術が使われています。</p>
-  <figure class="hero-photo">
-    <img src="images/learning/top_vacuum_main.jpg" alt="ステンレス製の研究用真空装置イメージ">
-    <figcaption><b>まず、真空装置を見てみる。</b> 真空装置は、容器の中から気体を取り除き、目的に合った低い圧力の環境を作ります。<span class="credit">EPAオリジナル・イメージ</span></figcaption>
-  </figure>
+</style>
+<style>
+/* MonoBase Ver.0.6.5 — Vacuum character layout fix */
+.vac-page{max-width:1180px;margin:0 auto;padding:22px 18px 44px;color:#163456}
+.vac-back{display:inline-flex;margin-bottom:12px;color:#3c6f9d;text-decoration:none;font-size:13px}
+.vac-hero,.vac-section,.vac-start{background:#fff;border:1px solid #dce8f2;border-radius:18px;box-shadow:0 8px 28px rgba(43,84,120,.055)}
+.vac-hero{display:grid;grid-template-columns:.9fr 1.45fr;gap:20px;padding:24px;margin-bottom:18px;overflow:hidden}
+.vac-kicker,.vac-eyebrow{font-size:11px;font-weight:800;letter-spacing:.12em;color:#2f78b8}
+.vac-hero h1{font-size:40px;line-height:1.15;margin:8px 0 12px;color:#113a68}
+.vac-lead{font-size:14px;line-height:1.75;color:#536d84}
+.vac-guide-note{margin-top:22px;border-left:3px solid #2f86c9;background:#f4f9fd;padding:12px 14px;border-radius:0 12px 12px 0;display:grid;gap:3px}
+.vac-guide-note strong{font-size:14px;color:#135f9e}.vac-guide-note span{font-size:13px;color:#5c7489}
+.vac-hero-photo{position:relative;min-height:350px;border-radius:14px;overflow:hidden;background:#eef5fa}
+.vac-hero-photo>img{width:100%;height:100%;object-fit:cover;display:block}
+.vac-hero-character{position:absolute;left:8px;bottom:-2px;width:32%;max-width:230px;z-index:2;filter:drop-shadow(0 8px 12px rgba(44,66,85,.18))}
+.vac-hero-character img{width:100%;display:block}
+.vac-photo-caption{position:absolute;right:10px;bottom:10px;background:rgba(10,35,58,.72);color:#fff;font-size:11px;padding:7px 10px;border-radius:8px;z-index:3}
+.vac-section{padding:22px;margin-bottom:18px}
+.vac-section-head h2,.vac-learning-main h2,.vac-start h2{margin:5px 0 7px;color:#123d69}
+.vac-section-head p,.vac-start p{margin:0;color:#637b90;font-size:13px}
+.vac-app-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.vac-app-card{border:1px solid #dce8f2;border-radius:14px;overflow:hidden;background:#fbfdff}
+.vac-app-card img{width:100%;height:135px;object-fit:cover;display:block}
+.vac-app-card div{padding:11px}.vac-app-card h3{font-size:15px;margin:0 0 6px;color:#164b7a}.vac-app-card p{font-size:11.5px;line-height:1.55;color:#6a7f91;margin:0}
+.vac-learning{display:grid;grid-template-columns:210px 1fr;gap:22px}
+.vac-learning-aside{position:relative;background:linear-gradient(180deg,#f6fbff,#edf6fd);border-radius:14px;min-height:360px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.vac-learning-aside img{width:100%;max-height:250px;object-fit:contain;object-position:bottom}
+.vac-mini-bubble{position:absolute;left:12px;right:12px;top:12px;background:#fff;border:1px solid #cfe2f2;border-radius:12px;padding:10px;font-size:11px;line-height:1.55;color:#49677f}
+.vac-learning-main h2{font-size:24px}
+.vac-topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.vac-topic-grid a{display:grid;grid-template-columns:42px 1fr 20px;gap:8px;align-items:center;text-decoration:none;border:1px solid #dce8f2;border-radius:12px;padding:12px;background:#fff;color:#163456}
+.vac-topic-grid b{width:38px;height:38px;border-radius:10px;background:#edf6fd;display:grid;place-items:center;color:#2677b6}
+.vac-topic-grid strong{display:block;font-size:14px}.vac-topic-grid small{display:block;margin-top:3px;color:#76899a;font-size:10.5px}.vac-topic-grid i{font-style:normal;color:#2a78b5}
+.vac-topic-grid .wide{grid-column:1/-1}
+.vac-start{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 22px;background:linear-gradient(90deg,#f7fbff,#edf6ff)}
+.vac-start h2{font-size:21px}.vac-start a{background:linear-gradient(180deg,#2d8fd4,#1767aa);color:#fff;text-decoration:none;font-weight:800;padding:15px 22px;border-radius:12px}
+@media(max-width:900px){.vac-hero{grid-template-columns:1fr}.vac-app-grid{grid-template-columns:1fr 1fr}.vac-learning{grid-template-columns:1fr}.vac-learning-aside{min-height:180px}.vac-learning-aside img{width:180px;max-height:165px;margin-left:auto}.vac-mini-bubble{right:200px}}
+@media(max-width:640px){.vac-page{padding:12px 10px 30px}.vac-hero,.vac-section{padding:14px}.vac-hero h1{font-size:30px}.vac-hero-photo{min-height:220px}.vac-hero-character{width:34%}.vac-app-grid{gap:8px}.vac-app-card img{height:105px}.vac-app-card h3{font-size:13px}.vac-app-card p{font-size:10px}.vac-topic-grid{grid-template-columns:1fr}.vac-topic-grid .wide{grid-column:auto}.vac-start{flex-direction:column;align-items:stretch}.vac-start a{text-align:center}}
+</style>
+
+
+<style>
+/* MonoBase Ver.0.6.5 — restrained clean-character vacuum top */
+.vac-page{max-width:1180px;margin:0 auto;padding:22px 18px 44px;color:#173650}
+.vac-back{display:inline-block;margin-bottom:12px;color:#4d789d;text-decoration:none;font-size:13px}
+.vac-hero-clean,.vac-section,.vac-start-clean{background:#fff;border:1px solid #dce7f0;border-radius:18px;box-shadow:0 7px 24px rgba(42,79,112,.05)}
+.vac-hero-clean{display:grid;grid-template-columns:.9fr 1.4fr;gap:22px;padding:24px;margin-bottom:18px}
+.vac-kicker,.vac-eyebrow{font-size:11px;font-weight:800;letter-spacing:.12em;color:#2f78b8}
+.vac-copy-clean h1{font-size:40px;line-height:1.15;margin:8px 0 12px;color:#113d6b}
+.vac-copy-clean>p{font-size:14px;line-height:1.75;color:#60798f;margin:0}
+.vac-kechan-intro{display:flex;align-items:flex-end;gap:12px;margin-top:20px;padding:10px 12px;background:#f6fbff;border-radius:12px;border-left:3px solid #2e88ca}
+.vac-kechan-intro img{width:78px;max-height:88px;object-fit:contain}
+.vac-kechan-intro div{display:grid;gap:3px}
+.vac-kechan-intro strong{font-size:13px;color:#185f96}
+.vac-kechan-intro span{font-size:12px;line-height:1.5;color:#617b91}
+.vac-main-photo{margin:0;position:relative;border-radius:14px;overflow:hidden;min-height:330px}
+.vac-main-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.vac-main-photo figcaption{position:absolute;right:10px;bottom:10px;background:rgba(14,38,60,.7);color:#fff;padding:6px 9px;border-radius:8px;font-size:11px}
+.vac-section{padding:22px;margin-bottom:18px}
+.vac-section-head h2,.vac-roadmap-copy h2,.vac-start-clean h2{margin:5px 0 7px;color:#123d69}
+.vac-section-head p,.vac-roadmap-copy>p{margin:0;color:#667f93;font-size:13px}
+.vac-app-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.vac-app-card{border:1px solid #dce7f0;border-radius:14px;overflow:hidden;background:#fbfdff}
+.vac-app-card img{width:100%;height:135px;object-fit:cover;display:block}
+.vac-app-card div{padding:10px}.vac-app-card h3{font-size:15px;margin:0 0 5px;color:#164b7a}.vac-app-card p{font-size:11.5px;line-height:1.5;color:#708495;margin:0}
+.vac-roadmap-clean{display:grid;grid-template-columns:260px 1fr;gap:22px}
+.vac-roadmap-copy{padding-right:4px}
+.vac-kechan-small{margin-top:18px;background:#f6fbff;border:1px solid #dceaf5;border-radius:14px;padding:10px;display:flex;align-items:flex-end;gap:8px}
+.vac-kechan-small img{width:94px;max-height:100px;object-fit:contain}
+.vac-kechan-small span{font-size:11px;line-height:1.55;color:#58758b}
+.vac-topic-grid.clean{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vac-topic-grid.clean a{display:grid;grid-template-columns:42px 1fr 18px;gap:8px;align-items:center;text-decoration:none;border:1px solid #dce7f0;border-radius:12px;padding:12px;color:#173650;background:#fff}
+.vac-topic-grid.clean b{width:38px;height:38px;border-radius:10px;background:#edf6fd;display:grid;place-items:center;color:#2879b7}
+.vac-topic-grid.clean strong{display:block;font-size:14px}.vac-topic-grid.clean small{display:block;margin-top:3px;color:#7a8c9b;font-size:10.5px}.vac-topic-grid.clean i{font-style:normal;color:#2f79b5}
+.vac-topic-grid.clean .wide{grid-column:1/-1}
+.vac-start-clean{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;background:linear-gradient(90deg,#f8fbfe,#edf6ff)}
+.vac-start-clean h2{font-size:21px}.vac-start-clean a{background:linear-gradient(180deg,#2f8ed2,#1769aa);color:#fff;text-decoration:none;font-weight:800;padding:14px 20px;border-radius:12px}
+@media(max-width:900px){.vac-hero-clean{grid-template-columns:1fr}.vac-main-photo{min-height:280px}.vac-app-grid{grid-template-columns:1fr 1fr}.vac-roadmap-clean{grid-template-columns:1fr}.vac-kechan-small{max-width:340px}}
+@media(max-width:640px){.vac-page{padding:12px 10px 30px}.vac-hero-clean,.vac-section{padding:14px}.vac-copy-clean h1{font-size:30px}.vac-main-photo{min-height:220px}.vac-app-grid{gap:8px}.vac-app-card img{height:105px}.vac-app-card h3{font-size:13px}.vac-app-card p{font-size:10px}.vac-topic-grid.clean{grid-template-columns:1fr}.vac-topic-grid.clean .wide{grid-column:auto}.vac-start-clean{flex-direction:column;align-items:stretch}.vac-start-clean a{text-align:center}}
+</style>
+
+
+<style>
+/* MonoBase Ver.0.6.5 — Vacuum top redesign */
+.vac-page{max-width:1180px;margin:0 auto;padding:20px 18px 46px;color:#173650}
+.vac-back{display:inline-block;margin:0 0 12px;color:#5b7891;text-decoration:none;font-size:13px}
+.vac-hero-r{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.28fr);gap:18px;background:#fff;border:1px solid #d9e5ef;border-radius:22px;padding:22px;box-shadow:0 10px 30px rgba(42,79,112,.06);overflow:hidden}
+.vac-hero-left{min-width:0;display:flex;flex-direction:column;justify-content:space-between;min-height:410px}
+.vac-kicker,.vac-eyebrow{font-size:11px;font-weight:800;letter-spacing:.13em;color:#2e77b7}
+.vac-hero-copy h1{margin:8px 0 12px;font-size:42px;line-height:1.08;color:#103d6a}
+.vac-hero-copy p{margin:0;max-width:470px;font-size:14px;line-height:1.8;color:#60798f}
+.vac-guide-wrap{display:flex;align-items:flex-end;gap:14px;min-height:250px;padding-top:16px}
+.vac-guide-wrap img{width:205px;max-height:245px;object-fit:contain;object-position:left bottom;flex:0 0 auto;filter:drop-shadow(0 10px 15px rgba(36,61,84,.12))}
+.vac-guide-bubble{position:relative;max-width:245px;margin-bottom:24px;padding:12px 14px;background:#f6fbff;border:1px solid #d8e8f4;border-radius:14px;font-size:12.5px;line-height:1.6;color:#5b7489}
+.vac-guide-bubble:before{content:"";position:absolute;left:-8px;bottom:28px;width:14px;height:14px;background:#f6fbff;border-left:1px solid #d8e8f4;border-bottom:1px solid #d8e8f4;transform:rotate(45deg)}
+.vac-hero-photo{margin:0;position:relative;min-height:410px;border-radius:18px;overflow:hidden;background:#eaf1f6}
+.vac-hero-photo img{width:100%;height:100%;display:block;object-fit:cover}
+.vac-hero-photo figcaption{position:absolute;right:12px;bottom:12px;padding:7px 10px;border-radius:9px;background:rgba(13,34,54,.72);color:#fff;font-size:11px}
+.vac-section,.vac-roadmap-r{margin-top:18px;background:#fff;border:1px solid #d9e5ef;border-radius:20px;padding:22px;box-shadow:0 8px 24px rgba(42,79,112,.045)}
+.vac-section-head h2,.vac-roadmap-head h2{margin:6px 0 7px;color:#123d69;font-size:24px}
+.vac-section-head p,.vac-roadmap-head p{margin:0;color:#6a8194;font-size:13px}
+.vac-app-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:17px}
+.vac-app-card{overflow:hidden;border:1px solid #dce7f0;border-radius:15px;background:#fbfdff}
+.vac-app-card img{display:block;width:100%;height:142px;object-fit:cover}
+.vac-app-card div{padding:11px 11px 12px}
+.vac-app-card h3{margin:0 0 5px;font-size:15px;color:#164b7a}
+.vac-app-card p{margin:0;font-size:11.5px;line-height:1.55;color:#738697}
+.vac-roadmap-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-bottom:16px}
+.vac-start-link{flex:0 0 auto;text-decoration:none;padding:10px 14px;border-radius:10px;border:1px solid #bed7e9;background:#f6fbff;color:#236da6;font-size:12px;font-weight:800}
+.vac-topic-grid-r{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vac-topic-grid-r a{display:grid;grid-template-columns:42px 1fr 18px;gap:9px;align-items:center;min-height:68px;padding:11px 12px;border:1px solid #dce7f0;border-radius:13px;background:#fff;color:#173650;text-decoration:none;transition:.15s ease}
+.vac-topic-grid-r a:hover{transform:translateY(-1px);border-color:#a9cbe2;box-shadow:0 8px 18px rgba(37,91,132,.08)}
+.vac-topic-grid-r b{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:#eef7fd;color:#2b7cb8;font-size:12px}
+.vac-topic-grid-r strong{display:block;font-size:14px}
+.vac-topic-grid-r small{display:block;margin-top:3px;color:#81919f;font-size:10.5px}
+.vac-topic-grid-r i{font-style:normal;color:#2f79b5}
+.vac-topic-grid-r .wide{grid-column:1/-1}
+@media(max-width:900px){
+  .vac-hero-r{grid-template-columns:1fr}
+  .vac-hero-left{min-height:auto}
+  .vac-guide-wrap{min-height:210px}
+  .vac-guide-wrap img{width:175px;max-height:205px}
+  .vac-hero-photo{min-height:300px}
+  .vac-app-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .vac-page{padding:12px 10px 32px}
+  .vac-hero-r,.vac-section,.vac-roadmap-r{padding:14px;border-radius:16px}
+  .vac-hero-copy h1{font-size:31px}
+  .vac-hero-copy p{font-size:12.5px;line-height:1.7}
+  .vac-guide-wrap{gap:8px;min-height:185px}
+  .vac-guide-wrap img{width:140px;max-height:175px}
+  .vac-guide-bubble{font-size:10.8px;padding:9px 10px;margin-bottom:14px}
+  .vac-hero-photo{min-height:230px}
+  .vac-app-grid{gap:8px}
+  .vac-app-card img{height:105px}
+  .vac-app-card h3{font-size:13px}
+  .vac-app-card p{font-size:10px}
+  .vac-roadmap-head{align-items:flex-start;flex-direction:column}
+  .vac-topic-grid-r{grid-template-columns:1fr}
+  .vac-topic-grid-r .wide{grid-column:auto}
+}
+</style>
+
+
+<style>
+/* MonoBase Ver.0.6.5 — character-led technical hero */
+.vac-hero-manga{
+  display:grid;
+  grid-template-columns:36% 64%;
+  min-height:500px;
+  background:#fff;
+  border:1px solid #d9e5ef;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(42,79,112,.06);
+}
+.vac-character-panel{
+  position:relative;
+  min-width:0;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 25% 20%,rgba(191,229,255,.72),transparent 35%),
+    linear-gradient(145deg,#f8fcff 0%,#eaf6ff 100%);
+}
+.vac-character-panel:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent 75%,rgba(255,255,255,.72) 100%);
+}
+.vac-character-art{
+  position:absolute;
+  left:-5px;
+  bottom:-7px;
+  width:72%;
+  height:92%;
+  z-index:1;
+  display:flex;
+  align-items:flex-end;
+}
+.vac-character-art img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:left bottom;
+  filter:drop-shadow(0 14px 20px rgba(34,64,89,.14));
+}
+.vac-comic-bubble{
+  position:absolute;
+  z-index:3;
+  top:56px;
+  right:18px;
+  width:42%;
+  padding:16px 16px 15px;
+  background:#fff;
+  border:2px solid #174f7d;
+  border-radius:20px;
+  box-shadow:0 7px 18px rgba(32,74,107,.08);
+}
+.vac-comic-bubble:before{
+  content:"";
+  position:absolute;
+  left:-13px;
+  bottom:30px;
+  width:22px;height:22px;
+  background:#fff;
+  border-left:2px solid #174f7d;
+  border-bottom:2px solid #174f7d;
+  transform:rotate(45deg);
+}
+.vac-comic-bubble span{
+  display:block;
+  margin-bottom:5px;
+  color:#2d82bf;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.vac-comic-bubble strong{
+  display:block;
+  color:#123f69;
+  font-size:17px;
+  line-height:1.45;
+}
+.vac-comic-bubble small{
+  display:block;
+  margin-top:7px;
+  color:#6e8496;
+  font-size:10.5px;
+  line-height:1.5;
+}
+.vac-hero-content{
+  min-width:0;
+  display:grid;
+  grid-template-rows:auto 1fr;
+  padding:28px 26px 26px 14px;
+  background:#fff;
+}
+.vac-hero-copy2{
+  padding:4px 10px 20px;
+}
+.vac-hero-copy2 h1{
+  margin:7px 0 10px;
+  color:#103d6a;
+  font-size:43px;
+  line-height:1.08;
+}
+.vac-hero-copy2 p{
+  max-width:650px;
+  margin:0;
+  color:#60798f;
+  font-size:14px;
+  line-height:1.75;
+}
+.vac-hero-photo2{
+  position:relative;
+  min-height:315px;
+  margin:0;
+  overflow:hidden;
+  border-radius:17px;
+  background:#eaf1f6;
+}
+.vac-hero-photo2 img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.vac-hero-photo2 figcaption{
+  position:absolute;
+  right:11px;
+  bottom:11px;
+  padding:6px 9px;
+  border-radius:8px;
+  background:rgba(13,34,54,.72);
+  color:#fff;
+  font-size:10.5px;
+}
+@media(max-width:900px){
+  .vac-hero-manga{grid-template-columns:40% 60%;min-height:450px}
+  .vac-character-art{width:82%;height:88%}
+  .vac-comic-bubble{top:35px;right:10px;width:46%;padding:12px}
+  .vac-comic-bubble strong{font-size:14px}
+  .vac-hero-content{padding:20px 18px 20px 8px}
+  .vac-hero-copy2 h1{font-size:34px}
+}
+@media(max-width:640px){
+  .vac-hero-manga{grid-template-columns:1fr;min-height:0}
+  .vac-character-panel{height:330px}
+  .vac-character-art{width:58%;height:96%}
+  .vac-comic-bubble{top:34px;right:18px;width:42%}
+  .vac-hero-content{padding:16px 14px 14px}
+  .vac-hero-copy2{padding:2px 2px 14px}
+  .vac-hero-copy2 h1{font-size:31px}
+  .vac-hero-copy2 p{font-size:12.5px}
+  .vac-hero-photo2{min-height:220px}
+}
+</style>
+
+
+<style id="monobase-mobile-responsive-v0724">
+/* MonoBase Ver.0.7.24 Mobile Responsive */
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+body{
+  overflow-x:hidden;
+}
+img,svg,video,canvas{
+  max-width:100%;
+  height:auto;
+}
+button,a,input,select,textarea{
+  -webkit-tap-highlight-color:transparent;
+}
+@media (max-width: 900px){
+  body{
+    min-width:0 !important;
+  }
+
+  /* Header / brand */
+  .top,
+  header.top,
+  .app-header,
+  header{
+    min-height:auto !important;
+  }
+  .top .inner,
+  .top-inner,
+  .header-inner,
+  header .inner{
+    padding-left:14px !important;
+    padding-right:14px !important;
+  }
+  .top .brand,
+  .brand{
+    min-width:0 !important;
+  }
+  .top .brand .name,
+  .brand .name,
+  .brand-text{
+    min-width:0 !important;
+  }
+
+  /* Main shell / side navigation */
+  .shell,
+  .app-shell,
+  .layout,
+  .page-layout,
+  .main-layout{
+    width:100% !important;
+    max-width:100% !important;
+    grid-template-columns:1fr !important;
+    display:block !important;
+  }
+  aside,
+  .sidebar,
+  .side-nav,
+  .sidenav,
+  .left-nav,
+  nav.side{
+    position:static !important;
+    width:100% !important;
+    max-width:none !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin:0 0 12px !important;
+    overflow:visible !important;
+  }
+
+  /* Horizontal nav fallback when a desktop side nav exists */
+  .sidebar nav,
+  .side-nav nav,
+  .sidenav nav,
+  .left-nav nav,
+  nav.side{
+    display:flex !important;
+    gap:8px !important;
+    overflow-x:auto !important;
+    overscroll-behavior-inline:contain;
+    scrollbar-width:thin;
+    padding-bottom:6px !important;
+  }
+  .sidebar nav a,
+  .side-nav nav a,
+  .sidenav nav a,
+  .left-nav nav a,
+  nav.side a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    min-height:42px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+  }
+
+  /* Main content */
+  main,
+  .main,
+  .content,
+  .page,
+  .page-content,
+  .main-content{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    padding-left:14px !important;
+    padding-right:14px !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Hero / two-column blocks */
+  .hero,
+  .hero-grid,
+  .detail-hero,
+  .detail-grid,
+  .intro-grid,
+  .two-col,
+  .two-column,
+  .columns,
+  .grid-2,
+  .split,
+  .overview-grid{
+    grid-template-columns:1fr !important;
+  }
+  .hero{
+    gap:18px !important;
+  }
+  .hero-copy,
+  .hero-text,
+  .detail-main,
+  .detail-side{
+    min-width:0 !important;
+  }
+
+  /* Cards */
+  .cards,
+  .card-grid,
+  .grid,
+  .quick,
+  .quick-grid,
+  .material-grid,
+  .story-grid,
+  #storyGrid,
+  .everyday-grid,
+  .property-grid,
+  .stats-grid,
+  .feature-grid{
+    grid-template-columns:1fr !important;
+  }
+  .card,
+  .story-card,
+  .everyday-card,
+  .panel,
+  .box{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Forms / search */
+  input[type="text"],
+  input[type="search"],
+  input[type="number"],
+  select,
+  textarea{
+    min-height:44px !important;
+    font-size:16px !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+  }
+  button,
+  .btn,
+  a.btn,
+  .button,
+  .cta{
+    min-height:44px !important;
+  }
+  .search,
+  .searchbar,
+  .search-bar,
+  .search-box,
+  .search-wrap{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  /* Tables stay usable instead of crushing columns */
+  table{
+    min-width:640px;
+  }
+  .table-wrap,
+  .table-scroll,
+  .data-table-wrap,
+  .properties-table,
+  .comparison-table,
+  .result-table{
+    overflow-x:auto !important;
+    -webkit-overflow-scrolling:touch;
+    max-width:100% !important;
+  }
+
+  /* Long technical text */
+  h1{
+    font-size:clamp(26px,7vw,36px) !important;
+    line-height:1.25 !important;
+  }
+  h2{
+    font-size:clamp(21px,5.8vw,28px) !important;
+    line-height:1.35 !important;
+  }
+  h3{
+    line-height:1.45 !important;
+  }
+  p,li,dd,dt,td,th{
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+
+  /* Material detail image */
+  .material-image,
+  .detail-image,
+  .hero-image,
+  .material-visual{
+    width:100% !important;
+    max-width:520px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  /* Utility bar / actions */
+  .actions,
+  .toolbar,
+  .detail-actions,
+  .button-row,
+  .controls{
+    flex-wrap:wrap !important;
+    gap:8px !important;
+  }
+  .actions > *,
+  .toolbar > *,
+  .detail-actions > *,
+  .button-row > *{
+    max-width:100% !important;
+  }
+
+  /* Modal/dialog */
+  .modal,
+  .dialog,
+  [role="dialog"]{
+    max-width:calc(100vw - 24px) !important;
+    max-height:calc(100vh - 24px) !important;
+  }
+}
+
+@media (max-width: 600px){
+  main,
+  .main,
+  .content,
+  .page,
+  .page-content,
+  .main-content{
+    padding-left:12px !important;
+    padding-right:12px !important;
+  }
+
+  .top .brand .mark.mb-line-apple{
+    width:36px!important;
+    height:36px!important;
+    min-width:36px!important;
+  }
+
+  .hero,
+  .section,
+  section,
+  .panel,
+  .card{
+    border-radius:14px !important;
+  }
+
+  .story-card,
+  .everyday-card{
+    padding:15px !important;
+  }
+
+  .story-card p,
+  .story-card .story-a,
+  .everyday-card p{
+    font-size:15px !important;
+    line-height:1.8 !important;
+  }
+
+  .quick a,
+  .quick a.primary{
+    width:100% !important;
+    justify-content:center !important;
+  }
+
+  .breadcrumb,
+  .breadcrumbs{
+    overflow-x:auto !important;
+    white-space:nowrap !important;
+    padding-bottom:4px !important;
+  }
+
+  /* Sticky/fixed desktop controls often cover mobile content */
+  .fixed-tools,
+  .floating-tools{
+    position:static !important;
+  }
+}
+</style>
+
+</head><body>
+
+<div class="vac-page">
+  <a class="vac-back" href="index.html">← MonoBase</a>
+
+  
+<section class="vac-hero-manga">
+  <div class="vac-character-panel">
+    <div class="vac-character-art">
+      <img src="images/learning/characters/kechan_hero_nofootdragon.png" alt="案内役のキャラクターと白いドラゴン">
+    </div>
+    <div class="vac-comic-bubble">
+      <span>QUESTION</span>
+      <strong>真空って、<br>何もない空間のこと？</strong>
+      <small>まずはここから見ていきましょう。</small>
+    </div>
+  </div>
+
+  <div class="vac-hero-content">
+    <div class="vac-hero-copy2">
+      <span class="vac-kicker">VACUUM TECHNOLOGY / COURSE</span>
+      <h1>真空技術入門</h1>
+      <p>真空は、研究設備だけでなく、半導体・光学・食品・表面処理など、身近なものづくりにも使われています。</p>
+    </div>
+    <figure class="vac-hero-photo2">
+      <img src="images/learning/top_vacuum_main.jpg" alt="真空装置">
+      <figcaption>真空装置のイメージ</figcaption>
+    </figure>
+  </div>
+</section>
+
+
+  <section class="vac-section">
+    <div class="vac-section-head">
+      <span class="vac-eyebrow">WHERE IT IS USED</span>
+      <h2>実は、こんなところにも真空技術。</h2>
+      <p>まずは身近な例から、真空がどんな場面で役立っているのか見てみましょう。</p>
+    </div>
+    <div class="vac-app-grid">
+      <article class="vac-app-card"><img src="images/learning/top_semiconductor.jpg" alt="半導体・ウェハ"><div><h3>半導体・ウェハ</h3><p>薄膜形成や製造工程で、真空環境が使われます。</p></div></article>
+      <article class="vac-app-card"><img src="images/learning/top_optics.jpg" alt="光学・レンズ"><div><h3>光学・レンズ</h3><p>レンズのコーティングなどにも真空技術が使われます。</p></div></article>
+      <article class="vac-app-card"><img src="images/learning/top_food.jpg" alt="食品・包装"><div><h3>食品・包装</h3><p>真空包装は、品質を保つための身近な応用例です。</p></div></article>
+      <article class="vac-app-card"><img src="images/learning/top_plasma.jpg" alt="プラズマ・表面処理"><div><h3>プラズマ・表面処理</h3><p>真空中でプラズマを作り、表面改質などに利用します。</p></div></article>
+    </div>
+  </section>
+
+  <section class="vac-roadmap-r">
+    <div class="vac-roadmap-head">
+      <div>
+        <span class="vac-eyebrow">LEARNING GUIDE</span>
+        <h2>真空の基本を、順番に見ていきましょう</h2>
+        <p>7つのテーマに分けて、ひとつずつ学んでいきます。</p>
+      </div>
+      <a class="vac-start-link" href="learning_vacuum_01.html">01から始める →</a>
+    </div>
+    <div class="vac-topic-grid-r">
+      <a href="learning_vacuum_01.html"><b>01</b><span><strong>真空って何？</strong><small>大気と比べながら基本を知る</small></span><i>→</i></a>
+      <a href="learning_vacuum_02.html"><b>02</b><span><strong>なぜ真空にする？</strong><small>真空にする意味を考える</small></span><i>→</i></a>
+      <a href="learning_vacuum_03.html"><b>03</b><span><strong>どうやって作る？</strong><small>真空をつくるしくみ</small></span><i>→</i></a>
+      <a href="learning_vacuum_04.html"><b>04</b><span><strong>どうやって測る？</strong><small>真空度の測り方と単位</small></span><i>→</i></a>
+      <a href="learning_vacuum_05.html"><b>05</b><span><strong>真空中では何が起きる？</strong><small>分子のふるまいを知る</small></span><i>→</i></a>
+      <a href="learning_vacuum_06.html"><b>06</b><span><strong>真空はどんな場面で使う？</strong><small>研究から日常までの活用例</small></span><i>→</i></a>
+      <a href="learning_vacuum_quiz.html" class="wide"><b>07</b><span><strong>ミニクイズ</strong><small>ここまでの内容を確認する</small></span><i>→</i></a>
+    </div>
+  </section>
 </div>
 
-<section>
-  <h2>実は、こんなところにも真空技術。</h2>
-  <p>完成した製品を見ても、製造工程で真空が使われたことは分からない場合があります。まずは身近な例から見てみましょう。</p>
-  <div class="use-grid">
-    <a class="use-card" href="learning_vacuum_05.html"><img src="images/learning/top_semiconductor.jpg" alt="半導体ウェハのイメージ"><div class="body"><b>半導体・ウェハ</b><small>成膜・微細加工などの製造工程</small><span class="credit">EPAオリジナル・イメージ</span></div></a>
-    <a class="use-card" href="learning_vacuum_05.html"><img src="images/learning/top_optics.jpg" alt="光学コーティングレンズのイメージ"><div class="body"><b>光学・レンズ</b><small>反射防止膜などの機能性コーティング</small><span class="credit">EPAオリジナル・イメージ</span></div></a>
-    <a class="use-card" href="learning_vacuum_05.html"><img src="images/learning/top_food.jpg" alt="真空包装食品のイメージ"><div class="body"><b>食品・包装</b><small>真空包装や減圧を利用した処理</small><span class="credit">EPAオリジナル・イメージ</span></div></a>
-    <a class="use-card" href="learning_vacuum_06.html"><img src="images/learning/top_plasma.jpg" alt="真空装置内のプラズマイメージ"><div class="body"><b>プラズマ・薄膜</b><small>真空中でプラズマを作り、薄膜を形成</small><span class="credit">EPAオリジナル・イメージ</span></div></a>
-  </div>
-</section>
-
-<section>
-  <h2>真空の基本を、順番に見ていきましょう</h2>
-  <p class="lead">ここから「真空って何？」から順番に、装置・測定・用途・実際の真空装置までつなげて学びます。</p>
-  <div class="course">
-    <a class="lesson" href="learning_vacuum_01.html"><span class="num">01</span><span><b>真空って何？</b><small>大気・圧力・気体分子から理解する</small></span></a>
-    <a class="lesson" href="learning_vacuum_02.html"><span class="num">02</span><span><b>なぜ真空にする？</b><small>空気を減らす意味を知る</small></span></a>
-    <a class="lesson" href="learning_vacuum_03.html"><span class="num">03</span><span><b>どうやって作る？</b><small>真空容器とポンプを見る</small></span></a>
-    <a class="lesson" href="learning_vacuum_04.html"><span class="num">04</span><span><b>どうやって測る？</b><small>圧力と真空計の基本</small></span></a>
-    <a class="lesson" href="learning_vacuum_05.html"><span class="num">05</span><span><b>真空にはどんな種類がある？</b><small>低真空から極高真空までの違いを知る</small></span></a>
-    <a class="lesson" href="learning_vacuum_06.html"><span class="num">06</span><span><b>実際の真空装置を見てみよう</b><small>チャンバー・ポンプ・真空計・バルブ・配管をつなげて理解する</small></span></a>
-    <a class="lesson" href="learning_vacuum_quiz.html"><span class="num">07</span><span><b>理解度チェック</b><small>ここまでの内容を全10問で確認する</small></span></a>
-  </div>
-</section>
-<div class="nav"><span></span><span></span><a class="btn" href="learning_vacuum_01.html">学習を始める →</a></div>
-</main><footer>EPA Technical Learning ｜ Vacuum Technology Course Ver.3.0</footer>
 </body></html>

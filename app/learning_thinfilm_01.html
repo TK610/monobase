@@ -14,6 +14,320 @@
 .point{max-width:900px;margin:24px auto 0;padding:18px 20px;border-left:4px solid #6fa3c7;border-radius:10px;background:#f4f9fd;color:#304f63;font-size:17px;line-height:1.8}
 .next-tease{max-width:900px;margin:22px auto 0;padding:16px 18px;border-radius:12px;background:#fff8ec;border:1px solid #f0d9b8;color:#6d5734;line-height:1.75}
 </style>
+
+<style id="monobase-mobile-responsive-v0724">
+/* MonoBase Ver.0.7.24 Mobile Responsive */
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+body{
+  overflow-x:hidden;
+}
+img,svg,video,canvas{
+  max-width:100%;
+  height:auto;
+}
+button,a,input,select,textarea{
+  -webkit-tap-highlight-color:transparent;
+}
+@media (max-width: 900px){
+  body{
+    min-width:0 !important;
+  }
+
+  /* Header / brand */
+  .top,
+  header.top,
+  .app-header,
+  header{
+    min-height:auto !important;
+  }
+  .top .inner,
+  .top-inner,
+  .header-inner,
+  header .inner{
+    padding-left:14px !important;
+    padding-right:14px !important;
+  }
+  .top .brand,
+  .brand{
+    min-width:0 !important;
+  }
+  .top .brand .name,
+  .brand .name,
+  .brand-text{
+    min-width:0 !important;
+  }
+
+  /* Main shell / side navigation */
+  .shell,
+  .app-shell,
+  .layout,
+  .page-layout,
+  .main-layout{
+    width:100% !important;
+    max-width:100% !important;
+    grid-template-columns:1fr !important;
+    display:block !important;
+  }
+  aside,
+  .sidebar,
+  .side-nav,
+  .sidenav,
+  .left-nav,
+  nav.side{
+    position:static !important;
+    width:100% !important;
+    max-width:none !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin:0 0 12px !important;
+    overflow:visible !important;
+  }
+
+  /* Horizontal nav fallback when a desktop side nav exists */
+  .sidebar nav,
+  .side-nav nav,
+  .sidenav nav,
+  .left-nav nav,
+  nav.side{
+    display:flex !important;
+    gap:8px !important;
+    overflow-x:auto !important;
+    overscroll-behavior-inline:contain;
+    scrollbar-width:thin;
+    padding-bottom:6px !important;
+  }
+  .sidebar nav a,
+  .side-nav nav a,
+  .sidenav nav a,
+  .left-nav nav a,
+  nav.side a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    min-height:42px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+  }
+
+  /* Main content */
+  main,
+  .main,
+  .content,
+  .page,
+  .page-content,
+  .main-content{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    padding-left:14px !important;
+    padding-right:14px !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Hero / two-column blocks */
+  .hero,
+  .hero-grid,
+  .detail-hero,
+  .detail-grid,
+  .intro-grid,
+  .two-col,
+  .two-column,
+  .columns,
+  .grid-2,
+  .split,
+  .overview-grid{
+    grid-template-columns:1fr !important;
+  }
+  .hero{
+    gap:18px !important;
+  }
+  .hero-copy,
+  .hero-text,
+  .detail-main,
+  .detail-side{
+    min-width:0 !important;
+  }
+
+  /* Cards */
+  .cards,
+  .card-grid,
+  .grid,
+  .quick,
+  .quick-grid,
+  .material-grid,
+  .story-grid,
+  #storyGrid,
+  .everyday-grid,
+  .property-grid,
+  .stats-grid,
+  .feature-grid{
+    grid-template-columns:1fr !important;
+  }
+  .card,
+  .story-card,
+  .everyday-card,
+  .panel,
+  .box{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Forms / search */
+  input[type="text"],
+  input[type="search"],
+  input[type="number"],
+  select,
+  textarea{
+    min-height:44px !important;
+    font-size:16px !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+  }
+  button,
+  .btn,
+  a.btn,
+  .button,
+  .cta{
+    min-height:44px !important;
+  }
+  .search,
+  .searchbar,
+  .search-bar,
+  .search-box,
+  .search-wrap{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  /* Tables stay usable instead of crushing columns */
+  table{
+    min-width:640px;
+  }
+  .table-wrap,
+  .table-scroll,
+  .data-table-wrap,
+  .properties-table,
+  .comparison-table,
+  .result-table{
+    overflow-x:auto !important;
+    -webkit-overflow-scrolling:touch;
+    max-width:100% !important;
+  }
+
+  /* Long technical text */
+  h1{
+    font-size:clamp(26px,7vw,36px) !important;
+    line-height:1.25 !important;
+  }
+  h2{
+    font-size:clamp(21px,5.8vw,28px) !important;
+    line-height:1.35 !important;
+  }
+  h3{
+    line-height:1.45 !important;
+  }
+  p,li,dd,dt,td,th{
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+
+  /* Material detail image */
+  .material-image,
+  .detail-image,
+  .hero-image,
+  .material-visual{
+    width:100% !important;
+    max-width:520px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  /* Utility bar / actions */
+  .actions,
+  .toolbar,
+  .detail-actions,
+  .button-row,
+  .controls{
+    flex-wrap:wrap !important;
+    gap:8px !important;
+  }
+  .actions > *,
+  .toolbar > *,
+  .detail-actions > *,
+  .button-row > *{
+    max-width:100% !important;
+  }
+
+  /* Modal/dialog */
+  .modal,
+  .dialog,
+  [role="dialog"]{
+    max-width:calc(100vw - 24px) !important;
+    max-height:calc(100vh - 24px) !important;
+  }
+}
+
+@media (max-width: 600px){
+  main,
+  .main,
+  .content,
+  .page,
+  .page-content,
+  .main-content{
+    padding-left:12px !important;
+    padding-right:12px !important;
+  }
+
+  .top .brand .mark.mb-line-apple{
+    width:36px!important;
+    height:36px!important;
+    min-width:36px!important;
+  }
+
+  .hero,
+  .section,
+  section,
+  .panel,
+  .card{
+    border-radius:14px !important;
+  }
+
+  .story-card,
+  .everyday-card{
+    padding:15px !important;
+  }
+
+  .story-card p,
+  .story-card .story-a,
+  .everyday-card p{
+    font-size:15px !important;
+    line-height:1.8 !important;
+  }
+
+  .quick a,
+  .quick a.primary{
+    width:100% !important;
+    justify-content:center !important;
+  }
+
+  .breadcrumb,
+  .breadcrumbs{
+    overflow-x:auto !important;
+    white-space:nowrap !important;
+    padding-bottom:4px !important;
+  }
+
+  /* Sticky/fixed desktop controls often cover mobile content */
+  .fixed-tools,
+  .floating-tools{
+    position:static !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header><div class="head"><div class="brand">EPA Technical Learning</div><a class="right" href="index.html">← MonoBase ホーム</a></div></header><div class="course-switch-wrap"><nav class="course-switch" aria-label="技術学習コース切替"><span class="course-switch-label">学習コース</span><a href="learning_vacuum.html">真空技術</a><a href="learning_sputtering.html">スパッタリング</a><a class="active" aria-current="page" href="learning_thinfilm.html">薄膜技術</a></nav></div>
