@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "material_count": 197,
+  "material_count": 209,
   "groups": [
     {
       "group": "元素",
@@ -2184,6 +2184,175 @@
               "state": "",
               "subcategory": "電池・機能性材料",
               "summary": "オリビン構造を持つ高安全性のリチウムイオン電池正極材料。長寿命・高熱安定性で広く普及している。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "宝石・鉱物",
+      "raw_group": "宝石・鉱物",
+      "count": 12,
+      "subcategories": [
+        {
+          "subcategory": "天然宝石・鉱物",
+          "count": 1,
+          "materials": [
+            {
+              "id": "GEM-DIAMOND",
+              "japanese": "ダイヤモンド",
+              "english": "Diamond",
+              "formula": "C",
+              "state": "固体",
+              "subcategory": "天然宝石・鉱物",
+              "summary": "炭素だけからできた結晶。宝石としてだけでなく、切削・研磨工具や放熱材料、半導体研究でも重要です。"
+            }
+          ]
+        },
+        {
+          "subcategory": "石英・宝石",
+          "count": 2,
+          "materials": [
+            {
+              "id": "GEM-QUARTZ",
+              "japanese": "水晶（クォーツ）",
+              "english": "Rock Crystal / Quartz",
+              "formula": "SiO2",
+              "state": "固体",
+              "subcategory": "石英・宝石",
+              "summary": "透明な石英の結晶。宝石として知られるだけでなく、圧電効果を利用した水晶振動子が時計や電子機器を支えています。"
+            },
+            {
+              "id": "GEM-AMETHYST",
+              "japanese": "アメシスト",
+              "english": "Amethyst",
+              "formula": "SiO2",
+              "state": "固体",
+              "subcategory": "石英・宝石",
+              "summary": "紫色の石英。無色の水晶と同じSiO₂ですが、微量成分や色中心によって紫色になります。"
+            }
+          ]
+        },
+        {
+          "subcategory": "コランダム・宝石",
+          "count": 2,
+          "materials": [
+            {
+              "id": "GEM-RUBY",
+              "japanese": "ルビー",
+              "english": "Ruby",
+              "formula": "Al2O3 + Cr",
+              "state": "固体",
+              "subcategory": "コランダム・宝石",
+              "summary": "赤色の宝石質コランダム。主成分はサファイアと同じAl₂O₃で、クロムなどが赤色に関係します。"
+            },
+            {
+              "id": "GEM-SAPPHIRE",
+              "japanese": "サファイア",
+              "english": "Sapphire",
+              "formula": "Al2O3",
+              "state": "固体",
+              "subcategory": "コランダム・宝石",
+              "summary": "宝石質コランダム。青色が有名ですが多彩な色があり、合成サファイアは光学・電子分野でも使われます。"
+            }
+          ]
+        },
+        {
+          "subcategory": "ベリル・宝石",
+          "count": 2,
+          "materials": [
+            {
+              "id": "GEM-EMERALD",
+              "japanese": "エメラルド",
+              "english": "Emerald",
+              "formula": "Be3Al2Si6O18",
+              "state": "固体",
+              "subcategory": "ベリル・宝石",
+              "summary": "緑色の宝石質ベリル。アクアマリンと同じ鉱物グループですが、微量成分の違いで印象が大きく変わります。"
+            },
+            {
+              "id": "GEM-AQUAMARINE",
+              "japanese": "アクアマリン",
+              "english": "Aquamarine",
+              "formula": "Be3Al2Si6O18",
+              "state": "固体",
+              "subcategory": "ベリル・宝石",
+              "summary": "青～青緑色の宝石質ベリル。エメラルドと同じ鉱物グループなのに、鉄などによってまったく違う色になります。"
+            }
+          ]
+        },
+        {
+          "subcategory": "非晶質シリカ・宝石",
+          "count": 1,
+          "materials": [
+            {
+              "id": "GEM-OPAL",
+              "japanese": "オパール",
+              "english": "Opal",
+              "formula": "SiO2·nH2O",
+              "state": "固体",
+              "subcategory": "非晶質シリカ・宝石",
+              "summary": "水を含む非晶質シリカ。プレシャスオパールでは、色素ではなく微細構造によって虹色の遊色が現れます。"
+            }
+          ]
+        },
+        {
+          "subcategory": "トパーズ・宝石",
+          "count": 1,
+          "materials": [
+            {
+              "id": "GEM-TOPAZ",
+              "japanese": "トパーズ",
+              "english": "Topaz",
+              "formula": "Al2SiO4(F,OH)2",
+              "state": "固体",
+              "subcategory": "トパーズ・宝石",
+              "summary": "硬度8の宝石鉱物。無色から黄・青など多彩ですが、明瞭な劈開があり「硬い＝割れにくい」ではありません。"
+            }
+          ]
+        },
+        {
+          "subcategory": "ガーネット群・宝石",
+          "count": 1,
+          "materials": [
+            {
+              "id": "GEM-GARNET",
+              "japanese": "ガーネット",
+              "english": "Garnet",
+              "formula": "Garnet group",
+              "state": "固体",
+              "subcategory": "ガーネット群・宝石",
+              "summary": "赤い宝石の印象が強いですが、実は複数の鉱物を含むグループ。宝飾だけでなく研磨材として使われる種類もあります。"
+            }
+          ]
+        },
+        {
+          "subcategory": "翡翠・宝石",
+          "count": 1,
+          "materials": [
+            {
+              "id": "GEM-JADEITE",
+              "japanese": "ジェダイト（翡翠）",
+              "english": "Jadeite (Jade)",
+              "formula": "NaAlSi2O6",
+              "state": "固体",
+              "subcategory": "翡翠・宝石",
+              "summary": "「翡翠」と呼ばれる代表的な材料の一つ。ネフライトとは別鉱物で、緻密な集合組織による高い靭性が特徴です。"
+            }
+          ]
+        },
+        {
+          "subcategory": "オリビン・宝石",
+          "count": 1,
+          "materials": [
+            {
+              "id": "GEM-PERIDOT",
+              "japanese": "ペリドット",
+              "english": "Peridot",
+              "formula": "(Mg,Fe)2SiO4",
+              "state": "固体",
+              "subcategory": "オリビン・宝石",
+              "summary": "宝石質オリビン。黄緑色の宝石から、地球の上部マントル、火山、さらには一部の隕石まで話がつながります。"
             }
           ]
         }

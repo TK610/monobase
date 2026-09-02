@@ -253,3 +253,80 @@ Ver.0.7.26 Search Alias / Story Display Audit
 - 197材料すべての「ちょっと気になる話」データ存在を再監査
 - 白金（Pt）の小話データ存在を確認
 - 材料詳細に小話表示監査用の非表示マーカーを追加
+
+Ver.0.7.27 Search Alias Fix
+- Materials ExplorerのsearchFields()へ別名辞書を直接統合。
+- プラチナ/ゴールド/シルバー等がscoreMatch()の正式検索対象になるよう修正。
+
+Ver.0.7.28 Fun Column Polish
+- 「ちょっと気になる話」を読み物として楽しめる方向へ再編集開始
+- 小話が1～2本だった18材料を中心に、身近な文化・歴史・言葉・自然現象との接点を追加
+- クリプトンはスーパーマン／クリプトナイトとの違いを日本人にも伝わる見出しへ変更
+- 専門知識だけの説明にならないよう「知っている言葉→意外な事実→材料の理由」の流れを強化
+- 危険物については体験を促す表現を避け、安全上の区別を維持
+
+
+Ver.0.7.29 Gemstone & Mineral Extension (2026-09-02)
+- Added 12 gemstone/mineral records (197 -> 209 materials).
+- Added gemstone-specific property display: mineral class, composition, Mohs hardness, specific gravity, crystal system, representative colors.
+- Added approved rough + polished representative images for all 12 records.
+- Added stories, aliases, and related-material links.
+- Gem records are excluded from weight calculation; no artificial fixed density is assigned.
+
+
+[Ver.0.7.30 Usage Explorer V2]
+- 用途カテゴリを初心者向け13分類へ再設計。
+- 「その他」カテゴリを廃止し、代表用途として説明しやすいものだけを掲載。
+- 宝石・装飾カテゴリを追加（12材料）。
+- カテゴリ説明文と「使われ方」表示を追加。
+- 同一材料の複数カテゴリ掲載は、用途が明確な場合のみ許容。
+
+
+Ver.0.7.31 Usage Navigation Audit
+- 用途カードの「使われ方」を「使用例」へ変更
+- 13大分類を維持し、小分類フィルターを追加
+- 用途→材料詳細へカテゴリ・小分類・使用例を引き継ぐ
+- 詳細ページに「この用途から見つけた材料」カードを追加
+- ルート起動ファイルは「MonoBaseを開く.html」に一本化（index.htmlはWeb公開用に維持）
+
+
+Ver.0.7.32 Detail Application Integration
+- 用途専用の大型案内カードを廃止し、材料詳細ページを共通化。
+- 用途から遷移した場合は小さな戻り導線のみ表示。
+- 「主な用途」を使用例カードとして整理し、既存の身近な用途説明と対応できる項目には「なぜ？」説明を表示。
+- 複数用途を最大6件まで見やすく表示。
+- 起動用日本語HTMLは「MonoBaseを開く.html」に一本化。
+
+
+Ver.0.7.33 Detail Feature Polish (2026-09-02)
+- 主な特徴を説明付きミニカード化（全材料共通UI）
+- 特徴名の意味が初心者にも分かるよう代表特性の説明辞書を追加
+- Ti-W、Ar、Si、Sapphire、Diamondの主要用途理由を先行補完
+- 既存の身近な用途説明と一致する用途は自動的に「なぜ？」へ接続
+- 情報量を増やしつつ、2列カードで視認性を維持
+
+
+[Ver0.7.34]
+- 詳細ページ「主な用途」を説明付きカードへ変更。用途名だけでなく、何に・なぜ使われるかを1〜2文で表示。
+- 「なぜ？」ラベルを廃止し、本文として自然に統合。
+- ZrB2など代表材料の用途説明を個別補強。その他は用途語に応じた初心者向け説明を表示。
+- ZIPはPython標準zipfileでUTF-8ファイル名フラグを付けて生成し、MonoBaseを開く.htmlの文字化け再発を防止。
+
+
+Ver.0.7.35 PC Readability Polish
+- 材料詳細ページのPC本文文字サイズを約1〜2px拡大
+- 特徴・用途カード本文、身近な用途、ちょっと気になる話、出典欄の可読性を改善
+- 1100px以上に限定し、スマホ表示サイズは変更しない
+
+Ver.0.7.36 PC Detail Typography Final Polish
+- PC詳細ページの主要本文サイズはVer.0.7.35を維持。
+- 小さく残っていた補足文、基本物性注記、加工・取扱い、関連材料、比較候補、参考リンク、右サイドの識別・出典情報を底上げ。
+- 「ちょっと気になる話」は本文のみ約0.4px追加し、読み物としての可読性を改善。
+- 1100px以上のPC表示だけに適用し、スマホ表示は変更しない。
+- ページ全体を一律拡大せず、最低文字サイズを揃える方針。
+
+
+Ver.0.7.37 Audit Batch 01 (2026-09-02)
+- No.001-030: scientific/beginner/application wording audit reflected.
+- Explicitly distinguishes elemental substances from ions, compounds and alloys where needed.
+- No.031+ content intentionally unchanged.

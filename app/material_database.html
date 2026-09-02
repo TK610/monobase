@@ -95,7 +95,7 @@ footer{max-width:1220px;margin:0 auto 30px;padding:0 20px;color:#738796;font-siz
 
 
 <style id="monobase-mobile-responsive-v0724">
-/* MonoBase Ver.0.7.26 Mobile Responsive */
+/* MonoBase Ver.0.7.28 Mobile Responsive */
 html{
   -webkit-text-size-adjust:100%;
   text-size-adjust:100%;
@@ -461,7 +461,9 @@ button,a,input,select,textarea{
 <script src="js/emd-data.js"></script>
 <script src="js/i18n-data.js"></script>
 <script src="js/i18n.js"></script>
-<script>
+<script>const MB_SEARCH_ALIASES={"EL-013-AL":["アルミ"],"EL-022-TI":["チタン"],"EL-026-FE":["アイアン"],"EL-029-CU":["カッパー"],"EL-047-AG":["シルバー","silver"],"EL-050-SN":["錫","ティン"],"EL-074-W":["ウォルフラム"],"EL-078-PT":["プラチナ","platinum"],"EL-079-AU":["ゴールド","gold"],"EL-080-HG":["マーキュリー"],"ITO":["酸化インジウムスズ"],"IGZO":["イグゾー"]};
+function mbAliasText(m){return (MB_SEARCH_ALIASES[m?.id]||[]).join(' ').toLowerCase();}
+
 const db=window.EMD_DATA||{}, all=db.materials||[];
 const I=window.MonoBaseI18n;
 const q=document.getElementById('q'),cat=document.getElementById('category'),list=document.getElementById('list'),
@@ -476,18 +478,18 @@ function getStore(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(
 function setStore(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 function addRecent(m){let a=getStore('epaRecentMaterials').filter(x=>x.id!==m.id);a.unshift({id:m.id,name:m.name,japanese:m.japanese,english:m.english,formula:m.formula});setStore('epaRecentMaterials',a.slice(0,8))}
 function toggleFavorite(m){let a=getStore('epaFavoriteMaterials'),has=a.some(x=>x.id===m.id);a=has?a.filter(x=>x.id!==m.id):[{id:m.id,name:m.name,japanese:m.japanese,english:m.english,formula:m.formula},...a];setStore('epaFavoriteMaterials',a.slice(0,30));show(m,false)}
-function searchFields(m){return [m.japanese,m.name,m.english,m.formula,m.id,...(m.aliases||[])].filter(Boolean)}
+function searchFields(m){return [m.japanese,m.name,m.english,m.formula,m.id,...(m.aliases||[]),...(MB_SEARCH_ALIASES[m.id]||[])].filter(Boolean)}
 function extendedFields(m){return [...searchFields(m),m.summary,m.representative_form,m.machinability,m.safety_note,...(m.uses||[]),...(m.characteristics||[]),...(m.processing_forms||[])].filter(Boolean)}
 function scoreMatch(m,term){if(!term)return 0;const f=searchFields(m).map(norm),e=extendedFields(m).map(norm);let s=0;f.forEach((v,i)=>{if(v===term)s=Math.max(s,i===3?120:110);else if(v.startsWith(term))s=Math.max(s,i===0||i===2?90:82);else if(v.includes(term))s=Math.max(s,68)});if(!s&&e.some(v=>v.includes(term)))s=35;return s}
 function rows(){const term=norm(q.value.trim()),c=cat.value;return all.map(m=>({m,score:term?scoreMatch(m,term):0})).filter(x=>(!term||x.score>0)&&(!c||x.m.category===c)).sort((a,b)=>term?(b.score-a.score)||I.materialName(a.m).localeCompare(I.materialName(b.m),I.lang):I.materialName(a.m).localeCompare(I.materialName(b.m),I.lang)).map(x=>x.m)}
 function categoryLabel(c){return t('category.'+c)}
 function rebuildCategory(){const current=cat.value;cat.innerHTML=`<option value="">${esc(t('filter.all'))}</option>`;[...new Set(all.map(x=>x.category).filter(Boolean))].sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=categoryLabel(c);cat.appendChild(o)});cat.value=current}
 function sourceBlock(title,s){if(!s||(!s.name&&!s.url))return '';const value=(s.value!==null&&s.value!==undefined)?`<div>${esc(t('source.value',{v:s.value}))}</div>`:'';const link=s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(t('source.open'))}</a>`:`<span>${esc(t('source.none'))}</span>`;return `<div class="source"><strong>${esc(title)}</strong><div>${esc(s.name||'')}</div>${value}<div>${link}</div>${s.url?`<div class="url">${esc(s.url)}</div>`:''}</div>`}
-function show(m,track=true){if(!m)return;selectedId=m.id;if(track)addRecent(m);document.querySelectorAll('.item').forEach(x=>x.classList.toggle('active',x.dataset.id===m.id));const den=typeof m.density==='number'?`${m.density} ${esc(m.unit||'g/cm³')}`:t('detail.noDensity');const fav=getStore('epaFavoriteMaterials').some(x=>x.id===m.id);
+function show(m,track=true){if(!m)return;selectedId=m.id;if(track)addRecent(m);document.querySelectorAll('.item').forEach(x=>x.classList.toggle('active',x.dataset.id===m.id));const isGem=m.material_kind==='gemstone_mineral';const den=typeof m.density==='number'?`${m.density} ${esc(m.unit||'g/cm³')}`:(isGem?esc(m.specific_gravity_display||'—'):t('detail.noDensity'));const fav=getStore('epaFavoriteMaterials').some(x=>x.id===m.id);
  detail.innerHTML=`<div class="detail-title"><h2>${esc(I.materialName(m))}<span class="badge">${esc(m.review_status||'')}</span></h2><button class="favorite ${fav?'active':''}" id="favoriteBtn">${esc(fav?t('detail.favorited'):t('detail.favorite'))}</button></div>
  <div class="subname">${esc(I.secondaryMaterialName(m))}${m.formula?' ／ '+esc(m.formula):''}</div>
  ${m.image_file?`<div class="image"><img src="images/materials/${esc(m.image_file)}" alt="${esc(I.materialName(m))}" onerror="this.parentElement.style.display='none'"></div>`:''}
- <div class="meta"><b>${esc(t('detail.id'))}</b><div>${esc(m.id)}</div><b>${esc(t('detail.category'))}</b><div>${esc(categoryLabel(m.category||''))}${m.subcategory?' / '+esc(m.subcategory):''}</div><b>${esc(t('detail.density'))}</b><div><strong>${den}</strong></div><b>${esc(t('detail.condition'))}</b><div>${esc(m.density_condition||m.density_status||t('detail.unset'))}</div><b>${esc(t('detail.review'))}</b><div>${esc(m.review_decision||'')}</div><b>${esc(t('detail.updated'))}</b><div>${esc(m.updated||'')}</div></div>
+ <div class="meta"><b>${esc(t('detail.id'))}</b><div>${esc(m.id)}</div><b>${esc(t('detail.category'))}</b><div>${esc(categoryLabel(m.category||''))}${m.subcategory?' / '+esc(m.subcategory):''}</div><b>${esc(isGem?'比重':t('detail.density'))}</b><div><strong>${den}</strong></div><b>${esc(isGem?'モース硬度':t('detail.condition'))}</b><div>${esc(isGem?(m.mohs_hardness_display||'未登録'):(m.density_condition||m.density_status||t('detail.unset')))}</div><b>${esc(t('detail.review'))}</b><div>${esc(m.review_decision||'')}</div><b>${esc(t('detail.updated'))}</b><div>${esc(m.updated||'')}</div></div>
  <div class="section-title">${esc(t('detail.reason'))}</div><div class="reason">${esc(m.adoption_reason||'')}</div>${m.note?`<div class="notice">${esc(m.note)}</div>`:''}
  <a class="open-detail" id="openDetail" href="material_detail.html?id=${encodeURIComponent(m.id)}">${esc(t('detail.open'))}</a>
  <div class="section-title">${esc(t('detail.sources'))}</div>${sourceBlock(t('source.current'),m.source_current||{name:m.source_name,url:m.source_url})}${sourceBlock(t('source.a'),m.source_a)}${sourceBlock(t('source.b'),m.source_b)}`;
@@ -497,7 +499,7 @@ function show(m,track=true){if(!m)return;selectedId=m.id;if(track)addRecent(m);d
 function closeSuggestions(){suggestions.hidden=true;suggestions.innerHTML='';suggestionIndex=-1}
 function renderSuggestions(){const term=norm(q.value.trim());if(!term){closeSuggestions();return}const c=all.map(m=>({m,score:scoreMatch(m,term)})).filter(x=>x.score>=68).sort((a,b)=>b.score-a.score).slice(0,7);if(!c.length){closeSuggestions();return}suggestions.innerHTML=c.map((x,i)=>`<button type="button" class="suggestion" data-id="${esc(x.m.id)}" data-index="${i}"><span><strong>${esc(I.materialName(x.m))}</strong><small>${esc(I.secondaryMaterialName(x.m))} ／ ${esc(categoryLabel(x.m.category||''))}</small></span><span class="formula">${esc(x.m.formula||'')}</span></button>`).join('');suggestions.hidden=false;suggestions.querySelectorAll('.suggestion').forEach(el=>el.addEventListener('mousedown',e=>{e.preventDefault();const m=all.find(x=>x.id===el.dataset.id);q.value=I.materialName(m);closeSuggestions();render(false);show(m,true)}))}
 function render(withSug=true){const r=rows(),term=norm(q.value.trim());clearBtn.hidden=!q.value;resultCount.textContent=t('result.count',{n:r.length});resultHint.textContent=term?t('result.matchHint'):t('result.defaultHint');
- list.innerHTML=r.length?r.map(m=>`<div class="item" data-id="${esc(m.id)}"><div><strong>${esc(I.materialName(m))}</strong><div class="muted">${esc(I.secondaryMaterialName(m))}${m.formula?' ／ '+esc(m.formula):''} ／ ${esc(categoryLabel(m.category||''))}</div></div><span class="density">${typeof m.density==='number'?esc(m.density)+' g/cm³':esc(t('detail.unset'))}</span></div>`).join(''):`<div class="empty-search"><strong>${esc(t('empty.title'))}</strong><p>${esc(t('empty.body'))}</p><div class="empty-actions"><button id="emptyClear">${esc(t('empty.clear'))}</button><a href="usage_explorer.html">${esc(t('empty.usage'))}</a><a href="classification_explorer.html">${esc(t('empty.class'))}</a></div></div>`;
+ list.innerHTML=r.length?r.map(m=>`<div class="item" data-id="${esc(m.id)}"><div><strong>${esc(I.materialName(m))}</strong><div class="muted">${esc(I.secondaryMaterialName(m))}${m.formula?' ／ '+esc(m.formula):''} ／ ${esc(categoryLabel(m.category||''))}</div></div><span class="density">${typeof m.density==='number'?esc(m.density)+' g/cm³':(m.material_kind==='gemstone_mineral'?'比重 '+esc(m.specific_gravity_display||'—'):esc(t('detail.unset')))}</span></div>`).join(''):`<div class="empty-search"><strong>${esc(t('empty.title'))}</strong><p>${esc(t('empty.body'))}</p><div class="empty-actions"><button id="emptyClear">${esc(t('empty.clear'))}</button><a href="usage_explorer.html">${esc(t('empty.usage'))}</a><a href="classification_explorer.html">${esc(t('empty.class'))}</a></div></div>`;
  list.querySelectorAll('.item').forEach(el=>el.addEventListener('click',()=>show(all.find(m=>m.id===el.dataset.id))));
  document.getElementById('emptyClear')?.addEventListener('click',()=>{q.value='';cat.value='';render(false);q.focus()});
  if(r.length){const wanted=r.find(m=>m.id===selectedId)||r[0];show(wanted,false)}else detail.innerHTML=`<div class="empty">${esc(t('empty.change'))}</div>`;

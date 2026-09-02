@@ -28,7 +28,8 @@ window.MONOBASE_I18N = {
     "category.窒化物・炭化物・ホウ化物":"窒化物・炭化物・ホウ化物",
     "category.合金・磁性・シリサイド":"合金・磁性・シリサイド",
     "category.半導体・カルコゲナイド・相変化":"半導体・カルコゲナイド・相変化",
-    "category.光学・電池・先端機能材料":"光学・電池・先端機能材料"
+    "category.光学・電池・先端機能材料":"光学・電池・先端機能材料",
+    "category.宝石・鉱物":"宝石・鉱物"
   },
   en: {
     "brand.subtitle":"Manufacturing Learning & Tools",
@@ -59,6 +60,7 @@ window.MONOBASE_I18N = {
     "category.窒化物・炭化物・ホウ化物":"Nitrides, Carbides & Borides",
     "category.合金・磁性・シリサイド":"Alloys, Magnetic Materials & Silicides",
     "category.半導体・カルコゲナイド・相変化":"Semiconductors, Chalcogenides & Phase-change",
-    "category.光学・電池・先端機能材料":"Optical, Battery & Advanced Functional Materials"
+    "category.光学・電池・先端機能材料":"Optical, Battery & Advanced Functional Materials",
+    "category.宝石・鉱物":"Gemstones & Minerals"
   }
 };
