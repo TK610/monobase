@@ -1,0 +1,6 @@
+MonoBase Vacuum01 Comic Rev5
+- Latest uploaded orange-haired female student portrait integrated.
+- Existing approved boy and teacher comic assets retained from Rev4.
+- Desktop portrait height tuned to 420px.
+- Mobile portrait width tuned to max 70vw.
+- Existing 3-scene dialogue and technical content preserved.

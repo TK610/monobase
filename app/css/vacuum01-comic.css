@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 .vacuum-comic__portrait { grid-column: 2; grid-row: 1; align-self: end; min-width: 0; }
-.vacuum-comic__portrait img { display: block; width: auto; height: 400px; max-width: 100%; object-fit: contain; object-position: bottom; margin: 0 auto; }
+.vacuum-comic__portrait img { display: block; width: auto; height: 420px; max-width: 100%; object-fit: contain; object-position: bottom; margin: 0 auto; }
 .vacuum-comic__bubble { grid-column: 1; grid-row: 1; position: relative; min-width: 0; margin: 12px 0 40px; padding: 24px 28px; border: 2px solid #9ab8cf; border-radius: 26px; background: #f4f9fc; }
 .vacuum-comic__bubble::after { content: ''; position: absolute; top: 45%; right: -12px; width: 20px; height: 20px; border-top: 2px solid #9ab8cf; border-right: 2px solid #9ab8cf; background: #f4f9fc; transform: rotate(45deg); }
 .vacuum-comic__name { margin: 0 0 12px; font-size: .875rem; font-weight: 700; color: var(--b, #245b88); }
@@ -28,7 +28,7 @@
 .vacuum-comic-bridge span { font-size: 1.5rem; }
 @media (max-width: 760px) {
   .vacuum-comic__scene, .vacuum-comic__scene--reverse { display: flex; flex-direction: column; gap: 0; padding: 18px 16px 24px; }
-  .vacuum-comic__portrait { width: min(66vw, 100%); align-self: center; }
+  .vacuum-comic__portrait { width: min(70vw, 100%); align-self: center; }
   .vacuum-comic__portrait img { width: 100%; height: auto; max-height: none; }
   .vacuum-comic__bubble { width: 100%; margin: 20px 0 0; padding: 20px; border-radius: 20px; }
   .vacuum-comic__bubble::after, .vacuum-comic__scene--reverse .vacuum-comic__bubble::after { top: -12px; left: calc(50% - 10px); right: auto; transform: rotate(-45deg); }
@@ -42,3 +42,16 @@
 @media print {
   .vacuum-comic__scene { break-inside: avoid; }
 }
+
+/* Small companions support the technical explanation without replacing it. */
+.vacuum-companion { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--l, #d8e2ea); }
+.vacuum-companion .vacuum-companion__image { display: block; flex: 0 0 auto; width: auto; height: 180px; max-width: 35%; object-fit: contain; }
+.vacuum-companion__speech { min-width: 0; max-width: 540px; padding: 16px 20px; border-radius: 16px; background: var(--p, #edf4f8); }
+.vacuum-companion__speech p { margin: 0; font-size: 1rem; line-height: 1.8; color: var(--n, #16324f); overflow-wrap: anywhere; }
+.vacuum-companion__speech .vacuum-companion__name { margin-bottom: 6px; color: var(--b, #245b88); font-size: .875rem; font-weight: 700; }
+@media (max-width: 599px) {
+  .vacuum-companion { gap: 12px; align-items: center; }
+  .vacuum-companion .vacuum-companion__image { width: 27%; height: auto; }
+  .vacuum-companion__speech { flex: 1; padding: 12px; }
+}
+@media print { .vacuum-companion { break-inside: avoid; } }
