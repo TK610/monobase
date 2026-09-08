@@ -1,0 +1,19 @@
+/* Keep the new teacher and the invitation fully visible at every width. */
+.vac-hero-manga { grid-template-columns: minmax(0, 36fr) minmax(0, 64fr); }
+.vac-character-panel { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 24px; padding: 24px 18px 0; background: #fff; height: auto; }
+.vac-character-panel::after { display: none; }
+.vac-character-art { position: static; width: 100%; height: 400px; flex: none; justify-content: center; }
+.vac-character-art img { width: auto; height: 100%; max-width: 100%; object-fit: contain; object-position: center bottom; filter: none; }
+.vac-comic-bubble { position: relative; top: auto; right: auto; order: -1; width: 100%; max-width: 320px; margin: 0; }
+.vac-comic-bubble::before { left: calc(50% - 11px); bottom: -13px; transform: rotate(-45deg); }
+.vac-comic-bubble span { font-size: 12px; }
+.vac-comic-bubble small { font-size: 14px; }
+@media (max-width: 900px) {
+  .vac-hero-manga { grid-template-columns: 1fr; }
+  .vac-character-panel { padding-top: 20px; }
+  .vac-comic-bubble strong { font-size: 17px; }
+}
+@media (max-width: 599px) {
+  .vac-character-art { width: min(66vw, 100%); height: auto; }
+  .vac-character-art img { width: 100%; height: auto; }
+}

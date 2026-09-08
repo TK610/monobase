@@ -1,0 +1,44 @@
+/* Vacuum 01 only. Shared course styles and technical content are preserved. */
+.vacuum-comic { margin-top: 24px; }
+.vacuum-comic__scene {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 52px);
+  padding: 28px 40px 0;
+  margin-top: 20px;
+  background: #fff;
+  border: 1px solid var(--l, #d8e2ea);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.vacuum-comic__portrait { grid-column: 2; grid-row: 1; align-self: end; min-width: 0; }
+.vacuum-comic__portrait img { display: block; width: auto; height: 400px; max-width: 100%; object-fit: contain; object-position: bottom; margin: 0 auto; }
+.vacuum-comic__bubble { grid-column: 1; grid-row: 1; position: relative; min-width: 0; margin: 12px 0 40px; padding: 24px 28px; border: 2px solid #9ab8cf; border-radius: 26px; background: #f4f9fc; }
+.vacuum-comic__bubble::after { content: ''; position: absolute; top: 45%; right: -12px; width: 20px; height: 20px; border-top: 2px solid #9ab8cf; border-right: 2px solid #9ab8cf; background: #f4f9fc; transform: rotate(45deg); }
+.vacuum-comic__name { margin: 0 0 12px; font-size: .875rem; font-weight: 700; color: var(--b, #245b88); }
+.vacuum-comic__line { margin: 0; font-size: clamp(1.125rem, 2vw, 1.5rem); line-height: 1.85; font-weight: 700; color: var(--n, #16324f); overflow-wrap: anywhere; }
+.vacuum-comic__line + .vacuum-comic__line { margin-top: 16px; }
+.vacuum-comic__scene--reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+.vacuum-comic__scene--reverse .vacuum-comic__portrait { grid-column: 1; }
+.vacuum-comic__scene--reverse .vacuum-comic__bubble { grid-column: 2; }
+.vacuum-comic__scene--reverse .vacuum-comic__bubble::after { right: auto; left: -12px; transform: rotate(225deg); }
+.vacuum-comic-bridge { text-align: center; padding: 38px 10px 8px; color: var(--b, #245b88); }
+.vacuum-comic-bridge p { font-size: clamp(1.25rem, 3vw, 1.625rem); font-weight: 700; margin: 0 0 8px; }
+.vacuum-comic-bridge span { font-size: 1.5rem; }
+@media (max-width: 760px) {
+  .vacuum-comic__scene, .vacuum-comic__scene--reverse { display: flex; flex-direction: column; gap: 0; padding: 18px 16px 24px; }
+  .vacuum-comic__portrait { width: min(66vw, 100%); align-self: center; }
+  .vacuum-comic__portrait img { width: 100%; height: auto; max-height: none; }
+  .vacuum-comic__bubble { width: 100%; margin: 20px 0 0; padding: 20px; border-radius: 20px; }
+  .vacuum-comic__bubble::after, .vacuum-comic__scene--reverse .vacuum-comic__bubble::after { top: -12px; left: calc(50% - 10px); right: auto; transform: rotate(-45deg); }
+  .vacuum-comic__line { font-size: 1.125rem; }
+  .vacuum-comic__name { margin-bottom: 8px; }
+  .vacuum-comic-bridge { padding-top: 28px; }
+}
+@media (min-width: 600px) and (max-width: 760px) {
+  .vacuum-comic__portrait { width: 300px; }
+}
+@media print {
+  .vacuum-comic__scene { break-inside: avoid; }
+}

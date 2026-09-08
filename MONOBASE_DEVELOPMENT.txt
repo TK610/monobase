@@ -330,3 +330,9 @@ Ver.0.7.37 Audit Batch 01 (2026-09-02)
 - No.001-030: scientific/beginner/application wording audit reflected.
 - Explicitly distinguishes elemental substances from ions, compounds and alloys where needed.
 - No.031+ content intentionally unchanged.
+
+
+Ver.0.7.41 Audit Batch 05 (2026-09-03)
+- Materials 121-150 audited and reflected.
+- 209 materials retained.
+- Variable-composition oxides/nitrides clarified; thin-film vs bulk distinctions strengthened.
