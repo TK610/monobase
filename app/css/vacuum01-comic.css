@@ -45,13 +45,21 @@
 
 /* Small companions support the technical explanation without replacing it. */
 .vacuum-companion { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--l, #d8e2ea); }
-.vacuum-companion .vacuum-companion__image { display: block; flex: 0 0 auto; width: auto; height: 180px; max-width: 35%; object-fit: contain; }
+.vacuum-companion .vacuum-companion__image { display: block; flex: 0 0 auto; width: auto; height: 230px; max-width: 48%; object-fit: contain; }
 .vacuum-companion__speech { min-width: 0; max-width: 540px; padding: 16px 20px; border-radius: 16px; background: var(--p, #edf4f8); }
 .vacuum-companion__speech p { margin: 0; font-size: 1rem; line-height: 1.8; color: var(--n, #16324f); overflow-wrap: anywhere; }
 .vacuum-companion__speech .vacuum-companion__name { margin-bottom: 6px; color: var(--b, #245b88); font-size: .875rem; font-weight: 700; }
 @media (max-width: 599px) {
   .vacuum-companion { gap: 12px; align-items: center; }
-  .vacuum-companion .vacuum-companion__image { width: 27%; height: auto; }
+  .vacuum-companion .vacuum-companion__image { width: 36%; height: auto; max-height: 250px; }
   .vacuum-companion__speech { flex: 1; padding: 12px; }
 }
 @media print { .vacuum-companion { break-inside: avoid; } }
+
+/* Rev7: enlarge SD companions while keeping the opening comic unchanged. */
+.vacuum-companion--aoi .vacuum-companion__image { height: 345px; }
+.vacuum-companion--teacher .vacuum-companion__image { height: 368px; }
+@media (max-width: 599px) {
+  .vacuum-companion--aoi .vacuum-companion__image { width: 48%; max-height: none; }
+  .vacuum-companion--teacher .vacuum-companion__image { width: 52%; max-height: none; }
+}
