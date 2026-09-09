@@ -1,0 +1,221 @@
+.v02-hero{max-width:1100px;margin:0 auto 26px;padding:28px;border:1px solid #d8e5ee;border-radius:24px;background:linear-gradient(135deg,#f7fbfe,#eef7fb)}
+.v02-hero h1{margin:.25rem 0 .7rem;font-size:clamp(30px,5vw,50px);color:#16324f}.v02-question{display:inline-block;margin:8px 0 18px;padding:8px 13px;border-radius:999px;background:#e8f3fa;color:#15527d;font-weight:800}.v02-intro{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.v02-person{display:grid;grid-template-columns:86px 1fr;gap:10px;align-items:end;background:#fff;border:1px solid #d8e5ee;border-radius:18px;padding:12px}.v02-person img{width:86px;height:132px;object-fit:contain;object-position:center bottom}.v02-person b{display:block;color:#15527d;margin-bottom:5px}.v02-person p{margin:0;line-height:1.65}.v02-section{max-width:1100px;margin:24px auto;padding:26px;border:1px solid #d8e5ee;border-radius:20px;background:#fff}.v02-section h2{margin:.15rem 0 12px;color:#16324f}.v02-ey{font-size:12px;font-weight:900;letter-spacing:.12em;color:#3d7ca7}.v02-lead{color:#435966;line-height:1.85}.v02-device{display:grid;grid-template-columns:1.2fr 70px .9fr 70px .7fr;align-items:center;gap:10px;margin:22px 0;padding:22px;border-radius:18px;background:#f7fbfd;border:1px solid #d8e5ee}.v02-chamber{position:relative;min-height:230px;border:7px solid #718795;border-radius:46px;background:linear-gradient(180deg,#eef7fb,#dcecf4);overflow:hidden}.v02-chamber:before{content:"真空チャンバー";position:absolute;top:12px;left:0;right:0;text-align:center;font-weight:800;color:#16324f}.molecule{position:absolute;width:13px;height:13px;border-radius:50%;background:#3e86b2;box-shadow:0 0 0 3px rgba(62,134,178,.12)}.m1{left:18%;top:31%}.m2{left:42%;top:43%}.m3{left:70%;top:29%}.m4{left:26%;top:67%}.m5{left:61%;top:71%}.m6{left:80%;top:55%}.m7{left:48%;top:24%}.v02-pipe{height:22px;background:#8ba0ad;border-radius:12px;position:relative}.v02-pipe:after{content:"→";position:absolute;inset:-15px 0 auto;text-align:center;color:#15527d;font-size:30px;font-weight:900}.v02-pump{min-height:145px;border:5px solid #718795;border-radius:24px;background:#e8eef2;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;color:#16324f;padding:10px}.v02-out{font-weight:900;text-align:center;color:#15527d}.v02-key{margin:18px 0;padding:15px 18px;border-left:5px solid #3d7ca7;background:#eef7fb;border-radius:10px;font-size:18px;font-weight:800;color:#16324f}.v02-stages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}.v02-stage{padding:16px;border:1px solid #d8e5ee;border-radius:16px;background:#f9fcfe;text-align:center}.v02-stage h3{margin:0 0 12px;color:#16324f}.mini-chamber{position:relative;height:160px;border:5px solid #718795;border-radius:34px;background:#eaf4f8;margin-bottom:12px}.mini-chamber .dot{position:absolute;width:10px;height:10px;border-radius:50%;background:#3e86b2}.v02-flowline{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;align-items:center;margin:18px 0;font-weight:800;color:#16324f}.v02-flowline span{padding:10px 12px;border-radius:12px;background:#eef7fb}.v02-flowline i{font-style:normal;color:#3d7ca7}.v02-dialogue{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.v02-talk{display:grid;grid-template-columns:78px 1fr;gap:10px;align-items:end;padding:12px;border:1px solid #d8e5ee;border-radius:16px;background:#fff}.v02-talk img{width:78px;height:120px;object-fit:contain;object-position:center bottom}.v02-talk b{color:#15527d}.v02-talk p{margin:4px 0 0;line-height:1.6}.v02-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.v02-compare article{padding:20px;border:1px solid #d8e5ee;border-radius:16px;background:#f9fcfe}.v02-compare h3{margin-top:0;color:#16324f}.v02-compare strong{display:block;margin-top:10px;color:#15527d}.v02-range{margin:20px 0;padding:20px;border:1px solid #d8e5ee;border-radius:16px;background:#f7fbfd}.v02-axis{display:flex;justify-content:space-between;font-size:13px;color:#526a78}.v02-bar{height:16px;border-radius:10px;background:linear-gradient(90deg,#b9d7e8,#5d8fb0,#245b88);margin:7px 0 18px}.pump-row{display:grid;grid-template-columns:150px 1fr;gap:10px;align-items:center;margin:10px 0}.pump-row b{color:#16324f}.pump-span{height:16px;border-radius:10px;background:#8db6cf}.pump-span.high{margin-left:38%;width:62%;background:#5d8fb0}.pump-span.mid{width:62%}.v02-relay{display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;gap:8px;align-items:center;margin:20px 0}.v02-relay div{padding:18px 12px;text-align:center;border:1px solid #d8e5ee;border-radius:14px;background:#f8fbfd;font-weight:800;color:#16324f}.v02-relay .arr{border:0;background:transparent;color:#3d7ca7;font-size:28px}.v02-stack{max-width:430px;margin:20px auto;display:grid;gap:8px;text-align:center}.v02-stack div{padding:13px;border:1px solid #d8e5ee;border-radius:12px;background:#f8fbfd;font-weight:800;color:#16324f}.v02-stack .down{border:0;background:transparent;padding:0;color:#3d7ca7;font-size:22px}.v02-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.v02-summary article{padding:18px;border-radius:16px;background:#f3f9fc;border:1px solid #d8e5ee}.v02-summary b{display:block;color:#15527d;margin-bottom:6px}.v02-quiz button{display:block;width:100%;text-align:left;margin:9px 0;padding:14px 16px;border:1px solid #bfd2e2;border-radius:12px;background:#fff;color:#16324f;font:inherit;cursor:pointer}.v02-quiz button:hover{background:#f2f8fb}.v02-result{display:none;margin-top:12px;padding:13px;border-radius:12px;background:#eef7fb;color:#16324f;font-weight:700}.v02-next{padding:22px;border-radius:18px;background:#16324f;color:#fff}.v02-next a{color:#fff;font-weight:900}.v02-note{font-size:13px;color:#60737f}.epa-course-nav{max-width:1100px;margin:28px auto;padding:0 18px;display:grid;grid-template-columns:1fr auto 1fr;gap:12px}.epa-course-nav a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border:1px solid #bfd2e2;border-radius:10px;background:#fff;color:#15527d;text-decoration:none;font-weight:700}.epa-course-nav .prev{justify-self:start}.epa-course-nav .home{justify-self:center}.epa-course-nav .next{justify-self:end}
+@media(max-width:760px){.v02-hero,.v02-section{margin-left:12px;margin-right:12px;padding:18px}.v02-intro,.v02-dialogue,.v02-compare,.v02-summary,.v02-stages{grid-template-columns:1fr}.v02-person{grid-template-columns:72px 1fr}.v02-person img{width:72px;height:110px}.v02-device{grid-template-columns:1fr;gap:8px}.v02-pipe{width:22px;height:58px;margin:auto}.v02-pipe:after{content:"↓";inset:10px -20px auto}.v02-pump{min-height:105px}.v02-relay{grid-template-columns:1fr}.v02-relay .arr{transform:rotate(90deg)}.pump-row{grid-template-columns:1fr}.v02-dialogue .v02-talk{grid-template-columns:72px 1fr}.epa-course-nav{grid-template-columns:1fr 1fr}.epa-course-nav .home{grid-column:1/-1;grid-row:1}.epa-course-nav .prev{grid-column:1}.epa-course-nav .next{grid-column:2}}
+
+/* ===== Rev2 visual tuning ===== */
+.v02-hero{padding:34px 34px 30px}
+.v02-hero h1{font-size:clamp(36px,5.4vw,56px);line-height:1.16;margin-top:.35rem}
+.v02-question{font-size:15px;padding:10px 16px;margin-bottom:22px}
+.v02-intro{gap:16px}
+.v02-person{min-height:188px;grid-template-columns:112px 1fr;gap:14px;padding:15px 16px;align-items:center;overflow:hidden}
+.v02-person img{width:112px;height:166px;object-fit:contain;object-position:center bottom}
+.v02-char-aoi--hero{transform:scale(1.14);transform-origin:center bottom}
+.v02-char-haruto--hero{transform:scale(1.04);transform-origin:center bottom}
+.v02-char-teacher--hero{transform:scale(1.08);transform-origin:center bottom}
+.v02-talk{overflow:hidden;min-height:144px}
+.v02-talk img{width:88px;height:126px}
+.v02-dialogue .v02-talk{grid-template-columns:88px 1fr}
+.v02-char-aoi--sd{transform:scale(1.20);transform-origin:center bottom}
+.v02-device{position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+.v02-chamber{box-shadow:inset 0 0 28px rgba(72,126,158,.08)}
+.v02-pump{position:relative;background:linear-gradient(180deg,#eef3f6,#dde7ec)}
+.v02-pump:before{content:"";width:34px;height:34px;border:5px solid #718795;border-radius:50%;margin-right:10px;box-shadow:inset 0 0 0 5px #edf4f7}
+.v02-out:before{content:"⇢";display:block;font-size:34px;line-height:1;margin-bottom:4px;color:#3d7ca7}
+.v02-teacher-note{display:grid;grid-template-columns:82px 1fr;gap:12px;align-items:center;margin:14px 0 2px;padding:12px 14px;border-left:4px solid #6ea4c5;border-radius:12px;background:#f3f9fc;color:#334f60}
+.v02-teacher-note img{width:82px;height:108px;object-fit:contain;object-position:center bottom}
+.v02-teacher-note p{margin:0;line-height:1.65}
+.v02-stack div:not(.down){display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px}
+.v02-stack .stack-icon{display:inline-grid;place-items:center;min-width:28px;height:28px;border:1px solid #b9ccda;border-radius:50%;background:#fff;color:#2f6f9a;font-weight:900}
+.v02-stack .stack-turbo{background:#f2f8fc}.v02-stack .stack-dry{background:#f7fafc}.v02-stack .stack-exhaust{background:#eef7fb}
+@media(max-width:760px){.v02-hero{padding:22px 18px 20px}.v02-hero h1{font-size:clamp(31px,9vw,42px)}.v02-person{min-height:154px;grid-template-columns:92px 1fr;padding:12px 14px}.v02-person img{width:92px;height:138px}.v02-char-aoi--hero{transform:scale(1.16)}.v02-dialogue .v02-talk{grid-template-columns:86px 1fr}.v02-talk img{width:86px;height:122px}.v02-char-aoi--sd{transform:scale(1.21)}.v02-teacher-note{grid-template-columns:72px 1fr}.v02-teacher-note img{width:72px;height:96px}}
+
+
+/* ===== Rev3: opening matches Vacuum 01 ===== */
+.v02-title-hero{margin-bottom:0;}
+.v02-opening-comic{margin-top:0;}
+.v02-opening-comic .vacuum-comic__portrait img{
+  object-fit:contain;
+}
+.v02-opening-comic .vacuum-comic__scene:first-child .vacuum-comic__portrait img{
+  transform:scale(1.08);
+  transform-origin:center bottom;
+}
+.v02-opening-bridge{margin-bottom:18px;}
+
+/* Keep SD character visual scale consistent */
+.v02-dialogue .v02-talk{
+  min-height:146px;
+}
+.v02-dialogue .v02-talk img{
+  width:96px;
+  height:130px;
+  object-fit:contain;
+  object-position:center bottom;
+}
+.v02-dialogue .v02-talk img[alt*="SD葵"]{
+  transform:scale(1.14);
+  transform-origin:center bottom;
+}
+
+/* STEP4: dedicated swap slot for approved Aoi "understood/idea" variant */
+.v02-aoi-understand-slot{
+  transform:scale(1.16) !important;
+  transform-origin:center bottom !important;
+}
+
+@media(max-width:760px){
+  .v02-opening-comic .vacuum-comic__scene:first-child .vacuum-comic__portrait img{
+    transform:scale(1.10);
+  }
+  .v02-dialogue .v02-talk img{
+    width:92px;
+    height:126px;
+  }
+}
+
+
+/* ===== Rev5: character-card quality + overlap fix =====
+   - Separate image/text columns.
+   - Never enlarge by transform.
+   - Crop lower body only via overflow:hidden.
+   - Keep original high-resolution source downscaled, never upscaled. */
+
+.v02-dialogue .v02-talk{
+  display:grid !important;
+  grid-template-columns:132px minmax(0,1fr) !important;
+  gap:14px !important;
+  align-items:center !important;
+  min-height:170px !important;
+  padding:12px 16px !important;
+  overflow:hidden !important;
+}
+
+.v02-talktext{
+  min-width:0;
+  position:relative;
+  z-index:2;
+  align-self:center;
+}
+
+.v02-talktext b{
+  display:block;
+  margin-bottom:4px;
+}
+
+.v02-talktext p{
+  margin:0;
+  line-height:1.65;
+  overflow-wrap:anywhere;
+}
+
+.v02-charframe{
+  width:124px;
+  height:148px;
+  overflow:hidden;
+  align-self:end;
+  justify-self:center;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  background:transparent;
+  position:relative;
+  z-index:1;
+}
+
+.v02-charframe img{
+  display:block !important;
+  width:118px !important;
+  max-width:none !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:unset !important;
+  object-position:unset !important;
+  transform:none !important;
+  image-rendering:auto !important;
+  flex:none;
+}
+
+/* Fine tuning only by width and vertical offset; still always downscaling from source. */
+.v02-charframe--aoi img{
+  width:120px !important;
+  margin-top:0 !important;
+}
+.v02-charframe--haruto img{
+  width:118px !important;
+  margin-top:0 !important;
+}
+.v02-charframe--teacher img{
+  width:120px !important;
+  margin-top:0 !important;
+}
+
+/* STEP4 approved Aoi variant has a slightly different composition. */
+.v02-charframe--aoi img[src*="student_girl_sd_idea_v1.png"]{
+  width:122px !important;
+  margin-top:-2px !important;
+}
+
+.v02-teacher-note{
+  display:grid !important;
+  grid-template-columns:132px minmax(0,1fr) !important;
+  gap:14px !important;
+  align-items:center !important;
+  overflow:hidden !important;
+  min-height:166px;
+}
+.v02-teacher-note .v02-charframe{
+  height:146px;
+}
+.v02-teacher-note p{
+  min-width:0;
+  margin:0;
+  line-height:1.65;
+  overflow-wrap:anywhere;
+}
+
+/* Neutralize previous character transforms from older revisions. */
+.v02-char-aoi,
+.v02-char-aoi--sd,
+.v02-aoi-understand-slot{
+  transform:none !important;
+}
+
+@media(max-width:760px){
+  .v02-dialogue{
+    grid-template-columns:1fr !important;
+  }
+  .v02-dialogue .v02-talk{
+    grid-template-columns:112px minmax(0,1fr) !important;
+    min-height:154px !important;
+    padding:10px 12px !important;
+    gap:10px !important;
+  }
+  .v02-charframe{
+    width:106px;
+    height:136px;
+  }
+  .v02-charframe img{
+    width:106px !important;
+  }
+  .v02-charframe--aoi img{
+    width:108px !important;
+  }
+  .v02-charframe--haruto img{
+    width:106px !important;
+  }
+  .v02-charframe--teacher img{
+    width:108px !important;
+  }
+  .v02-charframe--aoi img[src*="student_girl_sd_idea_v1.png"]{
+    width:110px !important;
+  }
+  .v02-teacher-note{
+    grid-template-columns:112px minmax(0,1fr) !important;
+    min-height:154px;
+    padding:10px 12px !important;
+    gap:10px !important;
+  }
+  .v02-teacher-note .v02-charframe{
+    height:134px;
+  }
+}
