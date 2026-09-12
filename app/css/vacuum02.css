@@ -181,6 +181,23 @@
   overflow-wrap:anywhere;
 }
 
+
+/* Rev14 STEP3: transparent teacher art sits directly on the pale-blue note panel.
+   Enlarged and cropped to keep her face and presenting hand readable. */
+.v02-teacher-note{
+  grid-template-columns:190px minmax(0,1fr) !important;
+  min-height:178px;
+}
+.v02-teacher-note .v02-charframe--teacher-step3{
+  width:184px;
+  height:164px;
+  align-self:end;
+}
+.v02-teacher-note .v02-charframe--teacher-step3 img{
+  width:178px !important;
+  margin-top:-6px !important;
+}
+
 /* Neutralize previous character transforms from older revisions. */
 .v02-char-aoi,
 .v02-char-aoi--sd,
@@ -230,4 +247,75 @@
   .v02-teacher-note .v02-charframe{
     height:134px;
   }
+  .v02-teacher-note{
+    grid-template-columns:132px minmax(0,1fr) !important;
+  }
+  .v02-teacher-note .v02-charframe--teacher-step3{
+    width:128px;
+    height:138px;
+  }
+  .v02-teacher-note .v02-charframe--teacher-step3 img{
+    width:145px !important;
+    margin-top:-3px !important;
+  }
+}
+
+
+/* ===== Rev13 quiz reaction illustrations ===== */
+.v02-result{
+  display:none;
+  grid-template-columns:150px minmax(0,1fr);
+  gap:16px;
+  align-items:center;
+  margin-top:14px;
+  padding:14px 16px 14px 10px;
+  min-height:158px;
+  overflow:hidden;
+  border:1px solid #d7e7f0;
+  border-radius:16px;
+  background:#f4fafc;
+  color:#16324f;
+  font-weight:700;
+}
+.v02-result.is-correct{background:#f3faf7;border-color:#cfe5d8}
+.v02-result.is-incorrect{background:#f7fafc;border-color:#d8e5ee}
+.v02-result-visual{
+  width:144px;
+  height:142px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  align-self:end;
+}
+.v02-result-visual img{
+  display:block;
+  width:142px;
+  max-width:none;
+  height:auto;
+  transform:none;
+}
+.v02-result-visual--teacher img{
+  width:154px;
+  margin-top:-3px;
+}
+.v02-result-copy{min-width:0;line-height:1.55}
+.v02-result-copy b{display:block;font-size:18px;margin-bottom:5px}
+.v02-result-copy small{display:block;font-weight:600;color:#536975;font-size:14px}
+
+@media(max-width:760px){
+  .v02-result{
+    grid-template-columns:112px minmax(0,1fr);
+    gap:10px;
+    min-height:142px;
+    padding:10px 12px 10px 6px;
+  }
+  .v02-result-visual{
+    width:108px;
+    height:126px;
+  }
+  .v02-result-visual img{width:112px}
+  .v02-result-visual--teacher img{width:124px;margin-top:-2px}
+  .v02-result-copy b{font-size:16px}
+  .v02-result-copy small{font-size:13px}
 }
