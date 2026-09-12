@@ -1,8 +1,0 @@
-MonoBase Vacuum Technology 02 Rev5
-- Rebuilt character dialogue cards from Rev3 baseline.
-- Character image and dialogue text now use separate fixed columns; overlap is prevented structurally.
-- Removed transform-based image enlargement that caused soft/pixelated rendering.
-- Lower body is cropped by frame overflow instead of object-fit:cover.
-- Haruto is the perceived-size reference; Aoi and Keiko are tuned around the same head/eye scale.
-- Approved Aoi 'understood / idea' image added as PNG and used in STEP4.
-- CSS cache version updated to v=5.

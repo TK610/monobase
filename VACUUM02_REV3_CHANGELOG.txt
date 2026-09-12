@@ -1,6 +1,0 @@
-MonoBase Vacuum Technology 02 Rev3
-- Opening changed to the same large title + comic flow as Vacuum 01.
-- Removed the three equal-size intro profile cards.
-- Aoi SD display size adjusted to match Haruto and Keiko better.
-- STEP4 is prepared for the approved Aoi 'understood/idea' SD variant.
-- The exact approved Aoi SD image is not inside the current ZIP, so it has not been fabricated or falsely substituted.
