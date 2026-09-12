@@ -149,6 +149,14 @@
   margin-top:0 !important;
 }
 
+
+/* STEP5: teacher is intentionally enlarged and cropped around the lower torso.
+   This keeps her face/gesture readable at the same visual weight as Aoi and Haruto. */
+.v02-charframe--teacher-step5 img{
+  width:145px !important;
+  margin-top:-2px !important;
+}
+
 /* STEP4 approved Aoi variant has a slightly different composition. */
 .v02-charframe--aoi img[src*="student_girl_sd_idea_v1.png"]{
   width:122px !important;
@@ -205,6 +213,10 @@
   }
   .v02-charframe--teacher img{
     width:108px !important;
+  }
+  .v02-charframe--teacher-step5 img{
+    width:130px !important;
+    margin-top:-2px !important;
   }
   .v02-charframe--aoi img[src*="student_girl_sd_idea_v1.png"]{
     width:110px !important;

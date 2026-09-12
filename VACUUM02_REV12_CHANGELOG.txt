@@ -1,0 +1,7 @@
+MonoBase Ver.0.7.43 Vacuum02 Rev12
+
+STEP5 character display adjustment
+- Keiko teacher: enlarged only in STEP5 (desktop 145px / mobile 130px)
+- Lower body is intentionally cropped inside the existing character frame
+- Aoi/Haruto/teacher dialogue text is unchanged
+- Image cache query bumped to v=12
