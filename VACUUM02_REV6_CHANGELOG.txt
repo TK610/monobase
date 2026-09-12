@@ -1,0 +1,6 @@
+MonoBase Vacuum Technology 02 Rev6 - Character Refresh
+
+- Replaced all three opening character illustrations with Vacuum 02-specific poses.
+- Replaced every Aoi, Haruto, and Ke-ko teacher illustration in STEP 2-5 with context-specific variants.
+- Removed repeated reuse of the same SD illustration across multiple dialogue cards.
+- Learning text, diagrams, navigation, and quiz logic are unchanged.
