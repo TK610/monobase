@@ -319,3 +319,16 @@
   .v02-result-copy b{font-size:16px}
   .v02-result-copy small{font-size:13px}
 }
+
+
+/* Rev16 STEP3: teacher now uses the same dialogue-card pattern as the other steps. */
+.v02-dialogue .v02-charframe--teacher img[src*="v02_teacher_step3_transparent.png"]{
+  width:124px !important;
+  margin-top:-2px !important;
+}
+@media(max-width:760px){
+  .v02-dialogue .v02-charframe--teacher img[src*="v02_teacher_step3_transparent.png"]{
+    width:112px !important;
+    margin-top:-1px !important;
+  }
+}
