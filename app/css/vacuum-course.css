@@ -1,0 +1,82 @@
+/* Independent styles for lessons 03–07. Lessons 01 and 02 do not load this file. */
+.vc-page { color:#263746; font-size:16px; background:#f4f6f8; }
+.vc-page main { max-width:1100px; padding:22px 18px 44px; }
+.vc-page p { line-height:1.85; overflow-wrap:anywhere; }
+.vc-page h1 { font-size:clamp(28px,4vw,42px); line-height:1.35; }
+.vc-page h2 { font-size:clamp(23px,3vw,29px); line-height:1.5; }
+.vc-page h3 { font-size:19px; line-height:1.5; }
+.vc-page a { color:#15527d; text-underline-offset:3px; }
+.vc-page .vc-hero { padding:28px; }
+.vc-ey { font-size:12px; font-weight:800; letter-spacing:.12em; color:#3d7ca7; }
+.vc-section { margin:24px 0; padding:26px; border:1px solid #d8e5ee; border-radius:20px; background:white; }
+.vc-progress { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+.vc-progress a { width:44px; min-height:44px; display:grid; place-items:center; border:1px solid #bfd2e2; border-radius:10px; background:white; text-decoration:none; font-weight:700; }
+.vc-progress a[aria-current] { color:white; background:#16324f; border-color:#16324f; }
+.vc-dialogue { display:grid; gap:12px; margin:20px 0; }
+.vc-talk { display:grid; grid-template-columns:132px minmax(0,1fr); gap:18px; align-items:center; padding:14px 18px; border:1px solid #d8e5ee; border-radius:16px; background:white; }
+.vc-portrait { display:flex; justify-content:center; align-items:center; }
+.vc-portrait img { display:block; width:100%; height:150px; object-fit:contain; }
+.vc-talktext { min-width:0; }
+.vc-talktext b { display:block; font-size:14px; color:#15527d; }
+.vc-talktext p { margin:6px 0 0; }
+.vc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:16px; margin:18px 0; }
+.vc-card { padding:18px; border:1px solid #d8e5ee; border-radius:16px; background:#f9fcfe; min-width:0; }
+.vc-card p:last-child { margin-bottom:0; }
+.vc-two { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; align-items:center; }
+.vc-figure { margin:18px 0; min-width:0; }
+.vc-figure img { display:block; width:100%; height:auto; max-width:480px; margin:auto; }
+.vc-figure figcaption { font-size:14px; line-height:1.7; color:#526a78; text-align:center; margin-top:10px; }
+.vc-key { padding:15px 18px; border-left:4px solid #3d7ca7; background:#edf6fb; border-radius:10px; color:#16324f; font-weight:700; }
+.vc-note { font-size:14px; color:#536773; }
+.vc-flow { list-style:none; display:flex; flex-wrap:wrap; gap:26px; margin:24px 0; padding:0; align-items:stretch; }
+.vc-flow li { flex:1 1 150px; position:relative; border:1px solid #bad2e2; border-radius:14px; padding:16px; text-align:center; background:#f2f8fc; color:#16324f; font-weight:700; }
+.vc-flow li:not(:last-child)::after { content:'→'; position:absolute; right:-23px; top:calc(50% - 15px); color:#327dab; }
+.vc-flow small { display:block; font-size:14px; font-weight:400; }
+.vc-nav { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+.vc-nav a { flex:1 1 180px; text-align:center; display:grid; place-items:center; padding:12px; min-height:48px; border:1px solid #bfd2e2; border-radius:12px; background:white; font-weight:700; }
+.vc-nav a:last-child { background:#16324f; color:white; }
+.vc-sources { padding:18px; border:1px solid #d8e5ee; border-radius:14px; background:#fff; font-size:14px; margin-top:20px; }
+.vc-sources summary { cursor:pointer; font-size:16px; min-height:32px; }
+.vc-sources li { margin:10px 0; }
+.vc-related { padding:18px; background:#edf6fb; border-radius:12px; }
+.vc-page button { font:inherit; cursor:pointer; background:#16324f; color:white; border:1px solid #16324f; border-radius:10px; padding:12px 18px; min-height:48px; }
+.vc-page button:hover { background:#245b88; }
+.vc-page :focus-visible { outline:3px solid #ab6621; outline-offset:4px; }
+.vc-page fieldset { border:0; padding:0; margin:12px 0 20px; min-width:0; }
+.vc-page legend { font-size:20px; font-weight:700; line-height:1.7; margin-bottom:16px; padding:0; }
+.vc-option { display:flex; align-items:flex-start; gap:12px; border:1px solid #bfd2e2; border-radius:12px; padding:16px; margin:12px 0; cursor:pointer; line-height:1.75; }
+.vc-option input { width:20px; height:20px; margin-top:4px; flex-shrink:0; accent-color:#245b88; }
+.vc-option.is-selected { background:#edf6fb; border-color:#245b88; }
+.vc-feedback { display:grid; grid-template-columns:110px minmax(0,1fr); gap:16px; padding:18px; border:1px solid #c5d9e7; border-radius:14px; background:#f4f9fc; margin:18px 0; }
+.vc-feedback[hidden] { display:none; }
+.vc-feedback.is-correct { background:#f1f8f3; border-color:#bcd5c4; }
+.vc-feedback img { width:110px; height:140px; object-fit:contain; }
+.vc-feedback strong { font-size:17px; }
+.vc-feedback p { margin:8px 0; }
+.vc-answer { margin-top:18px; }
+.vc-answer summary { padding:10px 0; cursor:pointer; color:#15527d; }
+#reset-quiz { color:#16324f; background:white; margin-top:16px; }
+.vc-sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+.vc-skip { position:absolute; left:10px; top:-80px; z-index:99; background:white; padding:12px; }
+.vc-skip:focus { top:10px; }
+@media(max-width:760px) {
+ .vc-page main { padding:16px 12px 32px; }
+ .vc-page .vc-hero,.vc-section { padding:20px 16px; }
+ .vc-talk { grid-template-columns:94px minmax(0,1fr); padding:12px 10px; gap:12px; }
+ .vc-portrait img { height:128px; }
+ .vc-two { grid-template-columns:1fr; gap:8px; }
+ .vc-flow { flex-direction:column; gap:26px; }
+ .vc-flow li { flex:auto; }
+ .vc-flow li:not(:last-child)::after { content:'↓'; right:calc(50% - 8px); top:auto; bottom:-27px; }
+ .vc-grid { grid-template-columns:1fr; }
+ .vc-feedback { grid-template-columns:80px minmax(0,1fr); padding:12px; gap:12px; }
+ .vc-feedback img { width:80px; height:110px; }
+}
+@media(max-width:360px) {
+ .vc-talk { grid-template-columns:72px minmax(0,1fr); gap:10px; }
+ .vc-portrait img { height:112px; }
+ .vc-progress { gap:5px; }
+ .vc-progress a { width:36px; }
+ .vc-feedback { grid-template-columns:1fr; }
+}
+@media print { .vc-section,.vc-talk,.vc-figure { break-inside:avoid; } .vc-progress,.vc-nav,.vc-skip,button { display:none; } }

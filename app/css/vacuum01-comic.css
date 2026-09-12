@@ -63,3 +63,9 @@
   .vacuum-companion--aoi .vacuum-companion__image { width: 48%; max-height: none; }
   .vacuum-companion--teacher .vacuum-companion__image { width: 52%; max-height: none; }
 }
+
+/* Rev9: opening Haruto portrait +10% for visual balance with Aoi and Keiko. */
+.vacuum-comic__portrait img.vacuum-comic__portrait-haruto { height: 462px; }
+@media (max-width: 760px) {
+  .vacuum-comic__portrait img.vacuum-comic__portrait-haruto { width: 110%; max-width: none; height: auto; margin-left: -5%; margin-right: -5%; }
+}

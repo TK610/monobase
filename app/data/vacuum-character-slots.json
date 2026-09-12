@@ -1,0 +1,170 @@
+[
+  {
+    "slot": "v03-talk-01",
+    "page": "learning_vacuum_03.html",
+    "role": "aoi-question",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v03-talk-02",
+    "page": "learning_vacuum_03.html",
+    "role": "haruto-think",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v03-talk-03",
+    "page": "learning_vacuum_03.html",
+    "role": "teacher-explain",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v03-talk-04",
+    "page": "learning_vacuum_03.html",
+    "role": "aoi-idea",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v03-talk-05",
+    "page": "learning_vacuum_03.html",
+    "role": "haruto-understand",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v03-talk-06",
+    "page": "learning_vacuum_03.html",
+    "role": "aoi-idea",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v03-talk-07",
+    "page": "learning_vacuum_03.html",
+    "role": "teacher-explain",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v04-talk-01",
+    "page": "learning_vacuum_04.html",
+    "role": "aoi-question",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v04-talk-02",
+    "page": "learning_vacuum_04.html",
+    "role": "haruto-think",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v04-talk-03",
+    "page": "learning_vacuum_04.html",
+    "role": "teacher-explain",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v04-talk-04",
+    "page": "learning_vacuum_04.html",
+    "role": "aoi-idea",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v04-talk-05",
+    "page": "learning_vacuum_04.html",
+    "role": "haruto-understand",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v04-talk-06",
+    "page": "learning_vacuum_04.html",
+    "role": "teacher-explain",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v05-talk-01",
+    "page": "learning_vacuum_05.html",
+    "role": "aoi-question",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v05-talk-02",
+    "page": "learning_vacuum_05.html",
+    "role": "haruto-think",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v05-talk-03",
+    "page": "learning_vacuum_05.html",
+    "role": "teacher-explain",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v05-talk-04",
+    "page": "learning_vacuum_05.html",
+    "role": "aoi-idea",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v05-talk-05",
+    "page": "learning_vacuum_05.html",
+    "role": "haruto-understand",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v05-talk-06",
+    "page": "learning_vacuum_05.html",
+    "role": "teacher-explain",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v05-talk-07",
+    "page": "learning_vacuum_05.html",
+    "role": "aoi-idea",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v06-talk-01",
+    "page": "learning_vacuum_06.html",
+    "role": "aoi-question",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v06-talk-02",
+    "page": "learning_vacuum_06.html",
+    "role": "haruto-understand",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v06-talk-03",
+    "page": "learning_vacuum_06.html",
+    "role": "teacher-explain",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v06-talk-04",
+    "page": "learning_vacuum_06.html",
+    "role": "aoi-idea",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v06-talk-05",
+    "page": "learning_vacuum_06.html",
+    "role": "teacher-explain",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "v06-talk-06",
+    "page": "learning_vacuum_06.html",
+    "role": "haruto-understand",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "vquiz-talk-01",
+    "page": "learning_vacuum_quiz.html",
+    "role": "aoi-idea",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  },
+  {
+    "slot": "vquiz-talk-02",
+    "page": "learning_vacuum_quiz.html",
+    "role": "teacher-encourage",
+    "instruction": "この要素内のimg srcを変更すると、この会話だけを差し替えられます。"
+  }
+]
