@@ -101,3 +101,25 @@
 @media(max-width:390px){.vacuum-secondary{grid-template-columns:1fr}}
 
 .vacuum-secondary--single{grid-template-columns:1fr}
+
+/* Rev8: Vacuum03 opening comic matches the large 01/02 manga layout. */
+.v03-opening-comic{margin-top:24px}
+.v03-opening-comic .vacuum-comic__scene{min-height:430px}
+.v03-opening-comic .vacuum-comic__portrait img{height:420px;object-fit:contain;object-position:center bottom}
+.v03-opening-comic .vacuum-comic__scene:first-child .vacuum-comic__portrait img{height:430px}
+.v03-opening-comic .vacuum-comic__scene:nth-child(2) .vacuum-comic__portrait img{height:430px}
+.v03-opening-comic .vacuum-comic__scene:nth-child(3) .vacuum-comic__portrait img{height:430px}
+.v03-opening-bridge{margin-bottom:18px}
+@media(max-width:760px){
+  .v03-opening-comic .vacuum-comic__scene{min-height:0}
+  .v03-opening-comic .vacuum-comic__portrait img,
+  .v03-opening-comic .vacuum-comic__scene:first-child .vacuum-comic__portrait img,
+  .v03-opening-comic .vacuum-comic__scene:nth-child(2) .vacuum-comic__portrait img,
+  .v03-opening-comic .vacuum-comic__scene:nth-child(3) .vacuum-comic__portrait img{width:100%;height:auto;max-height:none}
+}
+
+/* Rev11: Vacuum03 STEP1 generic gas-transport concept */
+.vc-flow-figure{margin:22px auto 12px;text-align:center}
+.vc-flow-figure img{width:100%;max-width:1080px;height:auto}
+.vc-flow-figure figcaption{font-weight:700;color:#16324f;margin-top:4px}
+@media(max-width:760px){.vc-flow-figure{overflow-x:auto}.vc-flow-figure img{min-width:700px}}
