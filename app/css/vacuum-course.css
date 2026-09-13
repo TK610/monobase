@@ -151,3 +151,31 @@
   .vc-flow-particles i:nth-child(1){left:11px;top:2px}.vc-flow-particles i:nth-child(2){left:33px;top:13px}.vc-flow-particles i:nth-child(3){left:55px;top:2px}
   .vc-flow-figure figcaption{margin-top:3px;font-size:12.5px;line-height:1.45;text-align:center}
 }
+
+/* Rev16: Vacuum03 STEP1 mobile vertical flow final compact polish */
+@media(max-width:640px){
+  .vc-section#step-1{padding:20px 16px 18px}
+  .vc-section#step-1 .vc-flow-figure{margin:12px auto 6px}
+  .vc-flow-mobile{max-width:250px;margin:0 auto}
+  .vc-flow-vessel{gap:4px;margin-bottom:4px}
+  .vc-flow-vessel strong{font-size:17px;line-height:1.25}
+  .vc-flow-vessel-box{width:136px;height:82px;border-width:3px;border-radius:16px}
+  .vc-flow-vessel-box i,.vc-flow-particles i{width:9px;height:9px}
+  .vc-flow-vessel-box i:nth-child(1){left:25px;top:20px}
+  .vc-flow-vessel-box i:nth-child(2){left:56px;top:48px}
+  .vc-flow-vessel-box i:nth-child(3){left:96px;top:19px}
+  .vc-flow-vessel-box i:nth-child(4){left:104px;top:57px}
+  .vc-flow-vessel-box i:nth-child(5){left:32px;top:59px}
+  .vc-flow-vessel-box i:nth-child(6){left:76px;top:37px}
+  .vc-flow-step{margin:1px 0 3px}
+  .vc-flow-step b{font-size:17px;line-height:1.3;margin-bottom:2px}
+  .vc-flow-arrow{width:3px;height:20px;margin:0 0 6px}
+  .vc-flow-arrow::after{border-left-width:8px;border-right-width:8px;border-top-width:11px}
+  .vc-flow-particles{width:64px;height:22px;margin-bottom:0}
+  .vc-flow-particles i:nth-child(1){left:9px;top:1px}
+  .vc-flow-particles i:nth-child(2){left:28px;top:11px}
+  .vc-flow-particles i:nth-child(3){left:47px;top:1px}
+  .vc-flow-figure figcaption{margin-top:0;font-size:12.5px;line-height:1.4}
+  .vc-section#step-1 .vc-note{margin:8px 0 6px;font-size:.9rem;line-height:1.55}
+  .vc-section#step-1 .vc-note + p{margin:8px 0 0}
+}
