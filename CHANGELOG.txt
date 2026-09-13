@@ -182,3 +182,11 @@ Rev16 - Vacuum03 STEP1 Mobile Compact Polish
 - キャプション、注記、STEP2への導入文の間隔を整理。
 - PC版レイアウトは変更なし。
 
+
+
+Rev17 - Vacuum03 STEP1 Responsive Separation & Label Readability
+- STEP1のPC用横図とスマホ用縦図を760px基準で完全分離し、同時表示を防止。
+- スマホ版はRev15とRev16の中間程度の密度に再調整。
+- スマホ版の「容器内の気体」「①取り込む」「②出口側へ運ぶ」「③外へ出す」を20pxへ拡大。
+- PC版概念図の工程ラベルも拡大し、図上の文字の視認性を改善。
+- vacuum-course.cssに?v=17を付与し、GitHub Pages/Safariで旧CSSが残るリスクを軽減。

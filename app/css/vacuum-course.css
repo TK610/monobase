@@ -179,3 +179,39 @@
   .vc-section#step-1 .vc-note{margin:8px 0 6px;font-size:.9rem;line-height:1.55}
   .vc-section#step-1 .vc-note + p{margin:8px 0 0}
 }
+
+
+/* Rev17: Vacuum03 STEP1 strict desktop/mobile separation + readable labels */
+.vc-flow-desktop{display:block}
+.vc-flow-mobile{display:none}
+@media(max-width:760px){
+  .vc-section#step-1{overflow:hidden;padding:22px 16px 20px}
+  .vc-section#step-1 .vc-flow-figure{width:100%;max-width:100%;margin:14px auto 8px;padding:0;overflow:hidden;box-sizing:border-box}
+  .vc-section#step-1 .vc-flow-desktop{display:none !important}
+  .vc-section#step-1 .vc-flow-mobile{display:flex !important;flex-direction:column;align-items:center;width:100%;max-width:290px;margin:0 auto;box-sizing:border-box;color:#16324f}
+  .vc-section#step-1 .vc-flow-vessel{width:100%;gap:6px;margin-bottom:6px}
+  .vc-section#step-1 .vc-flow-vessel strong{font-size:20px;line-height:1.3;text-align:center}
+  .vc-section#step-1 .vc-flow-vessel-box{width:148px;height:88px;border-width:3px;border-radius:17px}
+  .vc-section#step-1 .vc-flow-vessel-box i,.vc-section#step-1 .vc-flow-particles i{width:9px;height:9px}
+  .vc-section#step-1 .vc-flow-vessel-box i:nth-child(1){left:27px;top:21px}
+  .vc-section#step-1 .vc-flow-vessel-box i:nth-child(2){left:61px;top:51px}
+  .vc-section#step-1 .vc-flow-vessel-box i:nth-child(3){left:105px;top:20px}
+  .vc-section#step-1 .vc-flow-vessel-box i:nth-child(4){left:113px;top:61px}
+  .vc-section#step-1 .vc-flow-vessel-box i:nth-child(5){left:35px;top:63px}
+  .vc-section#step-1 .vc-flow-vessel-box i:nth-child(6){left:82px;top:40px}
+  .vc-section#step-1 .vc-flow-step{display:flex;flex-direction:column;align-items:center;width:100%;margin:3px 0 5px}
+  .vc-section#step-1 .vc-flow-step b{font-size:20px;line-height:1.3;text-align:center;margin:0 0 3px;font-weight:700}
+  .vc-section#step-1 .vc-flow-arrow{width:4px;height:24px;margin:0 0 7px}
+  .vc-section#step-1 .vc-flow-arrow::after{border-left-width:9px;border-right-width:9px;border-top-width:12px}
+  .vc-section#step-1 .vc-flow-particles{width:68px;height:24px;margin:0}
+  .vc-section#step-1 .vc-flow-particles i:nth-child(1){left:9px;top:2px}
+  .vc-section#step-1 .vc-flow-particles i:nth-child(2){left:29px;top:12px}
+  .vc-section#step-1 .vc-flow-particles i:nth-child(3){left:50px;top:2px}
+  .vc-section#step-1 .vc-flow-figure figcaption{margin-top:5px;font-size:14px;line-height:1.45;text-align:center}
+  .vc-section#step-1 .vc-note{margin:10px 0 7px;font-size:.92rem;line-height:1.6}
+  .vc-section#step-1 .vc-note + p{margin:9px 0 0}
+}
+@media(min-width:761px){
+  .vc-section#step-1 .vc-flow-desktop{display:block !important}
+  .vc-section#step-1 .vc-flow-mobile{display:none !important}
+}
