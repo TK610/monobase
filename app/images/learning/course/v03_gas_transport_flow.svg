@@ -18,5 +18,5 @@
 <line x1="570" y1="150" x2="720" y2="150" stroke="#2f82b5" stroke-width="6" marker-end="url(#arrow)"/>
 <g fill="#2f82b5"><circle cx="768" cy="132" r="7"/><circle cx="792" cy="164" r="7"/><circle cx="816" cy="142" r="7"/></g>
 <line x1="870" y1="150" x2="1020" y2="150" stroke="#2f82b5" stroke-width="6" marker-end="url(#arrow)"/>
-<g fill="#2f82b5"><circle cx="1068" cy="128" r="7"/><circle cx="1100" cy="158" r="7"/><circle cx="1133" cy="136" r="7"/><circle cx="1082" cy="192" r="7"/></g>
+<g fill="#2f82b5"><circle cx="1068" cy="132" r="7"/><circle cx="1100" cy="164" r="7"/><circle cx="1132" cy="142" r="7"/></g>
 </svg>
