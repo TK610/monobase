@@ -234,3 +234,29 @@
   .vc-screw-steps{grid-template-columns:1fr;gap:8px;margin:12px 0 8px}
   .vc-screw-steps span{min-height:0;padding:11px 12px;font-size:15px}
 }
+
+/* Rev19: Vacuum03 STEP2 accuracy, benefit, and responsive polish */
+.vc-screw-mobile-direction{display:none}
+.vc-benefit{display:flex;align-items:flex-start;gap:14px;margin:18px 0 10px;padding:17px 18px;border:1px solid #b8d3e4;border-radius:14px;background:#eef7fc;color:#16324f}
+.vc-benefit .vc-point-label{flex:0 0 auto}
+.vc-benefit strong{display:block;font-size:17px;margin-bottom:4px}
+.vc-benefit p{margin:0;line-height:1.7}
+.vc-step-bridge{margin:20px 0 0;padding:15px 17px;border-left:4px solid #2f82b5;background:#f6fafc;font-weight:700;color:#16324f}
+@media(max-width:760px){
+  .vc-screw-labels-desktop{display:none}
+  .vc-screw-mobile-direction{display:flex;align-items:center;justify-content:center;gap:14px;margin:2px 0 5px;color:#16324f;font-weight:700;font-size:15px}
+  .vc-screw-mobile-direction b{color:#2f82b5;font-size:20px}
+  .vc-screw-svg{width:100%;max-width:100%;height:auto}
+  .vc-benefit{gap:10px;padding:14px 13px;margin-top:15px}
+  .vc-benefit strong{font-size:16px}
+  .vc-step-bridge{margin-top:16px;padding:13px 14px;font-size:15px;line-height:1.65}
+}
+
+/* Rev23: Vacuum03 STEP2 - generated reference visual integrated as the learning figure */
+.vc-screw-photo-figure picture{display:block}
+.vc-screw-reference{display:block;width:100%;height:auto;max-width:1080px;margin:0 auto;border-radius:14px}
+@media(max-width:760px){
+  .vc-screw-photo-figure{overflow:visible}
+  .vc-screw-photo-figure .vc-screw-mobile-direction{display:flex;margin-bottom:8px}
+  .vc-screw-reference{max-width:100%;border-radius:10px}
+}
