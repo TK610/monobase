@@ -215,3 +215,22 @@
   .vc-section#step-1 .vc-flow-desktop{display:block !important}
   .vc-section#step-1 .vc-flow-mobile{display:none !important}
 }
+
+/* Rev18: Vacuum03 STEP2 screw dry-pump concept figure */
+.vc-screw-figure{margin:24px auto 12px;text-align:center;max-width:1120px}
+.vc-screw-labels{display:grid;grid-template-columns:1fr 1.6fr 1fr;align-items:center;gap:16px;margin:0 auto 8px;color:#16324f;font-weight:700;font-size:17px}
+.vc-screw-labels span:first-child{text-align:left}.vc-screw-labels span:last-child{text-align:right}.vc-screw-labels strong{text-align:center}
+.vc-screw-svg{display:block;width:100%;height:auto;max-width:980px;margin:0 auto}
+.vc-screw-figure figcaption{margin-top:6px;color:#536773;font-weight:700;font-size:14px;line-height:1.5}
+.vc-screw-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 10px}
+.vc-screw-steps span{display:flex;align-items:center;justify-content:center;min-height:56px;padding:12px 14px;border:1px solid #bad2e2;border-radius:13px;background:#f2f8fc;color:#16324f;font-weight:700;text-align:center;line-height:1.45}
+.vc-screw-note{margin-top:8px}
+@media(max-width:760px){
+  .vc-screw-figure{margin:18px auto 10px;max-width:100%;overflow:hidden}
+  .vc-screw-labels{grid-template-columns:1fr 1.4fr 1fr;gap:6px;font-size:12.5px;margin-bottom:4px}
+  .vc-screw-labels span:first-child,.vc-screw-labels span:last-child{text-align:center}
+  .vc-screw-svg{width:100%;max-width:520px}
+  .vc-screw-figure figcaption{font-size:12.5px;margin-top:4px}
+  .vc-screw-steps{grid-template-columns:1fr;gap:8px;margin:12px 0 8px}
+  .vc-screw-steps span{min-height:0;padding:11px 12px;font-size:15px}
+}
