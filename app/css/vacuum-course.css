@@ -260,3 +260,12 @@
   .vc-screw-photo-figure .vc-screw-mobile-direction{display:flex;margin-bottom:8px}
   .vc-screw-reference{max-width:100%;border-radius:10px}
 }
+
+
+/* Rev27: force the complete STEP2 screw figure to remain visible on mobile.
+   New image filename also prevents an older cropped asset from browser/GitHub cache. */
+@media(max-width:760px){
+  .vc-screw-photo-figure{width:100%;max-width:100%;overflow:visible !important}
+  .vc-screw-photo-figure picture{display:flex !important;width:100%;max-width:100%;align-items:center;justify-content:center;overflow:visible}
+  .vc-screw-photo-figure .vc-screw-reference{display:block !important;width:calc(100% - 16px) !important;max-width:calc(100% - 16px) !important;height:auto !important;aspect-ratio:auto !important;object-fit:contain !important;object-position:center center !important;margin:0 8px !important;border-radius:8px}
+}

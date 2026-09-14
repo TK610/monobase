@@ -1,3 +1,8 @@
+Rev27
+- Vacuum03 STEP2: mobile now forces the full screw-pump figure inside the content width (no crop).
+- Renamed the reference image asset to v2 to avoid stale mobile/browser cache.
+- Desktop layout/content unchanged.
+
 Rev24 (2026-09-14)
 - Vacuum03 STEP2のスマホ用スクリュー模式図を再トリミング。左右端に残っていた元画像の文字・矢印の切れ端を除去。
 - 中央のスクリュー機構、回転方向、取り込み・搬送・圧縮の表示は維持。PC版は変更なし。
