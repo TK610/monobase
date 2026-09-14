@@ -1,3 +1,7 @@
+Rev24 (2026-09-14)
+- Vacuum03 STEP2のスマホ用スクリュー模式図を再トリミング。左右端に残っていた元画像の文字・矢印の切れ端を除去。
+- 中央のスクリュー機構、回転方向、取り込み・搬送・圧縮の表示は維持。PC版は変更なし。
+
 Rev14 (2026-09-13)
 - STEP1概念図を最終調整。PC/モバイルとも①②③後の粒子数を3粒に統一し、途中で気体が増えたように見える表現を解消。
 - モバイル縦フローを約25%圧縮し、矢印サイズと工程間余白を縮小。
@@ -234,3 +238,9 @@ Rev22 - Vacuum03 STEP2 Screw Diagram Simplification
 - PC用とスマホ用のWebP画像を追加し、画面幅に応じて切り替えるpicture要素を採用。
 - 既存のSTEP2本文、3段階カード、葵の会話、ドライポンプのメリット、STEP3への橋渡しは維持。
 - 実機の詳細構造はページ下部の参考資料リンクで確認する方針を維持。
+
+Rev25 (Vacuum03 STEP2 text polish)
+- STEP2 intro avoids implying vacuum pumps are only two categories; introduces multiple pump methods before the dry screw example.
+- STEP2 process card ③ changed to 「気体を圧縮して排出する」.
+- Dry-pump benefit clarified: reduced oil contact helps avoid contaminating the vacuum chamber/products.
+- “Dry” caveat rewritten for beginners: bearings etc. outside the gas-compression section may use oil/grease.
