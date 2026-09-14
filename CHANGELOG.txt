@@ -244,3 +244,7 @@ Rev25 (Vacuum03 STEP2 text polish)
 - STEP2 process card ③ changed to 「気体を圧縮して排出する」.
 - Dry-pump benefit clarified: reduced oil contact helps avoid contaminating the vacuum chamber/products.
 - “Dry” caveat rewritten for beginners: bearings etc. outside the gas-compression section may use oil/grease.
+[Rev26] Vacuum03 STEP2 mobile screw figure
+- スマホ専用のトリミング画像を廃止し、PC版と同じ完全なスクリュー模式図をレスポンシブ表示。
+- 左右ラベルの切れ端が残る問題を解消。PC版の表示は変更なし。
+
