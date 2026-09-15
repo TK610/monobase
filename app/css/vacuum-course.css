@@ -269,3 +269,64 @@
   .vc-screw-photo-figure picture{display:flex !important;width:100%;max-width:100%;align-items:center;justify-content:center;overflow:visible}
   .vc-screw-photo-figure .vc-screw-reference{display:block !important;width:calc(100% - 16px) !important;max-width:calc(100% - 16px) !important;height:auto !important;aspect-ratio:auto !important;object-fit:contain !important;object-position:center center !important;margin:0 8px !important;border-radius:8px}
 }
+
+/* Rev29: STEP3 rotary-vane concept figure */
+.vc-rotary-figure{margin:22px auto 18px;text-align:center}
+.vc-rotary-figure img{width:100%;max-width:760px;height:auto;margin:0 auto;border-radius:12px}
+.vc-rotary-figure figcaption{margin-top:8px}
+@media(max-width:760px){
+  .vc-rotary-figure{margin:16px 0 14px}
+  .vc-rotary-figure img{max-width:100%;border-radius:8px}
+}
+
+/* Rev32: STEP4 turbomolecular pump visual */
+.vc-turbo-figure{max-width:760px;margin:24px auto 18px;text-align:center}
+.vc-turbo-figure img{display:block;width:min(100%,680px);height:auto;margin:0 auto;object-fit:contain}
+@media(max-width:760px){.vc-turbo-figure{margin:18px auto 14px}.vc-turbo-figure img{width:100%;max-width:560px}}
+
+/* Vacuum 03 STEP5: pump role system figure */
+.vc-system-figure{max-width:1000px;margin:24px auto 18px;text-align:center}
+.vc-system-figure img{display:block;width:100%;height:auto;margin:0 auto;object-fit:contain;border-radius:12px}
+@media(max-width:760px){.vc-system-figure{margin:18px auto 14px}.vc-system-figure img{width:100%;border-radius:10px}}
+
+/* Vacuum 03 STEP5: pump role system + qualitative pressure range */
+.vc-system-figure{max-width:1080px;margin:20px auto 18px}
+.vc-system-figure img{width:100%;max-width:none}
+.vc-card-emphasis{margin-top:10px;font-weight:700;color:#174d73}
+.vc-pressure-range{margin:18px 0 8px;padding:18px 20px;border:1px solid #c9ddec;border-radius:14px;background:#f8fbfd}
+.vc-pressure-axis{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;margin-bottom:14px;font-size:.92rem;font-weight:700;color:#31556f}
+.vc-pressure-axis b{text-align:center;font-weight:600;color:#61798b}
+.vc-range-row{display:grid;grid-template-columns:170px minmax(180px,1fr) 130px;align-items:center;gap:14px;margin:12px 0}
+.vc-range-label{font-weight:700;color:#123e60}
+.vc-range-row strong{font-size:.88rem;color:#526d80}
+.vc-range-track{position:relative;height:18px;border-radius:999px;background:linear-gradient(90deg,#e7f2f9 0%,#edf3f6 50%,#e7f2f9 100%);overflow:hidden}
+.vc-range{position:absolute;top:0;bottom:0;border-radius:999px;background:currentColor;opacity:.78}
+.vc-range.rough{left:0;width:68%;color:#4d91bd}
+.vc-range.turbo{right:0;width:60%;color:#557da4}
+.vc-pressure-range>p{margin:12px 0 0;text-align:center;font-size:.9rem;color:#587084}
+@media(max-width:760px){
+ .vc-system-figure{margin:16px -4px 14px}
+ .vc-pressure-range{padding:15px 14px}
+ .vc-pressure-axis{grid-template-columns:auto 1fr auto;gap:7px;font-size:.78rem}
+ .vc-pressure-axis b{font-size:.75rem}
+ .vc-range-row{grid-template-columns:1fr;gap:6px;margin:14px 0}
+ .vc-range-row strong{font-size:.8rem}
+ .vc-range-track{height:16px}
+}
+
+/* Vacuum 03 STEP5: distinguish pump-down sequence from gas-flow direction */
+.vc-order-point{margin-top:18px}
+.vc-order-point p{margin-top:6px;line-height:1.8}
+
+/* Vacuum 03 STEP5 Rev38: clarify pressure direction and move range diagram upward */
+.vc-system-pressure-guide{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;max-width:900px;margin:4px auto 14px;padding:10px 14px;border-radius:10px;background:#f3f8fc;color:#31556f;font-size:.86rem}
+.vc-system-pressure-guide span{display:flex;flex-direction:column;gap:2px;white-space:nowrap}
+.vc-system-pressure-guide span:last-child{text-align:right}
+.vc-system-pressure-guide b{color:#123e60}
+.vc-system-pressure-guide strong{text-align:center;font-weight:700;color:#54758d}
+#step-5>.vc-pressure-range{margin:18px 0 20px}
+@media(max-width:760px){
+ .vc-system-pressure-guide{grid-template-columns:1fr;gap:5px;text-align:center;font-size:.8rem;margin:2px 0 14px}
+ .vc-system-pressure-guide span,.vc-system-pressure-guide span:last-child{text-align:center;white-space:normal}
+ .vc-system-pressure-guide strong{font-size:.78rem}
+}

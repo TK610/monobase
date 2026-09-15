@@ -1,3 +1,9 @@
+Rev31
+- Vacuum03 STEP3 title clarified to rotary vane pump.
+- Simplified pump-oil explanation.
+- Revised Haruto dialogue to compare dry and oil-sealed rotary vane concepts.
+- Diagram/layout unchanged.
+
 Rev27
 - Vacuum03 STEP2: mobile now forces the full screw-pump figure inside the content width (no crop).
 - Renamed the reference image asset to v2 to avoid stale mobile/browser cache.
@@ -255,3 +261,26 @@ Rev25 (Vacuum03 STEP2 text polish)
 
 
 Rev28: Vacuum03 STEP2 葵SDイラストを採用画像へ差し替え。
+
+Rev29: Vacuum03 STEP3 ロータリーベーンポンプ模式図・本文更新
+- STEP3の旧簡略SVGを、吸入→搬送→圧縮→排気が追えるロータリーベーンポンプ模式図へ差し替え。
+- 偏心ロータ、ベーン、排気弁、油（シール・潤滑）の役割を初心者向けに整理。
+- 図を左右2カラムではなく本文幅の中央配置に変更し、スライド風にならない教材レイアウトへ調整。
+- 排気側で空間が小さくなって圧縮され、圧力が高まると排気弁から排出される流れを本文で補足。
+- 実機構造は機種によって異なることを注記。
+- STEP2の採用済み葵SDイラストはそのまま維持。
+
+Rev32
+- Vacuum 03 STEP4: replaced the old simple turbo.svg with the adopted turbomolecular pump cutaway concept image.
+- Revised STEP4 text to explain rotor/stator action without implying a fan-like airflow.
+- Added a beginner-facing note clarifying that sparse gas molecules are transported toward the backing pump.
+
+Rev35: Vacuum03 STEP5に役割分担の真空システム図を追加。従来の簡易フロー表示を図解へ置換。
+
+Rev37: Vacuum03 STEP5 - clarified the difference between pump-down sequence and gas-flow direction for beginners.
+
+Rev38: Vacuum03 STEP5 - moved qualitative pressure-range diagram directly below system figure; added high-vacuum/low-pressure to atmospheric-pressure guide; clarified pump-down order vs operating gas-flow direction.
+
+Rev39 STEP5 final wording polish
+- Pressure guide simplified to 「高真空 → 大気圧」 for beginner clarity.
+- Turbo card clarified: it becomes active after the backing pump lowers pressure and is used in combination with the backing pump.
