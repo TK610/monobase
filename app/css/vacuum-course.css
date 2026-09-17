@@ -360,3 +360,12 @@
   #step-4 [data-image-slot="v03-talk-09"] .vc-portrait img { height:132px; }
   #step-4 [data-image-slot="v03-talk-10"] .vc-portrait img { height:123px; }
 }
+
+/* Ver0.7.48: Vacuum03 STEP4 Haruto visual-size final adjustment */
+#step-4 [data-image-slot="v03-talk-09"] .vc-portrait img { height:198px; }
+@media(max-width:760px) {
+  #step-4 [data-image-slot="v03-talk-09"] .vc-portrait img { height:165px; }
+}
+@media(max-width:360px) {
+  #step-4 [data-image-slot="v03-talk-09"] .vc-portrait img { height:145px; }
+}
