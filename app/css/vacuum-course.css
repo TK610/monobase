@@ -330,3 +330,33 @@
  .vc-system-pressure-guide span,.vc-system-pressure-guide span:last-child{align-items:center;text-align:center;white-space:nowrap;line-height:1.35}
  .vc-system-pressure-guide strong{font-size:.72rem;white-space:nowrap}
 }
+
+/* Ver0.7.46: Vacuum03 STEP4 character direction / visual balance */
+#step-4 [data-image-slot="v03-talk-08"] .vc-portrait img,
+#step-4 [data-image-slot="v03-talk-10"] .vc-portrait img { height:165px; }
+@media(max-width:760px) {
+  #step-4 [data-image-slot="v03-talk-08"] .vc-portrait img,
+  #step-4 [data-image-slot="v03-talk-10"] .vc-portrait img { height:140px; }
+}
+@media(max-width:360px) {
+  #step-4 [data-image-slot="v03-talk-08"] .vc-portrait img,
+  #step-4 [data-image-slot="v03-talk-10"] .vc-portrait img { height:123px; }
+}
+
+/* Ver0.7.47: Vacuum03 dialogue character balance */
+#step-2 [data-image-slot="v03-talk-04"] .vc-portrait img,
+#step-4 [data-image-slot="v03-talk-08"] .vc-portrait img,
+#step-4 [data-image-slot="v03-talk-09"] .vc-portrait img { height:180px; }
+#step-4 [data-image-slot="v03-talk-10"] .vc-portrait img { height:165px; transform:scaleX(-1); }
+@media(max-width:760px) {
+  #step-2 [data-image-slot="v03-talk-04"] .vc-portrait img,
+  #step-4 [data-image-slot="v03-talk-08"] .vc-portrait img,
+  #step-4 [data-image-slot="v03-talk-09"] .vc-portrait img { height:150px; }
+  #step-4 [data-image-slot="v03-talk-10"] .vc-portrait img { height:140px; }
+}
+@media(max-width:360px) {
+  #step-2 [data-image-slot="v03-talk-04"] .vc-portrait img,
+  #step-4 [data-image-slot="v03-talk-08"] .vc-portrait img,
+  #step-4 [data-image-slot="v03-talk-09"] .vc-portrait img { height:132px; }
+  #step-4 [data-image-slot="v03-talk-10"] .vc-portrait img { height:123px; }
+}
