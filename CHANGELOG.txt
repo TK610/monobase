@@ -284,3 +284,7 @@ Rev38: Vacuum03 STEP5 - moved qualitative pressure-range diagram directly below 
 Rev39 STEP5 final wording polish
 - Pressure guide simplified to 「高真空 → 大気圧」 for beginner clarity.
 - Turbo card clarified: it becomes active after the backing pump lowers pressure and is used in combination with the backing pump.
+
+Rev43 Vacuum03 STEP5 mobile polish
+- 葵の語尾を「流れるの？」へ変更し、自然な初心者の疑問表現に調整。
+- スマホ版の水色圧力ガイドを縦積みから横並びへ変更し、装置図と同じ左→右の気体流れを維持。
