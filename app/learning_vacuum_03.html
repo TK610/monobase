@@ -87,6 +87,47 @@
   }
 }
 </style>
+
+<style>
+/* Ver.0.7.55: mobile-only alignment for STEP3/STEP5 dialogue cards */
+@media (max-width:700px){
+  [data-image-slot="v03-talk-05"],
+  [data-image-slot="v03-talk-06"],
+  [data-image-slot="v03-talk-07"]{
+    gap:8px !important;
+    column-gap:8px !important;
+  }
+  [data-image-slot="v03-talk-05"] .vc-portrait,
+  [data-image-slot="v03-talk-06"] .vc-portrait,
+  [data-image-slot="v03-talk-07"] .vc-portrait{
+    width:112px !important;
+    min-width:112px !important;
+    margin-left:-8px !important;
+    margin-right:0 !important;
+    overflow:visible !important;
+  }
+  [data-image-slot="v03-talk-05"] .vc-talk__body,
+  [data-image-slot="v03-talk-06"] .vc-talk__body,
+  [data-image-slot="v03-talk-07"] .vc-talk__body{
+    min-width:0 !important;
+    margin-left:0 !important;
+  }
+}
+</style>
+
+<style>
+/* Ver.0.7.56: Vacuum03 CHECK reaction portraits - larger waist-up crop */
+#v03-feedback{grid-template-columns:160px minmax(0,1fr);align-items:center;gap:18px;min-height:205px;overflow:hidden;}
+#v03-feedback img{width:160px;height:185px;object-fit:cover;object-position:50% 12%;align-self:end;}
+@media (max-width:700px){
+  #v03-feedback{grid-template-columns:118px minmax(0,1fr);gap:8px;padding:12px;min-height:170px;}
+  #v03-feedback img{width:118px;height:158px;object-fit:cover;object-position:50% 10%;margin-left:-5px;}
+}
+@media (max-width:420px){
+  #v03-feedback{grid-template-columns:108px minmax(0,1fr);gap:6px;}
+  #v03-feedback img{width:108px;height:150px;margin-left:-6px;}
+}
+</style>
 </head><body class="vc-page"><a class="vc-skip" href="#lesson">本文へ移動</a><div class="course-switch-wrap"><nav class="course-switch" aria-label="技術学習コース切替"><span class="course-switch-label">学習コース</span><a class="active" aria-current="page" href="learning_vacuum.html">真空技術</a><a href="learning_sputtering.html">スパッタリング</a><a href="learning_thinfilm.html">薄膜技術</a></nav></div><main id="lesson"><nav class="vc-progress" aria-label="真空技術入門 全7ページ"><a href="learning_vacuum_01.html">01<span class="vc-sr"> 真空ってなに？</span></a><a href="learning_vacuum_02.html">02<span class="vc-sr"> どうやって真空をつくるの？</span></a><a href="learning_vacuum_03.html" aria-current="page">03<span class="vc-sr"> 真空ポンプにはどんな種類がある？</span></a><a href="learning_vacuum_04.html">04<span class="vc-sr"> 真空はどうやって測る？</span></a><a href="learning_vacuum_05.html">05<span class="vc-sr"> 真空がうまく作れないのはなぜ？</span></a><a href="learning_vacuum_06.html">06<span class="vc-sr"> 真空はどこで使われている？</span></a><a href="learning_vacuum_quiz.html">07<span class="vc-sr"> 理解度チェック</span></a></nav><div class="hero vc-hero"><div class="vc-ey">VACUUM TECHNOLOGY / 03</div><h1>真空ポンプにはどんな種類がある？</h1><p>02では、ポンプを組み合わせて真空をつくりました。では、ポンプによって何が違うのでしょう？</p></div><div class="vacuum-comic v03-opening-comic" role="group" aria-label="真空ポンプにはどんな種類がある？ 3人の会話">
   <article class="vacuum-comic__scene" aria-labelledby="v03-comic-aoi-name">
     <div class="vacuum-comic__portrait">
@@ -162,8 +203,8 @@
     var fb=document.getElementById('v03-feedback');
     if(!selected){fb.hidden=false;fb.className='vc-feedback';fb.innerHTML='<div></div><div><strong>選択肢を1つ選んでください。</strong></div>';return;}
     fb.hidden=false;
-    if(selected.value==='b'){fb.className='vc-feedback is-correct';fb.innerHTML='<img src="images/learning/characters/course/aoi-happy.webp" alt="正解を喜ぶ葵"><div><strong>やった！ 正解！</strong><p>ポンプにはそれぞれ得意な圧力範囲があります。得意なところを組み合わせて高真空をつくります。</p></div>';}
-    else{fb.className='vc-feedback';fb.innerHTML='<img src="images/learning/characters/course/teacher-encourage.webp" alt="もう一度と励ますけー子ちゃん先生"><div><strong>もう一度考えてみましょう。</strong><p>STEP 4と5を見直してみましょう。ポイントは「得意な圧力範囲」です。</p></div>';}
+    if(selected.value==='b'){fb.className='vc-feedback is-correct';fb.innerHTML='<img src="images/learning/characters/course/v03_check_teacher_correct.png" alt="正解をやさしく喜ぶけー子ちゃん先生"><div><strong>その通りです！</strong><p>ポンプにはそれぞれ得意な圧力範囲があります。だから、目的に合わせて組み合わせることがあるんですね。</p></div>';}
+    else{fb.className='vc-feedback';fb.innerHTML='<img src="images/learning/characters/course/v03_check_haruto_retry.png" alt="もう一度考える陽斗"><div><strong>もう一度考えてみよう。</strong><p>STEP 4と5を見るとヒントがありそうだね。ポイントは「得意な圧力範囲」だよ。</p></div>';}
   });}
 })();
 </script></body></html>
