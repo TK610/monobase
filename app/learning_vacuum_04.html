@@ -382,6 +382,68 @@
   display:none !important;
 }
 </style>
+
+<style>
+/* Vacuum04 STEP2 Ver.0.7.76 — move labels away from the gauge body */
+.v04-inside-wrap{
+  overflow:visible !important;
+}
+.v04-img-label{
+  white-space:normal !important;
+  z-index:5 !important;
+}
+
+/* Desktop: use the surrounding white space instead of covering the gauge */
+@media (min-width:561px){
+  .v04-label-sensor{
+    right:-2% !important;
+    top:24% !important;
+  }
+  .v04-label-membrane{
+    right:-7% !important;
+    top:45% !important;
+    max-width:210px !important;
+  }
+  .v04-label-membrane b{
+    white-space:nowrap !important;
+  }
+  .v04-label-pressure{
+    left:-4% !important;
+    top:62% !important;
+  }
+}
+
+/* Mobile: labels may extend beyond the image itself, but remain inside the card.
+   Keep "ダイアフラム" intact and avoid covering the important mechanism. */
+@media (max-width:560px){
+  .v04-inside-wrap{
+    overflow:visible !important;
+  }
+  .v04-img-label{
+    max-width:150px !important;
+    font-size:11px !important;
+    line-height:1.25 !important;
+  }
+  .v04-label-sensor{
+    right:-4px !important;
+    top:23% !important;
+  }
+  .v04-label-membrane{
+    right:-8px !important;
+    top:44% !important;
+    max-width:172px !important;
+  }
+  .v04-label-membrane b{
+    white-space:nowrap !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
+  }
+  .v04-label-pressure{
+    left:-5px !important;
+    top:61% !important;
+  }
+}
+</style>
 </head><body class="vc-page"><a class="vc-skip" href="#lesson">本文へ移動</a><div class="course-switch-wrap"><nav class="course-switch" aria-label="技術学習コース切替"><span class="course-switch-label">学習コース</span><a class="active" aria-current="page" href="learning_vacuum.html">真空技術</a><a href="learning_sputtering.html">スパッタリング</a><a href="learning_thinfilm.html">薄膜技術</a></nav></div><main id="lesson"><nav class="vc-progress" aria-label="真空技術入門 全7ページ"><a href="learning_vacuum_01.html">01<span class="vc-sr"> 真空ってなに？</span></a><a href="learning_vacuum_02.html">02<span class="vc-sr"> どうやって真空をつくるの？</span></a><a href="learning_vacuum_03.html">03<span class="vc-sr"> 真空ポンプにはどんな種類がある？</span></a><a href="learning_vacuum_04.html" aria-current="page">04<span class="vc-sr"> 真空はどうやって測る？</span></a><a href="learning_vacuum_05.html">05<span class="vc-sr"> 真空がうまく作れないのはなぜ？</span></a><a href="learning_vacuum_06.html">06<span class="vc-sr"> 真空はどこで使われている？</span></a><a href="learning_vacuum_quiz.html">07<span class="vc-sr"> 理解度チェック</span></a></nav><div class="hero vc-hero"><div class="vc-ey">VACUUM TECHNOLOGY / 04</div><h1>真空はどうやって測る？</h1><p>ポンプにも得意な範囲がありました。測る側にも、圧力に合った方法があります。</p></div><div class="vacuum-comic v04-opening-comic" role="group" aria-label="真空はどうやって測る？ 3人の会話">
   <article class="vacuum-comic__scene" aria-labelledby="v04-comic-aoi-name">
     <div class="vacuum-comic__portrait"><img src="images/learning/characters/course/v04_intro_aoi_transparent.png" alt="疑問を持つ葵" width="576" height="1024" decoding="async"></div>
