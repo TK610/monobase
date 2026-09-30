@@ -50,6 +50,338 @@
   .v04-opening-comic .vacuum-comic__portrait{width:300px;}
 }
 </style>
+<style>
+.v04-inside-wrap{position:relative;max-width:720px;margin:auto}.v04-inside-wrap>img{display:block;width:100%;height:auto}
+.v04-img-label{position:absolute;z-index:2;max-width:175px;padding:7px 9px;border:1px solid #bdd4e5;border-radius:9px;background:rgba(255,255,255,.96);box-shadow:0 2px 7px rgba(20,55,80,.12);line-height:1.25;text-align:left;color:#173b5c;font-size:13px}
+.v04-img-label b,.v04-img-label span{display:block}.v04-img-label span{font-size:.82em;color:#607383;margin-top:2px}
+.v04-label-sensor{right:1%;top:25%}.v04-label-membrane{right:1%;top:45%;border-color:#efb9c4}.v04-label-pressure{left:1%;top:62%;border-color:#b7d5f4}
+.v04-flow-caption{margin-top:12px;padding:12px;border-radius:11px;background:#f6f9fc;text-align:center;color:#183c5c}.v04-flow-caption>strong{display:block;margin-bottom:8px}.v04-flow-step{padding:7px;border:1px solid #dce7ef;border-radius:8px;background:#fff}.v04-flow-arrow{font-weight:700;color:#397cb5}
+@media(max-width:560px){.v04-img-label{max-width:118px;padding:5px 6px;font-size:10px}.v04-label-sensor{top:24%}.v04-label-membrane{top:43%}.v04-label-pressure{top:61%}.v04-flow-step{font-size:.92em}}
+</style>
+<style>
+/* Vacuum04 STEP2 Ver.0.7.71 — crop/scale + clearer leader arrows */
+.v04-inside-wrap{
+  position:relative;
+  width:100%;
+  max-width:none;
+  margin:0 auto;
+  height:clamp(430px,52vw,650px);
+  overflow:hidden;
+  background:#fff;
+  border-radius:4px;
+}
+.v04-inside-wrap>img{
+  position:absolute;
+  width:112%;
+  max-width:none;
+  height:auto;
+  left:50%;
+  top:-4%;
+  transform:translateX(-50%);
+}
+
+/* labels */
+.v04-img-label{
+  z-index:3;
+  max-width:180px;
+  background:rgba(255,255,255,.97);
+}
+.v04-label-sensor{right:1.5%;top:25%}
+.v04-label-membrane{right:1.5%;top:45%}
+.v04-label-pressure{left:1.5%;top:61%}
+
+/* leader lines */
+.v04-img-label::before,
+.v04-img-label::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+}
+.v04-label-sensor::before{
+  right:100%; top:52%;
+  width:70px; height:2px;
+  background:#397fb6;
+  transform:rotate(166deg);
+  transform-origin:right center;
+}
+.v04-label-sensor::after{
+  right:calc(100% + 66px); top:calc(52% + 15px);
+  width:8px; height:8px;
+  border-left:2px solid #397fb6;
+  border-bottom:2px solid #397fb6;
+  transform:rotate(28deg);
+}
+.v04-label-membrane::before{
+  right:100%; top:48%;
+  width:62px; height:2px;
+  background:#df7188;
+  transform:rotate(184deg);
+  transform-origin:right center;
+}
+.v04-label-membrane::after{
+  right:calc(100% + 57px); top:calc(48% - 5px);
+  width:8px; height:8px;
+  border-left:2px solid #df7188;
+  border-bottom:2px solid #df7188;
+  transform:rotate(42deg);
+}
+.v04-label-pressure::before{
+  left:100%; top:45%;
+  width:62px; height:2px;
+  background:#3c8ee8;
+  transform:rotate(-24deg);
+  transform-origin:left center;
+}
+.v04-label-pressure::after{
+  left:calc(100% + 56px); top:calc(45% - 24px);
+  width:8px; height:8px;
+  border-right:2px solid #3c8ee8;
+  border-top:2px solid #3c8ee8;
+  transform:rotate(20deg);
+}
+
+/* Keep the two STEP2 panels visually balanced on desktop */
+@media (min-width:700px){
+  .v04-inside-figure{height:auto}
+  .v04-inside-wrap{height:clamp(430px,43vw,650px)}
+}
+
+/* Mobile: enlarge the useful upper section and crop the long lower flange */
+@media (max-width:560px){
+  .v04-inside-wrap{
+    height:500px;
+  }
+  .v04-inside-wrap>img{
+    width:128%;
+    top:-1%;
+  }
+  .v04-img-label{
+    max-width:122px;
+    padding:5px 6px;
+    font-size:10px;
+  }
+  .v04-label-sensor{right:0;top:25%}
+  .v04-label-membrane{right:0;top:45%}
+  .v04-label-pressure{left:0;top:62%}
+  .v04-label-sensor::before{width:38px}
+  .v04-label-sensor::after{right:calc(100% + 34px)}
+  .v04-label-membrane::before{width:34px}
+  .v04-label-membrane::after{right:calc(100% + 29px)}
+  .v04-label-pressure::before{width:34px}
+  .v04-label-pressure::after{left:calc(100% + 28px)}
+}
+</style>
+
+<style>
+/* Vacuum04 STEP2 Ver.0.7.72 */
+.v04-inside-wrap{
+  position:relative;
+  width:100%;
+  height:610px;
+  overflow:hidden;
+  margin:0 auto;
+  background:#fff;
+}
+/* Enlarge the original internal image and crop away the long stem/base */
+.v04-inside-wrap>img{
+  position:absolute;
+  width:128%;
+  max-width:none;
+  height:auto;
+  left:50%;
+  top:-2%;
+  transform:translateX(-50%);
+}
+
+/* Clear leader lines: label -> actual target */
+.v04-img-label{
+  z-index:4;
+  max-width:178px;
+  padding:7px 9px;
+  background:rgba(255,255,255,.98);
+}
+.v04-label-sensor{right:1%;top:24%}
+.v04-label-membrane{right:1%;top:44%}
+.v04-label-pressure{left:1%;top:61%}
+
+.v04-img-label::before{
+  content:"";
+  position:absolute;
+  height:2px;
+  transform-origin:0 50%;
+}
+.v04-img-label::after{
+  content:"";
+  position:absolute;
+  width:7px;height:7px;
+  border-radius:50%;
+}
+
+/* Sensor: line ends at the central sensing assembly above the membrane */
+.v04-label-sensor::before{
+  right:100%; top:52%;
+  width:92px;
+  background:#397fb6;
+  transform:rotate(169deg);
+  transform-origin:100% 50%;
+}
+.v04-label-sensor::after{
+  right:calc(100% + 88px);
+  top:calc(52% + 16px);
+  background:#397fb6;
+}
+/* Diaphragm: line ends on the pink membrane */
+.v04-label-membrane::before{
+  right:100%; top:50%;
+  width:78px;
+  background:#df7188;
+  transform:rotate(187deg);
+  transform-origin:100% 50%;
+}
+.v04-label-membrane::after{
+  right:calc(100% + 74px);
+  top:calc(50% - 13px);
+  background:#df7188;
+}
+/* Gas pressure: line ends inside the blue-arrow/gas region, not on the stem */
+.v04-label-pressure::before{
+  left:100%; top:48%;
+  width:86px;
+  background:#3c8ee8;
+  transform:rotate(-31deg);
+}
+.v04-label-pressure::after{
+  left:calc(100% + 72px);
+  top:calc(48% - 43px);
+  background:#3c8ee8;
+}
+
+@media(max-width:560px){
+  .v04-inside-wrap{height:445px}
+  .v04-inside-wrap>img{width:142%;top:-1%}
+  .v04-img-label{max-width:116px;padding:5px 6px;font-size:10px}
+  .v04-label-sensor{right:0;top:23%}
+  .v04-label-membrane{right:0;top:43%}
+  .v04-label-pressure{left:0;top:60%}
+  .v04-label-sensor::before{width:49px}
+  .v04-label-sensor::after{right:calc(100% + 45px);top:calc(52% + 8px)}
+  .v04-label-membrane::before{width:43px}
+  .v04-label-membrane::after{right:calc(100% + 39px);top:calc(50% - 7px)}
+  .v04-label-pressure::before{width:46px}
+  .v04-label-pressure::after{left:calc(100% + 38px);top:calc(48% - 24px)}
+}
+</style>
+
+<style>
+/* Vacuum04 STEP2 Ver.0.7.73 — remove leader lines, keep target dots */
+.v04-img-label::before{
+  display:none !important;
+}
+/* Re-purpose ::after as a simple colored target dot near the actual part */
+.v04-img-label::after{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  width:9px !important;
+  height:9px !important;
+  border:0 !important;
+  border-radius:50% !important;
+  transform:none !important;
+  box-shadow:0 0 0 2px rgba(255,255,255,.8);
+}
+.v04-label-sensor::after{
+  background:#397fb6 !important;
+  right:auto !important;
+  left:-122px !important;
+  top:50px !important;
+}
+.v04-label-membrane::after{
+  background:#df7188 !important;
+  right:auto !important;
+  left:-104px !important;
+  top:4px !important;
+}
+.v04-label-pressure::after{
+  background:#3c8ee8 !important;
+  left:190px !important;
+  right:auto !important;
+  top:-22px !important;
+}
+@media(max-width:560px){
+  .v04-label-sensor::after{
+    left:-62px !important;
+    top:28px !important;
+  }
+  .v04-label-membrane::after{
+    left:-52px !important;
+    top:2px !important;
+  }
+  .v04-label-pressure::after{
+    left:118px !important;
+    top:-12px !important;
+  }
+}
+</style>
+
+<style>
+/* Vacuum04 STEP2 Ver.0.7.74 — final layout polish */
+
+/* Do not stretch the two desktop cards to the same height. */
+@media (min-width:700px){
+  .vacuum04-gauge-grid,
+  .v04-gauge-grid,
+  .gauge-visual-grid{
+    align-items:start !important;
+  }
+  .vacuum04-gauge-grid > *,
+  .v04-gauge-grid > *,
+  .gauge-visual-grid > *{
+    align-self:start !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+}
+
+/* Internal view: focus on sensor + diaphragm + gas chamber.
+   Keep only enough of the lower neck to understand the connection. */
+.v04-inside-wrap{
+  height:520px !important;
+  overflow:hidden !important;
+}
+.v04-inside-wrap>img{
+  width:145% !important;
+  max-width:none !important;
+  left:50% !important;
+  top:-3% !important;
+  transform:translateX(-50%) !important;
+}
+
+/* Reposition labels/dots for the enlarged useful area. */
+.v04-label-sensor{right:0 !important;top:24% !important}
+.v04-label-membrane{right:0 !important;top:45% !important}
+.v04-label-pressure{left:0 !important;top:62% !important}
+
+@media(max-width:560px){
+  .v04-inside-wrap{height:405px !important}
+  .v04-inside-wrap>img{
+    width:158% !important;
+    top:-2% !important;
+  }
+  .v04-label-sensor{top:23% !important}
+  .v04-label-membrane{top:44% !important}
+  .v04-label-pressure{top:61% !important}
+}
+</style>
+
+<style>
+/* Vacuum04 STEP2 Ver.0.7.75 — remove target dots only */
+.v04-label-sensor::after,
+.v04-label-membrane::after,
+.v04-label-pressure::after{
+  content:none !important;
+  display:none !important;
+}
+</style>
 </head><body class="vc-page"><a class="vc-skip" href="#lesson">本文へ移動</a><div class="course-switch-wrap"><nav class="course-switch" aria-label="技術学習コース切替"><span class="course-switch-label">学習コース</span><a class="active" aria-current="page" href="learning_vacuum.html">真空技術</a><a href="learning_sputtering.html">スパッタリング</a><a href="learning_thinfilm.html">薄膜技術</a></nav></div><main id="lesson"><nav class="vc-progress" aria-label="真空技術入門 全7ページ"><a href="learning_vacuum_01.html">01<span class="vc-sr"> 真空ってなに？</span></a><a href="learning_vacuum_02.html">02<span class="vc-sr"> どうやって真空をつくるの？</span></a><a href="learning_vacuum_03.html">03<span class="vc-sr"> 真空ポンプにはどんな種類がある？</span></a><a href="learning_vacuum_04.html" aria-current="page">04<span class="vc-sr"> 真空はどうやって測る？</span></a><a href="learning_vacuum_05.html">05<span class="vc-sr"> 真空がうまく作れないのはなぜ？</span></a><a href="learning_vacuum_06.html">06<span class="vc-sr"> 真空はどこで使われている？</span></a><a href="learning_vacuum_quiz.html">07<span class="vc-sr"> 理解度チェック</span></a></nav><div class="hero vc-hero"><div class="vc-ey">VACUUM TECHNOLOGY / 04</div><h1>真空はどうやって測る？</h1><p>ポンプにも得意な範囲がありました。測る側にも、圧力に合った方法があります。</p></div><div class="vacuum-comic v04-opening-comic" role="group" aria-label="真空はどうやって測る？ 3人の会話">
   <article class="vacuum-comic__scene" aria-labelledby="v04-comic-aoi-name">
     <div class="vacuum-comic__portrait"><img src="images/learning/characters/course/v04_intro_aoi_transparent.png" alt="疑問を持つ葵" width="576" height="1024" decoding="async"></div>
@@ -63,16 +395,15 @@
     <div class="vacuum-comic__portrait"><img src="images/learning/characters/course/v04_intro_keiko_transparent.png" alt="説明するけー子ちゃん先生" width="912" height="1536" loading="lazy" decoding="async"></div>
     <div class="vacuum-comic__bubble"><p class="vacuum-comic__name" id="v04-comic-keiko-name">けー子ちゃん先生</p><p class="vacuum-comic__line">そうですね。真空は「真空計」を使って、圧力として確かめます。測る範囲によって方法も違うんですよ。</p></div>
   </article>
-</div><div class="vacuum-comic-bridge v04-opening-bridge"><p>では、真空計は何を手がかりに圧力を測っているのでしょう？</p><span aria-hidden="true">↓</span></div><section class="vc-section" id="step-1"><div class="vc-ey">STEP 1</div><h2>見えない気体を、数字で確かめる</h2><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-01" data-character-slot="aoi-question"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_aoi_new.png" alt="葵" width="640" height="1024" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>葵</b><p>ちゃんと真空になったのかな？</p></div></div><div class="vc-talk" data-image-slot="v04-talk-02" data-character-slot="haruto-think"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_haruto_new.png" alt="陽斗" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>陽斗</b><p>01で、真空は圧力で表すって習ったね。</p></div></div><div class="vc-talk" data-image-slot="v04-talk-03" data-character-slot="teacher-explain"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_keiko_new.png" alt="けー子ちゃん先生" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>けー子ちゃん先生</b><p>圧力を調べるために使うのが、真空計です。</p></div></div></div><ol class="vc-flow"><li>チャンバー内の気体</li><li>真空計のセンサー</li><li>圧力の表示：Pa</li></ol><p>Pa（パスカル）は圧力の単位です。真空では、圧力が低いほど「真空度が高い」と表します。<br><small>1 Pa ＝ 1 N/m²（1 m²あたりに1 Nの力がかかる圧力）</small></p><div class="vc-grid"><article class="vc-card"><h3>100 Pa</h3><p>圧力が高い</p></article><article class="vc-card"><h3>1 Pa</h3><p>圧力が低い → 真空度が高い</p></article></div><p class="vc-note">ここでの数値は比較の例です。合格値や実機の操作目標ではありません。</p></section><section class="vc-section" id="step-2"><div class="vc-ey">STEP 2</div><h2>「押す力」を受け取る方法</h2><p>真空計には、測る圧力の範囲に合わせていくつかの測り方があります。まずは、気体が膜を押す力を利用する<strong>隔膜式の真空計</strong>を見てみましょう。</p><div class="vc-grid"><article class="vc-card"><h3>隔膜真空計の外観</h3><figure class="vc-figure"><img src="images/learning/course/v04_diaphragm_gauge_exterior.png" alt="MonoBase教材用に作成した隔膜真空計の外観イメージ" width="1024" height="1536" loading="lazy" decoding="async"><figcaption>外観イメージ</figcaption></figure></article><article class="vc-card"><h3>中ではどう測っている？</h3><figure class="vc-figure"><img src="images/learning/course/v04_diaphragm_gauge_cutaway.png" alt="隔膜真空計の内部で気体の圧力を受けた薄い膜がたわみ、その変化をセンサで検出する模式図" width="1024" height="1536" loading="lazy" decoding="async"><figcaption>
-  <div style="margin-top:10px;text-align:left;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:12px;">
-      <div style="padding:9px 10px;border:1px solid #cfe0ee;border-radius:10px;background:#f7fbff;"><strong>🔵 気体の圧力</strong><br><span style="font-size:.9em;">画像下側の青い丸・矢印</span></div>
-      <div style="padding:9px 10px;border:1px solid #f0c9cf;border-radius:10px;background:#fff8f9;"><strong>🩷 薄い膜（ダイアフラム）</strong><br><span style="font-size:.9em;">中央のピンク色の薄い部分</span></div>
-      <div style="padding:9px 10px;border:1px solid #cfe0d5;border-radius:10px;background:#f8fcf9;"><strong>🟢 センサ</strong><br><span style="font-size:.9em;">膜の上側で変化を検出</span></div>
-    </div>
-    <div style="padding:10px 12px;border-radius:10px;background:#f6f9fc;line-height:1.8;">
-      <strong>測定の流れ</strong><br>
-      ① 気体が膜を押す → ② 薄い膜がわずかにたわむ → ③ センサがたわみを検出 → ④ 圧力の値に変換
-    </div>
-  </div>
-</figcaption></figure></article></div><p>薄い膜（ダイアフラム）が気体の圧力を受けると、わずかにたわみます。その変化をセンサで検出し、圧力として表示します。</p><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-04" data-character-slot="aoi-idea"><div class="vc-portrait"><img src="images/learning/characters/course/aoi-idea.webp" alt="葵" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>葵</b><p>目に見えない空気でも、膜は押せるんだね。</p></div></div></div></section><section class="vc-section" id="step-3"><div class="vc-ey">STEP 3</div><h2>熱や電気を手がかりにする方法</h2><div class="vc-grid"><article class="vc-card"><h3>熱の逃げ方を調べる</h3><figure class="vc-figure"><img src="images/learning/course/heat.svg" alt="気体分子が熱した線から熱を運ぶ" width="360" height="240" loading="lazy"><figcaption>代表例：ピラニ真空計</figcaption></figure><p>気体によって熱の逃げ方が変わります。熱した線の冷え方を手がかりに圧力を求めます。</p></article><article class="vc-card"><h3>気体を電気の信号に変える</h3><figure class="vc-figure"><img src="images/learning/course/ion.svg" alt="電子で気体をイオンにし、集めたイオンの信号から圧力を求める" width="360" height="240" loading="lazy"><figcaption>代表例：電離真空計</figcaption></figure><p>残った気体をイオンにし、その量に関係する電気信号を測ります。高真空側で使われます。</p></article></div><p class="vc-note">どちらも気体の性質を利用した間接測定です。気体の種類によって表示が変わるため、実機では対応する条件を確認します。</p></section><section class="vc-section" id="step-4"><div class="vc-ey">STEP 4</div><h2>測る側にも、得意な範囲がある</h2><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-05" data-character-slot="haruto-understand"><div class="vc-portrait"><img src="images/learning/characters/course/haruto-understand.png" alt="陽斗" width="864" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>陽斗</b><p>03のポンプと同じで、測る方法も使い分けるんだね。</p></div></div><div class="vc-talk" data-image-slot="v04-talk-06" data-character-slot="teacher-explain"><div class="vc-portrait"><img src="images/learning/characters/course/teacher-explain.png" alt="けー子ちゃん先生" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>けー子ちゃん先生</b><p>はい。一つのセンサーで、すべての圧力を正しく測れるとは限りません。</p></div></div></div><div class="vc-grid"><article class="vc-card"><h3>粗引き側の測定</h3><p>隔膜式やピラニなど、圧力に合う方式を使う。</p></article><article class="vc-card"><h3>高真空側の測定</h3><p>電離真空計など、少ない気体を検出できる方式を使う。</p></article></div><p>異なるセンサーを組み合わせた真空計もあります。表示器が一つでも、内部で複数の方法を使っている場合があります。</p><p class="vc-note">測定範囲は機種で異なり、重なる範囲もあります。特に隔膜式は、測る圧力に応じた製品が用意されています。</p><p class="vc-key">数字を見る前に「単位」と「測れる範囲」を確認する。</p></section><section class="vc-section" id="summary"><div class="vc-ey">SUMMARY</div><h2>今日覚えるのは、この3つ</h2><div class="vc-grid"><article class="vc-card"><h3>真空を圧力で確認</h3><p>見た目ではなく、真空計の表示で確かめる。</p></article><article class="vc-card"><h3>測定方法は複数</h3><p>膜の動き、熱の逃げ方、電気信号などを使う。</p></article><article class="vc-card"><h3>範囲に合う真空計</h3><p>一種類で、すべてを測れるとは限らない。</p></article></div></section><section class="vc-section vc-check" id="check"><div class="vc-ey">CHECK</div><h2>1問だけ解いてみよう</h2><fieldset><legend>真空計を使い分ける必要がある主な理由はどれ？</legend><label class="vc-option"><input type="radio" name="v04-check" value="a"><span>A　真空計ごとに得意な圧力範囲があるため</span></label><label class="vc-option"><input type="radio" name="v04-check" value="b"><span>B　真空では圧力を測れないため</span></label><label class="vc-option"><input type="radio" name="v04-check" value="c"><span>C　Paは高真空では使えない単位だから</span></label></fieldset><button type="button" id="v04-check-button">答えを確認する</button><div id="v04-feedback" class="vc-feedback" aria-live="polite" hidden></div></section><p>ポンプは動いているのに、真空計の数字が下がらない。次は、その理由を考えます。</p><nav class="vacuum-end-nav" aria-label="このページの学習ナビゲーション"><a class="vacuum-next" href="learning_vacuum_05.html"><span>次のページ</span><strong>05 真空がうまく作れないのはなぜ？</strong><b aria-hidden="true">→</b></a><div class="vacuum-secondary"><a href="learning_vacuum_03.html">← 03へ戻る</a><a href="learning_vacuum.html">真空技術ホーム</a></div></nav><details class="vc-sources vacuum-end-sources"><summary>参考資料・図解について</summary><p>図は仕組みを理解するための概念図です。形状・粒子数・圧力範囲は実機を再現していません。</p><ul><li><a href="https://www.leybold.com/de-de/knowledge/blog/factors-to-consider-when-choosing-vacuum-gauges" target="_blank" rel="noopener noreferrer">Leybold：真空計の測定方式と範囲</a></li><li><a href="https://www.leybold.com/en-us/knowledge/vacuum-fundamentals/vacuum-measurement/how-indirect-pressure-measurement-works" target="_blank" rel="noopener noreferrer">Leybold：間接的な圧力測定</a></li></ul></details></main><footer>MonoBase Technical Learning ｜ Vacuum Technology Course</footer><script>(function(){var options=document.querySelectorAll('input[name="v04-check"]');options.forEach(function(input){input.addEventListener('change',function(){document.querySelectorAll('#check .vc-option').forEach(function(label){label.classList.toggle('is-selected',!!label.querySelector('input:checked'));});});});var btn=document.getElementById('v04-check-button');if(btn){btn.addEventListener('click',function(){var selected=document.querySelector('input[name="v04-check"]:checked');var fb=document.getElementById('v04-feedback');fb.hidden=false;if(!selected){fb.className='vc-feedback';fb.innerHTML='<div><strong>選択肢を1つ選んでください。</strong></div>';return;}if(selected.value==='a'){fb.className='vc-feedback is-correct';fb.innerHTML='<div><strong>その通りです！</strong><p>真空計には、それぞれ得意な圧力範囲があります。目的の圧力に合う方式を選ぶことが大切です。</p></div>';}else{fb.className='vc-feedback';fb.innerHTML='<div><strong>もう一度考えてみよう。</strong><p>STEP 4の「測る側にも、得意な範囲がある」を見直してみましょう。</p></div>';}});}})();</script></body></html>
+</div><div class="vacuum-comic-bridge v04-opening-bridge"><p>では、真空計は何を手がかりに圧力を測っているのでしょう？</p><span aria-hidden="true">↓</span></div><section class="vc-section" id="step-1"><div class="vc-ey">STEP 1</div><h2>見えない気体を、数字で確かめる</h2><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-01" data-character-slot="aoi-question"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_aoi_new.png" alt="葵" width="640" height="1024" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>葵</b><p>ちゃんと真空になったのかな？</p></div></div><div class="vc-talk" data-image-slot="v04-talk-02" data-character-slot="haruto-think"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_haruto_new.png" alt="陽斗" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>陽斗</b><p>01で、真空は圧力で表すって習ったね。</p></div></div><div class="vc-talk" data-image-slot="v04-talk-03" data-character-slot="teacher-explain"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_keiko_new.png" alt="けー子ちゃん先生" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>けー子ちゃん先生</b><p>圧力を調べるために使うのが、真空計です。</p></div></div></div><ol class="vc-flow"><li>チャンバー内の気体</li><li>真空計のセンサー</li><li>圧力の表示：Pa</li></ol><p>Pa（パスカル）は圧力の単位です。真空では、圧力が低いほど「真空度が高い」と表します。<br><small>1 Pa ＝ 1 N/m²（1 m²あたりに1 Nの力がかかる圧力）</small></p><div class="vc-grid"><article class="vc-card"><h3>100 Pa</h3><p>圧力が高い</p></article><article class="vc-card"><h3>1 Pa</h3><p>圧力が低い → 真空度が高い</p></article></div><p class="vc-note">ここでの数値は比較の例です。合格値や実機の操作目標ではありません。</p></section><section class="vc-section" id="step-2"><div class="vc-ey">STEP 2</div><h2>「押す力」を受け取る方法</h2><p>真空計には、測る圧力の範囲に合わせていくつかの測り方があります。まずは、気体が膜を押す力を利用する<strong>隔膜式の真空計</strong>を見てみましょう。</p><div class="vc-grid"><article class="vc-card"><h3>隔膜真空計の外観</h3><figure class="vc-figure"><img src="images/learning/course/v04_diaphragm_gauge_exterior.png" alt="MonoBase教材用に作成した隔膜真空計の外観イメージ" width="1024" height="1536" loading="lazy" decoding="async"><figcaption>外観イメージ</figcaption></figure></article><article class="vc-card"><h3>中ではどう測っている？</h3><figure class="v04-inside-figure">
+<div class="v04-inside-wrap"><img src="images/learning/course/v04_diaphragm_gauge_cutaway.png" alt="隔膜真空計の内部で気体の圧力を受けた薄い膜がたわみ、その変化をセンサで検出する模式図" width="1024" height="1536" loading="lazy" decoding="async">
+<div class="v04-img-label v04-label-sensor"><b>センサ</b><span>膜の変化を検出</span></div>
+<div class="v04-img-label v04-label-membrane"><b>薄い膜（ダイアフラム）</b><span>圧力でわずかにたわむ</span></div>
+<div class="v04-img-label v04-label-pressure"><b>気体の圧力</b><span>膜を下から押す</span></div>
+</div>
+<figcaption class="v04-flow-caption"><strong>どうやって圧力を測る？</strong>
+<div class="v04-flow-step">① 気体が膜を押す</div><div class="v04-flow-arrow">↓</div>
+<div class="v04-flow-step">② 薄い膜がわずかにたわむ</div><div class="v04-flow-arrow">↓</div>
+<div class="v04-flow-step">③ センサが膜の変化を検出</div><div class="v04-flow-arrow">↓</div>
+<div class="v04-flow-step">④ 圧力の値として表示</div></figcaption>
+</figure></article></div><p>このように、膜のわずかな変化を利用して圧力を測るのが隔膜式の真空計です。</p><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-04" data-character-slot="aoi-idea"><div class="vc-portrait"><img src="images/learning/characters/course/aoi-idea.webp" alt="葵" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>葵</b><p>目に見えない空気でも、膜は押せるんだね。</p></div></div></div></section><section class="vc-section" id="step-3"><div class="vc-ey">STEP 3</div><h2>熱や電気を手がかりにする方法</h2><div class="vc-grid"><article class="vc-card"><h3>熱の逃げ方を調べる</h3><figure class="vc-figure"><img src="images/learning/course/heat.svg" alt="気体分子が熱した線から熱を運ぶ" width="360" height="240" loading="lazy"><figcaption>代表例：ピラニ真空計</figcaption></figure><p>気体によって熱の逃げ方が変わります。熱した線の冷え方を手がかりに圧力を求めます。</p></article><article class="vc-card"><h3>気体を電気の信号に変える</h3><figure class="vc-figure"><img src="images/learning/course/ion.svg" alt="電子で気体をイオンにし、集めたイオンの信号から圧力を求める" width="360" height="240" loading="lazy"><figcaption>代表例：電離真空計</figcaption></figure><p>残った気体をイオンにし、その量に関係する電気信号を測ります。高真空側で使われます。</p></article></div><p class="vc-note">どちらも気体の性質を利用した間接測定です。気体の種類によって表示が変わるため、実機では対応する条件を確認します。</p></section><section class="vc-section" id="step-4"><div class="vc-ey">STEP 4</div><h2>測る側にも、得意な範囲がある</h2><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-05" data-character-slot="haruto-understand"><div class="vc-portrait"><img src="images/learning/characters/course/haruto-understand.png" alt="陽斗" width="864" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>陽斗</b><p>03のポンプと同じで、測る方法も使い分けるんだね。</p></div></div><div class="vc-talk" data-image-slot="v04-talk-06" data-character-slot="teacher-explain"><div class="vc-portrait"><img src="images/learning/characters/course/teacher-explain.png" alt="けー子ちゃん先生" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>けー子ちゃん先生</b><p>はい。一つのセンサーで、すべての圧力を正しく測れるとは限りません。</p></div></div></div><div class="vc-grid"><article class="vc-card"><h3>粗引き側の測定</h3><p>隔膜式やピラニなど、圧力に合う方式を使う。</p></article><article class="vc-card"><h3>高真空側の測定</h3><p>電離真空計など、少ない気体を検出できる方式を使う。</p></article></div><p>異なるセンサーを組み合わせた真空計もあります。表示器が一つでも、内部で複数の方法を使っている場合があります。</p><p class="vc-note">測定範囲は機種で異なり、重なる範囲もあります。特に隔膜式は、測る圧力に応じた製品が用意されています。</p><p class="vc-key">数字を見る前に「単位」と「測れる範囲」を確認する。</p></section><section class="vc-section" id="summary"><div class="vc-ey">SUMMARY</div><h2>今日覚えるのは、この3つ</h2><div class="vc-grid"><article class="vc-card"><h3>真空を圧力で確認</h3><p>見た目ではなく、真空計の表示で確かめる。</p></article><article class="vc-card"><h3>測定方法は複数</h3><p>膜の動き、熱の逃げ方、電気信号などを使う。</p></article><article class="vc-card"><h3>範囲に合う真空計</h3><p>一種類で、すべてを測れるとは限らない。</p></article></div></section><section class="vc-section vc-check" id="check"><div class="vc-ey">CHECK</div><h2>1問だけ解いてみよう</h2><fieldset><legend>真空計を使い分ける必要がある主な理由はどれ？</legend><label class="vc-option"><input type="radio" name="v04-check" value="a"><span>A　真空計ごとに得意な圧力範囲があるため</span></label><label class="vc-option"><input type="radio" name="v04-check" value="b"><span>B　真空では圧力を測れないため</span></label><label class="vc-option"><input type="radio" name="v04-check" value="c"><span>C　Paは高真空では使えない単位だから</span></label></fieldset><button type="button" id="v04-check-button">答えを確認する</button><div id="v04-feedback" class="vc-feedback" aria-live="polite" hidden></div></section><p>ポンプは動いているのに、真空計の数字が下がらない。次は、その理由を考えます。</p><nav class="vacuum-end-nav" aria-label="このページの学習ナビゲーション"><a class="vacuum-next" href="learning_vacuum_05.html"><span>次のページ</span><strong>05 真空がうまく作れないのはなぜ？</strong><b aria-hidden="true">→</b></a><div class="vacuum-secondary"><a href="learning_vacuum_03.html">← 03へ戻る</a><a href="learning_vacuum.html">真空技術ホーム</a></div></nav><details class="vc-sources vacuum-end-sources"><summary>参考資料・図解について</summary><p>図は仕組みを理解するための概念図です。形状・粒子数・圧力範囲は実機を再現していません。</p><ul><li><a href="https://www.leybold.com/de-de/knowledge/blog/factors-to-consider-when-choosing-vacuum-gauges" target="_blank" rel="noopener noreferrer">Leybold：真空計の測定方式と範囲</a></li><li><a href="https://www.leybold.com/en-us/knowledge/vacuum-fundamentals/vacuum-measurement/how-indirect-pressure-measurement-works" target="_blank" rel="noopener noreferrer">Leybold：間接的な圧力測定</a></li></ul></details></main><footer>MonoBase Technical Learning ｜ Vacuum Technology Course</footer><script>(function(){var options=document.querySelectorAll('input[name="v04-check"]');options.forEach(function(input){input.addEventListener('change',function(){document.querySelectorAll('#check .vc-option').forEach(function(label){label.classList.toggle('is-selected',!!label.querySelector('input:checked'));});});});var btn=document.getElementById('v04-check-button');if(btn){btn.addEventListener('click',function(){var selected=document.querySelector('input[name="v04-check"]:checked');var fb=document.getElementById('v04-feedback');fb.hidden=false;if(!selected){fb.className='vc-feedback';fb.innerHTML='<div><strong>選択肢を1つ選んでください。</strong></div>';return;}if(selected.value==='a'){fb.className='vc-feedback is-correct';fb.innerHTML='<div><strong>その通りです！</strong><p>真空計には、それぞれ得意な圧力範囲があります。目的の圧力に合う方式を選ぶことが大切です。</p></div>';}else{fb.className='vc-feedback';fb.innerHTML='<div><strong>もう一度考えてみよう。</strong><p>STEP 4の「測る側にも、得意な範囲がある」を見直してみましょう。</p></div>';}});}})();</script></body></html>
