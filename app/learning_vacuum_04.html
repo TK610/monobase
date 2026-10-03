@@ -444,6 +444,35 @@
   }
 }
 </style>
+
+<style>
+/* Vacuum04 STEP2 Ver.0.7.77
+   Keep labels free to sit outside the image, while restoring the crop of the
+   cutaway photo so the unnecessary lower neck/base does not appear. */
+.v04-inside-figure{
+  overflow:visible !important;
+}
+.v04-inside-wrap{
+  overflow:hidden !important;
+}
+.v04-img-label{
+  overflow:visible !important;
+  z-index:5 !important;
+}
+@media (max-width:560px){
+  .v04-inside-wrap{
+    height:405px !important;
+    overflow:hidden !important;
+  }
+  .v04-inside-wrap>img{
+    width:158% !important;
+    max-width:none !important;
+    left:50% !important;
+    top:-2% !important;
+    transform:translateX(-50%) !important;
+  }
+}
+</style>
 </head><body class="vc-page"><a class="vc-skip" href="#lesson">本文へ移動</a><div class="course-switch-wrap"><nav class="course-switch" aria-label="技術学習コース切替"><span class="course-switch-label">学習コース</span><a class="active" aria-current="page" href="learning_vacuum.html">真空技術</a><a href="learning_sputtering.html">スパッタリング</a><a href="learning_thinfilm.html">薄膜技術</a></nav></div><main id="lesson"><nav class="vc-progress" aria-label="真空技術入門 全7ページ"><a href="learning_vacuum_01.html">01<span class="vc-sr"> 真空ってなに？</span></a><a href="learning_vacuum_02.html">02<span class="vc-sr"> どうやって真空をつくるの？</span></a><a href="learning_vacuum_03.html">03<span class="vc-sr"> 真空ポンプにはどんな種類がある？</span></a><a href="learning_vacuum_04.html" aria-current="page">04<span class="vc-sr"> 真空はどうやって測る？</span></a><a href="learning_vacuum_05.html">05<span class="vc-sr"> 真空がうまく作れないのはなぜ？</span></a><a href="learning_vacuum_06.html">06<span class="vc-sr"> 真空はどこで使われている？</span></a><a href="learning_vacuum_quiz.html">07<span class="vc-sr"> 理解度チェック</span></a></nav><div class="hero vc-hero"><div class="vc-ey">VACUUM TECHNOLOGY / 04</div><h1>真空はどうやって測る？</h1><p>ポンプにも得意な範囲がありました。測る側にも、圧力に合った方法があります。</p></div><div class="vacuum-comic v04-opening-comic" role="group" aria-label="真空はどうやって測る？ 3人の会話">
   <article class="vacuum-comic__scene" aria-labelledby="v04-comic-aoi-name">
     <div class="vacuum-comic__portrait"><img src="images/learning/characters/course/v04_intro_aoi_transparent.png" alt="疑問を持つ葵" width="576" height="1024" decoding="async"></div>
