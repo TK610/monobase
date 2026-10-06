@@ -490,6 +490,900 @@
  .v04-label-pressure{left:0!important;top:61%!important;max-width:140px!important;font-size:11px!important}
 }
 </style>
+<style>
+/* Vacuum04 STEP3 Ver.0.7.79 */
+.v04-pirani-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;align-items:start}
+.v04-pirani-card{height:auto!important}
+.v04-pirani-photo,.v04-pirani-cut{margin:10px 0 0;text-align:center}
+.v04-pirani-photo img,.v04-pirani-cut img{display:block;width:100%;height:430px;object-fit:contain;background:#fff;border-radius:12px}
+.v04-pirani-photo figcaption{margin-top:8px;color:#60788d;font-size:.9rem}
+.v04-pirani-compare{margin-top:18px;padding:18px;border:1px solid #d6e4ee;border-radius:16px;background:#f8fbfd}
+.v04-pirani-compare>h3{text-align:center;margin:0 0 14px}
+.v04-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.v04-compare-box{display:flex;flex-direction:column;align-items:center;gap:7px;padding:15px;border:1px solid #d7e4ed;border-radius:13px;background:#fff;text-align:center}
+.v04-compare-box b{font-size:1.05rem;color:#164e78}.v04-compare-box i{font-style:normal;color:#3684b8}.v04-compare-box strong{color:#183d59}
+.v04-pirani-key{text-align:center;margin:15px 0 0}
+.v04-step3-haruto{margin-top:18px}
+.v04-ion-mini{margin-top:22px;padding:18px;border:1px solid #d6e4ee;border-radius:16px}
+.v04-ion-mini>h3{margin-top:0}.v04-ion-inner{display:grid;grid-template-columns:minmax(240px,.8fr) 1fr;gap:20px;align-items:center}
+.v04-ion-inner .vc-figure{margin:0}.v04-ion-inner h4{margin-top:0}
+@media(max-width:700px){
+ .v04-pirani-grid,.v04-compare-grid,.v04-ion-inner{grid-template-columns:1fr}
+ .v04-pirani-photo img{height:auto;max-height:480px}
+ .v04-pirani-cut img{height:auto;max-height:560px}
+ .v04-pirani-card{padding:16px!important}
+ .v04-pirani-compare{padding:14px}
+ .v04-ion-mini{padding:14px}
+}
+</style><style>
+/* Vacuum04 Ver.0.7.80 — STEP3 desktop polish + pressure range notes */
+.v04-range-note{margin:16px 0;padding:12px 16px;border-left:4px solid #4a91bd;background:#f4f9fc;border-radius:8px;display:flex;gap:6px;flex-direction:column}
+.v04-range-note b{color:#174c70}.v04-range-note span{font-weight:600}.v04-range-note small{color:#667d8e}
+@media (min-width:701px){
+ .v04-step3 .v04-pirani-grid{gap:18px;margin-top:18px}
+ .v04-step3 .v04-pirani-card{padding:14px!important;border:1px solid #d6e4ee!important;background:#fbfdfe!important;box-shadow:none!important}
+ .v04-step3 .v04-pirani-card h3{margin:0 0 8px!important}
+ .v04-step3 .v04-pirani-photo,.v04-step3 .v04-pirani-cut{margin:0!important}
+ .v04-step3 .v04-pirani-photo img,.v04-step3 .v04-pirani-cut img{height:500px!important;width:100%!important;object-fit:contain!important}
+ .v04-step3 .v04-pirani-compare{padding:16px 18px!important;background:transparent!important;border:0!important;border-top:1px solid #dbe7ef!important;border-bottom:1px solid #dbe7ef!important;border-radius:0!important}
+ .v04-step3 .v04-compare-grid{gap:24px!important}
+ .v04-step3 .v04-compare-box{border:0!important;border-radius:0!important;padding:10px 18px!important;background:transparent!important;position:relative}
+ .v04-step3 .v04-compare-box+ .v04-compare-box{border-left:1px solid #dbe7ef!important}
+ .v04-step3 .v04-compare-box span{font-size:1rem}
+ .v04-step3 .v04-compare-box i{font-size:1.15rem;line-height:1}
+ .v04-step3 .v04-pirani-key{margin-top:12px!important}
+ .v04-step3-haruto{min-height:210px!important;align-items:center!important;padding:12px 22px!important}
+ .v04-step3-haruto .vc-portrait{width:170px!important;height:190px!important;flex:0 0 170px!important;overflow:hidden!important;display:flex!important;align-items:flex-start!important;justify-content:center!important}
+ .v04-step3-haruto .vc-portrait img{width:170px!important;height:auto!important;max-width:none!important;transform:translateY(-3px)!important}
+ .v04-step3-haruto .vc-talktext{font-size:1.03rem!important}
+ .v04-ion-mini{margin-top:24px!important}
+}
+</style><style>
+/* Vacuum04 Ver.0.7.81 — PC balance, range bars, character consistency */
+.v04-range-visual{gap:8px!important}
+.v04-range-scale{display:grid;grid-template-columns:repeat(4,1fr);font-size:.76rem;color:#61788a;text-align:center;margin-top:3px}
+.v04-range-track{height:12px;border-radius:999px;background:linear-gradient(90deg,#e7f1f7,#edf4f8);position:relative;overflow:hidden;border:1px solid #d2e1ea}
+.v04-range-band{position:absolute;top:2px;height:6px;border-radius:999px;background:#378bc0}
+.v04-range-band.diaphragm{left:2%;width:62%}
+.v04-range-band.pirani{left:18%;width:54%}
+.v04-range-caption{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.v04-range-caption strong{color:#174c70}
+@media (min-width:701px){
+ /* Aoi: bring STEP2 portrait up to the visual weight already used for Haruto */
+ #step-2 .vc-talk .vc-portrait{width:170px!important;height:190px!important;flex:0 0 170px!important;overflow:hidden!important;display:flex!important;align-items:flex-start!important;justify-content:center!important}
+ #step-2 .vc-talk .vc-portrait img{width:170px!important;height:auto!important;max-width:none!important;transform:translateY(-3px)!important}
+ #step-2 .vc-talk{min-height:210px!important;align-items:center!important;padding:12px 22px!important}
+
+ /* STEP3 comparison: lighter hierarchy and less empty vertical space */
+ .v04-step3 .v04-pirani-compare{margin-top:14px!important;padding-top:13px!important;padding-bottom:13px!important}
+ .v04-step3 .v04-compare-box{gap:5px!important;padding-top:6px!important;padding-bottom:6px!important}
+ .v04-step3 .v04-pirani-range{margin-top:14px!important;margin-bottom:10px!important}
+ .v04-step3-haruto{margin-top:10px!important}
+}
+@media(max-width:700px){
+ .v04-range-scale{font-size:.68rem}
+ .v04-range-caption{gap:5px;flex-direction:column}
+}
+</style><style>
+/* Vacuum04 Ver.0.7.83 — STEP3: clearly separate Pirani and ionization topics.
+   No image generation or image-file editing. */
+@media (min-width:701px){
+  /* Character cards finish the preceding topic cleanly. */
+  .v04-step3-haruto{
+    margin-bottom:30px!important;
+  }
+
+  /* Start ionization as a visibly independent sub-section. */
+  .v04-ion-separate{
+    margin-top:0!important;
+    padding:24px 22px 20px!important;
+    border:1px solid #cbdfea!important;
+    border-radius:16px!important;
+    background:#fbfdff!important;
+    position:relative;
+  }
+  .v04-ion-separate:before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:-16px;
+    height:1px;
+    background:#d9e6ee;
+  }
+  .v04-ion-separate>h3{
+    margin:0 0 16px!important;
+    font-size:1.12rem!important;
+    color:#123f60!important;
+  }
+
+  /* Avoid any card-colored backing behind character image itself. */
+  .v04-step3-haruto .vc-portrait,
+  #step-2 .vc-talk .vc-portrait{
+    background:transparent!important;
+  }
+  .v04-step3-haruto .vc-portrait img,
+  #step-2 .vc-talk .vc-portrait img{
+    background:transparent!important;
+  }
+}
+@media(max-width:700px){
+  .v04-step3-haruto{margin-bottom:24px!important}
+  .v04-ion-separate{
+    margin-top:0!important;
+    padding:18px 14px!important;
+    border:1px solid #cbdfea!important;
+    border-radius:14px!important;
+    background:#fbfdff!important;
+  }
+  .v04-step3-haruto .vc-portrait,
+  #step-2 .vc-talk .vc-portrait,
+  .v04-step3-haruto .vc-portrait img,
+  #step-2 .vc-talk .vc-portrait img{
+    background:transparent!important;
+  }
+}
+</style><style>
+/* Vacuum04 Ver.0.7.84 — clearer learning route, no image changes */
+.v04-flow-no{display:inline-flex;align-items:center;justify-content:center;min-width:1.65em;height:1.65em;padding:0 .22em;margin-right:.25em;border-radius:999px;background:#e6f3fb;color:#17618f;font-size:.82em;font-weight:800;vertical-align:middle}
+.v04-tech-term{margin:10px 0 12px;padding:9px 12px;border-left:3px solid #64a6cf;background:#f5fafd;border-radius:6px;color:#334f62;font-size:.93rem}
+.v04-tech-term b{color:#164f75}
+.v04-detail-line{display:block;margin-top:7px;color:#405d70;font-size:.93rem}
+.v04-range-visual>b{display:flex;align-items:center;gap:2px;font-size:1rem;color:#174c70}
+@media(max-width:700px){
+ .v04-flow-no{min-width:1.55em;height:1.55em;font-size:.78em}
+ .v04-tech-term,.v04-detail-line{font-size:.88rem}
+}
+</style><style>
+/* Vacuum04 Ver.0.7.85 — overview map after opening comic; no image changes */
+.v04-overview{
+  margin:24px 0 30px;padding:22px 24px 20px;
+  border:1px solid #cfe0eb;border-radius:16px;background:#fbfdff;
+}
+.v04-overview-ey{
+  display:inline-block;margin-bottom:7px;padding:4px 10px;border-radius:999px;
+  background:#e7f4fb;color:#17618f;font-size:.78rem;font-weight:800;letter-spacing:.04em;
+}
+.v04-overview h2{margin:0;color:#173f5b;font-size:1.32rem;line-height:1.45}
+.v04-overview-lead{margin:8px 0 18px;color:#425d70;line-height:1.75}
+.v04-overview-scale{margin:4px 4px 16px}
+.v04-overview-scale-labels{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  color:#587184;font-size:.78rem;text-align:center;
+}
+.v04-overview-axis{
+  position:relative;height:12px;margin-top:6px;border-radius:999px;
+  background:linear-gradient(90deg,#e8f4fa 0%,#d9edf7 45%,#c9e5f4 72%,#b8dced 100%);
+  border:1px solid #c4dce9;overflow:visible;
+}
+.v04-overview-axis:after{
+  content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);
+  width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:9px solid #4d96bf;
+}
+.v04-overview-methods{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;
+}
+.v04-overview-method{
+  display:flex;align-items:center;gap:11px;min-height:84px;padding:12px 13px;
+  border:1px solid #d8e6ee;border-radius:12px;background:#fff;
+}
+.v04-overview-method-no{
+  display:flex;align-items:center;justify-content:center;flex:0 0 30px;width:30px;height:30px;
+  border-radius:50%;background:#e7f4fb;color:#17618f;font-weight:800;
+}
+.v04-overview-method h3{margin:0 0 4px;font-size:.96rem;color:#174c70}
+.v04-overview-method p{margin:0;font-size:.88rem;color:#486273}
+.v04-overview-method b{color:#173f5b}
+.v04-overview-method.diaphragm{border-top:3px solid #63a9cf}
+.v04-overview-method.pirani{border-top:3px solid #3f8fbd}
+.v04-overview-method.ion{border-top:3px solid #276f9d}
+.v04-overview-note{margin:12px 2px 0;color:#6a7f8d;font-size:.75rem}
+@media(max-width:700px){
+ .v04-overview{margin:18px 0 24px;padding:18px 14px 16px;border-radius:14px}
+ .v04-overview h2{font-size:1.14rem}
+ .v04-overview-lead{font-size:.9rem;margin-bottom:15px}
+ .v04-overview-scale-labels{font-size:.67rem}
+ .v04-overview-methods{grid-template-columns:1fr;gap:8px}
+ .v04-overview-method{min-height:0;padding:10px 12px}
+ .v04-overview-method h3{font-size:.93rem}
+ .v04-overview-method p{font-size:.84rem}
+}
+</style><style>
+/* Vacuum04 Ver.0.7.86 — 3-column overview with overlapping gauge ranges */
+.v04-overview-scale-labels{grid-template-columns:repeat(3,1fr)!important}
+.v04-overview-axis{display:none!important}
+.v04-overview-range-map{display:grid;gap:7px;margin-top:8px}
+.v04-overview-range-row{
+ display:grid;grid-template-columns:86px 1fr;align-items:center;gap:9px;
+ min-height:17px;font-size:.75rem;color:#426075;
+}
+.v04-overview-range-row>b{font-weight:700;text-align:right;color:#31566e}
+.v04-overview-range-row .range{
+ position:relative;display:block;height:8px;border-radius:999px;background:#3f91bf;
+}
+.v04-overview-range-row .range.diaphragm{width:58%;margin-left:0}
+.v04-overview-range-row .range.pirani{width:57%;margin-left:20%}
+.v04-overview-range-row .range.ion{width:47%;margin-left:53%}
+.v04-overview-bridge{
+ margin:15px 0 0;padding:11px 13px;border-radius:9px;
+ background:#f1f8fc;color:#244e68;font-size:.9rem;line-height:1.6;
+}
+@media(max-width:700px){
+ .v04-overview-range-row{grid-template-columns:70px 1fr;gap:7px;font-size:.69rem}
+ .v04-overview-range-row .range{height:7px}
+ .v04-overview-bridge{font-size:.86rem}
+}
+</style><style>
+/* Vacuum04 Ver.0.7.87 — colorful beginner overview map; HTML/CSS only */
+.v04-color-map{overflow:hidden}
+.v04-vacuum-zone{
+ position:relative;display:grid;grid-template-columns:repeat(3,1fr);
+ margin:18px 0 20px;border-radius:13px;overflow:visible;
+}
+.v04-vacuum-zone .zone{
+ position:relative;min-height:72px;padding:13px 10px 12px;text-align:center;
+ border-top:1px solid rgba(55,113,148,.15);border-bottom:1px solid rgba(55,113,148,.15)
+}
+.v04-vacuum-zone .zone:first-child{border-radius:12px 0 0 12px;border-left:1px solid rgba(55,113,148,.15)}
+.v04-vacuum-zone .zone:last-of-type{border-radius:0 12px 12px 0;border-right:1px solid rgba(55,113,148,.15)}
+.v04-vacuum-zone .low{background:linear-gradient(180deg,#e9f8ff,#dff4fb)}
+.v04-vacuum-zone .mid{background:linear-gradient(180deg,#fff8d9,#fff1c4)}
+.v04-vacuum-zone .high{background:linear-gradient(180deg,#f7e9ff,#f0dcff)}
+.v04-vacuum-zone b{display:block;font-size:1.04rem;margin-bottom:4px}
+.v04-vacuum-zone .low b{color:#1875a7}.v04-vacuum-zone .mid b{color:#bd6900}.v04-vacuum-zone .high b{color:#7634a4}
+.v04-vacuum-zone span{font-size:.76rem;color:#526b7a}
+.v04-vacuum-zone .zone-arrow{
+ position:absolute;left:2%;right:2%;top:-7px;height:7px;border-radius:999px;
+ background:linear-gradient(90deg,#25a6d9 0%,#4cc4b0 28%,#f0d53d 50%,#f4a135 70%,#c447c7 100%);
+}
+.v04-vacuum-zone .zone-arrow:after{
+ content:"";position:absolute;right:-7px;top:-4px;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:11px solid #a53bc2;
+}
+.v04-gauge-bands{display:grid;gap:11px;margin:4px 0 15px}
+.v04-gauge-bands .gauge-row{position:relative;min-height:58px}
+.v04-gauge-bands .gauge-band{
+ display:flex;align-items:center;gap:10px;min-height:42px;padding:8px 17px;
+ border-radius:999px;font-size:.91rem;box-shadow:0 3px 10px rgba(38,79,105,.08)
+}
+.v04-gauge-bands .gauge-band strong{font-size:1rem;white-space:nowrap}
+.v04-gauge-bands .gauge-band em{
+ padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.84);
+ font-style:normal;font-weight:800;white-space:nowrap
+}
+.v04-gauge-bands .gauge-row>p{margin:5px 10px 0;font-size:.76rem;color:#557080}
+.v04-gauge-bands .diaphragm{width:65%;margin-left:0}
+.v04-gauge-bands .pirani{width:66%;margin-left:18%}
+.v04-gauge-bands .ion{width:55%;margin-left:45%}
+.v04-gauge-bands .diaphragm .gauge-band{background:linear-gradient(90deg,#c9efff,#70c8ee);color:#075b87}
+.v04-gauge-bands .pirani .gauge-band{background:linear-gradient(90deg,#ffe9a8,#ffbd43);color:#9a4b00}
+.v04-gauge-bands .ion .gauge-band{background:linear-gradient(90deg,#ead4ff,#b878e6);color:#5e258b}
+@media(max-width:700px){
+ .v04-vacuum-zone{margin-top:16px}
+ .v04-vacuum-zone .zone{min-height:64px;padding:11px 5px 9px}
+ .v04-vacuum-zone b{font-size:.9rem}.v04-vacuum-zone span{font-size:.64rem}
+ .v04-gauge-bands{gap:10px}
+ .v04-gauge-bands .gauge-row,
+ .v04-gauge-bands .diaphragm,.v04-gauge-bands .pirani,.v04-gauge-bands .ion{
+   width:100%;margin-left:0
+ }
+ .v04-gauge-bands .gauge-band{gap:6px;padding:8px 11px;font-size:.78rem;flex-wrap:wrap;border-radius:12px}
+ .v04-gauge-bands .gauge-band strong{font-size:.86rem}
+ .v04-gauge-bands .gauge-band em{padding:2px 7px}
+ .v04-gauge-bands .gauge-row>p{font-size:.72rem}
+}
+</style><style>
+/* Vacuum04 Ver.0.7.88 — final polish of colorful overview */
+.v04-color-map .v04-overview-lead{margin-bottom:12px!important}
+.v04-color-map .v04-vacuum-zone{margin-top:14px!important;margin-bottom:11px!important}
+.v04-range-role{
+ margin:2px 0 7px;padding-left:2px;
+ color:#3d6077;font-size:.78rem;font-weight:800;letter-spacing:.01em
+}
+.v04-color-map .v04-gauge-bands{gap:7px!important;margin-top:0!important;margin-bottom:11px!important}
+.v04-color-map .v04-gauge-bands .gauge-row{min-height:51px!important}
+.v04-color-map .v04-gauge-bands .gauge-row>p{margin-top:3px!important}
+/* Soft ends communicate approximate/overlapping ranges rather than hard boundaries. */
+.v04-color-map .gauge-band{position:relative;overflow:hidden}
+.v04-color-map .gauge-band:after{
+ content:"";position:absolute;right:0;top:0;width:54px;height:100%;
+ background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.58));
+ pointer-events:none
+}
+.v04-color-map .gauge-row.ion .gauge-band:before{
+ content:"";position:absolute;left:0;top:0;width:40px;height:100%;
+ background:linear-gradient(90deg,rgba(255,255,255,.48),rgba(255,255,255,0));
+ pointer-events:none
+}
+.v04-color-map .v04-overview-note{margin-top:7px!important}
+@media(max-width:700px){
+ .v04-color-map .v04-vacuum-zone{margin-bottom:10px!important}
+ .v04-range-role{font-size:.73rem;margin-bottom:6px}
+ .v04-color-map .v04-gauge-bands{gap:8px!important}
+ .v04-color-map .gauge-band:after{width:30px}
+}
+</style><style>
+/* Vacuum04 Ver.0.7.89 — overview typography finishing only */
+.v04-color-map .v04-range-role{
+  font-size:.88rem!important;
+  font-weight:800!important;
+  color:#294f68!important;
+  margin:5px 0 9px!important;
+}
+.v04-color-map .v04-gauge-bands .gauge-row>p{
+  font-size:.84rem!important;
+  line-height:1.55!important;
+  color:#486575!important;
+  margin-top:5px!important;
+}
+@media(max-width:700px){
+ .v04-color-map .v04-range-role{font-size:.8rem!important}
+ .v04-color-map .v04-gauge-bands .gauge-row>p{
+   font-size:.78rem!important;
+   line-height:1.5!important;
+ }
+}
+</style><style>
+/* Vacuum04 Ver.0.7.90 — overview readability + STEP1→STEP2 learning bridge */
+@media(min-width:701px){
+ .v04-color-map .v04-overview-ey{font-size:.84rem!important}
+ .v04-color-map h2{font-size:1.42rem!important}
+ .v04-color-map .v04-overview-lead{font-size:.98rem!important}
+ .v04-color-map .v04-vacuum-zone b{font-size:1.10rem!important}
+ .v04-color-map .v04-vacuum-zone span{font-size:.81rem!important}
+ .v04-color-map .v04-gauge-bands .gauge-band{font-size:.96rem!important}
+ .v04-color-map .v04-gauge-bands .gauge-band strong{font-size:1.04rem!important}
+ .v04-color-map .v04-gauge-bands .gauge-row>p{font-size:.87rem!important}
+ .v04-color-map .v04-overview-note{font-size:.79rem!important}
+}
+.v04-step1-bridge{
+ margin:18px 0 0;padding:13px 16px;border-left:4px solid #4c9bc6;
+ border-radius:8px;background:#f1f8fc;color:#234e69;
+ font-weight:700;line-height:1.7;
+}
+</style><style>
+/* Vacuum04 Ver.0.7.92 — unify STEP2 / STEP3 learning rhythm */
+
+/* Common section rhythm */
+#step-2>h2,#step-3>h2{margin-bottom:8px!important}
+#step-2>p:first-of-type,#step-3>p:first-of-type{
+  margin-top:0!important;margin-bottom:16px!important;line-height:1.75!important
+}
+#step-2 .v04-flow-no,#step-3 .v04-flow-no{
+  background:#e8f5fb!important;color:#17618f!important;
+  min-width:1.65em!important;height:1.65em!important
+}
+
+/* ①②: same card treatment */
+#step-2 .vc-card,#step-3 .v04-pirani-card{
+  border:1px solid #d4e5ef!important;border-radius:12px!important;
+  background:#fff!important;box-shadow:none!important
+}
+#step-2 .vc-card h3,#step-3 .v04-pirani-card h3{
+  color:#174c70!important;font-size:1rem!important
+}
+
+/* Technical term callouts: same hierarchy */
+#step-2 .v04-tech-term,#step-3 .v04-tech-term{
+  margin:10px 0 12px!important;padding:9px 12px!important;
+  border-left:3px solid #5ba5cf!important;background:#f5fafd!important;
+  color:#38576b!important;border-radius:6px!important
+}
+
+/* ③ Principle block */
+#step-3 .v04-pirani-compare{
+  margin-top:14px!important;border-top:1px solid #dbe7ef!important;
+  border-bottom:1px solid #dbe7ef!important
+}
+
+/* ④ Range blocks: color-coded to match overview map */
+#step-2 .v04-range-visual,#step-3 .v04-range-visual{
+  border-left-width:4px!important;border-radius:9px!important;
+  padding:12px 15px!important
+}
+#step-2 .v04-range-visual{
+  border-left-color:#69c6eb!important;background:#f0faff!important
+}
+#step-3 .v04-range-visual{
+  border-left-color:#f3b43e!important;background:#fff9e9!important
+}
+#step-2 .v04-range-band.diaphragm{
+  background:linear-gradient(90deg,#72ccec,#9bdcf2)!important
+}
+#step-3 .v04-range-band.pirani{
+  background:linear-gradient(90deg,#ffc75a,#f3ad2f)!important
+}
+#step-2 .v04-range-caption strong{color:#1676a5!important}
+#step-3 .v04-range-caption strong{color:#a95d00!important}
+
+/* Character = understanding checkpoint */
+#step-2 .vc-talk,#step-3 .v04-step3-haruto{
+  position:relative!important;margin-top:12px!important;
+  border-color:#cfe0eb!important;background:#fff!important
+}
+#step-2 .vc-talk:before,#step-3 .v04-step3-haruto:before{
+  content:"理解できたかな？";position:absolute;left:18px;top:-10px;
+  padding:2px 9px;border-radius:999px;background:#e8f5fb;color:#17618f;
+  font-size:.72rem;font-weight:800;z-index:2
+}
+
+/* Ionization begins as a clearly new topic after Pirani checkpoint */
+#step-3 .v04-ion-separate{
+  margin-top:34px!important;border:1px solid #d8dfea!important;
+  border-top:4px solid #b67be0!important;background:#fcf9ff!important
+}
+#step-3 .v04-ion-separate>h3{color:#63328a!important}
+
+/* Keep the compact PC rhythm */
+@media(min-width:701px){
+ #step-2,#step-3{padding-top:20px!important}
+ #step-2 .v04-range-visual,#step-3 .v04-range-visual{margin-top:14px!important}
+}
+
+/* Mobile: preserve vertical reading order and avoid crowding */
+@media(max-width:700px){
+ #step-2 .vc-card,#step-3 .v04-pirani-card{border-radius:10px!important}
+ #step-2 .vc-talk:before,#step-3 .v04-step3-haruto:before{
+   left:12px;font-size:.68rem
+ }
+ #step-3 .v04-ion-separate{margin-top:28px!important}
+}
+</style><style>
+@media(min-width:701px){
+#step-2 .vc-talk{display:grid!important;grid-template-columns:190px minmax(0,1fr)!important;column-gap:28px!important;align-items:center!important;padding:18px 24px!important}
+#step-2 .vc-talk .vc-portrait{width:190px!important;height:210px!important;min-width:190px!important;overflow:hidden!important;justify-self:start!important}
+#step-2 .vc-talk .vc-portrait img{width:180px!important;max-width:none!important;height:auto!important;transform:translateY(-2px)!important}
+#step-2 .vc-talk .vc-talktext{min-width:0!important;margin:0!important;padding-left:0!important;position:relative!important;z-index:2!important}
+}
+</style><style>
+/* Ver.0.7.94 — character dialogue itself is the learning checkpoint */
+#step-2 .vc-talk:before,
+#step-3 .v04-step3-haruto:before{content:none!important;display:none!important}
+</style><style>
+/* Vacuum04 Ver.0.7.94 — ion gauge promoted to independent STEP4 */
+.v04-ion-step{border-top-color:#b67be0!important}
+.v04-ion-step .vc-ey{color:#7339a0!important}
+.v04-ion-step>h2{color:#40255b}
+.v04-ion-main{
+ display:grid;grid-template-columns:minmax(260px,.9fr) minmax(0,1.1fr);
+ gap:26px;align-items:center;margin-top:18px;padding:20px;
+ border:1px solid #dfd3e9;border-radius:12px;background:#fcf9ff
+}
+.v04-ion-main .vc-figure{margin:0!important}
+.v04-ion-main .vc-figure img{display:block;width:100%;max-height:280px;object-fit:contain}
+.v04-ion-main .v04-ion-explain h3{margin:0 0 10px;color:#66338e}
+.v04-ion-main .v04-ion-explain>p{line-height:1.75}
+.v04-ion-main .v04-tech-term{
+ border-left-color:#b67be0!important;background:#f7effc!important
+}
+@media(max-width:700px){
+ .v04-ion-main{grid-template-columns:1fr;gap:14px;padding:14px}
+ .v04-ion-main .vc-figure img{max-height:230px}
+}
+</style><style>
+/* Vacuum04 Ver.0.7.95 — STEP4 ionization gauge full lesson */
+.v04-ion-step{border-top-color:#b67be0!important}
+.v04-ion-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:18px;margin-top:18px}
+.v04-ion-card{padding:14px!important;border:1px solid #dfd3e9!important;background:#fff!important;box-shadow:none!important}
+.v04-ion-card h3{margin:0 0 8px!important;color:#5f3187}.v04-ion-card h3 span,.v04-ion-principle h3 span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#f0e3fa;color:#713ca0;font-size:.78rem;margin-right:5px}
+.v04-ion-photo,.v04-ion-cut{margin:0!important;text-align:center}.v04-ion-photo img,.v04-ion-cut img{display:block;width:100%;height:500px;object-fit:contain}.v04-ion-photo figcaption{margin-top:5px;color:#718392;font-size:.78rem}
+.v04-ion-principle{margin-top:16px;padding:15px 18px;border-top:1px solid #e2d6ec;border-bottom:1px solid #e2d6ec}.v04-ion-principle h3{margin:0 0 8px;color:#5f3187}.v04-ion-principle>p{margin:7px 0;line-height:1.75}
+.v04-ion-range{border-left-color:#a85bd7!important;background:#fbf6fe!important}.v04-ion-range .v04-range-band.ionization{left:62%;width:36%;background:#a85bd7}.v04-ion-range .v04-range-caption strong{color:#693493}.v04-range-num{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#ead8f7;color:#713ca0;font-size:.75rem;margin-right:4px}
+.v04-ion-teacher{margin-top:12px!important;border-color:#dcc9eb!important;background:#fff!important}
+@media(min-width:701px){.v04-ion-teacher{display:grid!important;grid-template-columns:190px minmax(0,1fr)!important;column-gap:28px!important;align-items:center!important;padding:16px 24px!important;min-height:205px!important}.v04-ion-teacher .vc-portrait{width:190px!important;height:185px!important;overflow:hidden!important;display:flex!important;align-items:flex-start!important;justify-content:center!important}.v04-ion-teacher .vc-portrait img{width:165px!important;height:auto!important;max-width:none!important;transform:translateY(-4px)!important}.v04-ion-teacher .vc-talktext{min-width:0!important;margin:0!important;padding:0!important}}
+@media(max-width:700px){.v04-ion-grid{grid-template-columns:1fr}.v04-ion-photo img{height:330px}.v04-ion-cut img{height:auto;max-height:none}.v04-ion-principle{padding:13px 10px}.v04-ion-teacher .vc-portrait img{object-fit:contain}}
+</style>
+<style>
+/* Vacuum04 Ver.0.7.96 — STEP4 PC internal diagram emphasis */
+@media (min-width:701px){
+  #step-4-ion .v04-ion-cut img{
+    width:112%!important;
+    max-width:none!important;
+    height:500px!important;
+    object-fit:contain!important;
+    transform:translateX(-5.35%)!important;
+  }
+}
+</style>
+
+<style>
+/* Vacuum04 Ver.0.7.97 — STEP4 PC image balance and containment */
+@media (min-width:701px){
+  #step-4-ion .v04-ion-card{overflow:hidden!important;}
+  #step-4-ion .v04-ion-photo,
+  #step-4-ion .v04-ion-cut{
+    width:100%!important;
+    overflow:hidden!important;
+  }
+  #step-4-ion .v04-ion-photo img{
+    width:100%!important;
+    height:500px!important;
+    max-width:100%!important;
+    object-fit:contain!important;
+    transform:scale(1.23)!important;
+    transform-origin:center center!important;
+  }
+  #step-4-ion .v04-ion-cut img{
+    width:100%!important;
+    max-width:100%!important;
+    height:500px!important;
+    object-fit:contain!important;
+    transform:scale(1.055)!important;
+    transform-origin:center center!important;
+  }
+}
+</style>
+<style>
+/* Ver.0.7.98 — STEP4 internal diagram: keep every baked-in label visible */
+@media (min-width:701px){
+  .v04-ion-step .v04-ion-grid > *:nth-child(2),
+  .v04-ion-step .v04-ion-card:nth-child(2){
+    overflow:hidden!important;
+  }
+  .v04-ion-step .v04-ion-card:nth-child(2) figure,
+  .v04-ion-step .v04-ion-card:nth-child(2) .vc-figure{
+    overflow:hidden!important;
+    padding-left:8px!important;
+    padding-right:8px!important;
+    box-sizing:border-box!important;
+  }
+  .v04-ion-step .v04-ion-card:nth-child(2) img{
+    width:96%!important;
+    max-width:96%!important;
+    height:auto!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    transform:none!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+}
+</style><style>
+/* Ver.0.7.99 — STEP3: unify principle/range as two orange learning cards */
+@media (min-width:701px){
+  #step-3 .v04-pirani-compare{
+    margin-top:16px!important;
+    padding:16px 18px!important;
+    border:1px solid #f0c66f!important;
+    border-left:4px solid #f2a51a!important;
+    border-radius:10px!important;
+    background:#fffaf0!important;
+  }
+  #step-3 .v04-pirani-compare h3{
+    margin-top:0!important;
+  }
+  #step-3 .v04-pirani-range{
+    margin-top:12px!important;
+    padding:14px 16px!important;
+    border:1px solid #f0c66f!important;
+    border-left:4px solid #f2a51a!important;
+    border-radius:10px!important;
+    background:#fffaf0!important;
+  }
+}
+</style>
+<style>
+/* Ver.0.8.00 — Vacuum04 visual system polish
+   Common outer frame + method colors used only as internal learning accents. */
+
+/* STEP outer containers: one neutral rule */
+#step-1,#step-2,#step-3,#step-4{
+  border-color:#c9dce8!important;
+  border-top-color:#c9dce8!important;
+}
+
+/* STEP 2: diaphragm = blue */
+#step-2 .v04-pirani-range,
+#step-2 .v04-range-note{
+  background:#f7fbfd!important;
+  border-color:#cfe4f0!important;
+  border-left-color:#3d9dca!important;
+}
+
+/* STEP 3: Pirani = orange.
+   Principle is the main card (white); range is secondary (very pale orange). */
+#step-3 .v04-pirani-compare{
+  background:#fff!important;
+  border:1px solid #eadfca!important;
+  border-left:4px solid #f2a51a!important;
+  border-radius:10px!important;
+}
+#step-3 .v04-pirani-range{
+  background:#fffaf2!important;
+  border:1px solid #f2dfb9!important;
+  border-left:4px solid #f2a51a!important;
+  border-radius:10px!important;
+}
+
+/* STEP 4: ionization = purple, but keep the STEP frame neutral */
+#step-4{
+  border-color:#c9dce8!important;
+  border-top-color:#c9dce8!important;
+}
+#step-4 .v04-range-note,
+#step-4 .v04-range-visual{
+  background:#fbf8fe!important;
+  border-color:#e4d4f2!important;
+  border-left-color:#a45bd4!important;
+}
+
+/* Character cards are comprehension support, not a second main panel. */
+@media (min-width:701px){
+  #step-1 .vc-talk,
+  #step-2 .vc-talk,
+  #step-3 .vc-talk,
+  #step-4 .vc-talk{
+    min-height:168px!important;
+    padding-top:9px!important;
+    padding-bottom:9px!important;
+  }
+
+  #step-2 .vc-talk .vc-portrait,
+  #step-3 .vc-talk .vc-portrait,
+  #step-4 .vc-talk .vc-portrait{
+    height:154px!important;
+  }
+
+  #step-2 .vc-talk .vc-portrait img,
+  #step-3 .vc-talk .vc-portrait img,
+  #step-4 .vc-talk .vc-portrait img{
+    max-height:154px!important;
+    width:auto!important;
+    object-fit:contain!important;
+  }
+
+  /* STEP1 has three consecutive dialogue cards: tighten their rhythm slightly more. */
+  #step-1 .vc-talk{
+    min-height:142px!important;
+    margin-top:9px!important;
+    margin-bottom:9px!important;
+  }
+  #step-1 .vc-talk .vc-portrait{
+    height:126px!important;
+  }
+  #step-1 .vc-talk .vc-portrait img{
+    max-height:126px!important;
+    width:auto!important;
+    object-fit:contain!important;
+  }
+}
+
+/* Keep numbered subheads visually consistent without changing their content. */
+#step-2 h3,#step-3 h3,#step-4 h3{
+  line-height:1.35!important;
+}
+</style>
+
+<style>
+/* Ver.0.8.01 — STEP3 Pirani: equalize the two top cards */
+@media (min-width:701px){
+  #step-3 .v04-pirani-grid{
+    align-items:stretch!important;
+  }
+  #step-3 .v04-pirani-card{
+    height:100%!important;
+    box-sizing:border-box!important;
+    display:flex!important;
+    flex-direction:column!important;
+  }
+  #step-3 .v04-pirani-photo,
+  #step-3 .v04-pirani-cut{
+    flex:1 1 auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:center!important;
+  }
+  #step-3 .v04-pirani-photo figcaption{
+    flex:0 0 auto!important;
+  }
+}
+</style>
+
+<style>
+/* Ver.0.8.02 — STEP3/4: keep method colors only in pressure-range visuals */
+#step-3 .v04-pirani-compare{
+  background:#fff!important;
+  border:1px solid #cfe0ea!important;
+  border-left:1px solid #cfe0ea!important;
+  border-radius:10px!important;
+}
+#step-3 .v04-pirani-card{
+  border-color:#cfe0ea!important;
+}
+#step-4-ion{
+  border-color:#c9dce8!important;
+  border-top-color:#c9dce8!important;
+}
+#step-4-ion .v04-ion-card{
+  border-color:#cfe0ea!important;
+}
+#step-4-ion .v04-ion-principle{
+  background:#fff!important;
+  border-top:1px solid #cfe0ea!important;
+  border-bottom:1px solid #cfe0ea!important;
+}
+#step-4-ion .v04-ion-teacher{
+  border-color:#cfe0ea!important;
+  background:#fff!important;
+}
+/* Method colors remain intentionally on the range cards/bars only. */
+#step-3 .v04-pirani-range{
+  background:#fffaf2!important;
+  border:1px solid #f2dfb9!important;
+  border-left:4px solid #f2a51a!important;
+}
+#step-4-ion .v04-ion-range{
+  background:#fbf8fe!important;
+  border-color:#e4d4f2!important;
+  border-left-color:#a45bd4!important;
+}
+</style>
+
+<style>
+/* Ver.0.8.03 — STEP4 visual consistency */
+/* Keep purple only for the pressure-range visualization. */
+#step-4-ion > .vc-ey,
+#step-4-ion > h2,
+#step-4-ion .v04-ion-card h3,
+#step-4-ion .v04-ion-principle h3,
+#step-4-ion .v04-ion-teacher .vc-talktext b{
+  color:#174c70!important;
+}
+#step-4-ion .v04-ion-card h3 span,
+#step-4-ion .v04-ion-principle h3 span{
+  background:#eaf5fb!important;
+  color:#176a9a!important;
+}
+/* ③ should read as a complete content card, like the other numbered blocks. */
+#step-4-ion .v04-ion-principle{
+  margin-top:16px!important;
+  padding:15px 18px!important;
+  background:#fff!important;
+  border:1px solid #cfe0ea!important;
+  border-radius:10px!important;
+}
+/* Teacher is support content: match the compact character scale used in STEP2/3. */
+@media (min-width:701px){
+  #step-4-ion .v04-ion-teacher{
+    display:grid!important;
+    grid-template-columns:150px minmax(0,1fr)!important;
+    column-gap:22px!important;
+    align-items:center!important;
+    min-height:168px!important;
+    padding:9px 22px!important;
+  }
+  #step-4-ion .v04-ion-teacher .vc-portrait{
+    width:150px!important;
+    height:154px!important;
+    min-width:150px!important;
+    overflow:hidden!important;
+    display:flex!important;
+    align-items:flex-start!important;
+    justify-content:center!important;
+  }
+  #step-4-ion .v04-ion-teacher .vc-portrait img{
+    width:auto!important;
+    height:auto!important;
+    max-width:150px!important;
+    max-height:154px!important;
+    object-fit:contain!important;
+    transform:none!important;
+  }
+}
+</style>
+
+<style>
+/* Ver.0.8.04 — character crop, STEP4 exterior balance, beginner-friendly wording */
+@media (min-width:701px){
+  /* Haruto: portrait crop rather than showing the full body. */
+  #step-3 .v04-step3-haruto .vc-portrait{
+    width:150px!important;height:154px!important;flex:0 0 150px!important;
+    overflow:hidden!important;align-items:flex-start!important;justify-content:center!important;
+  }
+  #step-3 .v04-step3-haruto .vc-portrait img{
+    width:150px!important;height:auto!important;max-width:none!important;max-height:none!important;
+    object-fit:initial!important;transform:translateY(-2px)!important;
+  }
+  /* Teacher: same compact portrait scale/crop as the other explanation cards. */
+  #step-4-ion .v04-ion-teacher{
+    grid-template-columns:150px minmax(0,1fr)!important;min-height:168px!important;padding:9px 22px!important;
+  }
+  #step-4-ion .v04-ion-teacher .vc-portrait{
+    width:150px!important;height:154px!important;min-width:150px!important;overflow:hidden!important;
+    align-items:flex-start!important;justify-content:center!important;
+  }
+  #step-4-ion .v04-ion-teacher .vc-portrait img{
+    width:150px!important;height:auto!important;max-width:none!important;max-height:none!important;
+    object-fit:initial!important;transform:translateY(-2px)!important;
+  }
+  /* Exterior was visually too small beside the annotated cutaway. */
+  #step-4-ion .v04-ion-photo img{
+    transform:scale(1.38)!important;transform-origin:center center!important;
+  }
+}
+</style>
+
+<style>
+/* Ver.0.8.05 — character visual scale correction */
+@media (min-width:701px){
+  #step-3 .v04-step3-haruto .vc-portrait{
+    width:130px!important;height:142px!important;flex:0 0 130px!important;
+    overflow:hidden!important;display:flex!important;align-items:flex-start!important;justify-content:center!important;
+  }
+  #step-3 .v04-step3-haruto .vc-portrait img{
+    width:108px!important;height:auto!important;max-width:none!important;max-height:none!important;
+    transform:translateY(-1px)!important;
+  }
+  #step-4-ion .v04-ion-teacher{
+    grid-template-columns:130px minmax(0,1fr)!important;min-height:156px!important;padding:8px 22px!important;
+  }
+  #step-4-ion .v04-ion-teacher .vc-portrait{
+    width:130px!important;height:142px!important;min-width:130px!important;
+    overflow:hidden!important;display:flex!important;align-items:flex-start!important;justify-content:center!important;
+  }
+  #step-4-ion .v04-ion-teacher .vc-portrait img{
+    width:108px!important;height:auto!important;max-width:none!important;max-height:none!important;
+    transform:translateY(-1px)!important;
+  }
+}
+</style>
+
+<style>
+/* Ver.0.8.06 — final PC character/text polish */
+@media (min-width:701px){
+  #step-3 .v04-step3-haruto .vc-portrait img{
+    width:116px!important;
+  }
+}
+</style>
+
+<style id="v04-step5-pc-rebuild">
+.v04-step5 .v04-s5-talks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 22px}
+.v04-step5 .v04-s5-talk{border:1px solid #c8ddea;border-radius:12px;background:#fff;min-height:154px;padding:12px 14px;display:flex;align-items:center;gap:12px}
+.v04-step5 .v04-s5-face{width:86px;height:126px;flex:0 0 86px;overflow:hidden;display:flex;justify-content:center;align-items:flex-start}
+.v04-step5 .v04-s5-face img{width:100%;height:auto;max-width:none}
+.v04-step5 .v04-s5-talk b{color:#07507f;font-size:.88rem}.v04-step5 .v04-s5-talk p{margin:8px 0 0;line-height:1.7}
+.v04-step5 .v04-s5-compare,.v04-step5 .v04-s5-use{border:1px solid #c8ddea;border-radius:12px;background:#fff;padding:18px;margin:0 0 18px}
+.v04-step5 .v04-s5-compare h3,.v04-step5 .v04-s5-use h3{margin:0 0 14px;color:#083e64}
+.v04-step5 .v04-s5-table{display:grid;grid-template-columns:1.15fr 1.25fr 1.6fr;border:1px solid #d7e4ec;border-radius:9px;overflow:hidden}
+.v04-step5 .v04-s5-table>div{padding:12px;border-right:1px solid #e0eaf0;border-bottom:1px solid #e0eaf0;display:flex;align-items:center}.v04-step5 .v04-s5-table>div:nth-child(3n){border-right:0}.v04-step5 .v04-s5-table>div:nth-last-child(-n+3){border-bottom:0}
+.v04-step5 .v04-s5-table .head{background:#f3f8fb;font-weight:700;color:#365c73}.v04-step5 .tag{display:inline-block;border-radius:999px;padding:4px 12px;font-weight:700;background:#edf6fb}.v04-step5 .tag.dia{color:#167ba9}.v04-step5 .tag.pir{color:#a66b00;background:#fff7e6}.v04-step5 .tag.ion{color:#7a39ad;background:#f7effd}
+.v04-step5 .v04-s5-compare small{display:block;margin-top:10px;color:#6c7f8c}
+.v04-step5 .v04-s5-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:12px;margin:16px 0}.v04-step5 .v04-s5-flow div{border:1px solid #d4e3ec;border-radius:10px;text-align:center;padding:14px 10px;background:#f9fcfd}.v04-step5 .v04-s5-flow small{display:block;color:#667d8e;margin-bottom:5px}.v04-step5 .v04-s5-flow b{color:#083e64}.v04-step5 .v04-s5-flow i{font-style:normal;color:#4d8db4;font-size:1.35rem}.v04-step5 .v04-s5-sub{margin:10px 0 0;color:#405969}
+.v04-step5 .v04-s5-flow div{min-height:210px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.v04-step5 .v04-s5-flow img{width:100%;height:180px;object-fit:contain;display:block;margin:0 auto 8px}
+@media(max-width:700px){.v04-step5 .v04-s5-talks{grid-template-columns:1fr}.v04-step5 .v04-s5-table{grid-template-columns:1fr 1fr}.v04-step5 .v04-s5-table .head{display:none}.v04-step5 .v04-s5-table>div{border-bottom:1px solid #e0eaf0!important}.v04-step5 .v04-s5-flow{grid-template-columns:1fr}.v04-step5 .v04-s5-flow i{transform:rotate(90deg);text-align:center}}
+</style>
+
+<style>
+/* Vacuum04 Ver.0.8.14 — CHECK: instant answer + character feedback */
+#check .vc-option{transition:border-color .16s ease,background .16s ease}
+#check .vc-option.is-correct-choice{border-color:#77b98a!important;background:#f2fbf5!important}
+#check .vc-option.is-wrong-choice{border-color:#d99898!important;background:#fff6f6!important}
+#check .v04-check-feedback{margin-top:18px!important;padding:0!important;overflow:hidden;border:1px solid #cfe0eb!important;border-radius:12px!important;background:#f7fafc!important}
+#check .v04-check-feedback.is-correct{border-color:#c8dfcf!important;background:#f6fbf7!important}
+#check .v04-check-character{display:grid;grid-template-columns:190px minmax(0,1fr);align-items:center;gap:26px;min-height:190px;padding:14px 24px}
+#check .v04-check-portrait{width:190px;height:170px;overflow:hidden;display:flex;align-items:flex-start;justify-content:center}
+#check .v04-check-portrait img{width:185px;height:auto;max-width:none;display:block;transform:translateY(-2px)}
+#check .v04-check-message{min-width:0}
+#check .v04-check-message>strong{display:block;margin-bottom:9px;font-size:1.08rem;color:#173f60}
+#check .v04-check-message>b{display:block;margin-bottom:7px;font-size:.82rem;color:#0d5a8d}
+#check .v04-check-message p{margin:0;line-height:1.75}
+@media(max-width:700px){
+ #check .v04-check-character{grid-template-columns:105px minmax(0,1fr);gap:12px;min-height:135px;padding:12px}
+ #check .v04-check-portrait{width:105px;height:120px}
+ #check .v04-check-portrait img{width:130px;transform:translateY(0)}
+ #check .v04-check-message>strong{font-size:1rem}
+}
+</style>
+
+<style>
+/* Vacuum04 Ver.0.8.15 — CHECK feedback layout fix */
+#check .vc-feedback.v04-check-feedback{display:block!important;grid-template-columns:none!important;width:100%!important;box-sizing:border-box!important}
+#check .vc-feedback.v04-check-feedback[hidden]{display:none!important}
+#check .v04-check-character{width:100%!important;box-sizing:border-box!important}
+#check .v04-check-message{width:auto!important;min-width:0!important;max-width:none!important;writing-mode:horizontal-tb!important;word-break:normal!important;overflow-wrap:break-word!important;white-space:normal!important}
+#check .v04-check-message strong,#check .v04-check-message b,#check .v04-check-message p{writing-mode:horizontal-tb!important;word-break:normal!important;white-space:normal!important}
+</style>
 </head><body class="vc-page"><a class="vc-skip" href="#lesson">本文へ移動</a><div class="course-switch-wrap"><nav class="course-switch" aria-label="技術学習コース切替"><span class="course-switch-label">学習コース</span><a class="active" aria-current="page" href="learning_vacuum.html">真空技術</a><a href="learning_sputtering.html">スパッタリング</a><a href="learning_thinfilm.html">薄膜技術</a></nav></div><main id="lesson"><nav class="vc-progress" aria-label="真空技術入門 全7ページ"><a href="learning_vacuum_01.html">01<span class="vc-sr"> 真空ってなに？</span></a><a href="learning_vacuum_02.html">02<span class="vc-sr"> どうやって真空をつくるの？</span></a><a href="learning_vacuum_03.html">03<span class="vc-sr"> 真空ポンプにはどんな種類がある？</span></a><a href="learning_vacuum_04.html" aria-current="page">04<span class="vc-sr"> 真空はどうやって測る？</span></a><a href="learning_vacuum_05.html">05<span class="vc-sr"> 真空がうまく作れないのはなぜ？</span></a><a href="learning_vacuum_06.html">06<span class="vc-sr"> 真空はどこで使われている？</span></a><a href="learning_vacuum_quiz.html">07<span class="vc-sr"> 理解度チェック</span></a></nav><div class="hero vc-hero"><div class="vc-ey">VACUUM TECHNOLOGY / 04</div><h1>真空はどうやって測る？</h1><p>ポンプにも得意な範囲がありました。測る側にも、圧力に合った方法があります。</p></div><div class="vacuum-comic v04-opening-comic" role="group" aria-label="真空はどうやって測る？ 3人の会話">
   <article class="vacuum-comic__scene" aria-labelledby="v04-comic-aoi-name">
     <div class="vacuum-comic__portrait"><img src="images/learning/characters/course/v04_intro_aoi_transparent.png" alt="疑問を持つ葵" width="576" height="1024" decoding="async"></div>
@@ -503,7 +1397,46 @@
     <div class="vacuum-comic__portrait"><img src="images/learning/characters/course/v04_intro_keiko_transparent.png" alt="説明するけー子ちゃん先生" width="912" height="1536" loading="lazy" decoding="async"></div>
     <div class="vacuum-comic__bubble"><p class="vacuum-comic__name" id="v04-comic-keiko-name">けー子ちゃん先生</p><p class="vacuum-comic__line">そうですね。真空は「真空計」を使って、圧力として確かめます。測る範囲によって方法も違うんですよ。</p></div>
   </article>
-</div><div class="vacuum-comic-bridge v04-opening-bridge"><p>では、真空計は何を手がかりに圧力を測っているのでしょう？</p><span aria-hidden="true">↓</span></div><section class="vc-section" id="step-1"><div class="vc-ey">STEP 1</div><h2>見えない気体を、数字で確かめる</h2><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-01" data-character-slot="aoi-question"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_aoi_new.png" alt="葵" width="640" height="1024" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>葵</b><p>ちゃんと真空になったのかな？</p></div></div><div class="vc-talk" data-image-slot="v04-talk-02" data-character-slot="haruto-think"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_haruto_new.png" alt="陽斗" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>陽斗</b><p>01で、真空は圧力で表すって習ったね。</p></div></div><div class="vc-talk" data-image-slot="v04-talk-03" data-character-slot="teacher-explain"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_keiko_new.png" alt="けー子ちゃん先生" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>けー子ちゃん先生</b><p>圧力を調べるために使うのが、真空計です。</p></div></div></div><ol class="vc-flow"><li>チャンバー内の気体</li><li>真空計のセンサー</li><li>圧力の表示：Pa</li></ol><p>Pa（パスカル）は圧力の単位です。真空では、圧力が低いほど「真空度が高い」と表します。<br><small>1 Pa ＝ 1 N/m²（1 m²あたりに1 Nの力がかかる圧力）</small></p><div class="vc-grid"><article class="vc-card"><h3>100 Pa</h3><p>圧力が高い</p></article><article class="vc-card"><h3>1 Pa</h3><p>圧力が低い → 真空度が高い</p></article></div><p class="vc-note">ここでの数値は比較の例です。合格値や実機の操作目標ではありません。</p></section><section class="vc-section" id="step-2"><div class="vc-ey">STEP 2</div><h2>「押す力」を受け取る方法</h2><p>真空計には、測る圧力の範囲に合わせていくつかの測り方があります。まずは、気体が膜を押す力を利用する<strong>隔膜式の真空計</strong>を見てみましょう。</p><div class="vc-grid"><article class="vc-card"><h3>隔膜真空計の外観</h3><figure class="vc-figure"><img src="images/learning/course/v04_diaphragm_gauge_exterior.png" alt="MonoBase教材用に作成した隔膜真空計の外観イメージ" width="1024" height="1536" loading="lazy" decoding="async"><figcaption>外観イメージ</figcaption></figure></article><article class="vc-card"><h3>中ではどう測っている？</h3><figure class="v04-inside-figure">
+</div><div class="vacuum-comic-bridge v04-opening-bridge"><p>では、真空計は何を手がかりに圧力を測っているのでしょう？</p><span aria-hidden="true">↓</span></div>
+<section class="v04-overview v04-color-map" aria-labelledby="v04-overview-title">
+  <div class="v04-overview-ey">まず全体を見てみよう</div>
+  <h2 id="v04-overview-title">真空の深さに合わせて、測り方を使い分ける</h2>
+  <p class="v04-overview-lead">真空の深さによって、適した測り方が変わります。代表的な3つの測り方を、まず全体で見てみましょう。</p>
+
+  <div class="v04-vacuum-zone" aria-label="低真空から高真空へのイメージ">
+    <div class="zone low"><b>低真空</b><span>大気圧に近い領域</span></div>
+    <div class="zone mid"><b>中真空</b><span>さらに圧力が低い領域</span></div>
+    <div class="zone high"><b>高真空</b><span>非常に圧力が低い領域</span></div>
+    <i class="zone-arrow" aria-hidden="true"></i>
+  </div>
+
+  <div class="v04-range-role">主な測定範囲のイメージ</div>
+  <div class="v04-gauge-bands">
+    <div class="gauge-row diaphragm">
+      <div class="gauge-band">
+        <strong>隔膜式真空計</strong><em>「押す力」</em><span>を測る</span>
+      </div>
+      <p>薄い膜が押される変化から、圧力を求める</p>
+    </div>
+    <div class="gauge-row pirani">
+      <div class="gauge-band">
+        <strong>ピラニ真空計</strong><em>「熱の逃げ方」</em><span>を測る</span>
+      </div>
+      <p>加熱したフィラメントから、熱が逃げる変化を利用する</p>
+    </div>
+    <div class="gauge-row ion">
+      <div class="gauge-band">
+        <strong>電離真空計</strong><em>「イオン」</em><span>を利用する</span>
+      </div>
+      <p>気体をイオン化し、その量に関係する電気信号から圧力を求める</p>
+    </div>
+  </div>
+
+  <p class="v04-overview-note">※測定できる範囲は方式・機種によって異なり、互いに重なる範囲もあります。</p>
+</section>
+<section
+<section class="vc-section" id="step-1"><div class="vc-ey">STEP 1</div><h2>見えない気体を、数字で確かめる</h2><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-01" data-character-slot="aoi-question"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_aoi_new.png" alt="葵" width="640" height="1024" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>葵</b><p>ちゃんと真空になったのかな？</p></div></div><div class="vc-talk" data-image-slot="v04-talk-02" data-character-slot="haruto-think"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_haruto_new.png" alt="陽斗" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>陽斗</b><p>前に、真空は圧力で表すって習ったね。</p></div></div><div class="vc-talk" data-image-slot="v04-talk-03" data-character-slot="teacher-explain"><div class="vc-portrait"><img src="images/learning/characters/course/v04_step1_keiko_new.png" alt="けー子ちゃん先生" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>けー子ちゃん先生</b><p>圧力を調べるために使うのが、真空計です。</p></div></div></div><ol class="vc-flow"><li>チャンバー内の気体</li><li>真空計のセンサー</li><li>圧力の表示：Pa</li></ol><p>圧力とは、面をどれくらいの強さで押しているかを表すものです。単位には Pa（パスカル）を使います。真空では、圧力が低いほど「真空度が高い」と表します。<br><small>1 Pa ＝ 1 N/m²（1 m²あたりに1 Nの力がかかる圧力）</small></p><div class="vc-grid"><article class="vc-card"><h3>100 Pa</h3><p>圧力が高い</p></article><article class="vc-card"><h3>1 Pa</h3><p>圧力が低い → 真空度が高い</p></article></div><p class="vc-note">ここでの数値は比較の例です。合格値や実機の操作目標ではありません。</p><p class="v04-step1-bridge">では、真空計はこの「圧力」をどうやって感じ取っているのでしょう？</p>
+</section><section class="vc-section" id="step-2"><div class="vc-ey">STEP 2</div><h2>隔膜式真空計で「押す力」を測る</h2><p>真空計には、測る圧力の範囲に合わせていくつかの測り方があります。まずは、気体が膜を押す力を利用する<strong>隔膜式の真空計</strong>を見てみましょう。</p><div class="vc-grid"><article class="vc-card"><h3><span class="v04-flow-no">①</span> 外観を見てみよう</h3><figure class="vc-figure"><img src="images/learning/course/v04_diaphragm_gauge_exterior.png" alt="MonoBase教材用に作成した隔膜真空計の外観イメージ" width="1024" height="1536" loading="lazy" decoding="async"><figcaption>外観イメージ</figcaption></figure></article><article class="vc-card"><h3><span class="v04-flow-no">②</span> 中ではどうなっている？</h3><figure class="v04-inside-figure">
 <div class="v04-inside-wrap"><img src="images/learning/course/v04_diaphragm_gauge_cutaway.png" alt="隔膜真空計の内部で気体の圧力を受けた薄い膜がたわみ、その変化をセンサで検出する模式図" width="1024" height="1536" loading="lazy" decoding="async">
 <div class="v04-img-label v04-label-sensor"><b>センサ</b><span>膜の変化を検出</span></div>
 <div class="v04-img-label v04-label-membrane"><b>薄い膜（ダイアフラム）</b><span>圧力でわずかにたわむ</span></div>
@@ -514,4 +1447,140 @@
 <div class="v04-flow-step">② 薄い膜がわずかにたわむ</div><div class="v04-flow-arrow">↓</div>
 <div class="v04-flow-step">③ センサが膜の変化を検出</div><div class="v04-flow-arrow">↓</div>
 <div class="v04-flow-step">④ 圧力の値として表示</div></figcaption>
-</figure></article></div><p>このように、膜のわずかな変化を利用して圧力を測るのが隔膜式の真空計です。</p><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-04" data-character-slot="aoi-idea"><div class="vc-portrait"><img src="images/learning/characters/course/aoi-idea.webp" alt="葵" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>葵</b><p>目に見えない空気でも、膜は押せるんだね。</p></div></div></div></section><section class="vc-section" id="step-3"><div class="vc-ey">STEP 3</div><h2>熱や電気を手がかりにする方法</h2><div class="vc-grid"><article class="vc-card"><h3>熱の逃げ方を調べる</h3><figure class="vc-figure"><img src="images/learning/course/heat.svg" alt="気体分子が熱した線から熱を運ぶ" width="360" height="240" loading="lazy"><figcaption>代表例：ピラニ真空計</figcaption></figure><p>気体によって熱の逃げ方が変わります。熱した線の冷え方を手がかりに圧力を求めます。</p></article><article class="vc-card"><h3>気体を電気の信号に変える</h3><figure class="vc-figure"><img src="images/learning/course/ion.svg" alt="電子で気体をイオンにし、集めたイオンの信号から圧力を求める" width="360" height="240" loading="lazy"><figcaption>代表例：電離真空計</figcaption></figure><p>残った気体をイオンにし、その量に関係する電気信号を測ります。高真空側で使われます。</p></article></div><p class="vc-note">どちらも気体の性質を利用した間接測定です。気体の種類によって表示が変わるため、実機では対応する条件を確認します。</p></section><section class="vc-section" id="step-4"><div class="vc-ey">STEP 4</div><h2>測る側にも、得意な範囲がある</h2><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-05" data-character-slot="haruto-understand"><div class="vc-portrait"><img src="images/learning/characters/course/haruto-understand.png" alt="陽斗" width="864" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>陽斗</b><p>03のポンプと同じで、測る方法も使い分けるんだね。</p></div></div><div class="vc-talk" data-image-slot="v04-talk-06" data-character-slot="teacher-explain"><div class="vc-portrait"><img src="images/learning/characters/course/teacher-explain.png" alt="けー子ちゃん先生" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>けー子ちゃん先生</b><p>はい。一つのセンサーで、すべての圧力を正しく測れるとは限りません。</p></div></div></div><div class="vc-grid"><article class="vc-card"><h3>粗引き側の測定</h3><p>隔膜式やピラニなど、圧力に合う方式を使う。</p></article><article class="vc-card"><h3>高真空側の測定</h3><p>電離真空計など、少ない気体を検出できる方式を使う。</p></article></div><p>異なるセンサーを組み合わせた真空計もあります。表示器が一つでも、内部で複数の方法を使っている場合があります。</p><p class="vc-note">測定範囲は機種で異なり、重なる範囲もあります。特に隔膜式は、測る圧力に応じた製品が用意されています。</p><p class="vc-key">数字を見る前に「単位」と「測れる範囲」を確認する。</p></section><section class="vc-section" id="summary"><div class="vc-ey">SUMMARY</div><h2>今日覚えるのは、この3つ</h2><div class="vc-grid"><article class="vc-card"><h3>真空を圧力で確認</h3><p>見た目ではなく、真空計の表示で確かめる。</p></article><article class="vc-card"><h3>測定方法は複数</h3><p>膜の動き、熱の逃げ方、電気信号などを使う。</p></article><article class="vc-card"><h3>範囲に合う真空計</h3><p>一種類で、すべてを測れるとは限らない。</p></article></div></section><section class="vc-section vc-check" id="check"><div class="vc-ey">CHECK</div><h2>1問だけ解いてみよう</h2><fieldset><legend>真空計を使い分ける必要がある主な理由はどれ？</legend><label class="vc-option"><input type="radio" name="v04-check" value="a"><span>A　真空計ごとに得意な圧力範囲があるため</span></label><label class="vc-option"><input type="radio" name="v04-check" value="b"><span>B　真空では圧力を測れないため</span></label><label class="vc-option"><input type="radio" name="v04-check" value="c"><span>C　Paは高真空では使えない単位だから</span></label></fieldset><button type="button" id="v04-check-button">答えを確認する</button><div id="v04-feedback" class="vc-feedback" aria-live="polite" hidden></div></section><p>ポンプは動いているのに、真空計の数字が下がらない。次は、その理由を考えます。</p><nav class="vacuum-end-nav" aria-label="このページの学習ナビゲーション"><a class="vacuum-next" href="learning_vacuum_05.html"><span>次のページ</span><strong>05 真空がうまく作れないのはなぜ？</strong><b aria-hidden="true">→</b></a><div class="vacuum-secondary"><a href="learning_vacuum_03.html">← 03へ戻る</a><a href="learning_vacuum.html">真空技術ホーム</a></div></nav><details class="vc-sources vacuum-end-sources"><summary>参考資料・図解について</summary><p>図は仕組みを理解するための概念図です。形状・粒子数・圧力範囲は実機を再現していません。</p><ul><li><a href="https://www.leybold.com/de-de/knowledge/blog/factors-to-consider-when-choosing-vacuum-gauges" target="_blank" rel="noopener noreferrer">Leybold：真空計の測定方式と範囲</a></li><li><a href="https://www.leybold.com/en-us/knowledge/vacuum-fundamentals/vacuum-measurement/how-indirect-pressure-measurement-works" target="_blank" rel="noopener noreferrer">Leybold：間接的な圧力測定</a></li></ul></details></main><footer>MonoBase Technical Learning ｜ Vacuum Technology Course</footer><script>(function(){var options=document.querySelectorAll('input[name="v04-check"]');options.forEach(function(input){input.addEventListener('change',function(){document.querySelectorAll('#check .vc-option').forEach(function(label){label.classList.toggle('is-selected',!!label.querySelector('input:checked'));});});});var btn=document.getElementById('v04-check-button');if(btn){btn.addEventListener('click',function(){var selected=document.querySelector('input[name="v04-check"]:checked');var fb=document.getElementById('v04-feedback');fb.hidden=false;if(!selected){fb.className='vc-feedback';fb.innerHTML='<div><strong>選択肢を1つ選んでください。</strong></div>';return;}if(selected.value==='a'){fb.className='vc-feedback is-correct';fb.innerHTML='<div><strong>その通りです！</strong><p>真空計には、それぞれ得意な圧力範囲があります。目的の圧力に合う方式を選ぶことが大切です。</p></div>';}else{fb.className='vc-feedback';fb.innerHTML='<div><strong>もう一度考えてみよう。</strong><p>STEP 4の「測る側にも、得意な範囲がある」を見直してみましょう。</p></div>';}});}})();</script></body></html>
+</figure></article></div><p>このように、膜のわずかな変化を利用して圧力を測るのが隔膜式の真空計です。<div class="v04-range-note v04-range-visual">
+<b><span class="v04-flow-no">④</span> この真空計が活躍する圧力範囲</b>
+<div class="v04-range-scale"><span>大気圧側</span><span>低真空</span><span>中真空</span><span>高真空側</span></div>
+<div class="v04-range-track"><i class="v04-range-band diaphragm"></i></div>
+<div class="v04-range-caption"><strong>隔膜式</strong><span>主に大気圧付近～低・中真空側の測定に使います。</span></div>
+<small>※実際の測定範囲は方式・機種によって大きく異なります。</small>
+</div></p><div class="vc-dialogue"><div class="vc-talk" data-image-slot="v04-talk-04" data-character-slot="aoi-idea"><div class="vc-portrait"><img src="images/learning/characters/course/aoi-idea.webp" alt="葵" width="912" height="1536" loading="lazy" decoding="async"></div><div class="vc-talktext"><b>葵</b><p>目に見えない空気でも、膜は押せるんだね。</p></div></div></div></section><section class="vc-section v04-step3" id="step-3">
+<div class="vc-ey">STEP 3</div><h2>ピラニ真空計で「熱の逃げ方」から圧力を測る</h2>
+<p>膜の動きだけでなく、<b>気体が熱を運ぶ性質</b>や<b>電気の信号</b>を利用して圧力を測る方法もあります。まずは、熱を利用するピラニ真空計を見てみましょう。</p>
+
+<div class="v04-pirani-grid">
+ <article class="vc-card v04-pirani-card">
+  <h3><span class="v04-flow-no">①</span> 外観を見てみよう</h3>
+  <figure class="v04-pirani-photo"><img src="images/learning/course/pirani_monobase_exterior.png" alt="MonoBase ピラニ真空計の外観" loading="lazy"><figcaption>外観イメージ</figcaption></figure>
+ </article>
+ <article class="vc-card v04-pirani-card">
+  <h3><span class="v04-flow-no">②</span> 中ではどうなっている？</h3>
+  <figure class="v04-pirani-cut"><img src="images/learning/course/pirani_monobase_cutaway.png" alt="ピラニ真空計の内部構造。加熱した細い線の温度変化を利用して圧力を測る" loading="lazy"></figure>
+ </article>
+</div>
+
+<div class="v04-pirani-compare">
+ <h3><span class="v04-flow-no">③</span> どうやって圧力を測る？</h3><p class="v04-tech-term"><b>フィラメント</b>：電気で加熱する細い線。気体への熱の逃げ方を調べます。</p>
+ <div class="v04-compare-grid">
+  <div class="v04-compare-box"><b>圧力が高い</b><span>気体が多い</span><i>↓</i><span>熱が逃げやすい</span><i>↓</i><strong>フィラメントが冷えやすい</strong></div>
+  <div class="v04-compare-box"><b>圧力が低い</b><span>気体が少ない</span><i>↓</i><span>熱が逃げにくい</span><i>↓</i><strong>フィラメントが冷えにくい</strong></div>
+ </div>
+ <p class="v04-pirani-key">この<b>熱の逃げ方の違い</b>を電気的に読み取り、圧力を求めます。<span class="v04-detail-line">フィラメントの温度変化を<b>電気抵抗の変化</b>として検出し、圧力に換算します。</span></p>
+</div>
+
+<div class="v04-range-note v04-pirani-range v04-range-visual">
+<b><span class="v04-flow-no">④</span> この真空計が活躍する圧力範囲</b>
+<div class="v04-range-scale"><span>大気圧側</span><span>低真空</span><span>中真空</span><span>高真空側</span></div>
+<div class="v04-range-track"><i class="v04-range-band pirani"></i></div>
+<div class="v04-range-caption"><strong>ピラニ真空計</strong><span>粗引き～中真空側で広く使われます。</span></div>
+<small>※実際の測定範囲は機種や気体の種類によって異なります。</small>
+</div>
+<div class="vc-talk v04-step3-haruto" data-character-slot="haruto-understand">
+ <div class="vc-portrait"><img src="images/learning/characters/course/haruto-understand.png" alt="陽斗" loading="lazy" decoding="async"></div>
+ <div class="vc-talktext"><b>陽斗</b><p>気体が少ないほど熱が逃げにくくなる。その違いから圧力がわかるんですね。</p></div>
+</div>
+
+<p class="vc-note">ピラニ真空計は気体の種類によって熱の伝わり方が異なるため、表示値も影響を受けます。実機では測定条件を確認します。</p>
+</section>
+<section class="vc-section v04-ion-step" id="step-4-ion">
+  <div class="vc-ey">STEP 4</div>
+  <h2>電離真空計で「イオン」から圧力を測る</h2>
+  <p>さらに圧力が低くなると、残っている気体はとても少なくなります。そこで、気体を<b>イオン</b>に変え、その量に関係する電気信号を利用して圧力を測ります。</p>
+
+  <div class="v04-ion-grid">
+    <article class="vc-card v04-ion-card">
+      <h3><span>①</span> 外観を見てみよう</h3>
+      <figure class="v04-ion-photo">
+        <img src="images/learning/course/ionization_monobase_exterior.png" alt="MonoBase 電離真空計の外観イメージ">
+        <figcaption>外観イメージ</figcaption>
+      </figure>
+    </article>
+    <article class="vc-card v04-ion-card v04-ion-cut-card">
+      <h3><span>②</span> 中ではどう測っている？</h3>
+      <figure class="v04-ion-cut">
+        <img src="images/learning/course/ionization_monobase_cutaway.png" alt="電離真空計で電子が気体分子に衝突し、できたイオンを集める仕組み">
+      </figure>
+    </article>
+  </div>
+
+  <div class="v04-ion-principle">
+    <h3><span>③</span> 「イオン」を電気信号として読み取る</h3>
+    <p>フィラメントから出た電子が気体分子に衝突すると、<b>＋イオン</b>ができます。できたイオンをコレクタで集め、その<b>イオン電流</b>の大きさから圧力を求めます。</p>
+    <p class="v04-tech-term"><b>イオン</b>：電気を帯びた粒子。電離真空計では、残っている気体をイオン化して検出します。</p>
+  </div>
+
+  <div class="v04-range-note v04-ion-range v04-range-visual">
+    <b><span class="v04-range-num">④</span> この真空計が活躍する圧力範囲</b>
+    <div class="v04-range-scale"><span>大気圧側</span><span>低真空</span><span>中真空</span><span>高真空側</span></div>
+    <div class="v04-range-track"><i class="v04-range-band ionization"></i></div>
+    <div class="v04-range-caption"><strong>電離真空計</strong><span>主に高真空側の測定に使われます。</span></div>
+    <small>※実際の測定範囲は方式・機種によって大きく異なります。</small>
+  </div>
+
+  <div class="vc-talk v04-ion-teacher">
+    <div class="vc-portrait"><img src="images/learning/characters/teacher_sd_point.png" alt="けー子ちゃん先生"></div>
+    <div class="vc-talktext"><b>けー子ちゃん先生</b><p>気体がとても少なくなる高真空では、気体をイオンにして、その電気信号から圧力を測ります。</p></div>
+  </div>
+</section>
+<section class="vc-section v04-step5" id="step-5">
+<div class="vc-ey">STEP 5</div><h2>真空計を使い分ける</h2>
+<p>ここまで見てきた3つの真空計を比べながら、どんなときに使い分けるのか整理してみましょう。</p>
+<div class="v04-s5-talks">
+ <div class="v04-s5-talk"><div class="v04-s5-face"><img src="images/learning/characters/course/aoi-idea.webp" alt="葵"></div><div><b>葵</b><p>3つとも測り方が違ったけど、どれを使えばいいの？</p></div></div>
+ <div class="v04-s5-talk"><div class="v04-s5-face"><img src="images/learning/characters/course/haruto-understand.png" alt="陽斗"></div><div><b>陽斗</b><p>測りたい圧力に合わせて、真空計を選ぶのかな？</p></div></div>
+ <div class="v04-s5-talk"><div class="v04-s5-face"><img src="images/learning/characters/course/teacher-explain.png" alt="けー子ちゃん先生"></div><div><b>けー子ちゃん先生</b><p>そうです。大切なのは、測りたい圧力に合った真空計を選ぶことですよ。</p></div></div>
+</div>
+<div class="v04-s5-compare">
+ <h3>3つの真空計を比べてみよう</h3>
+ <div class="v04-s5-table">
+  <div class="head">真空計</div><div class="head">何を利用する？</div><div class="head">得意な領域</div>
+  <div><b>隔膜式真空計</b></div><div>膜を押す力</div><div>大気圧付近～低・中真空側</div>
+  <div><b>ピラニ真空計</b></div><div>熱の逃げ方</div><div>低～中真空側</div>
+  <div><b>電離真空計</b></div><div>イオンによる電気信号</div><div>高真空側</div>
+ </div>
+ <small>※実際の測定範囲は方式・機種によって異なり、互いに重なる範囲もあります。</small>
+</div>
+<div class="v04-s5-use">
+ <h3>圧力に合わせて、真空計を使い分ける</h3>
+ <p>真空装置では、圧力が下がっていく途中で、測定に適した真空計も変わります。</p>
+ <div class="v04-s5-flow">
+ <div><img src="images/learning/course/v04_diaphragm_gauge_exterior.png" alt="隔膜式真空計"><small>大気圧付近～</small><b>隔膜式</b></div><i>→</i>
+ <div><img src="images/learning/course/pirani_monobase_exterior.png" alt="ピラニ真空計"><small>低～中真空</small><b>ピラニ</b></div><i>→</i>
+ <div><img src="images/learning/course/ionization_monobase_exterior.png" alt="電離真空計"><small>高真空</small><b>電離真空計</b></div>
+ </div>
+ <p class="v04-s5-sub">異なるセンサーを組み合わせた真空計もあります。表示器が1つでも、内部で複数の方式を使っている場合があります。</p>
+</div>
+<p class="vc-key">真空計には、それぞれ得意な圧力の範囲があります。</p>
+</section><section class="vc-section" id="summary"><div class="vc-ey">SUMMARY</div><h2>今日覚えるのは、この3つ</h2><div class="vc-grid"><article class="vc-card"><h3>真空は「圧力」で確かめる</h3><p>見た目ではなく、真空計で圧力を測って確かめます。</p></article><article class="vc-card"><h3>真空計には、いろいろな測り方がある</h3><p>膜を押す力、熱の逃げ方、イオンなどを利用して圧力を測ります。</p></article><article class="vc-card"><h3>圧力に合わせて、真空計を使い分ける</h3><p>真空計には、それぞれ得意な圧力の範囲があります。</p></article></div></section><section class="vc-section vc-check" id="check"><div class="vc-ey">CHECK</div><h2>1問だけ解いてみよう</h2><fieldset><legend>真空計を使い分ける必要がある主な理由はどれ？</legend><label class="vc-option"><input type="radio" name="v04-check" value="a"><span>A　真空計ごとに得意な圧力範囲があるため</span></label><label class="vc-option"><input type="radio" name="v04-check" value="b"><span>B　真空では圧力を測れないため</span></label><label class="vc-option"><input type="radio" name="v04-check" value="c"><span>C　Paは高真空では使えない単位だから</span></label></fieldset><div id="v04-feedback" class="vc-feedback v04-check-feedback" aria-live="polite" hidden></div></section><p>ポンプは動いているのに、真空計の数字が下がらない。次は、その理由を考えます。</p><nav class="vacuum-end-nav" aria-label="このページの学習ナビゲーション"><a class="vacuum-next" href="learning_vacuum_05.html"><span>次のページ</span><strong>05 真空がうまく作れないのはなぜ？</strong><b aria-hidden="true">→</b></a><div class="vacuum-secondary"><a href="learning_vacuum_03.html">← 03へ戻る</a><a href="learning_vacuum.html">真空技術ホーム</a></div></nav><details class="vc-sources vacuum-end-sources"><summary>参考資料・図解について</summary><p>図は仕組みを理解するための概念図です。形状・粒子数・圧力範囲は実機を再現していません。</p><ul><li><a href="https://www.leybold.com/de-de/knowledge/blog/factors-to-consider-when-choosing-vacuum-gauges" target="_blank" rel="noopener noreferrer">Leybold：真空計の測定方式と範囲</a></li><li><a href="https://www.leybold.com/en-us/knowledge/vacuum-fundamentals/vacuum-measurement/how-indirect-pressure-measurement-works" target="_blank" rel="noopener noreferrer">Leybold：間接的な圧力測定</a></li></ul></details></main><footer>MonoBase Technical Learning ｜ Vacuum Technology Course</footer><script>(function(){
+var options=document.querySelectorAll('input[name="v04-check"]');
+var fb=document.getElementById('v04-feedback');
+function showResult(input){
+ document.querySelectorAll('#check .vc-option').forEach(function(label){
+  label.classList.remove('is-selected','is-correct-choice','is-wrong-choice');
+ });
+ var selectedLabel=input.closest('.vc-option');
+ selectedLabel.classList.add('is-selected');
+ fb.hidden=false;
+ if(input.value==='a'){
+  selectedLabel.classList.add('is-correct-choice');
+  fb.className='vc-feedback v04-check-feedback is-correct';
+  fb.innerHTML='<div class="v04-check-character"><div class="v04-check-portrait"><img src="images/learning/characters/course/haruto-check-correct.png" alt="正解して納得する陽斗"></div><div class="v04-check-message"><strong>正解！</strong><b>陽斗</b><p>なるほど。真空計には、それぞれ得意な圧力の範囲があるんだね。</p></div></div>';
+ }else{
+  selectedLabel.classList.add('is-wrong-choice');
+  var correct=document.querySelector('#check input[value="a"]');
+  if(correct){correct.closest('.vc-option').classList.add('is-correct-choice');}
+  fb.className='vc-feedback v04-check-feedback';
+  fb.innerHTML='<div class="v04-check-character"><div class="v04-check-portrait"><img src="images/learning/characters/course/teacher-check-retry.png" alt="もう一度考えるよう応援するけー子ちゃん先生"></div><div class="v04-check-message"><strong>もう一度考えてみましょう。</strong><b>けー子ちゃん先生</b><p>STEP 2〜4で、それぞれの真空計がどんな圧力で使われていたか、思い出してみましょう。</p></div></div>';
+ }
+}
+options.forEach(function(input){input.addEventListener('change',function(){showResult(input);});});
+})();</script></body></html>
