@@ -2775,3 +2775,214 @@ body.converter-mode .detail-doc-meta{align-self:center}
 .fraction-example b{display:block;margin-bottom:5px;color:#173b59}.fraction-example p{margin:2px 0;font-weight:700;color:#0d5f9e}
 .unit-learning-fraction .fraction-note{font-size:12px;color:#536b7e}
 
+
+/* =========================================================
+   MonoBase Ver.0.8.19 — Calculation Tools mobile polish
+   Weight calculator / unit converter only. Desktop unchanged.
+   ========================================================= */
+@media (max-width:700px){
+  /* App header becomes a compact mobile header instead of a desktop sidebar. */
+  .weight-app-design .sidebar{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    padding:14px 14px 12px!important;
+    margin:0!important;
+    border-radius:0!important;
+  }
+  .weight-app-design .epa-tools-brand{
+    display:flex!important;
+    margin:0 0 12px!important;
+  }
+  .weight-app-design .product-identity{display:none!important}
+  .weight-app-design .material-tool-menu{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:8px!important;
+    overflow:visible!important;
+    padding:0!important;
+  }
+  .weight-app-design .material-tool-menu button,
+  .weight-app-design .material-tool-menu .menu-link{
+    width:100%!important;
+    min-width:0!important;
+    min-height:46px!important;
+    padding:9px 8px 9px 38px!important;
+    margin:0!important;
+    font-size:12px!important;
+    line-height:1.25!important;
+  }
+  .weight-app-design .material-tool-menu button::before,
+  .weight-app-design .material-tool-menu .menu-link::before{
+    left:9px!important;
+    width:22px!important;
+    height:22px!important;
+  }
+
+  .weight-app-design .detail-layout-2026{
+    width:100%!important;
+    max-width:100%!important;
+    padding:14px 10px 30px!important;
+  }
+  .weight-app-design .detail-doc-hero{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+    padding:18px 15px!important;
+  }
+  .weight-app-design .detail-doc-main h1{font-size:27px!important;line-height:1.25!important}
+  .weight-product-stats{grid-template-columns:1fr 1fr!important;gap:6px!important}
+  .weight-product-stats>div{min-width:0!important;padding:7px 8px!important}
+
+  /* Weight: all working panels fit one phone column. */
+  .weight-app-design .material-calc-shell,
+  .weight-app-design .weight-tool-grid.integrated{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    min-width:0!important;
+    gap:12px!important;
+  }
+  .weight-app-design .material-search-panel,
+  .weight-app-design .weight-tool{
+    width:100%!important;
+    min-width:0!important;
+    padding:13px!important;
+    overflow:hidden!important;
+  }
+  .weight-app-design .material-source-tabs,
+  .weight-app-design .weight-material-tabs{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:6px!important;
+  }
+  .weight-app-design .material-source-tab,
+  .weight-app-design .weight-tab{
+    width:100%!important;
+    min-width:0!important;
+    padding:9px 6px!important;
+    font-size:12px!important;
+    white-space:normal!important;
+  }
+  .weight-app-design .emd-toolbar{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+  }
+  .weight-app-design .emd-list{max-height:260px!important}
+  .weight-app-design .emd-detail-head{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+  }
+  .weight-app-design .emd-detail-head>strong{white-space:normal!important;font-size:22px!important}
+  .weight-app-design .emd-detail dl{grid-template-columns:1fr!important}
+  .weight-app-design .weight-selected-material{
+    grid-template-columns:1fr auto!important;
+    gap:5px 8px!important;
+    padding:10px!important;
+  }
+  .weight-app-design .weight-selected-material>span{grid-column:1/-1!important}
+  .weight-app-design .weight-selected-material strong{min-width:0!important;overflow-wrap:anywhere!important}
+  .weight-app-design .weight-field-row{
+    grid-template-columns:1fr!important;
+    gap:6px!important;
+    margin-bottom:13px!important;
+  }
+  .weight-app-design .weight-input-panel{padding:2px 0!important;min-width:0!important}
+  .weight-app-design .weight-result-panel{
+    width:100%!important;
+    min-width:0!important;
+    padding:17px 15px!important;
+    border-left:1px solid #D9E5EF!important;
+    border-top:1px solid #D9E5EF!important;
+  }
+  .weight-app-design .weight-primary-result>strong{
+    max-width:100%!important;
+    font-size:clamp(30px,10vw,40px)!important;
+    overflow-wrap:anywhere!important;
+  }
+  .weight-app-design .weight-result-details{grid-template-columns:1fr 1fr!important}
+  .weight-app-design .weight-alloy-head,
+  .weight-app-design .weight-alloy-row{
+    grid-template-columns:minmax(0,1fr) 82px 36px!important;
+    gap:6px!important;
+  }
+  .weight-app-design .weight-quick-sections{grid-template-columns:1fr!important}
+
+  /* Unit converter: controls stack cleanly; no horizontal squeeze/overflow. */
+  .weight-app-design .converter-shell,
+  .weight-app-design .converter-workspace,
+  .weight-app-design .converter-card,
+  .weight-app-design .converter-learning{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  .weight-app-design .converter-head{
+    flex-direction:column!important;
+    gap:10px!important;
+  }
+  .weight-app-design .converter-mode-head{
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:8px!important;
+  }
+  .weight-app-design .converter-mode-head label{
+    width:100%!important;
+    justify-content:space-between!important;
+  }
+  .weight-app-design .converter-mode-head select{max-width:62%!important}
+  .weight-app-design .converter-mode-switch .converter-tabs{
+    grid-template-columns:1fr 1fr!important;
+    gap:7px!important;
+  }
+  .weight-app-design .converter-mode-switch .converter-tabs button{
+    grid-template-columns:30px minmax(0,1fr)!important;
+    column-gap:7px!important;
+    min-width:0!important;
+    min-height:58px!important;
+    padding:8px!important;
+  }
+  .weight-app-design .converter-mode-switch .converter-tabs button>b{width:30px!important;height:30px!important}
+  .weight-app-design .converter-mode-switch .converter-tabs button>span{font-size:13px!important}
+  .weight-app-design .converter-mode-switch .converter-tabs button>small{font-size:9px!important;white-space:normal!important}
+  .weight-app-design .converter-categories{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:7px!important;
+  }
+  .weight-app-design .category-card{width:100%!important;min-width:0!important}
+  .weight-app-design .converter-workspace{grid-template-columns:1fr!important;gap:12px!important}
+  .weight-app-design .input-card{padding:15px!important}
+  .weight-app-design .converter-pair{
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    margin-top:8px!important;
+  }
+  .weight-app-design .converter-pair label>div,
+  .weight-app-design .converter-pair .to-unit-row{
+    grid-template-columns:1fr!important;
+    width:100%!important;
+  }
+  .weight-app-design .converter-pair>button{
+    justify-self:center!important;
+    transform:rotate(90deg)!important;
+    margin:1px 0!important;
+  }
+  .weight-app-design .converter-result-card{padding:14px 10px!important}
+  .weight-app-design .converter-result-card .conv-result-number{
+    max-width:100%!important;
+    font-size:clamp(24px,9vw,32px)!important;
+  }
+  .weight-app-design .converter-learning details>div{padding:11px!important}
+  .weight-app-design .converter-history{padding:11px!important}
+
+  /* Generic table rule in detail.html must not force calculator tables off-screen. */
+  .weight-app-design .composition-table-wrap{max-width:100%!important;overflow-x:auto!important}
+  .weight-app-design .composition-table{min-width:680px!important}
+}
+@media (max-width:420px){
+  .weight-app-design .weight-result-details{grid-template-columns:1fr!important}
+  .weight-app-design .converter-mode-switch .converter-tabs{grid-template-columns:1fr!important}
+  .weight-app-design .material-tool-menu{grid-template-columns:1fr 1fr!important}
+}

@@ -1,3 +1,8 @@
+MonoBase Ver.0.8.19
+- 重量計算：スマホ表示を1カラム化し、材料選択・寸法入力・計算結果の横はみ出しを防止。
+- 単位・分析値変換：スマホ表示でモード、カテゴリ、入力、単位、結果、解説をレスポンシブ化。
+- PC版のレイアウトおよび計算ロジックは変更なし。
+
 Rev31
 - Vacuum03 STEP3 title clarified to rotary vane pump.
 - Simplified pump-oil explanation.
