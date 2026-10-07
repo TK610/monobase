@@ -2986,3 +2986,42 @@ body.converter-mode .detail-doc-meta{align-self:center}
   .weight-app-design .converter-mode-switch .converter-tabs{grid-template-columns:1fr!important}
   .weight-app-design .material-tool-menu{grid-template-columns:1fr 1fr!important}
 }
+
+/* =========================================================
+   MonoBase Ver.0.8.20 — Calculation Tools mobile wide layout
+   Use more of the phone viewport; desktop unchanged.
+   ========================================================= */
+@media (max-width:700px){
+  body.weight-app-design{width:100%!important;max-width:none!important;overflow-x:hidden!important}
+  .weight-app-design.page,
+  .weight-app-design .page,
+  .weight-app-design.detail-page-shell,
+  .weight-app-design .detail-page-shell{
+    width:100%!important;max-width:none!important;margin:0!important;padding:0!important;
+  }
+  .weight-app-design .main-panel,
+  .weight-app-design .detail-root{
+    width:100%!important;max-width:none!important;min-width:0!important;margin:0!important;padding:0!important;
+  }
+  .weight-app-design .detail-layout-2026{
+    width:100%!important;max-width:none!important;margin:0!important;padding:12px 8px 28px!important;
+  }
+  .weight-app-design .detail-doc-hero,
+  .weight-app-design .doc-section{
+    width:100%!important;max-width:none!important;
+  }
+  .weight-app-design .material-search-panel,
+  .weight-app-design .weight-tool,
+  .weight-app-design .converter-shell,
+  .weight-app-design .converter-card,
+  .weight-app-design .converter-workspace,
+  .weight-app-design .converter-learning{
+    width:100%!important;max-width:none!important;
+  }
+  .weight-app-design .converter-categories{gap:8px!important}
+  .weight-app-design .category-card{
+    min-height:58px!important;padding:10px 9px!important;gap:7px!important;
+    font-size:14px!important;line-height:1.3!important;overflow-wrap:anywhere!important;
+  }
+  .weight-app-design .category-card b{flex:0 0 30px!important;width:30px!important;height:30px!important}
+}

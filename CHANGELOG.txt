@@ -1,3 +1,28 @@
+Ver.0.8.25
+- Vacuum 05 STEP 1: adopted final shared-lab illustration with balanced character scale.
+- Rear monitor now shows pressure decreasing then leveling off; front gauge shows 2.3 x 10^-2 Pa.
+- PC uses 16:9 scene; mobile preserves the full illustration without 4:3 crop.
+- STEP 2 onward and other learning pages unchanged.
+
+Ver.0.8.24
+- 真空05 STEP1導入を1枚の研究室シーン＋会話フローへ再構成
+- 葵の研究室画像を基準に、陽斗とけー子ちゃん先生を同一場面へ配置
+- 陽斗の別装置と先生のキラキラ背景要素を除去
+- PCは横方向の会話フロー、スマホは縦方向へレスポンシブ表示
+- STEP2以降・他ページは変更なし
+
+Ver.0.8.23
+- Vacuum 05 STEP 1 opening comic: changed from one composited wide scene to a three-panel comic.
+- Each panel uses the same laboratory scene while framing Aoi, Haruto, and Keiko-sensei separately to reduce scale/compositing mismatch.
+- Mobile layout stacks the three panels vertically for readable character size.
+- Vacuum 05 STEP 2 onward and other pages are unchanged.
+
+Ver.0.8.22 (2026-10-07)
+- 真空05 STEP1の導入漫画のみ更新。
+- 葵の研究室を共通背景にし、陽斗・けー子ちゃん先生を同じ場面へ配置。
+- PCは横長の1シーン、スマホは縦長専用画像へ切り替えるレスポンシブ構成。
+- 真空05本文・他ページ・既存機能は変更なし。
+
 MonoBase Ver.0.8.19
 - 重量計算：スマホ表示を1カラム化し、材料選択・寸法入力・計算結果の横はみ出しを防止。
 - 単位・分析値変換：スマホ表示でモード、カテゴリ、入力、単位、結果、解説をレスポンシブ化。
@@ -296,3 +321,5 @@ Rev43 Vacuum03 STEP5 mobile polish
 Rev44: 真空03 STEP4の陽斗SD画像を採用画像の左右反転版へ差し替え。既存UI・レスポンシブ構成は維持。
 
 Rev48: 真空03 STEP4の陽斗のみ約10%拡大。葵・先生・向き・文章・その他レイアウトはRev47を維持。
+
+- Ver.0.8.20: calculation tools mobile layout widened; reduced outer gutters and improved converter category card fit. Desktop unchanged.
